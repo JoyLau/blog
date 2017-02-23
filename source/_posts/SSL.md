@@ -7,13 +7,13 @@ tags: [SSL,https,Apache,Tomcat,Nginx]
 ---
 <!-- more -->
 
-![SSL](http://olmkayhqc.bkt.clouddn.com/https.jpg)
+![SSL](http://image.lfdevelopment.cn/blog/https.jpg)
 
 
 ## Apache 2.x 证书部署
 
 ### 文件准备
-![Apache](http://olmkayhqc.bkt.clouddn.com/apachessl.png)
+![Apache](http://image.lfdevelopment.cn/blog/apachessl.png)
 
 ### 获取证书
 - Apache文件夹内获得证书文件 1_root_bundle.crt，2_www.domain.com_cert.crt 和私钥文件 3_www.domain.com.key,
@@ -47,7 +47,7 @@ tags: [SSL,https,Apache,Tomcat,Nginx]
 ##  Nginx 证书部署
 
 ### 文件准备
-![Nginx](http://olmkayhqc.bkt.clouddn.com/Nginxssl.png)
+![Nginx](http://image.lfdevelopment.cn/blog/Nginxssl.png)
 
 ### 获取证书
 - Nginx文件夹内获得SSL证书文件 1_www.domain.com_bundle.crt 和私钥文件 2_www.domain.com.key,
@@ -95,7 +95,7 @@ tags: [SSL,https,Apache,Tomcat,Nginx]
 
 ### 文件准备
 
-![Nginx](http://olmkayhqc.bkt.clouddn.com/Tomcatssl.png)
+![Nginx](http://image.lfdevelopment.cn/blog/Tomcatssl.png)
 
 
 ### 获取证书

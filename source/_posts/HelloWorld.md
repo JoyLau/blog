@@ -7,7 +7,7 @@ tags: [Hexo,Node.js,git,Bootstrap]
 ---
 <!-- more -->
 
-![HelloWorld](http://olmkayhqc.bkt.clouddn.com/world.jpg)
+![HelloWorld](http://image.lfdevelopment.cn/blog/world.jpg)
 
 
 ## 关于博客
