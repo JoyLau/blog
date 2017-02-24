@@ -3,7 +3,7 @@ title: Linux菜鸟到熟悉---生产环境的搭建
 date: 2017-2-23 13:20:42
 description: "之所以购买云服务器，主要是方便,安全,选择linux作为生产环境的系统更是安全，高效"
 categories: [Linux篇]
-tags: [linux,jdk,Tomcat]
+tags: [linux,jdk,Tomcat,MySQL,Redis,Docker]
 ---
 
 <!-- more -->
@@ -117,18 +117,97 @@ tags: [linux,jdk,Tomcat]
 
 ### 说明
 - mysql主要有2种方式安装
-    - 本文要说明的
-    - [点击跳转](http://blog.sina.com.cn/s/blog_16392bde40102wol6.html)
+    - 1.本文要说明的
+    - 2.[点击这里查看](http://blog.sina.com.cn/s/blog_16392bde40102wol6.html)
 
 
 ### 开始
 - 在mysql的官网上找到mysql的源链接
 
-![Mysql官网截图](http://image.lfdevelopment.cn/blog/server.jpg)
+![Mysql官网截图](//image.lfdevelopment.cn/blog/mysqlsourceLink.jpg)
 
+- 找到原链接：`https://repo.mysql.com//mysql57-community-release-el7-9.noarch.rpm`
 
+### 安装
 
-......    未完待续     .......
+- 安装命令
+    ``` bash
+        # wget https://repo.mysql.com//mysql57-community-release-el7-9.noarch.rpm
+        # rpm -ivh mysql57-community-release-el7-9.noarch.rpm
+        # yum install mysql-community-server
+    ```
+    
+- 安装过程中有确认操作，一律***y***
+- 接下来就是漫长的下载，只需要等待即可。
+### 启动
+- 安装完成后： `systemctl start mysqld` 启动mysqld服务
+ 
+### 配置
+- 查看` /var/log/mysqld.log `里的日志(可以查找**password**关键字)
+![mysqlLog](//image.lfdevelopment.cn/blog/mysqllog.jpg)
+- 可以看到创建的临时密码
+- 登录MySQL：`mysql -u root -p `
+- 输入刚才在日志里看到的临时密码
+- 这个时候我输入任何的命令都会提示`You must reset your password using ALTER USER statement before executing this statement.`
+![alterTips](//image.lfdevelopment.cn/blog/alertTips.jpg)
+- 通过 `alter user 'root'@'localhost' identified by 'root'` 命令，修改 root 用户的密码为 root
+- 退出，重新以root用户和刚设置的密码进行登录即可
+
+### MySql配置文件
+
+- 将所有权限赋给root用户并提供外网访问
+    ``` bash
+        grant all privileges on *.* to root@'%'identified by 'root';
+    ```
+    
+- 紧接着就可以在自己的机器上用**Navicat**了
+- 配置my.cnf：`/etc/my.cnf`
+    ``` bash
+        [mysqld]
+        #
+        # Remove leading # and set to the amount of RAM for the most important data
+        # cache in MySQL. Start at 70% of total RAM for dedicated server, else 10%.
+        # innodb_buffer_pool_size = 128M
+        #
+        # Remove leading # to turn on a very important data integrity option: logging
+        # changes to the binary log between backups.
+        # log_bin
+        #
+        # Remove leading # to set options mainly useful for reporting servers.
+        # The server defaults are faster for transactions and fast SELECTs.
+        # Adjust sizes as needed, experiment to find the optimal values.
+        # join_buffer_size = 128M
+        # sort_buffer_size = 2M
+        # read_rnd_buffer_size = 2M
+        datadir=/var/lib/mysql
+        socket=/var/lib/mysql/mysql.sock
+        //设置端口号
+        port= 3333
+        
+        //设置服务器端编码
+        character-set-server=utf8
+        
+        //Linux下表名是严格区分大小写的，设置为0表示区分，设置为1表示不区分
+        lower_case_table_names= 1
+        
+        # Disabling symbolic-links is recommended to prevent assorted security risks
+        symbolic-links=0
+        
+        log-error=/var/log/mysqld.log
+        pid-file=/var/run/mysqld/mysqld.pid
+    ```
+    
+### 值得注意的是：
+- 1.`show variables like 'character%';`可以看到数据库的编码方式
+    - `其中，character_set_client为客户端编码方式；`
+    - `character_set_connection为建立连接使用的编码；`
+    - `character_set_database数据库的编码；`
+    - `character_set_results结果集的编码；`
+    - `character_set_server数据库服务器的编码；`
+    - `只要保证以上四个采用的编码方式一样，就不会出现乱码问题。`
+- 2.暂时能配置只有这些，以后有更新，我会加上的
+    
+
 
 
     
