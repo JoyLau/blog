@@ -30,11 +30,11 @@ tags: [linux,磁盘挂载]
 ### 需要进行分区的情况
 - 运行 `fdisk /dev/xvdb`，对数据盘进行分区。根据提示，依次输入 n，p，1，两次回车，wq，分区就开始了。
 
-![Image2](http://image.lfdevelopment.cn/blog/linux2.png)
+![Image2](http://image.lfdevelopment.cn/blog/linux2.jpg)
 
 - 运行 `fdisk -l` 命令，查看新的分区。新分区 xvdb1 已经创建好。如下面示例中的/dev/xvdb1。
 
-![Image3](http://image.lfdevelopment.cn/blog/linux3.png)
+![Image3](http://image.lfdevelopment.cn/blog/linux3.jpg)
 
 
 ### 不需要进行分区的情况
@@ -43,11 +43,11 @@ tags: [linux,磁盘挂载]
 
 - 运行 `mkfs.ext3 /dev/xvdb1`，对新分区进行格式化。格式化所需时间取决于数据盘大小。您也可自主决定选用其他文件格式，如 `ext4` 等。
 
-![Image4](http://image.lfdevelopment.cn/blog/linux4.png)
+![Image4](http://image.lfdevelopment.cn/blog/linux4.jpg)
 
 - 运行 `echo /dev/xvdb1 /mnt ext3 defaults 0 0 >> /etc/fstab` 写入新分区信息。完成后，可以使用 `cat /etc/fstab` 命令查看。
 
-![Image5](http://image.lfdevelopment.cn/blog/linux5.png)
+![Image5](http://image.lfdevelopment.cn/blog/linux5.jpg)
 
 > Ubuntu 12.04 不支持 barrier，所以对该系统正确的命令是：`echo /dev/xvdb1 /mnt ext3 defaults 0 0 >> /etc/fstab` 
   如果需要把数据盘单独挂载到某个文件夹，比如单独用来存放网页，可以修改以上命令中的 /mnt 部分。

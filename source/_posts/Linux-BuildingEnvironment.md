@@ -12,7 +12,7 @@ tags: [linux,jdk,Tomcat]
 
 ## 前言
 
-- 本次搭建`Java`和`Tomcat`的运行环境，后续将接着搭建Mysql，git,Nginx...环境
+- 本次搭建`Java`和`Tomcat`的运行环境，后续将接着搭建Mysql，Git,Nginx,Redis,Docker...环境
 
 
 ## Java环境搭建
@@ -109,6 +109,22 @@ tags: [linux,jdk,Tomcat]
 - 因为配置pid，在启动的时候会再tomcat根目录生成tomcat.pid文件，停止之后删除
 - 同时tomcat在启动时候，执行start不会启动两个tomcat，保证始终只有一个tomcat服务在运行
 - 多个tomcat可以配置在多个目录下，互不影响。
+
+
+
+
+## Mysql5.7数据库安装
+
+### 说明
+- mysql主要有2种方式安装
+    - 本文要说明的
+    - [点击跳转](http://blog.sina.com.cn/s/blog_16392bde40102wol6.html)
+
+
+### 开始
+- 在mysql的官网上找到mysql的源链接
+
+![Mysql官网截图](http://image.lfdevelopment.cn/blog/server.jpg)
 
 
 
