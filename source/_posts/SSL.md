@@ -99,10 +99,8 @@ tags: [SSL,https,Apache,Tomcat,Nginx]
 
 
 ### 获取证书
-
 - 如果申请证书时有填写私钥密码，下载可获得Tomcat文件夹，其中有密钥库 www.domain.com.jks；
 - 如果没有填写私钥密码，不提供Tomcat证书文件的下载，需要用户手动转换格式生成。
-
 - 可以通过 Nginx 文件夹内证书文件和私钥文件生成jks格式证书
 - 转换工具：https://www.trustasia.com/tools/cert-converter.htm
 - 使用工具时注意填写 密钥库密码 ，安装证书时配置文件中需要填写。
