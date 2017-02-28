@@ -111,6 +111,10 @@ tags: [linux,jdk,Tomcat,MySQL,Redis,Docker]
 - 多个tomcat可以配置在多个目录下，互不影响。
 
 
+### 遇到个很尴尬的问题
+- 这个问题我尝试过很多次，那就是Tomcat启动的特别慢，后来查看日志发现是部署项目的时候花费时间特别长，详细看[这里](http://bbs.qcloud.com/thread-25271-1-1.html)
+
+
 
 
 ## Mysql5.7数据库安装
@@ -197,6 +201,14 @@ tags: [linux,jdk,Tomcat,MySQL,Redis,Docker]
         pid-file=/var/run/mysqld/mysqld.pid
     ```
     
+    
+### MySQL卸载
+- `yum remove  mysql mysql-server mysql-libs mysql-server;`
+- `rpm -qa|grep mysql`(查询出来的东东yum remove掉)
+- `find / -name mysql` (将找到的相关东西delete掉；)
+
+
+
 ### 值得注意的是：
 - 1.`show variables like 'character%';`可以看到数据库的编码方式
     - `其中，character_set_client为客户端编码方式；`
@@ -206,6 +218,124 @@ tags: [linux,jdk,Tomcat,MySQL,Redis,Docker]
     - `character_set_server数据库服务器的编码；`
     - `只要保证以上四个采用的编码方式一样，就不会出现乱码问题。`
 - 2.暂时能配置只有这些，以后有更新，我会加上的
+
+
+
+## Redis的安装
+
+### 说明
+#### Linux安装redis是需要在官网下载redis的源码然后再编译的
+- redis的官网：https://redis.io/
+- redis中文网：http://www.redis.cn/
+- 我已将编译好直接可以使用的Redis上传到GitHub: https://github.com/FailScholar/Redis-3.2.8-Linux
+- 请结合本篇博客和项目里的README文件使用
+
+### 下载安装
+- 下载linux版的压缩包,截止到我写博客的时间，官网给的稳定版是3.2.8，我们就下载`redis-3.2.8.tar.gz`
+- `tar -zxvf redis-3.2.8.tar.gz`
+- 进入src目录：`cd redis-3.2.8/src`
+- `make` 编译
+- 这时我们不执行`make intsall`,因为该操作会把编译生成的**_重要的文件_**拷贝到`user/local/bin`下，我们想要自定义配置路径
+
+#### 注意
+- 中间可能报`/bin/sh: cc:未找到命令`,对于这样的情况只需要
+    ``` bash
+        yum install gcc 
+        yum install gcc-c++ 
+    ```
+    
+- 这里的重要文件指的是下图所示的8个文件，在redis以前版本好像是7个文件（没具体试过）
+- 注意文件和文件夹的权限
+
+### 路径配置
+- `ls`查看src下的文件，你会看到有些文件是绿色的，这些事重要的文件，也正是我们所需要的，我们将这些文件单独存下来
+![Redis源码编译后的重要文件](//image.lfdevelopment.cn/blog/redisimportantfile.png)
+- 我们来看看编译出来的几个程序分别是干什么的：
+      redis-server：顾名思义，redis服务
+      redis-cli：redis client，提供一个redis客户端，以供连接到redis服务，进行增删改查等操作
+      redis-sentinel：redis实例的监控管理、通知和实例失效备援服务
+      redis-benchmark：redis的性能测试工具
+      redis-check-aof：若以AOF方式产生日志，当意外发生时用来快速修复
+      redis-check-rdb：若以RDB方式产生日志，当意外发生时用来快速修复
+- 保存好之后我们的路径如下：
+![Redis根目录](//image.lfdevelopment.cn/blog/redisfloder.png)
+![Redis-bin](//image.lfdevelopment.cn/blog/redisbin.png)
+![Redis-etc](//image.lfdevelopment.cn/blog/redisetc.png)
+
+
+### 配置文件配置
+- redis.conf我只修改了以下配置
+    - `port` : 端口
+    - `requirepass` 密码
+    - `bind 0.0.0.0` ： 配置外网可访问
+    - `daemonize yes` : 将redis服务作为守护进程,作为开机启动
+- 有了基本配置，redis还需要有一个管理启动、关闭、重启的一个脚本。redis源码里其实已经提供了一个初始化脚本`redis_init_script`,这是我的配置
+    ``` bash
+        #!/bin/sh
+        # chkconfig: 2345 90 10 
+        # description: Redis is a persistent key-value database
+        # Simple Redis init.d script conceived to work on Linux systems
+        # as it does use of the /proc filesystem.
+        # 如果redis设置了密码，则$CLIEXEC -a $PASSWORD -p $REDISPORT shutdown 需要加一个参数
+        
+        REDISPORT=6379
+        PASSWORD=123
+        EXEC=/project/redis3.2.8/bin/redis-server
+        CLIEXEC=/project/redis3.2.8/bin/redis-cli
+        
+        PIDFILE=/var/run/redis_${REDISPORT}.pid
+        CONF=/project/redis3.2.8/etc/redis.conf
+        
+        case "$1" in
+            start)
+                if [ -f $PIDFILE ]
+                then
+                        echo "$PIDFILE exists, process is already running or crashed"
+                else
+                        echo "Starting Redis server..."
+                        $EXEC $CONF
+                fi
+                ;;
+            stop)
+                if [ ! -f $PIDFILE ]
+                then
+                        echo "$PIDFILE does not exist, process is not running"
+                else
+                        PID=$(cat $PIDFILE)
+                        echo "Stopping ..."
+                        $CLIEXEC -a $PASSWORD -p $REDISPORT shutdown
+                        while [ -x /proc/${PID} ]
+                        do
+                            echo "Waiting for Redis to shutdown ..."
+                            sleep 1
+                        done
+                        echo "Redis stopped"
+                fi
+                ;;
+            *)
+                echo "Please use start or stop as first argument"
+                ;;
+        esac
+
+    ```
+    
+- 头部的chkconfig的添加是为了保证`chkconfig redis on`能够执行
+- 接着将**redis_init_script**脚本拷贝到**/etc/init.d/redis**，这里重命名为redis
+    ``` bash
+        # cp /project/redis-3.2.8/utils/redis_init_script /etc/init.d/redis
+    ```
+    
+- 现在还缺一个系统启动时的配置:`chkconfig redis on`
+- 执行之后，redis便是以系统服务启动、关闭了
+    ``` bash
+        systemctl start redis;
+        systemctl stop redis;
+        systemctl restart redis;
+    ```
+ 
+
+
+
     
 
 
