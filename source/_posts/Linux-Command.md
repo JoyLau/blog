@@ -69,4 +69,4 @@ tags: [linux,cmd]
 - 查看6379端口是否占用：`netstat -tunpl | grep 6379` (注意，redis服务需要 root 权限才能查看，不然只能检查到6379被某个进程占用，但是看不到进程名称。)
 
 ### 主机
-- 修改主机名：`hostnamectl set-hostname` 新主机名
+- 修改主机名：`hostnamectl set-hostname 新主机名`
