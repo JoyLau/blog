@@ -1,7 +1,7 @@
 ---
 title: Linux菜鸟到熟悉---常用命令备忘
 date: 2017-2-23 14:09:11
-description: 记下自己常用的实用的命令，以备快速查询和备忘"
+description: 记下自己常用的实用的命令，以便快速查询和备忘"
 categories: [Linux篇]
 tags: [linux,cmd]
 ---
@@ -69,4 +69,4 @@ tags: [linux,cmd]
 - 查看6379端口是否占用：`netstat -tunpl | grep 6379` (注意，redis服务需要 root 权限才能查看，不然只能检查到6379被某个进程占用，但是看不到进程名称。)
 
 ### 主机
-- 修改主机名：hostnamectl set-hostname 新主机名
+- 修改主机名：`hostnamectl set-hostname` 新主机名
