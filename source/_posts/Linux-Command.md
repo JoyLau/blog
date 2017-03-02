@@ -1,7 +1,7 @@
 ---
 title: Linux菜鸟到熟悉---常用命令备忘
 date: 2017-2-23 14:09:11
-description: 记下自己常用的实用的命令，以便快速查询和备忘"
+description: 记下自己常用的实用的命令，以便快速查询和备忘
 categories: [Linux篇]
 tags: [linux,cmd]
 ---
