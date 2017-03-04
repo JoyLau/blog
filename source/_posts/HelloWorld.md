@@ -3,7 +3,7 @@ title: Hello World
 date: 2017-1-01 12:59:47
 description: "作为一名程序员，第一篇博客那必须是HelloWorld。</br>第一篇博客想介绍下自己搭建这个博客的用途，以及该博客搭建的框架及技术，最后说一下关于博客这块以后的建设。"
 categories: [开始篇]
-tags: [Hexo,Node.js,git,Bootstrap]
+tags: [Hexo,Nodejs,Git,Bootstrap]
 ---
 <!-- more -->
 
@@ -83,6 +83,44 @@ Solo 是目前 GitHub 上关注度最高的 Java 开源博客系统，在GitHub�
 ### 搭建完成
 - 浏览器访问：http://localhost:4000/
 - 搭建结束搭建完之后可以修改自定义的配置文件 `_config.yml` ，以及更换成自己想要的主题 `themes`。
+
+
+### 文章置顶
+- 编辑这个文件：`node_modules/hexo-generator-index/lib/generator.js`
+- 覆盖原文件内容，采用下面内容：
+    ``` js
+        'use strict';
+        var pagination = require('hexo-pagination');
+        module.exports = function(locals){
+          var config = this.config;
+          var posts = locals.posts;
+            posts.data = posts.data.sort(function(a, b) {
+                if(a.top && b.top) { // 两篇文章top都有定义
+                    if(a.top == b.top) return b.date - a.date; // 若top值一样则按照文章日期降序排
+                    else return b.top - a.top; // 否则按照top值降序排
+                }
+                else if(a.top && !b.top) { // 以下是只有一篇文章top有定义，那么将有top的排在前面（这里用异或操作居然不行233）
+                    return -1;
+                }
+                else if(!a.top && b.top) {
+                    return 1;
+                }
+                else return b.date - a.date; // 都没定义按照文章日期降序排
+            });
+          var paginationDir = config.pagination_dir || 'page';
+          return pagination('', posts, {
+            perPage: config.index_generator.per_page,
+            layout: ['index', 'archive'],
+            format: paginationDir + '/%d/',
+            data: {
+              __index: true
+            }
+          });
+        };
+    ```
+    
+- 然后在文章头部的：Front-matter 位置加上一个：top: 1000 的内容。数值越大，越靠前
+
 
 
 ## 博客建设

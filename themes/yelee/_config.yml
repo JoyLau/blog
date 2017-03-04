@@ -9,9 +9,8 @@ Yelee: "3.5"
 menu:
   主页: /
   所有文章: /archives/
-  #随笔: /tags/随笔
   标签云: /tags/
-  关于我: /about/
+  留言板: /about/
 
 # Link to your avatar | 填写头像地址
 avatar: //image.lfdevelopment.cn/blog/JoyLau.jpg
@@ -182,9 +181,8 @@ tagcloud: true
 
 # Blogroll, Link exchange | 友情链接
 friends:
-  Hexo: https://hexo.io
-  GitHubPages: https://pages.github.com/
   JoyLau: http://www.lfdevelopment.cn/
+  JoyLau’life: http://life.lfdevelopment.cn/
 #friends: false
 
 #是否开启“关于我”。
@@ -198,12 +196,12 @@ open_in_new:
   global: 0 # 0-2
   title: true # article title in homepage 主页文章标题
   post: true # link within post/page 正文中的链接
-  tags: false # 标签
+  tags: true # 标签
   categories: true # 分类
   article_nav: true # 导航
   archives: true # 归档
   mini_archives: true # 迷你归档
-  menu: true # 边栏菜单
+  menu: false # 边栏菜单
   friends: true  # 友情链接
   socail: true # 社交图标
 

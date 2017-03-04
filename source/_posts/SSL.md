@@ -3,7 +3,7 @@ title: SSL证书部署
 date: 2017-2-20 13:30:48
 description: "网站https的访问方式已经日渐流行了，拥有一个https的网站是一件多么高逼格的事情</br>今天就分享一下我所接触服务器的证书安装方式"
 categories: [服务器篇]
-tags: [SSL,https,Apache,Tomcat,Nginx]
+tags: [SSL,HTTPS,Apache,Tomcat,Nginx]
 ---
 <!-- more -->
 

@@ -3,11 +3,12 @@ title: Linux菜鸟到熟悉---生产环境的搭建
 date: 2017-2-23 13:20:42
 description: "之所以购买云服务器，主要是方便,安全,选择linux作为生产环境的系统更是安全，高效"
 categories: [Linux篇]
-tags: [linux,jdk,Tomcat,MySQL,Redis,Docker]
+tags: [Linux,JDK,Tomcat,MySQL,Redis,Docker]
+top: 1000
 ---
 
 <!-- more -->
-![Server](http://image.lfdevelopment.cn/blog/server.jpg)
+![Server](//image.lfdevelopment.cn/blog/server.jpg)
 
 
 ## 前言
