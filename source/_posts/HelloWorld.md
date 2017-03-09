@@ -7,7 +7,7 @@ tags: [Hexo,Nodejs,Git,Bootstrap]
 ---
 <!-- more -->
 
-![HelloWorld](http://image.lfdevelopment.cn/blog/world.jpg)
+![HelloWorld](//image.joylau.cn/blog/world.jpg)
 
 
 ## 关于博客
@@ -130,7 +130,7 @@ Solo 是目前 GitHub 上关注度最高的 Java 开源博客系统，在GitHub�
 
 ### 以后建设
 - 这个博客只用作技术记录。
-- 自己打算再开一个专门记录生活的博客站，域名都起好了：http://life.lfdevelopment.cn
+- 自己打算再开一个专门记录生活的博客站，域名都起好了：http://life.joylau.cn
 
 
 

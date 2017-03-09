@@ -13,10 +13,10 @@ menu:
   留言板: /about/
 
 # Link to your avatar | 填写头像地址
-avatar: //image.lfdevelopment.cn/blog/JoyLau.jpg
+avatar: //image.joylau.cn/blog/JoyLau.jpg
 
 # Small icon of Your site | 站点小图标地址
-favicon: //image.lfdevelopment.cn/favicon.ico
+favicon: //image.joylau.cn/favicon.ico
 
 # Internationalization | 主题语言
 ## Change Language in SITE's _config.yml | 在站点配置中切换语言
@@ -45,7 +45,7 @@ subnav:
   Facebook: "https://www.facebook.com/profile.php?id=100007776496425"
   网易云音乐: "http://music.163.com/#/user/home?id=246512565"
   QQ: "tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=2587038142"
-  Coding: "http://www.lfdevelopment.cn"
+  Coding: "http://www.joylau.cn"
   # RSS: "/atom.xml"
   # 知乎: "https://www.zhihu.com/"
   # 豆瓣: "douban"
@@ -98,7 +98,7 @@ disqus:
 
 duoshuo: 
   on: true
-  domain: blog-lfdevelopment
+  domain: blog-joylau
   # 是否开启多说评论，http://duoshuo.com/create-site/
   # 使用上面网址登陆你的多说，然后创建站点，在 domain 中填入你设定的域名前半部分
   # http://<要填的部分>.duoshuo.com (domain只填上<>里的内容，不要填整个网址)
@@ -181,8 +181,8 @@ tagcloud: true
 
 # Blogroll, Link exchange | 友情链接
 friends:
-  JoyLau: http://www.lfdevelopment.cn/
-  JoyLau’life: http://life.lfdevelopment.cn/
+  JoyLau: http://www.joylau.cn/
+  JoyLau’life: http://life.joylau.cn/
 #friends: false
 
 #是否开启“关于我”。

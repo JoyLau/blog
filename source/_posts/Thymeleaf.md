@@ -7,7 +7,7 @@ tags: [Thymeleaf,Spring,Spring Boot]
 ---
 
 <!-- more -->
-![Thymeleaf](http://image.lfdevelopment.cn/blog/Thymeleaf.png)
+![Thymeleaf](//image.joylau.cn/blog/Thymeleaf.png)
 
 
 ## 历史篇
@@ -15,7 +15,7 @@ tags: [Thymeleaf,Spring,Spring Boot]
 ### 曾经交往过
 - 说是历史，也就是在去年，但我感觉已经过了很久。去年我在写`SpringBoot`项目的时候，想找一套前端的模板引擎，看到`SpringBoot`官网推荐使用`Thymeleaf`，就用了它
 - 在写了几个页面之后，我在项目里写下了这样一段话
-![曾经学习的历史记录](http://image.lfdevelopment.cn/blog/thyemeleafhistory.png)
+![曾经学习的历史记录](//image.joylau.cn/blog/thyemeleafhistory.png)
 
 ###  没好印象，我甩了她
 - 可以看到我放弃了它，选择了我熟悉的 `Freemarker`（不要问我为什么不选择JSP）

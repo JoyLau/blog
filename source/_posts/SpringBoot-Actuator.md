@@ -7,4 +7,4 @@ tags: [Spring,SpringBoot]
 ---
 
 <!-- more -->
-![screenshot-metrics](//image.lfdevelopment.cn/blog/screenshot-metrics.png)
+![screenshot-metrics](//image.joylau.cn/blog/screenshot-metrics.png)

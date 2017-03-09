@@ -7,7 +7,7 @@ tags: [Tomcat,GZIP]
 ---
 <!-- more -->
 
-![Tomcat](http://image.lfdevelopment.cn/blog/tomcat.jpg)
+![Tomcat](//image.joylau.cn/blog/tomcat.jpg)
 
 
 ## 事发起因
@@ -17,17 +17,17 @@ tags: [Tomcat,GZIP]
 - 对外只想提供80及443端口
 - 想把2个项目放到一个更目录下
 - 2个项目想用不同的二级域名来访问：
-   - <http://www.lfdevelopment.cn>想放我的个人主页
-   - <http://blog.lfdevelopment.cn>想放我的博客
-   - <http://life.lfdevelopment.cn>想放我的生活站
+   - <http://www.joylau.cn>想放我的个人主页
+   - <http://blog.joylau.cn>想放我的博客
+   - <http://life.joylau.cn>想放我的生活站
 
 ## 事发经过
 
 ### 建立文件夹
 - 在Tomcat的根目录下建立blog文件夹
-![blog文件夹](http://image.lfdevelopment.cn/blog/floder1.png)
+![blog文件夹](//image.joylau.cn/blog/floder1.png)
 - 在blog文件夹下建立ROOT文件夹，用作新项目的根路径
-![ROOT文件夹](http://image.lfdevelopment.cn/blog/folder2.png)
+![ROOT文件夹](//image.joylau.cn/blog/folder2.png)
 
 ### 修改配置
 - 修改server.xml配置文件,多加一对<Host></Host>配置
@@ -45,7 +45,7 @@ tags: [Tomcat,GZIP]
                        pattern="%h %l %u %t &quot;%r&quot; %s %b" />
               </Host>
         	  
-        	  <Host name="blog.lfdevelopment.cn"  appBase="blog"
+        	  <Host name="blog.joylau.cn"  appBase="blog"
                     unpackWARs="true" autoDeploy="true">
         	    </Host>
             </Engine>

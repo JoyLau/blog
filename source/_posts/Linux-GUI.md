@@ -8,7 +8,7 @@ tags: [linux,MATE Desktop]
 ---
 
 <!-- more -->
-![MATE Desktop](http://image.lfdevelopment.cn/blog/desktop.png)
+![MATE Desktop](//image.joylau.cn/blog/desktop.png)
 
 
 
