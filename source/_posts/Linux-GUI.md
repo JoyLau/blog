@@ -53,6 +53,8 @@ tags: [linux,MATE Desktop]
 ``` bash
     yum groupremove 'X Window System' -y
     yum groupremove 'MATE Desktop' -y
+    // 恢复至默认启动界面
+    systemctl set-default multi-user.target
 ```
 
 
