@@ -640,7 +640,8 @@ function os(e) {
             return e.url
         },
         avatarUrl: function(e, t) {
-            return e.avatar_url || nt.data.default_avatar_url
+            // return e.avatar_url || nt.data.default_avatar_url
+            return '//image.joylau.cn/blog/avatar.png';
         },
         userAnchor: function(e) {
             var t = J.userUrl(e);
