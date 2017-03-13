@@ -29,7 +29,7 @@ tags: [Linux,CMD]
         //      ========`-.____`-.___\_____/___.-`____.-'========         //
         //                           `=---='                              //
         //      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^        //
-        //                    佛祖保佑       永无BUG                       //
+        //                    佛祖保佑       永无BUG                        //
         ////////////////////////////////////////////////////////////////////
     ```
     
@@ -63,6 +63,29 @@ tags: [Linux,CMD]
 
 ### 文件操作
 - 删除文件里机器子文件夹的内容：`rm -rf /var/lib/mysql`
+- 查找某个文件所在目录：`find / -name filename`
+
+
+
+### 压缩与解压缩
+- 解压zip压缩文件：`unzip file.zip`，相反的，压缩文件 zip file （需安装`yum install unzip zip`,），解压到指定目录可加参数-d,如：`unzip file.zip -d /root/`
+- 将 test.txt 文件压缩为 test.zip，`zip test.zip test.txt`,当然也可以指定压缩包的目录，例如 /root/test.zip ,后面的test.txt也可以换成文件夹
+- linux下是不支持直接解压rar压缩文件，建议将要传输的文件压缩成zip文件
+- `yum install p7zip` 安装7z解压，支持更多压缩格式（卸载`yum remove p7zip`）
+
+
+### 快速删除文件夹/文件
+- 有时我们的文件夹里有很多文件，默认的删除方式是递归删除，文件夹深了及文件多了，删除会非常的慢，这时候：
+- 先建立一个空目录 
+  `mkdir /data/blank`
+- 用rsync删除目标目录 
+  `rsync–delete-before -d /data/blank/ /var/spool/clientmqueue/`
+- 同样的对于大文件：创建空文件 
+  `touch /data/blank.txt`
+- 用rsync清空文件 
+  `rsync-a –delete-before –progress –stats /root/blank.txt /root/nohup.out`
+  
+
 
 
 ### 端口
