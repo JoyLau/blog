@@ -228,7 +228,7 @@ top: 1000
 #### Linux安装redis是需要在官网下载redis的源码然后再编译的
 - redis的官网：https://redis.io/
 - redis中文网：http://www.redis.cn/
-- 我已将编译好直接可以使用的Redis上传到GitHub: https://github.com/FailScholar/Redis-3.2.8-Linux
+- 我已将编译好直接可以使用的Redis上传到GitHub: https://github.com/JoyLau/Redis-3.2.8-Linux
 - 请结合本篇博客和项目里的README文件使用
 
 ### 下载安装
