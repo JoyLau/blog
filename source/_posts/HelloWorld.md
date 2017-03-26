@@ -88,7 +88,7 @@ Solo 是目前 GitHub 上关注度最高的 Java 开源博客系统，在GitHub�
 ### 文章置顶
 - 编辑这个文件：`node_modules/hexo-generator-index/lib/generator.js`
 - 覆盖原文件内容，采用下面内容：
-    ``` js
+    ``` javascript
         'use strict';
         var pagination = require('hexo-pagination');
         module.exports = function(locals){

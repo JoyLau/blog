@@ -18,7 +18,7 @@ top: 1
 ## 开始
 
 ### 账户注册
-- 注册地址 ： https://issues.sonatype.org/secure/Signup!default.jspa，这一步需要注意的是记住用户名和密码，后面配置文件会用到
+- 注册地址 ： https://issues.sonatype.org/secure/Signup!default.jspa  ,这一步需要注意的是记住用户名和密码，后面配置文件会用到
 ![注册](//image.joylau.cn/blog/sonatype-register.png)
 
 ### 创建并提交工单

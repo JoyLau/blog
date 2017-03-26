@@ -3,7 +3,15 @@
         <a href="javascript:void(0);">
             <i class="fa fa-commenting-o animated infinite pulse"></i>
             <i class="fa fa-spinner fa-pulse"></i>
+
+            <!--畅言加载-->
+            <% if (!theme.preload_comment) { %>
+            <span id = "sourceId::<%=post.path%>" class = "cy_cmt_count" ></span><span class = "cy_cmt_count" >℃</span>
+            <% } else { %>
+            <!--非畅言加载-->
             <span class="count-comment"></span>
+            <% } %>
+
         </a>
     </aside>
     <script>
@@ -24,5 +32,11 @@
         }
     </script>
 <% } else { %>
-    <script> loadComment(); </script>
+
+    <script>
+        var load$hide = function(){
+            loadComment();
+        }
+    </script>
+
 <% } %>
