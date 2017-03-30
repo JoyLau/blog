@@ -34,8 +34,18 @@
                 });
             }
         };
-
+        <% if (theme.preload_comment) { %>
+            loadComment();
+        <% } %>
     </script>
     <%- partial('click2show') %>
-    <div id="SOHUCS" style="width: 97%" sid="<%=post.path%>"></div>
+    <div id="cyReward" sourceid = "<%=post.path%>" role="cylabs" data-use="reward" style="text-align: center;"></div>
+    <div id="cyEmoji" sourceid = "<%=post.path%>" role="cylabs" data-use="emoji"></div>
+    <div id="SOHUCS" style="width: 95%" sid="<%=post.path%>"></div>
+    <script>
+        <% if (theme.preload_comment) { %>
+        window.document.write('<script charset="utf-8" type="text/javascript" src="//changyan.itc.cn/js/lib/jquery.js"><\/script>');
+        window.document.write('<script charset="utf-8" type="text/javascript" src="//changyan.sohu.com/js/changyan.labs.https.js?appid=<%=theme.changyan.appid%>"><\/script>');
+        <% } %>
+    </script>
 </section>
