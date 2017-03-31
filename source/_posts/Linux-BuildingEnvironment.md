@@ -111,8 +111,9 @@ tags: [Linux,JDK,Tomcat,MySQL,Redis,Docker]
 - 多个tomcat可以配置在多个目录下，互不影响。
 
 
-### 遇到个很尴尬的问题
+### 遇到2个很尴尬的问题
 - 这个问题我尝试过很多次，那就是Tomcat启动的特别慢，后来查看日志发现是部署项目的时候花费时间特别长，详细看[这里](http://bbs.qcloud.com/thread-25271-1-1.html)
+- 遇到无法启动的问题，最后是`startup.sh`没有权限，你知道该怎么做的~~
 
 
 
