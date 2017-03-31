@@ -39,8 +39,13 @@
         <% } %>
     </script>
     <%- partial('click2show') %>
+
+
+    <!--打赏-->
     <div id="cyReward" sourceid = "<%=post.path%>" role="cylabs" data-use="reward" style="text-align: center;"></div>
+    <!--评论表情-->
     <div id="cyEmoji" sourceid = "<%=post.path%>" role="cylabs" data-use="emoji"></div>
+    <!--评论框-->
     <div id="SOHUCS" style="width: 95%" sid="<%=post.path%>"></div>
     <script>
         <% if (theme.preload_comment) { %>
