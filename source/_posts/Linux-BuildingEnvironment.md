@@ -155,7 +155,7 @@ tags: [Linux,JDK,Tomcat,MySQL,Redis,Docker]
 - 输入刚才在日志里看到的临时密码
 - 这个时候我输入任何的命令都会提示`You must reset your password using ALTER USER statement before executing this statement.`
 ![alterTips](//image.joylau.cn/blog/alertTips.jpg)
-- 通过 `alter user 'root'@'localhost' identified by 'root'` 命令，修改 root 用户的密码为 root
+- 通过 `alter user 'root'@'localhost' identified by 'root'` 命令，修改 root 用户的密码为 root，注意修改的密码不能过于简单
 - 退出，重新以root用户和刚设置的密码进行登录即可
 
 ### MySql配置文件
