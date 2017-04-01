@@ -1,5 +1,5 @@
 ---
-title: 重剑无锋,大巧不工 SpringBoot ---探索篇
+title: 重剑无锋,大巧不工 SpringBoot --- 探索篇
 date: 2017-3-14 11:21:20
 description: SpringBoot为我们做的自动配置，确实方便快捷，但是对于新手来说，如果不大懂SpringBoot内部启动原理，以后难免会吃亏
 categories: [SpringBoot篇]

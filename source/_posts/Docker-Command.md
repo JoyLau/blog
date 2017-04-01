@@ -1,5 +1,5 @@
 ---
-title: Docker菜鸟到熟悉---常用命令备忘
+title: Docker菜鸟到熟悉 --- 常用命令备忘
 date: 2017-3-22 12:33:48
 description: 记下自己常用的Docker命令，以便快速查询和备忘
 categories: [Docker篇]

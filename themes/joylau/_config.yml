@@ -45,8 +45,8 @@ subnav:
   Facebook: "https://www.facebook.com/profile.php?id=100007776496425"
   网易云音乐: "http://music.163.com/#/user/home?id=246512565"
   QQ: "tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=2587038142"
-  Coding: "http://www.joylau.cn"
-  # RSS: "/atom.xml"
+#  Coding: "http://www.joylau.cn"
+  RSS: "/atom.xml"
   # 知乎: "https://www.zhihu.com/"
   # 豆瓣: "douban"
   # 简书: "jianshu"
@@ -190,6 +190,7 @@ tagcloud: true
 friends:
   JoyLau: http://www.joylau.cn/
   JoyLau’life: http://life.joylau.cn/
+  老王博客: http://http://blog.wfyvv.com/
 #friends: false
 
 #是否开启“关于我”。
