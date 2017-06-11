@@ -1,7 +1,7 @@
 ---
 title: IntelliJ IDEA 插件开发
 date: 2017-4-28 11:32:10
-description: <img src='//image.joylau.cn/blog/IntelliJIDEA-Plugins.png' alt='IntelliJIDEA-Plugins'></br>以前经常使用的一款翻译插件，近几天发现突然不好用了，时行时不行的.....是时候得 看一些问题了.....
+description: <center><img src='//image.joylau.cn/blog/IntelliJIDEA-Plugins.png' alt='IntelliJIDEA-Plugins'></center><br>以前经常使用的一款翻译插件，近几天发现突然不好用了，时行时不行的.....是时候得 看一些问题了.....
 categories: [IntelliJ IDEA篇]
 tags: [IntelliJ IDEA,Plugins]
 ---

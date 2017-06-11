@@ -262,7 +262,7 @@ share:
 
 # 百度、谷歌站长验证。填写 HTML 标签 content
 # Site Verification for Google and Baidu. HTML label content.
-baidu_site: 
+baidu_site: YKshmF02SZ
 google_site: 
 
 # Fill in Google Analytics tracking ID, #e.g. UA-XXXXX-X
@@ -270,7 +270,7 @@ google_analytics:
 
 # 百度统计 http://sitecenter.baidu.com/sc-web/
 # 查看代码，填入 //hm.baidu.com/hm.js? 之后的内容
-baidu_tongji: 
+baidu_tongji: 691c26474b1733df80dca4dfa7ba5536
 
 # 不蒜子网站计数设置
 # http://ibruce.info/2015/04/04/busuanzi/

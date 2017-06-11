@@ -1,7 +1,7 @@
 ---
 title: Maven --- 发布自己的构件到中央仓库
 date: 2017-3-17 11:43:01
-description: "<img src='//image.joylau.cn/blog/sonatype.png' alt='Sonatype'></br>Sonatype真可谓是个强大的公司，如此多的构件包竟能管理的有条不紊，最近自己写了个ECharts的类库，想传到Maven中央仓库，下面开始动手吧....."
+description: "<center><img src='//image.joylau.cn/blog/sonatype.png' alt='Sonatype'></center><br>Sonatype真可谓是个强大的公司，如此多的构件包竟能管理的有条不紊，最近自己写了个ECharts的类库，想传到Maven中央仓库，下面开始动手吧....."
 categories: [Maven篇]
 tags: [Maven,GPG]
 ---
