@@ -1,7 +1,7 @@
 ---
 title: 收集整理一些JAVA学习的技能树
 date: 2017-6-5 09:12:13
-description: "搜集网上这些技能树，战略性收藏！！！</br>多图慎入"
+description: "搜集网上这些技能树，战略性收藏！！！<br>多图慎入"
 categories: [其他篇]
 tags: [技能]
 ---
