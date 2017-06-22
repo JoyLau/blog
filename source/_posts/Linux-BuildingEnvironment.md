@@ -118,22 +118,12 @@ tags: [Linux,JDK,Tomcat,MySQL,Redis,Docker]
 
 
 ### 使用yum安装的tomcat注意
+- 安装位置   _/etc/tomcat_
+- 主程序/软件存放webapp位置   _/var/lib/tomcat/webapps_
+- 在Centos使用yum安装后，Tomcat相关的目录都已采用符号链接到/usr/share/tomcat6目录，包含webapps等，这很方便我们配置管理   _/usr/share/tomcat_
+- 日志记录位置   _/var/log/tomcat_
+- 查看全部tomcat安装目录   _rpm -ql tomcat6 | cat -n_
 
-  安装位置
-  /etc/tomcat
-  
-  主程序/软件存放webapp位置
-  /var/lib/tomcat/webapps
-  
-  在Centos使用yum安装后，Tomcat相关的目录都已采用符号链接到/usr/share/tomcat6目录，包含webapps等，这很方便我们配置管理
-  /usr/share/tomcat
-  
-  日志记录位置
-  /var/log/tomcat
-  
-  查看全部tomcat安装目录
-  
-  rpm -ql tomcat6 | cat -n
 
 
 ## Mysql5.7数据库安装
