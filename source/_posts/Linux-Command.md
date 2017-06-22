@@ -3,6 +3,7 @@ title: Linux菜鸟到熟悉 --- 常用命令备忘
 date: 2017-2-23 14:09:11
 description: 记下自己常用的实用的命令，以便快速查询和备忘
 categories: [Linux篇]
+update_o: 1
 tags: [Linux,CMD]
 ---
 
@@ -93,3 +94,27 @@ tags: [Linux,CMD]
 
 ### 主机
 - 修改主机名：`hostnamectl set-hostname 新主机名`
+
+### yum
+- 列出所有可更新的软件清单命令：yum check-update
+
+- 更新所有软件命令：yum update
+
+- 仅安装指定的软件命令：yum install <package_name>
+
+- 仅更新指定的软件命令：yum update <package_name>
+
+- 列出所有可安裝的软件清单命令：yum list
+
+- 删除软件包命令：yum remove <package_name>
+
+- 查找软件包 命令：yum search <keyword>
+
+- 清除缓存命令:
+
+yum clean packages: 清除缓存目录下的软件包
+
+yum clean headers: 清除缓存目录下的 headers
+
+yum clean oldheaders: 清除缓存目录下旧的 headers
+

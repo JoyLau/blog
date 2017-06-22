@@ -3,6 +3,7 @@ title: Linux菜鸟到熟悉 --- 生产环境的搭建
 date: 2017-2-23 13:20:42
 description: "之所以购买云服务器，主要是方便,安全,选择linux作为生产环境的系统更是安全，高效"
 categories: [Linux篇]
+update_o: 1
 tags: [Linux,JDK,Tomcat,MySQL,Redis,Docker]
 ---
 
@@ -116,6 +117,23 @@ tags: [Linux,JDK,Tomcat,MySQL,Redis,Docker]
 - 遇到无法启动的问题，最后是`startup.sh`没有权限，你知道该怎么做的~~
 
 
+### 使用yum安装的tomcat注意
+
+  安装位置
+  /etc/tomcat
+  
+  主程序/软件存放webapp位置
+  /var/lib/tomcat/webapps
+  
+  在Centos使用yum安装后，Tomcat相关的目录都已采用符号链接到/usr/share/tomcat6目录，包含webapps等，这很方便我们配置管理
+  /usr/share/tomcat
+  
+  日志记录位置
+  /var/log/tomcat
+  
+  查看全部tomcat安装目录
+  
+  rpm -ql tomcat6 | cat -n
 
 
 ## Mysql5.7数据库安装

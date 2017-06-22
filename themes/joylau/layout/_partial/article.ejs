@@ -10,6 +10,19 @@
     <% } %>
     <% if (post.link || post.title){ %>
       <header class="article-header">
+           <div id="jl_custom">
+                <%if(post.update_o){%>
+                        <div class="article-pop-out tagcloud">
+                          <a class="color2">博主已更新</a>
+                        </div>
+                <% } %>
+
+                <%if(post.top){%>
+                          <div class="article-pop-out tagcloud">
+                            <a class="color2">博主已置顶</a>
+                          </div>
+                 <% } %>
+            </div>
         <%- partial('post/title', {class_name: 'article-title'}) %>
       </header>
       <% if (!index){ %>
@@ -36,11 +49,7 @@
     </div>
     <% if (index){ %>
     <div class="article-info article-info-index">
-      <%if(post.top){%>
-        <div class="article-pop-out tagcloud">
-          <a class="">置顶</a>
-        </div>
-      <% } %>
+
       <%- partial('post/category') %>
       <%- partial('post/tag') %>
       <% if (index && (post.description || post.excerpt)){ %>

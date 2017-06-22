@@ -41,3 +41,14 @@
   <% } %>
 
 <% } %>
+
+<% if (theme.new_post_tips){ %>
+<script>
+    $.each($('div#jl_custom'),function(a,b){
+        if($(b).html().indexOf('博主已更新')<0 && $('span.page-number.current').text()==1){
+            $(b).append("<img src='//image.joylau.cn/blog/new.gif' alt='这是博主刚出炉的新文章哦~'/>")
+            return false;
+        }
+    })
+</script>
+<% } %>
