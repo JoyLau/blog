@@ -29,3 +29,7 @@ pull node_modules folder in your project
 ```
 
 - 新增new文章功能，可在配置文件里面配置是否开启使用
+
+
+## 2017年06月24日16:35:10 更新
+- 好像忘了安装订阅插件： npm install hexo-generator-feed --save
