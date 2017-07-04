@@ -1,6 +1,7 @@
 ---
 title: 重剑无锋,大巧不工 SpringBoot --- @RequestBody JSON参数处理
 date: 2017-6-12 09:30:21
+update_o: 1
 description: "在Spring的项目里，如SpringBoot，SpringMVC，我们经常会传入JSON格式的参数进行处理<br>近期我遇到这样一个问题：如果我传进去的JSON对象属性比接受的对象属性要多的话，这时候会出现问题"
 categories: [SpringBoot篇]
 tags: [Spring,SpringMVC,SpringBoot,JSON]
@@ -75,4 +76,35 @@ OK，这个类同样也是继承了 AbstractHttpMessageConverter<Object>
 
 只要把这个类注入进去就可以了
 
+
+### SpringBoot使用FastJSON解析数据
+
+- 第一种继承WebMvcConfigurerAdapter，重写configureMessageConverters方法：
+
+``` java
+    @Override
+    public void configureMessageConverters(List<HttpMessageConverter<?>> converters) {
+        super.configureMessageConverters(converters);
+        FastJsonHttpMessageConverter converter=new FastJsonHttpMessageConverter();
+        FastJsonConfig fastJsonConfig= new FastJsonConfig();
+        fastJsonConfig.setSerializerFeatures(SerializerFeature.PrettyFormat);
+        converter.setFastJsonConfig(fastJsonConfig);
+        converters.add(converter);
+
+    }
+```
+
+- 第二种方式bean注入HttpMessageConverters：
+
+``` java
+    @Bean  
+    public HttpMessageConverters fastJsonHttpMessageConverters() {  
+    FastJsonHttpMessageConverter fastConverter = new FastJsonHttpMessageConverter();  
+    FastJsonConfig fastJsonConfig = new FastJsonConfig();  
+    fastJsonConfig.setSerializerFeatures(SerializerFeature.PrettyFormat);  
+    fastConverter.setFastJsonConfig(fastJsonConfig);  
+    HttpMessageConverter<?> converter = fastConverter;  
+    return new HttpMessageConverters(converter);  
+    } 
+```
 
