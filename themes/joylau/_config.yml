@@ -18,6 +18,10 @@ avatar: //image.joylau.cn/blog/JoyLau.jpg
 # Small icon of Your site | 站点小图标地址
 favicon: //image.joylau.cn/favicon.ico
 
+keywords: JoyLau,joylau,JoyLau's blog,刘法,,刘法的博客,刘法的技术与思考,Java,JavaWeb,Web程序员,Web开发,JavaWeb开发,个人博客
+
+description: JoyLau的技术学习与思考，JoyLau的个人博客,刘法的技术学习与思考，刘法的个人博客。
+
 # Internationalization | 主题语言
 ## Change Language in SITE's _config.yml | 在站点配置中切换语言
 ## https://hexo.io/docs/internationalization.html
@@ -190,7 +194,6 @@ tagcloud: true
 friends:
   JoyLau: http://www.joylau.cn/
   JoyLau’life: http://life.joylau.cn/
-  jlchen: http://www.jlchen.cn/
   老王博客: http://blog.wfyvv.com/
 #friends: false
 
