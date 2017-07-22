@@ -1,7 +1,6 @@
 ---
 title: 重剑无锋,大巧不工 SpringBoot --- @RequestBody JSON参数处理
 date: 2017-6-12 09:30:21
-update_o: 1
 description: "在Spring的项目里，如SpringBoot，SpringMVC，我们经常会传入JSON格式的参数进行处理<br>近期我遇到这样一个问题：如果我传进去的JSON对象属性比接受的对象属性要多的话，这时候会出现问题"
 categories: [SpringBoot篇]
 tags: [Spring,SpringMVC,SpringBoot,JSON]
