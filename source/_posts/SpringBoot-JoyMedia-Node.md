@@ -9,6 +9,8 @@ tags: [Node.js,SpringBoot]
 <!-- more -->
 
 ## 前言
+### 在线地址
+- [JoyMusic](//music.joylau.cn)
 ### Node.js 的学习
 - 入门是从这本书上开始的
 - 结合Node中文网的文档开始探索开发
@@ -271,4 +273,4 @@ tags: [Node.js,SpringBoot]
 ![JoyMedia - Node](//image.joylau.cn/blog/joylau-media-node-6.png)
 
 
->> 欢迎大家来听听试试看!😘
+>> 欢迎大家来听听试试看!😘 http://music.joylau.cn  (当前版本 v1.3)
