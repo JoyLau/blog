@@ -192,7 +192,9 @@ tagcloud: true
 friends:
   JoyLau: http://www.joylau.cn/
   JoyLau’life: http://life.joylau.cn/
-  老王博客: http://blog.wfyvv.com/
+  JoyMedia: http://media.joylau.cn/
+  wfyvv: http://blog.wfyvv.com/
+  CherryChang: http://chaxiaoniu.oschina.io/
 #friends: false
 
 #是否开启“关于我”。
@@ -228,7 +230,7 @@ ie_updater:
 
 # Tab Title Change | 标签页标题切换
 tab_title_change: 
-  on: true
+  on: false
   left_tab_title: '(つェ⊂) ~ '
   return_tab_title: '(*´∇｀*) ~ '
 
