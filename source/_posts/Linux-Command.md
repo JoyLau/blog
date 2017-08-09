@@ -106,3 +106,11 @@ tags: [Linux,CMD]
 - `yum clean packages`: 清除缓存目录下的软件包
 - `yum clean headers`: 清除缓存目录下的 headers
 - `yum clean oldheaders`: 清除缓存目录下旧的 headers
+
+### systemctl
+- `systemctl restart nginx` : 重启nginx
+- `systemctl start nginx` : 开启nginx
+- `systemctl stop nginx` : 关闭nginx
+- `systemctl enable nginx` : nginx开机启动
+- `systemctl disable nginx` : 禁用nginx开机启动
+- `systemctl status nginx` : 查看nginx服务信息
