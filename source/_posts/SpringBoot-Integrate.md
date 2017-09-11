@@ -9,6 +9,25 @@ tags: [Spring,SpringBoot]
 <!-- more -->
 ![build-better-enterprise](//image.joylau.cn/blog/SpringBoot-build-better-enterprise.png)
 
+## SpringBoot文章推荐
+- [重剑无锋,大巧不工 SpringBoot --- 基础篇](/2017/03/13/SpringBoot-Basic/)
+- [重剑无锋,大巧不工 SpringBoot --- 探索篇](/2017/03/14/SpringBoot-Research/)
+- [重剑无锋,大巧不工 SpringBoot --- 环境集成](/2017/03/14/SpringBoot-Integrate/)
+- [重剑无锋,大巧不工 SpringBoot --- 批处理SpringBatch](/2017/03/21/SpringBoot-SpringBatch/)
+- [重剑无锋,大巧不工 SpringBoot --- @RequestBody JSON参数处理](/2017/06/12/SpringBoot-RequestBody/)
+- [重剑无锋,大巧不工 SpringBoot --- 项目问题汇总及解决](/2017/06/12/SpringBoot-Question-Tips/)
+- [重剑无锋,大巧不工 SpringBoot --- 属性注入](/2017/06/13/SpringBoot-ConfigurationProperties/)
+- [重剑无锋,大巧不工 SpringBoot --- 整合RabbitMQ](/2017/06/16/SpringBoot-RabbitMQ/)
+- [重剑无锋,大巧不工 SpringBoot --- RESTful API](/2017/06/18/SpringBoot-RESTfulAPI/)
+- [重剑无锋,大巧不工 SpringBoot --- 整合使用MongoDB](/2017/07/18/SpringBoot-MongoDB/)
+
+## SpringBoot项目实战
+- [重剑无锋,大巧不工 SpringBoot --- 实战项目 JoyMedia （ 分析篇 ）](/2017/07/24/SpringBoot-JoyMedia/)
+- [重剑无锋,大巧不工 SpringBoot --- 实战项目 JoyMedia （ Node篇 ）](/2017/07/29/SpringBoot-JoyMedia-Node/)
+- [重剑无锋,大巧不工 SpringBoot --- 实战项目 JoyMedia （ 搜索篇 ）](/2017/08/06/SpringBoot-JoyMedia-Search/)
+- [重剑无锋,大巧不工 SpringBoot --- 实战项目 JoyMedia （ MV 篇 ）](/2017/08/20/SpringBoot-JoyMedia-MV/)
+- [重剑无锋,大巧不工 SpringBoot --- 实战项目 JoyMedia （ NoReferer篇 ）](/2017/08/29/SpringBoot-JoyMedia-NoReferer/)
+
 
 > 不啰嗦，直接上代码
 

@@ -1,7 +1,7 @@
 ---
 title: 人生从未写过如此有趣的代码
 date: 2017-9-4 10:02:58
-description: '<center><img src="//image.joylau.cn/blog/an-interesting-code.png"></center>  <br>哥们向我请教家庭问题的解决办法，我给了他这样的代码'
+description: '<center><img src="//image.joylau.cn/blog/an-interesting-code.png" alt="an-interesting-code"></center>  <br>哥们向我请教家庭问题的解决办法，我给了他这样的代码'
 categories: [程序员篇]
 tags: [程序员,算法]
 ---
