@@ -20,6 +20,7 @@ tags: [Spring,SpringBoot]
 - [重剑无锋,大巧不工 SpringBoot --- 整合RabbitMQ](/2017/06/16/SpringBoot-RabbitMQ/)
 - [重剑无锋,大巧不工 SpringBoot --- RESTful API](/2017/06/18/SpringBoot-RESTfulAPI/)
 - [重剑无锋,大巧不工 SpringBoot --- 整合使用MongoDB](/2017/07/18/SpringBoot-MongoDB/)
+- [重剑无锋,大巧不工 SpringBoot --- 推荐使用CaffeineCache](/2017/09/19/SpringBoot-CaffeineCache/)
 
 ## SpringBoot项目实战
 - [重剑无锋,大巧不工 SpringBoot --- 实战项目 JoyMedia （ 分析篇 ）](/2017/07/24/SpringBoot-JoyMedia/)

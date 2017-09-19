@@ -251,4 +251,13 @@ SpringBoot默认支持很多缓存，spring.cache.type就可以知道，默认�
 
 
 这里巧妙的使用了 定时任务，再其加上注解CacheEvict来清除所有cache name 为 api——cache 的缓存，超时时间是120s
+
+
+### 在说说我比较喜欢的使用方式
+
+单独写了篇文章，戳下面：
+- [重剑无锋,大巧不工 SpringBoot --- 推荐使用CaffeineCache](/2017/09/19/SpringBoot-CaffeineCache/)
+
+
+
 >> 持续更新中...
