@@ -4,6 +4,7 @@ date: 2017-6-12 16:11:09
 description: "<center><img src='//image.joylau.cn/blog/springboot-question-tips.png' alt='SpringBoot-Question-Tips.png'></center>  <br>这篇文章打算记录一下平时项目中遇到的各种SpringBoot问题，并记录解决方案<br>持续更新......"
 categories: [SpringBoot篇]
 tags: [Spring,SpringBoot]
+update_o: 1
 ---
 
 <!-- more -->
@@ -145,4 +146,109 @@ tags: [Spring,SpringBoot]
         </build>
 ```
 
+## 2017年9月19日更新
+
+### SpringBoot 项目打包时修改 MANIFEST.MF 文件
+
+一般情况下我们的 MANIFEST.MF内容如下：
+
+``` bash
+    Manifest-Version: 1.0
+    Implementation-Title: joylau-media
+    Implementation-Version: 1.7-RELEASE
+    Archiver-Version: Plexus Archiver
+    Built-By: JoyLau
+    Implementation-Vendor-Id: cn.joylau.code
+    Spring-Boot-Version: 1.5.4.RELEASE
+    Implementation-Vendor: Pivotal Software, Inc.
+    Main-Class: org.springframework.boot.loader.JarLauncher
+    Start-Class: cn.joylau.code.JoylauMediaApplication
+    Spring-Boot-Classes: BOOT-INF/classes/
+    Spring-Boot-Lib: BOOT-INF/lib/
+    Created-By: Apache Maven 3.5.0
+    Build-Jdk: 1.8.0_45
+    Implementation-URL: http://projects.spring.io/spring-boot/joylau-media
+     /
+
+```
+
+
+
+解决：
+
+
+
+``` xml
+    <plugin>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-maven-plugin</artifactId>
+        <configuration>
+            <!--fork :  如果没有该项配置，肯呢个devtools不会起作用，即应用不会restart -->
+            <fork>true</fork>
+        </configuration>
+    </plugin>
+    
+    //修改版本号，一般为pom文件的版本
+    <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-jar-plugin</artifactId>
+        <version>3.0.2</version>
+        <configuration>
+            <archive>
+                <manifestEntries>
+                    <Manifest-Version>${version}</Manifest-Version>
+                </manifestEntries>
+            </archive>
+        </configuration>
+    </plugin>
+```
+
+
+
+
+### SpringBoot 项目中引入缓存
+- 引入依赖
+
+``` xml
+    <dependency>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-cache</artifactId>
+    </dependency>
+```
+
+@EnableCaching 开启缓存
+
+@CacheConfig(cacheNames = "api_cache") 配置一个缓存类的公共信息
+
+@Cacheable() 注解到方法上开启缓存
+
+@CachePut() 根据使用的条件来执行具体的方法
+
+@CacheEvict() 根据配置的参数删除缓存
+
+SpringBoot默认支持很多缓存，spring.cache.type就可以知道，默认的是实现的是SimpleCacheManage，这里我记一下怎么设置缓存的超时时间
+
+
+
+``` java
+    @Configuration
+    @EnableCaching
+    @EnableScheduling
+    public class CachingConfig {
+        public static final String CACHENAME = "api_cache";
+        @Bean
+        public CacheManager cacheManager() {
+            return new ConcurrentMapCacheManager(CACHENAME);
+        }
+        @CacheEvict(allEntries = true, value = {CACHENAME})
+        @Scheduled(fixedDelay = 120 * 1000 ,  initialDelay = 500)
+        public void reportCacheEvict() {
+            System.out.println("Flush Cache " + dateFormat.format(new Date()));
+        }
+    }
+```
+
+
+
+这里巧妙的使用了 定时任务，再其加上注解CacheEvict来清除所有cache name 为 api——cache 的缓存，超时时间是120s
 >> 持续更新中...
