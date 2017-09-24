@@ -69,4 +69,25 @@ tags: [Spring,SpringBoot]
               spec: maximumSize=300,expireAfterWrite=2m
 ```
 
+
+通常SpringBoot默认的keyGenerator 是SimpleKeyGenerator，这个策略是以参数作为key值，如果参数为空的，就会返回SimpleKey[]字符串，这对于很多无参的方法的就有问题了
+我们需要重新这个keyGenerator，实现 `org.springframework.cache.interceptor.keyGenerator` 这个接口即可，将key值设置为类名+方法名+参数名，这样就不会冲突了
+
+``` java 
+    @Bean
+    public KeyGenerator caffeineKeyGenerator() {
+        return (target, method, params) -> {
+            StringBuilder sb = new StringBuilder();
+            sb.append(target.getClass().getName());
+            sb.append(method.getName());
+            for (Object obj : params) {
+                sb.append(obj.toString());
+            }
+            return sb.toString();
+        };
+    }
+```
+
+
+
 感觉无缝切换，继续使用吧！！！
