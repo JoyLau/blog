@@ -4,7 +4,6 @@ date: 2017-6-12 16:11:09
 description: "<center><img src='//image.joylau.cn/blog/springboot-question-tips.png' alt='SpringBoot-Question-Tips.png'></center>  <br>这篇文章打算记录一下平时项目中遇到的各种SpringBoot问题，并记录解决方案<br>持续更新......"
 categories: [SpringBoot篇]
 tags: [Spring,SpringBoot]
-update_o: 1
 ---
 
 <!-- more -->
