@@ -227,6 +227,8 @@ tags: [Maven,GPG]
 ### 上传构件到 OSS 中
 ``` xml
     mvn clean deploy -P release
+    <--! jdk1.8后再生成javadoc时语法较为严格，这时去除javadoc即可 !-->
+    mvn clean deploy -P release -Dmaven.javadoc.skip=true
 ```
 在上传之前会自动弹出一个对话框，需要输入上面提到的 Passphase，它就是刚才设置的 GPG 密钥库的密码。
 随后会看到大量的 upload 信息，因为在国内网络的缘故，时间有点久，耐心等待吧。
