@@ -121,6 +121,18 @@ Solo 是目前 GitHub 上关注度最高的 Java 开源博客系统，在GitHub�
     
 - 然后在文章头部的：Front-matter 位置加上一个：top: 1000 的内容。数值越大，越靠前
 
+### 文章推送
+- 安装git插件 ： npm install hexo-deployer-git --save
+- 配置文件
+
+``` xml
+    deploy:
+      type: git
+      repository: https://github.com/JoyLau/blog-public.git
+      branch: master
+```
+
+- 使用方式： hexo g -d ,会自动推送到上面配置的github地址,分支名为 master 默认的分支名为gh-page
 
 
 ## 博客建设
@@ -130,7 +142,7 @@ Solo 是目前 GitHub 上关注度最高的 Java 开源博客系统，在GitHub�
 
 ### 以后建设
 - 这个博客只用作技术记录。
-- 自己打算再开一个专门记录生活的博客站，域名都起好了：http://life.joylau.cn
+- 自己打算再开一个专门记录生活的博客站，域名都起好了：http://life.joylau.cn  (**`已弃用`**，发现真心没那么多时间去搞很多东西)
 
 
 

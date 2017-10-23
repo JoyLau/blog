@@ -33,3 +33,6 @@ pull node_modules folder in your project
 
 ## 2017年06月24日16:35:10 更新
 - 好像忘了安装订阅插件： npm install hexo-generator-feed --save
+
+## 2017年10月23日09:10:23 更新
+- npm install hexo-deployer-git --save
