@@ -61,8 +61,14 @@ tags: [Linux,JDK,Tomcat,MySQL,Redis,Docker]
 - 还有2中方法可以安装jdk：
     - 1.用`yum`安装jdk
     - 2.`Ubuntu` 上使用`apt-get`安装jdk
-    
-    
+
+
+### yum 安装jdk
+- yum search jdk ： 查看yum源上的jdk版本信息
+- 选择一个jdk8的来安装： yum install java-1.8.0-openjdk.x86_64
+- 等待即可
+
+
 ## Tomcat环境搭建
 
 ### 先配置
