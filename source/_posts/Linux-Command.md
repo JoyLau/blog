@@ -114,3 +114,34 @@ tags: [Linux,CMD]
 - `systemctl enable nginx` : nginx开机启动
 - `systemctl disable nginx` : 禁用nginx开机启动
 - `systemctl status nginx` : 查看nginx服务信息
+
+### yum更换为阿里源
+- 备份 ：mv /etc/yum.repos.d/CentOS-Base.repo /etc/yum.repos.d/CentOS-Base.repo.backup
+
+- 下载新的CentOS-Base.repo 到/etc/yum.repos.d/
+
+CentOS 5 ：
+
+wget -O /etc/yum.repos.d/CentOS-Base.repo http://mirrors.aliyun.com/repo/Centos-5.repo
+
+或者
+
+curl -o /etc/yum.repos.d/CentOS-Base.repo http://mirrors.aliyun.com/repo/Centos-5.repo
+
+CentOS 6 ： 
+
+wget -O /etc/yum.repos.d/CentOS-Base.repo http://mirrors.aliyun.com/repo/Centos-6.repo
+
+或者
+
+curl -o /etc/yum.repos.d/CentOS-Base.repo http://mirrors.aliyun.com/repo/Centos-6.repo
+
+CentOS 7 ： 
+
+wget -O /etc/yum.repos.d/CentOS-Base.repo http://mirrors.aliyun.com/repo/Centos-7.repo
+
+或者
+
+curl -o /etc/yum.repos.d/CentOS-Base.repo http://mirrors.aliyun.com/repo/Centos-7.repo
+
+- 之后运行 yum makecache 生成缓存
