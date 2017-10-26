@@ -19,7 +19,7 @@ tags: [MacOS,MacBookPro]
 - **Aria2GUI** : 突破百度限速
 - **Alfred 3** : 效率神器,谁用谁知道
 - **PDF Expert** : 查看pdf
-- **远程桌面连接** : mac电脑上远程连接windows
+- **远程桌面连接** : mac电脑上远程连接windows,网址: https://rink.hockeyapp.net/apps/5e0c144289a51fca2d3bfa39ce7f2b06 (2017年10月26日加)
 
 ## 播放器
 - **网易云音乐** ：这个必备啊
