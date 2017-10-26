@@ -206,13 +206,13 @@ aboutme: 整理一些在项目中用到的小知识或者技术点做一个总�
 ## `global` 0: 分开设置, 1: 全部在新标签打开, 2: 全部在"当前"标签打开
 open_in_new:
   global: 0 # 0-2
-  title: true # article title in homepage 主页文章标题
+  title: false # article title in homepage 主页文章标题
   post: true # link within post/page 正文中的链接
-  tags: true # 标签
-  categories: true # 分类
-  article_nav: true # 导航
-  archives: true # 归档
-  mini_archives: true # 迷你归档
+  tags: false # 标签
+  categories: false # 分类
+  article_nav: false # 导航
+  archives: false # 归档
+  mini_archives: false # 迷你归档
   menu: false # 边栏菜单
   friends: true  # 友情链接
   socail: true # 社交图标

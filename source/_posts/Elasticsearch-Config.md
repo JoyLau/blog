@@ -1,7 +1,7 @@
 ---
-title: Elasticsearch 配置 说明
+title: Elasticsearch 配置说明
 date: 2017-10-25 14:49:54
-description: "在这留一份 elasticsearch.yml的配置文件说明，以备查询"
+description: "在这留一份 elasticsearch.yml 的配置文件说明，以备查询"
 categories: [大数据篇]
 tags: [Elasticsearch]
 ---
@@ -9,8 +9,6 @@ tags: [Elasticsearch]
 <!-- more -->
 
 ## 配置说明
-
-``` yml
     配置Elasticsearch的集群名称，默认是elasticsearch，Elasticsearch会自动发现在同一网段下的Elasticsearch 节点，如果在同一网段下有多个集群，就可以用这个属性来区分不同的集群。
     cluster.name: elasticsearch
     
@@ -109,5 +107,3 @@ tags: [Elasticsearch]
     
     设置集群中master节点的初始列表，可以通过这些节点来自动发现新加入集群的节点。
     discovery.zen.ping.unicast.hosts: ["host1", "host2:port", "host3[portX-portY]"]
-```
-
