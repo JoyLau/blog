@@ -150,3 +150,7 @@ curl -o /etc/yum.repos.d/CentOS-Base.repo http://mirrors.aliyun.com/repo/Centos-
 - adduser es -s /bin/bash  : 创建用户为 es ,shell指定为bash
 - passwd es 更改 es 用户的密码
 - chown -R es:es /project/elasticsearch-5.6.3 循环遍历更改 /project/elasticsearch-5.6.3 目录下的文件拥有者及用户组
+- su - es : 切换成es用户重新登录系统
+- su es : 表示与 es 建立一个连接，通过 es 来执行命令
+
+注： 以上命令在安装 elasticsearch 时都会用的到
