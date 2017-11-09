@@ -145,3 +145,8 @@ wget -O /etc/yum.repos.d/CentOS-Base.repo http://mirrors.aliyun.com/repo/Centos-
 curl -o /etc/yum.repos.d/CentOS-Base.repo http://mirrors.aliyun.com/repo/Centos-7.repo
 
 - 之后运行 yum makecache 生成缓存
+
+## 创建用户，权限，密码等
+- adduser es -s /bin/bash  : 创建用户为 es ,shell指定为bash
+- passwd es 更改 es 用户的密码
+- chown -R es:es /project/elasticsearch-5.6.3 循环遍历更改 /project/elasticsearch-5.6.3 目录下的文件拥有者及用户组
