@@ -1,5 +1,5 @@
 ---
-title: Elasticsearch 配置说明
+title: Elasticsearch 配置说明 && 遇坑记录
 date: 2017-10-25 14:49:54
 description: "在这留一份 elasticsearch.yml 的配置文件说明，以备查询"
 categories: [大数据篇]
@@ -107,3 +107,17 @@ tags: [Elasticsearch]
     
     设置集群中master节点的初始列表，可以通过这些节点来自动发现新加入集群的节点。
     discovery.zen.ping.unicast.hosts: ["host1", "host2:port", "host3[portX-portY]"]
+
+
+
+低配置云服务器上安装遇到的坑：
+1. 启动elasticsearch直接退出，并返回killed，这里一般是由于内存不足导致的
+   修改es_home/bin/elasticsearch，ES_JAVA_OPTS="-Xms1g -Xmx1g"，后面的路径去掉
+
+2. max file descriptors [4096] for elasticsearch process is too low, increase to at least [65536]解决办法是在/etc/security/limits.conf文件中加两行。我的用户名叫hadoop,所以这里配置如下 
+    修改/etc/security/limits.conf,修改完成一定要退出，再次登录参数才能生效
+    更改成功，可以通过ulimit -Hh 命令检查，如果还是4096，那么需要退出当前用户，再次登录才能生效
+
+3. max virtual memory areas vm.max_map_count [65530] is too low, increase to at least [262144]解决办法是手动修改/etc/sysctl.conf文件，最后面加上一行代码。
+   vm.max_map_count=655360
+   修改/etc/sysctl.conf，修改完成之后，参数可以使用sysctl -p命令来让参数生效
