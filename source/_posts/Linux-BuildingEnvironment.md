@@ -68,6 +68,23 @@ tags: [Linux,JDK,Tomcat,MySQL,Redis,Docker]
 - 选择一个jdk8的来安装： yum install java-1.8.0-openjdk.x86_64
 - 等待即可
 
+注意的是默认安装的只是 Java JRE，而不是 JDK，为了开发方便，我们还是需要通过 yum 进行安装 JDK
+yum install java-1.8.0-openjdk-devel.x86_64
+
+之后就可以直接使用 Java javac 命令了
+
+配置 JAVA_HOME变量:
+
+vim ~/.bashrc
+在文件最后面添加如下单独一行（指向 JDK 的安装位置），并保存：
+export JAVA_HOME=/usr/lib/jvm/java-1.8.0-openjdk
+接着还需要让该环境变量生效，执行如下代码：
+source ~/.bashrc    # 使变量设置生效
+设置好后我们来检验一下是否设置正确：
+echo $JAVA_HOME     # 检验变量值
+java -version
+$JAVA_HOME/bin/java -version  # 与直接执行 java -version 一样
+如果设置正确的话，$JAVA_HOME/bin/java -version 会输出 java 的版本信息，且和 java -version 的输出结果一样
 
 ## Tomcat环境搭建
 
