@@ -314,3 +314,6 @@ CDN:
 
 # 是否开启新文章提示，默认加一个新文章的提示
 new_post_tips: true
+
+# 是否开启文字转换科技感
+page_title_shake: true

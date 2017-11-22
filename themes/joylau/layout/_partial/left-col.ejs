@@ -5,11 +5,11 @@
             <img src="<%- theme.root_url %><%=theme.avatar%>" class="animated zoomIn">
         </a>
         <hgroup>
-          <h1 class="header-author"><a href="<%= config.root %>"><%=theme.author%></a></h1>
+          <h1 class="header-author"><a class="chaffle" data-lang="en" href="<%= config.root %>"><%=theme.author%></a></h1>
         </hgroup>
 
         <% if (theme.subtitle){ %>
-        <p class="header-subtitle"><%=theme.subtitle%></p>
+        <p class="header-subtitle chaffle" data-lang="zh"><%=theme.subtitle%></p>
         <%}%>
 
         <% if (theme.search.on){ %>
@@ -51,13 +51,13 @@
                 <div class="tips-box hide">
                     <div class="tips-arrow"></div>
                     <ul class="tips-inner">
-                        <li><%= __('index.menu') %></li>
-                        <li><%= __('index.tags') %></li>
+                        <li class="chaffle" data-lang="zh"><%= __('index.menu') %></li>
+                        <li class="chaffle" data-lang="zh"><%= __('index.tags') %></li>
                         <%if(theme.friends && theme.friends.length != 0){%>
-                        <li><%= __('index.friends') %></li>
+                        <li class="chaffle" data-lang="zh"><%= __('index.friends') %></li>
                         <%}%>
                         <%if(theme.aboutme){%>
-                        <li><%= __('index.about') %></li>
+                        <li class="chaffle" data-lang="zh"><%= __('index.about') %></li>
                         <%}%>
                     </ul>
                 </div>
@@ -70,7 +70,7 @@
                     <nav class="header-menu">
                         <ul>
                         <% for (var i in theme.menu){ %>
-                            <li><a href="<%- theme.root_url %><%- url_for(theme.menu[i]) %>"><%= i %></a></li>
+                            <li><a class="chaffle" data-lang="zh" href="<%- theme.root_url %><%- url_for(theme.menu[i]) %>"><%= i %></a></li>
                         <%}%>
                         </ul>
                     </nav>
