@@ -290,6 +290,9 @@ jps查看启动是否成功启动
 上传成功后还可以查看下时候有文件 `./bin/hdfs dfs -ls input`
 运行实例  `./bin/hadoop jar ./share/hadoop/mapreduce/hadoop-mapreduce-examples-2.8.2.jar wordcount input/ output/`
 查看运行结果 `./bin/hdfs dfs -cat output/*`
+
+其实这些命令都是类 linux 命令,熟悉 linux 命令,这些都很好操作
+
 可以看到统计结果和单机版是一致的
 
 将结果导出 `./bin/hdfs dfs -get output ./output`
@@ -345,6 +348,9 @@ YARN 是从 MapReduce 中分离出来的，负责资源管理与任务调度。Y
 ``` xml
     127.0.0.1   localhost HostName
 ```
+
+### 参考资料
+<<Hadoop 权威指南 : 第四版>> --Tom White 著
 
 ### 感受
 这篇文章写下来等于将当时搭建 Hadoop 环境重复了一遍,花了不少功夫的,一遍敲命令,一遍记录下来,温故而知新,自己也学到不少东西,棒棒哒💯
