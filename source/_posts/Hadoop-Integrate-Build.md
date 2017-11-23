@@ -349,6 +349,9 @@ YARN 是从 MapReduce 中分离出来的，负责资源管理与任务调度。Y
     127.0.0.1   localhost HostName
 ```
 
+- put 上传文档时报错:There are 0 datanode(s) running and no node(s) are excluded in this operation
+这可能由于之前在目录下有操作,有一些其他的文档,只要清空指定的目录,然后再格式化 namenode 和 datanode 就可以了
+
 ### 参考资料
 《Hadoop 权威指南 : 第四版》 --Tom White 著
 
