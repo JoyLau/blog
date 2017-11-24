@@ -18,7 +18,7 @@ tags: [Hadoop]
 2. 然后搭建Hadoop集群，先让它在自己电脑上运行。
 3. 学习分布式文件系统HDFS。
 4. 学习分布式计算框架MapReduce
-5. 学习流式计算Strom
+5. 学习流式计算Storm
 6. 学习分布式协作服务Zookeeper
 7. 学习Hive—数据仓库工具
 8. 学习Hbase—分布式存储系统

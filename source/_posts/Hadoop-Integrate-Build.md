@@ -13,7 +13,7 @@ tags: [Hadoop]
 以下操作命令均是在服务的根目录下,使用的是相对目录
 
 ### 当前版本说明
-- Hadoop 版本2.8.0
+- Hadoop 版本2.8.2
 - 操作系统版本 centos 7.2
 
 ## 首先需要做的
@@ -21,31 +21,31 @@ tags: [Hadoop]
 
 `yum install openjdk1.8xxxxx` 这个安装的是 jre环境,并不是 jdk,安装 jdk
 
-``` shell
+``` bash
     sudo yum install java-1.7.0-openjdk java-1.8.0-openjdk-devel
 ```
 
 配置环境变量
 
-``` shell
+``` bash
     vim ~/.bashrc
 ```
 
 最后一行添加
 
-``` shell
+``` bash
     export JAVA_HOME=/usr/lib/jvm/java-1.8.0-openjdk
 ```
 
 紧接着,让环境变量生效
 
-``` shell
+``` bash
     source ~/.bashrc    # 使变量设置生效
 ```
 
 设置好之后,再看下是否生效了
 
-``` cmd
+``` bash
     echo $JAVA_HOME     # 检验变量值
     java -version
     $JAVA_HOME/bin/java -version  # 与直接执行 java -version 一样就没什么问题了
@@ -57,7 +57,7 @@ tags: [Hadoop]
 上传到服务器上,解压 tar -zxf hadoop-2.8.2.tar.gz
 解压完了,我们可以查看下版本信息
 
-``` cmd
+``` bash
     bin/hadoop version
     
     Hadoop 2.8.2
@@ -70,9 +70,9 @@ tags: [Hadoop]
 
 出现上述信息就没有什么问题
 
-接下来,就可以运行 Hadoop 自带的列子了,例子的目录在 /share/hadoop/mapreduce/hadoop-mapreduce-examples-2.8.0.jar
+接下来,就可以运行 Hadoop 自带的列子了,例子的目录在 /share/hadoop/mapreduce/hadoop-mapreduce-examples-2.8.2.jar
 
-``` cmd
+``` bash
     // 创建1个输入目录,输出目录不用创建,在命令中会自动创建,如果创建了,会提示目录已经存在,再次运行示例程序化,删除输出目录即可
     mkdir ./input
     
@@ -107,7 +107,7 @@ tags: [Hadoop]
 
 接下来,跑一个经典的 wordcount ,再次之前,我们创建一个文本以供程序统计
 
-``` cmd
+``` bash
     cat input/test.txt
     vi input/test.txt
     
@@ -116,7 +116,7 @@ tags: [Hadoop]
 
 开始记录
 
-``` cmd
+``` bash
     ./bin/hadoop jar ./share/hadoop/mapreduce/hadoop-mapreduce-examples-2.8.2.jar wordcount ./input/test.txt ./output/
 ```
 
@@ -183,10 +183,10 @@ tags: [Hadoop]
 ## Hadoop 伪分布式环境搭建
 我们需要设置 HADOOP 环境变量
 
-``` cmd
+``` bash
     gedit ~/.bashrc
     
-    export HADOOP_HOME=/home/hadoop-2.8.0
+    export HADOOP_HOME=/home/hadoop-2.8.2
     export HADOOP_INSTALL=$HADOOP_HOME
     export HADOOP_MAPRED_HOME=$HADOOP_HOME
     export HADOOP_COMMON_HOME=$HADOOP_HOME
@@ -235,27 +235,27 @@ tags: [Hadoop]
 
 配置完成后，执行 NameNode 和 DataNode 的格式化:
 
-``` cmd
+``` bash
     ./bin/hdfs namenode -format
     ./bin/hdfs datanode -format
 ```
 
 现在启动 Hadoop 伪分布式服务器
 
-``` cmd
+``` bash
     ./sbin/start-dfs.sh 
     ./sbin/start-yarn.sh
 ```
 
 以前版本的命令是
 
-``` cmd
+``` bash
     ./sbin/start-all.sh
 ```
 
 jps查看启动是否成功启动
 
-``` cmd
+``` bash
     jps
     
     5360 Jps
@@ -305,7 +305,7 @@ YARN 是从 MapReduce 中分离出来的，负责资源管理与任务调度。Y
 
 首先修改配置文件 mapred-site.xml，这边需要先进行重命名：
 
-``` cmd
+``` bash
     mv ./etc/hadoop/mapred-site.xml.template ./etc/hadoop/mapred-site.xml
 ```
 
@@ -331,7 +331,7 @@ YARN 是从 MapReduce 中分离出来的，负责资源管理与任务调度。Y
     </configuration>
 ```
 
-``` cmd
+``` bash
     ./sbin/start-yarn.sh      $ 启动YARN
     ./sbin/mr-jobhistory-daemon.sh start historyserver  # 开启历史服务器，才能在Web中查看任务运行情况
 ```
