@@ -2,8 +2,8 @@
 title: 重剑无锋,大巧不工 SpringBoot --- 整合使用 SpringSecurity
 date: 2018-3-28 09:20:38
 description: 公司近期有个项目的安全框架是用 Spring Security 搭建的，现在项目做完了，是时候总结一下 SpringBoot 整合 SpringSecurity 的使用了
-categories: [SpringBoot篇]
-tags: [Spring,SpringBoot]
+categories: [SpringSecurity篇]
+tags: [SpringSecurity,SpringBoot]
 ---
 
 <!-- more -->
