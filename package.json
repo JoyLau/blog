@@ -23,5 +23,11 @@
     "hexo-renderer-stylus": "^0.3.1",
     "hexo-server": "^0.2.0",
     "hexo-uglify": "0.0.4"
+  },
+  "scripts": {
+    "start": "hexo s",
+    "clean": "hexo clean",
+    "generate": "hexo g",
+    "deploy": "hexo d"
   }
 }
