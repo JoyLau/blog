@@ -1,5 +1,5 @@
 ---
-title: ELK(Elasticsearch + Logstash + Kibana) 日志分析平台搭建及 SpringBoot 如何将日志实时发送日志存储到 ELK 平台
+title: ELK(Elasticsearch + Logstash + Kibana) 日志分析平台搭建及 SpringBoot 如何实时发送日志存储到 ELK 平台
 date: 2018-5-7 17:11:22
 description: "Elasticsearch + Logstash + Kibana + SpringBoot 怎么玩"
 categories: [大数据篇]
