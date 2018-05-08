@@ -16,23 +16,24 @@ logstash 需要和 nginx 部署到一台机器
 更改日志记录的格式
 
 ```` bash
-    log_format  json '{
-                          "timestamp":"$time_iso8601",
-                          "remote_addr":"$remote_addr",
-                          "remote_user":"$remote_user", 
-                          "body_bytes_sent":"$body_bytes_sent",
-                          "request_time":"$request_time",
-                          "status":"$status",
-                          "request": "$request",
-                          "host":"$host",
-                          "request_method": "$request_method",
-                          "http_referrer": "$http_referer",
-                          "http_x_forwarded_for": "$http_x_forwarded_for", 
-                          "http_user_agent": "$http_user_agent",
-                          "url":"$uri"
-                          }'
+    log_format json '{ "@timestamp": "$time_iso8601", '
+                             '"time": "$time_iso8601", '
+                             '"remote_addr": "$remote_addr", '
+                             '"remote_user": "$remote_user", '
+                             '"body_bytes_sent": "$body_bytes_sent", '
+                             '"request_time": "$request_time", '
+                             '"status": "$status", '
+                             '"host": "$host", '
+                             '"request": "$request", '
+                             '"request_method": "$request_method", '
+                             '"uri": "$uri", '
+                             '"http_referrer": "$http_referer", '
+                             '"body_bytes_sent":"$body_bytes_sent", '
+                             '"http_x_forwarded_for": "$http_x_forwarded_for", '
+                             '"http_user_agent": "$http_user_agent" '
+                        '}';
     
-    access_log  /var/log/nginx/access.log  json;
+        access_log  /var/log/nginx/access.log  json;
 
 ````
 
@@ -51,12 +52,5 @@ input 里添加 file 类型
             tags => ["nginx"]
         }
     }
-    
-    output {
-            elasticsearch {
-                    hosts => ["http://192.168.10.232:9211"]
-                    index => "logstash_%{type}_%{+YYYY-MM}"
-            }
-         }
 
 ```
