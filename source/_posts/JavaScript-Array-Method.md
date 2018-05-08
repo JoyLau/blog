@@ -118,3 +118,17 @@ splice(index,howmany,item1,.....,itemX)
     a.reverse()//a：[5, 4, 3, 2, 1] 返回[5, 4, 3, 2, 1]
 ```
 
+### 数组里面的对象去重复
+``` javascript
+    unique(arr){
+            let hash = {};
+            arr = arr.reduce(function(item, next) {
+                if (!hash[next.name]) {
+                    item.push(next);
+                    hash[next.name] = true;
+                }
+                return item
+            }, []);
+            return arr;
+        }
+```
