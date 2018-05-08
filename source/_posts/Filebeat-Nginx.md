@@ -138,3 +138,10 @@ json.message_key：指定json日志解析后放到哪个key上，默认是json�
 ```
 
 这样看起来就很舒服了
+
+# 启动 FileBeat
+进入 Filebeat 目录
+
+``` bash
+    nohup sudo ./filebeat -e -c filebeat.yml >/dev/null 2>&1 & 
+```
