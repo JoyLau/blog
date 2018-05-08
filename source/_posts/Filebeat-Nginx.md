@@ -139,9 +139,34 @@ json.message_key：指定json日志解析后放到哪个key上，默认是json�
 
 这样看起来就很舒服了
 
-# 启动 FileBeat
+## 启动 FileBeat
 进入 Filebeat 目录
 
 ``` bash
     nohup sudo ./filebeat -e -c filebeat.yml >/dev/null 2>&1 & 
+```
+
+## 更新
+nginx 的日志里含有中文的话，会将中文转为 Unicode 编码，如果不转的话，加入 `escape=json` 参数就可以了
+
+``` bash
+    log_format json escape=json '{ "@timestamp": "$time_iso8601", '
+                                 '"time": "$time_iso8601", '
+                                 '"remote_addr": "$remote_addr", '
+                                 '"remote_user": "$remote_user", '
+                                 '"body_bytes_sent": "$body_bytes_sent", '
+                                 '"request_time": "$request_time", '
+                                 '"status": "$status", '
+                                 '"host": "$host", '
+                                 '"request": "$request", '
+                                 '"request_method": "$request_method", '
+                                 '"uri": "$uri", '
+                                 '"http_referrer": "$http_referer", '
+                                 '"body_bytes_sent":"$body_bytes_sent", '
+                                 '"http_x_forwarded_for": "$http_x_forwarded_for", '
+                                 '"http_user_agent": "$http_user_agent" '
+                            '}';
+        
+            access_log  /var/log/nginx/access.log  json;
+
 ```
