@@ -132,3 +132,5 @@ splice(index,howmany,item1,.....,itemX)
             return arr;
         }
 ```
+
+发现一个比较好的js组件，地址： https://lodash.com/docs/  里面有很多关于对数组的操作
