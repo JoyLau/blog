@@ -114,6 +114,12 @@ tags: [Linux,CMD]
 - `systemctl enable nginx` : nginx开机启动
 - `systemctl disable nginx` : 禁用nginx开机启动
 - `systemctl status nginx` : 查看nginx服务信息
+- `systemctl is-enabled nginx` ： 查看服务是否开机启动
+- `systemctl list-unit-files|grep enabled` ： 查看已启动的服务列表
+- `systemctl --failed` ： 查看启动失败的服务列表
+- `systemctl daemon-reload` ： 重新加载service文件
+- `systemctl reboot` : 重启
+- `systemctl shutdown` : 关机
 
 ### 压缩解压命令
 #### 压缩
