@@ -50,6 +50,8 @@ tags: [Linux,CMD]
 
 文件放到 /usr/lib/systemd/system/ 下
 
+Service 部分的启动、重启、停止命令全部要求使用绝对路径
+
 如果单独运行的是命令，这个就已经足够了，但是如果运行一些守护进程的话或者更复杂的情况的话，需要单独写一个脚本来运行
 
 关于 service 里面的详细配置可以参考： http://blog.51cto.com/littledevil/1912570 
