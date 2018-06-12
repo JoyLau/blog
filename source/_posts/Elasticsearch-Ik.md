@@ -7,5 +7,8 @@ tags: [Elasticsearch]
 ---
 
 <!-- more -->
+![IdiomsDictionary](http://image.joylau.cn/blog/IdiomsDictionary.gif)
+
+
 
 https://github.com/JoyLau/es-doc-node
