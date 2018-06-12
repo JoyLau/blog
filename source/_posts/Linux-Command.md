@@ -119,7 +119,7 @@ tags: [Linux,CMD]
 - `systemctl --failed` ： 查看启动失败的服务列表
 - `systemctl daemon-reload` ： 重新加载service文件
 - `systemctl reboot` : 重启
-- `systemctl shutdown` : 关机
+- `systemctl poweroff` : 关机
 
 ### 压缩解压命令
 #### 压缩
