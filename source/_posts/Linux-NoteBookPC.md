@@ -78,3 +78,16 @@ HandleLidSwitch　　 　　关闭笔记本盖子后会触发的行为
 只需要把HandleLidSwitch选项设置为 HandleLidSwitch=lock 
 
 设置完成保存后运行 systemctl restart systemd-logind 命令才生效
+
+## 恢复 Windows 启动项
+
+windows 7、8/10 安装centos7双系统后，默认会将mbr改写成为grub2，而默认的centos7不识别windows 的ntfs分区，所以启动项没有windows。 
+可以用3条命令，即可将windows添加到grub2的启动项。
+
+``` bash
+    yum -y install epel-release
+    yum -y install ntfs-3g
+    grub2-mkconfig -o /boot/grub2/grub.cfg
+```
+
+重启
