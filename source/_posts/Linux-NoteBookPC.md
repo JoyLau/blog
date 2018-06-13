@@ -91,3 +91,52 @@ windows 7、8/10 安装centos7双系统后，默认会将mbr改写成为grub2，
 ```
 
 重启
+
+## 最小化安装时配置静态 IP 地址
+1. vim /etc/sysconfig/network-scripts/ifcfg-网络接口名称,默认第一个是网络接口名称
+
+2. 修改以下红色标注的配置
+
+    TYPE=Ethernet
+    
+    <font color=red size=3>BOOTPROTO=static</font>
+    
+    DEFROUTE=yes
+    
+    IPV4_FAILURE_FATAL=no
+    
+    IPV6INIT=yes
+    
+    IPV6_AUTOCONF=yes
+    
+    IPV6_DEFROUTE=yes
+    
+    IPV6_FAILURE_FATAL=no
+    
+    NAME=eno16777736
+    
+    UUID=9e8d604f-d991-4aa2-88a3-4c679e6f139c
+    
+    DEVICE=eno16777736
+    
+    ONBOOT=yes
+    
+    PEERDNS=yes
+    
+    PEERROUTES=yes
+    
+    IPV6_PEERDNS=yes
+    
+    IPV6_PEERROUTES=yes
+    
+    <font color=red size=3>HWADDR=B8:70:F4:24:61:A7</font>  #MAC地址
+    
+    <font color=red size=3>IPADDR=192.168.10.29</font>     #静态IP
+    
+    <font color=red size=3>GATEWAY=192.168.10.1</font>     #默认网关
+    
+    <font color=red size=3>NETMASK=255.255.255.0</font>    #子网掩码
+    
+    <font color=red size=3>DNS1=61.132.163.68</font>       #DNS配置
+
+3. 重启网络服务 ：service network restart
