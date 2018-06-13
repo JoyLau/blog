@@ -57,6 +57,7 @@ tags: [Linux,CMD]
     nmcli r wifi on
 4. 测试（扫描信号）
     nmcli dev wifi
+    扫描不到可用 iw wlp8s0b1(网卡名称) scan | grep SSID 扫描一下
 5. 连接
     nmcli dev wifi connect password
 
