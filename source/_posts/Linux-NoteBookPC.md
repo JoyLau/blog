@@ -61,6 +61,8 @@ tags: [Linux,CMD]
 5. 连接
     nmcli dev wifi connect password
 
+注： 总结多次安装 centos 系统得出一个结论，如果在安装过程中选择打开 WiFi 并连接网络，系统安装完成后，会在 /etc/sysconfig/network-scripts/ 目录下生成一个 ifcfg-WiFi名称 文件和 keys-WiFi名称的密码文件，之后安装 NetworkManage-wifi 便可每次开机都能自动启动 WiFi，如果是装完系统在命令连接的话则每次重启后都需要自己手动连接 WiFi，这是扫描原因暂且不得而知
+
 ## 切换命令行和图形界面
 
 ``` shell
