@@ -86,6 +86,12 @@ java -version
 $JAVA_HOME/bin/java -version  # 与直接执行 java -version 一样
 如果设置正确的话，$JAVA_HOME/bin/java -version 会输出 java 的版本信息，且和 java -version 的输出结果一样
 
+### rpm 安装jdk
+1. 官网下载 jdk rpm包
+2. rpm -ivh jdk_xxxxx.rpm
+3. 配置环境变量（和上述配置一致）
+4. 卸载： rpm -qa|grep jdk ， 查出什么，就使用 rpm -e --nodeps java_xxx 来卸载
+
 ## Tomcat环境搭建
 
 ### 先配置
