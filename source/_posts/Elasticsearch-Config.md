@@ -134,3 +134,12 @@ tags: [Elasticsearch]
 5. elasticsearch 在 linux 下以后台启动的命令
     sh elasticsearch -d
     确认日志没有报错，然后head插件可以连接的上就可以了
+
+
+
+### 2018-06-21 更新
+1. ElasticSearch 允许跨域
+    http.cors.enabled: true #开启跨域访问支持，默认为false  
+    http.cors.allow-origin: /.*/ #跨域访问允许的域名地址，(允许所有域名)以上使用正则
+  
+2. rpm 安装的 elasticsearch 可以自动以系统服务启动和以root用户启动
