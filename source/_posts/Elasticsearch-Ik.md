@@ -7,7 +7,7 @@ tags: [Elasticsearch]
 ---
 
 <!-- more -->
-![IdiomsDictionary](http://image.joylau.cn/blog/IdiomsDictionary.gif)
+![IdiomsDictionary](http://image.joylau.cn/blog/idioms.gif)
 
 
 
