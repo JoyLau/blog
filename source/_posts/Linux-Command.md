@@ -188,3 +188,12 @@ curl -o /etc/yum.repos.d/CentOS-Base.repo http://mirrors.aliyun.com/repo/Centos-
 - su es : 表示与 es 建立一个连接，通过 es 来执行命令
 
 注： 以上命令在安装 elasticsearch 时都会用的到
+
+## 2018-06-22 更新
+1. vim 永久显示行号 vim /etc/vimrc 添加 `set nu` 或者 `set number`
+
+2. 最小化安装 centos 是没有 tab 键补全提示的， 需要安装 `yum install bash-completion`
+
+3. tab 补全提示不区分大小写 ： vim /etc/inputrc 添加 `set completion-ignore-case on`
+
+注： 以上 增加配置是全局的，只对当前用户的话，可以在当前目录下新建相应的文件，再添加配置，例如： ~/.inputrc
