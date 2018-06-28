@@ -1,7 +1,7 @@
 ---
 title: 自用 Ubuntu 系统配置
 date: 2018-06-28 15:16:22
-description: 安装完 Ubuntu 后自定义的一些配置
+description: 安装完 Ubuntu 后自定义的一些配置记录
 categories: [Ubuntu篇]
 tags: [Ubuntu]
 
@@ -36,3 +36,13 @@ tags: [Ubuntu]
 ```
 
 7. 安装中文字体文泉译：sudo apt-get install fonts-wqy-microhei
+
+8. 防火墙配置
+    sudo ufw enable
+    
+    sudo ufw default deny
+    
+    运行以上两条命令后，开启了防火墙，并在系统启动时自动开启。关闭所有外部对本机的访问，但本机访问外部正常
+    
+    sudo ufw disable 关闭防火墙
+    
