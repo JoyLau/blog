@@ -1,5 +1,5 @@
 ---
-title: 自用 Ubuntu 系统配置
+title: Ubuntu 自用配置记录
 date: 2018-06-28 15:16:22
 description: 安装完 Ubuntu 后自定义的一些配置记录
 categories: [Ubuntu篇]
