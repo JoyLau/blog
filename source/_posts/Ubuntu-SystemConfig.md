@@ -4,7 +4,7 @@ date: 2018-06-28 15:16:22
 description: 安装完 Ubuntu 后自定义的一些配置记录
 categories: [Ubuntu篇]
 tags: [Ubuntu]
-
+---
 <!-- more -->
 
 1. 关闭并禁用 swap 分区： sudo swapoff 并且 sudo vim /etc/fstab 注释掉 swap 那行
