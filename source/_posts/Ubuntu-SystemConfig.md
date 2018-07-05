@@ -7,6 +7,8 @@ tags: [Ubuntu]
 ---
 <!-- more -->
 
+## 安装完系统后的一些配置
+
 1. 关闭并禁用 swap 分区： sudo swapoff 并且 sudo vim /etc/fstab 注释掉 swap 那行
 
 2. 开启点击图标最小化： gsettings set org.compiz.unityshell:/org/compiz/profiles/unity/plugins/unityshell/ launcher-minimize-window true
@@ -50,4 +52,10 @@ tags: [Ubuntu]
     xset m N
     其中，N是速度，估计取值为0-10
     恢复默认 xset m default
+
+
+
+## apt-get 命令的记录
+1. 卸载软件： sudo apt-get purge docker-ce
+2. 查看软件版本： apt-cache madison docker-ce 
     
