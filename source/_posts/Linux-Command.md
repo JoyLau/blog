@@ -36,9 +36,6 @@ tags: [Linux,CMD]
 ### 说明
 - 有一些命令是centos7特有的，在低版本的可能无法使用
     
-    
-    
-    
 ### 防火墙
 - 查看防火墙状态：  `systemctl status firewalld`
 - 开启防火墙 ：  `systemctl start  firewalld`
@@ -154,29 +151,29 @@ tags: [Linux,CMD]
 
 - 下载新的CentOS-Base.repo 到/etc/yum.repos.d/
 
-CentOS 5 ：
-
-wget -O /etc/yum.repos.d/CentOS-Base.repo http://mirrors.aliyun.com/repo/Centos-5.repo
-
-或者
-
-curl -o /etc/yum.repos.d/CentOS-Base.repo http://mirrors.aliyun.com/repo/Centos-5.repo
-
-CentOS 6 ： 
-
-wget -O /etc/yum.repos.d/CentOS-Base.repo http://mirrors.aliyun.com/repo/Centos-6.repo
-
-或者
-
-curl -o /etc/yum.repos.d/CentOS-Base.repo http://mirrors.aliyun.com/repo/Centos-6.repo
-
-CentOS 7 ： 
-
-wget -O /etc/yum.repos.d/CentOS-Base.repo http://mirrors.aliyun.com/repo/Centos-7.repo
-
-或者
-
-curl -o /etc/yum.repos.d/CentOS-Base.repo http://mirrors.aliyun.com/repo/Centos-7.repo
+    CentOS 5 ：
+    
+    wget -O /etc/yum.repos.d/CentOS-Base.repo http://mirrors.aliyun.com/repo/Centos-5.repo
+    
+    或者
+    
+    curl -o /etc/yum.repos.d/CentOS-Base.repo http://mirrors.aliyun.com/repo/Centos-5.repo
+    
+    CentOS 6 ： 
+    
+    wget -O /etc/yum.repos.d/CentOS-Base.repo http://mirrors.aliyun.com/repo/Centos-6.repo
+    
+    或者
+    
+    curl -o /etc/yum.repos.d/CentOS-Base.repo http://mirrors.aliyun.com/repo/Centos-6.repo
+    
+    CentOS 7 ： 
+    
+    wget -O /etc/yum.repos.d/CentOS-Base.repo http://mirrors.aliyun.com/repo/Centos-7.repo
+    
+    或者
+    
+    curl -o /etc/yum.repos.d/CentOS-Base.repo http://mirrors.aliyun.com/repo/Centos-7.repo
 
 - 之后运行 yum makecache 生成缓存
 
