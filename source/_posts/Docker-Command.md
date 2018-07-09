@@ -82,3 +82,7 @@ docker pull centos:latest
 
 docker search nginx
 执行docker pull centos会将Centos这个仓库下面的所有镜像下载到本地repository。
+
+## 2018-07-09 14:02:25 更新
+docker search xxx : 在docker仓库查找镜像
+docker images | grep xxx : 在本地仓库查找镜像
