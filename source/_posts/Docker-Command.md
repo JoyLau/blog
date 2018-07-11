@@ -86,3 +86,4 @@ docker search nginx
 ## 2018-07-09 14:02:25 更新
 docker search xxx : 在docker仓库查找镜像
 docker images | grep xxx : 在本地仓库查找镜像
+
