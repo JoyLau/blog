@@ -87,3 +87,7 @@ docker search nginx
 docker search xxx : 在docker仓库查找镜像
 docker images | grep xxx : 在本地仓库查找镜像
 
+
+## 2018-07-12 09:44:40 更新
+进入容器： `docker exec -it 容器的ID或者NAME /bin/bash`
+
