@@ -25,3 +25,6 @@ tags: [Ubuntu]
 
 我的 1080P 分辨率，我的配置如下：
 ![MonacoB2](http://image.joylau.cn/blog/Monaco7.png)
+
+## 2018-07-18 14:22:05 更新
+看到一篇关于 Ubuntu 字体渲染问题的文章: 修复 Ubuntu 中文字体渲染  https://i-meto.com/fix-chinese-font-display/
