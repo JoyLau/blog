@@ -58,4 +58,32 @@ tags: [Ubuntu]
 ## apt-get 命令的记录
 1. 卸载软件： sudo apt-get purge docker-ce
 2. 查看软件版本： apt-cache madison docker-ce 
-    
+
+## 2018年07月19日09:10:55 更新
+indicator-sysmonitor 显示网速时,在状态栏会左右移动,解决方法是:
+修改源代码
+
+``` bash
+    sudo vi  /usr/lib/indicator-sysmonitor/sensors.py   
+```
+
+打开后，修改第29行的B_UNITS:
+
+``` bash
+    B_UNITS = ['MB', 'GB', 'TB']
+```
+
+接着修改下面的bytes_to_human函数：
+
+``` python
+    def bytes_to_human(bytes_):                 
+    unit = 0    
+    bytes_ = bytes_ / 1024 / 1024    
+    while bytes_ > 1024:    
+        unit += 1    
+        bytes_ /= 1024    
+    # 做成00.00MB/s的形式，避免变化     
+    return '{:0>5.2f}{:0>2}'.format(bytes_, B_UNITS[unit]) 
+```
+
+然后保存退出，重启就可以了。
