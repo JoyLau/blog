@@ -36,7 +36,7 @@
     <div class="article-entry" itemprop="articleBody">
       <% if (index && (post.description || post.excerpt)){ %>
           <% if (post.description){ %>
-              <%- post.description %>
+              <div class="article-description-tlt"><%- post.description %></div>
           <% } else { %>
               <%- post.excerpt %>
           <% } %>

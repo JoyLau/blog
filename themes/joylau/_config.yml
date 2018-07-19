@@ -317,3 +317,6 @@ new_post_tips: true
 
 # 是否开启文字转换科技感
 page_title_shake: true
+
+# 是否开启文字标题特效
+page_title_animate: true
