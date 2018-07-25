@@ -34,6 +34,9 @@ File | Settings | Keymap | main menu | code | completion | basic 设为 alt + /
 ### 自动提示忽略大小写
 File | Settings | Editor | General | Code Completion，将 case sensitive completion 修改为NONE
 
+### 编辑器设置多Tab页
+File | Settings | Editor | General | Editor Tabs 去掉 show tabs in single row
+
 ### idea64.vmoptions 配置
 16G 以上的机器： 
     -Xms512m
