@@ -18,4 +18,4 @@ mysql 后台取出的时间格式的字段，传到前台变成了时间戳
 
 1. @JsonFormat(pattern="yyyy-MM-dd HH:mm:ss",timezone="GMT+8") ： 后台 Date 类型转时间字符串，注意时区 （后台 -> 前台）
 2. @DateTimeFormat(pattern="yyyy-MM-dd HH:mm:ss") ：前台时间格式参数转为 javabean 的 Date 类型 （前台 -> 后台）
-3. @JSONField(name="end_time", format="yyyy-MM-dd hh:mm:ss") ： fastjson 专用，定义json 的 key，还有时间的格式化，也可以分别在 get set 方法上注解
+3. @JSONField(name="end_time", format="yyyy-MM-dd HH:mm:ss") ： fastjson 专用，定义json 的 key，还有时间的格式化，也可以分别在 get set 方法上注解
