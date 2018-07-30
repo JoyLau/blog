@@ -1,7 +1,7 @@
 ---
-title: Oracle 里 number 类型对应 Java bean 类型记录
+title: Oracle 里 number 类型对应 JdbcType bean 类型记录
 date: 2018-07-29 10:31:44
-description: "Oracle 里 number 类型对应 Java bean 类型记录"
+description: Oracle 里 number 类型对应 JdbcType bean 类型记录
 categories: [Java]
 tags: [Java]
 ---
