@@ -143,3 +143,11 @@ windows 7、8/10 安装centos7双系统后，默认会将mbr改写成为grub2，
     <font color=red size=3>DNS1=61.132.163.68</font>       #DNS配置
 
 3. 重启网络服务 ：service network restart
+
+## 时间同步
+更新时间 2018-08-01 16:36:09
+系统安装 ntpdate
+查看本地时间： date
+本地时间与服务器时间同步 ： ntpdate ntp1.aliyun.com
+查看bois时间： hwclock
+将本地时间写入到bois时间内： hwclock -w
