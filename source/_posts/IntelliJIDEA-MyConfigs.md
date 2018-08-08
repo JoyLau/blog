@@ -37,6 +37,9 @@ File | Settings | Editor | General | Code Completion，将 case sensitive comple
 ### 编辑器设置多Tab页
 File | Settings | Editor | General | Editor Tabs 去掉 show tabs in single row
 
+### 提示 serialVersionUID 的生成
+File | Settings | Editor | Inspections | Serialization issues | Serializable class without ’serialVersionUID’ 
+
 ### idea64.vmoptions 配置
 16G 以上的机器： 
     -Xms512m
