@@ -194,3 +194,21 @@ tags: [Linux,CMD]
 3. tab 补全提示不区分大小写 ： vim /etc/inputrc 添加 `set completion-ignore-case on`
 
 注： 以上 增加配置是全局的，只对当前用户的话，可以在当前目录下新建相应的文件，再添加配置，例如： ~/.inputrc
+
+## 2018-9-12 更新
+1. killall -9 nginx : 批量结束指定进程，比如不小心运行了 nginx，会产生1个master和n个work进程，这时候一个个结束不实际，killall就是最好的方式
+2. 有时候我们安装 rpm 安装包会出现某些依赖库找不到，比如
+    `libSM.so.6: cannot open shared object file: No such file or directory`
+    这时候我们使用 `yum provides libSM.so.6` 来寻找包含的动态库
+
+``` shell
+    Loaded plugins: fastestmirror
+    Loading mirror speeds from cached hostfile
+    gperftools-libs-2.6.1-1.el7.i686 : Libraries provided by gperftools
+    Repo        : Private-Base
+    Matched from:
+    Provides    : libprofiler.so.0
+
+```
+
+找到后安装即可 `yum install gperftools-libs`
