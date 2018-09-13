@@ -84,19 +84,34 @@ debug了一下，发现根本没有执行重写的 equals 方法
 
 ``` java 
     @Data
-        public class FollowAnalysisPojo {
-            ......
-            /**
-             * 重新 equals 方法必须重新 hashCode方法
-             * @return int
-             */
-            @Override
-            public int hashCode(){
-                int result = passTimeMain.hashCode();
-                result = 31 * result + passTimeMain.hashCode();
-                return result;
-            }
+    public class FollowAnalysisPojo {
+        ......
+        /**
+         * 重新 equals 方法必须重新 hashCode方法
+         * @return int
+         */
+        @Override
+        public int hashCode(){
+            int result = passTimeMain.hashCode();
+            result = 31 * result + passTimeMain.hashCode();
+            return result;
         }
+    }
 ```
 
 这样就可以了。
+
+## 2018-9-13 更新
+如果我们不重写方法，有没有办法按照List中bean的某个属性来去重复呢？答案是有的，利用的是 stream 的 reduce，用一个set 来存放 key,代码如下：
+
+``` java
+    List<JSONObject> result = trails.stream()
+                .filter(distinctByKey(VehicleTrail::getPlateNbr))
+                .collect(Collectors.toList());
+
+
+    private  <T> Predicate<T> distinctByKey(Function<? super T, ?> keyExtractor) {
+        Set<Object> seen = ConcurrentHashMap.newKeySet();
+        return t -> seen.add(keyExtractor.apply(t));
+    }
+```
