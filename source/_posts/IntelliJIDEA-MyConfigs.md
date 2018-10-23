@@ -40,6 +40,9 @@ File | Settings | Editor | General | Editor Tabs 去掉 show tabs in single row
 ### 提示 serialVersionUID 的生成
 File | Settings | Editor | Inspections | Serialization issues | Serializable class without ’serialVersionUID’ 
 
+### 显示内存占用
+Preferences | Appearance & Behavior | Appearance | Show memory indicator
+
 ### idea64.vmoptions 配置
 16G 以上的机器： 
     -Xms512m
@@ -52,3 +55,7 @@ File | Settings | Editor | Inspections | Serialization issues | Serializable cla
 ### idea.properties 配置
 控制台打印日志的行数：默认为 1024，不限制的话：
     idea.cycle.buffer.size=disabled
+
+### Mac OS 下 IDEA 文件位置
+配置文件位置: /Users/joylau/Library/Preferences/IntelliJIdea201x.x
+索引文件位置: /Users/joylau/Library/Caches/IntelliJIdea201x.x
