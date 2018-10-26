@@ -22,7 +22,7 @@ ownCloud 除了传统的部署方式,在如今 docker 大行其道的环境下,�
 这种方式的需要你提前装好 MariaDb 数据库,在启动完成后打开页面会按照流程填写数据库的链接信息,之后就可以使用 ownCloud 了
 
 
-## 第二种 分别安装
+### 第二种 分别安装
 分别先后使用 docker 按照 redis,mariadb,ownCloud
 安装 redis 的 mariadb
 
@@ -81,7 +81,7 @@ ownCloud 除了传统的部署方式,在如今 docker 大行其道的环境下,�
 
 之后稍等片刻,打开网页即可
 
-## 第三种 docker-compose 部署
+### 第三种 docker-compose 部署
 首先保证 docker-compose 的版本在 1.12.0+ 
 
 ``` sbtshell
@@ -112,7 +112,7 @@ ownCloud 除了传统的部署方式,在如今 docker 大行其道的环境下,�
 `docker-compose stop` 停止容器
 `docker-compose down` 停止和删除容器
 
-### 版本更新
+#### 版本更新
 1. 进入 .yaml 或 .env 目录
 2. 将 ownCloud 设置维护模式,` docker-compose exec server occ maintenance:mode --on`
 3. 停止容器, `docker-compose down`
