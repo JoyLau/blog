@@ -69,5 +69,5 @@ theme: joylau
 ## Docs: https://hexo.io/docs/deployment.html
 deploy:
   type: git
-  repository: https://github.com/JoyLau/blog-public.git
+  repository: https://name:password@github.com/JoyLau/blog-public.git
   branch: master
