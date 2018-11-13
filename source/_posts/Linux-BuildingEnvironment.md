@@ -369,17 +369,45 @@ $JAVA_HOME/bin/java -version  # 与直接执行 java -version 一样
         systemctl stop redis;
         systemctl restart redis;
     ```
- 
 
 
+## FTP 服务端安装
 
-    
+1. yum install vsftpd
+2. 修改 vim /etc/vsftpd/vsftpd.conf
+    `anonymous_enable=NO` : 不允许匿名用户登录
+    `chroot_local_user=YES` : 用户不能跳出当前的 home 目录
+3. 安装好之后其实已经创建了个 ftp 的用户了,可以查看 /etc/passwd 文件,只是没有密码,这个时候使用 ftp 工具来登录是可以看到目录的,默认 ftp 的 home 目录在 /var/ftp/ 下    
+4. 修改 ftp 用户密码 passwd ftp
+5. 这时使用 ftp 用户登录,发现不能 上传文件和删除文件,有 553 错误
 
+### 解决不能上传和删除文件
+1. 首先 selinux 会默认拦截 vsftp,想要不被拦截的话,可以关闭 selinux, 但是关闭后安全性得不到保障,可能会出现其他的问题,这里我们不关闭,可以开放权限
 
+    ``` shell
+        setenforce 0 #暂时让SELinux进入Permissive模式
+        getsebool -a | grep ftpd #查看 ftpd 的权限
+        
+        ftpd_anon_write --> off
+        ftpd_connect_all_unreserved --> off
+        ftpd_connect_db --> off
+        ftpd_full_access --> on
+        ftpd_use_cifs --> off
+        ftpd_use_fusefs --> off
+        ftpd_use_nfs --> off
+        ftpd_use_passive_mode --> off
+        
+        setsebool -P ftpd_full_access 1 # 设置ftpd_full_access的权限为 on
+        
+        setenforce 1 # 开启 selinux
+    ```
 
-    
-    
+2. 这时 selinux 已经开放了 vsftpd 的权限
 
- 
-   
-   
+3. 给 ftp 用户的 home 目录赋予写的权限 chmod a+w /var/ftp
+
+4. vsftpd 在新版本时,如果检测到用户不能跳出当前的 home 目录,那么用户的 home 不能有写的权限,会报 500 OOPS: vsftpd: refusing to run with writable root inside chroot() 错误,这时就尴尬了
+
+5. 解决方式: 在配置文件中添加: allow_writeable_chroot=YES
+
+6. 重启 vsftpd
