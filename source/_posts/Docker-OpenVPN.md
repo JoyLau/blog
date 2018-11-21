@@ -7,6 +7,10 @@ tags: [Docker, OpenVPN]
 ---
 
 <!-- more -->
+## 背景
+
+出差在外或者在家工作都需要连接公司网络,没有 VPN 怎么能行
+
 ## OpenVPN 服务端部署
 
 1. 全局变量配置: OVPN_DATA="/home/joylau/ovpn-data"
@@ -15,7 +19,8 @@ tags: [Docker, OpenVPN]
 4. 初始化,这里的密码我们都设置为 123456, `docker run -v ${OVPN_DATA}:/etc/openvpn --rm -it kylemanna/openvpn ovpn_initpki`
 5. 创建用户 liufa , 不使用密码的话在最后面加上 nopass, 使用密码就键入密码,这里我们使用 123456, `docker run -v ${OVPN_DATA}:/etc/openvpn --rm -it kylemanna/openvpn easyrsa build-client-full liufa`
 6. 为用户 liufa 生成秘钥, `docker run -v ${OVPN_DATA}:/etc/openvpn --rm kylemanna/openvpn ovpn_getclient liufa > ${OVPN_DATA}/liufa.ovpn`
-7. 运行容器,这里我的宿主机端口为 6001, `docker run --name openvpn -v ${OVPN_DATA}:/etc/openvpn -d -p 6001:1194 --privileged kylemanna/openvpn`
+7. 创建的文件中端口默认使用的是 1194, 而我用的是 6001,那我们还得修改下 liufa.ovpn 文件的端口
+8. 运行容器,这里我的宿主机端口为 6001, `docker run --name openvpn -v ${OVPN_DATA}:/etc/openvpn -d -p 6001:1194 --privileged kylemanna/openvpn`
 
 
 
