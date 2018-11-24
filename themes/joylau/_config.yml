@@ -87,7 +87,7 @@ preload_comment: true
 ## false: 当点击评论条等区域时再加载评论模块
 ## false: load comment's section until u click/hover on the bar/icon
 
-show_count: true
+show_count: false
 ## 是否在主页文章标题旁显示评论数（多说、Disqus,新增畅言）
 ## Add comment count after article title
 
@@ -113,7 +113,7 @@ youyan:
   # 友言服务在 Web 环境下运行，普通本地环境无法查看，请部署后在线上测试。
 
 changyan:
-  on: true
+  #on: true
   appid: cysUJIsDc
   appkey: prod_f3b45651c40acb065b603bb0c1ae489b
 
@@ -242,7 +242,7 @@ tab_title_change:
 ## https://github.com/PaicHyperionDev/hexo-generator-search
 search: 
   on: true
-  onload: false
+  onload: true
   ## true: get search.xml file when the page has loaded
   ## false: get the file when search box gets focus
 
