@@ -1,15 +1,36 @@
 ---
-title: 关于Jdk 8 Stream Distinct 去重复使用记录
-date: 2018-3-1 17:39:30
-description: java 8 lamda 表达式的 stream 有很多实用的方法，这里记录下去重复 distinct() 的使用
+title: 关于Jdk 8 Stream 的使用记录
+date: 2018-11-29 17:43:00
+description: java 8 lamda 表达式的 stream 有很多实用的方法，这里记录下日常的使用记录
 categories: [Java篇]
 tags: [java]
 ---
 
 <!-- more -->
 
+## reduce() 使用记录
+reduce 有三种方法可以使用:
 
-### 说明
+- `Optional<T> reduce(BinaryOperator<T> accumulator)`
+- `T reduce(T identity, BinaryOperator<T> accumulator)`
+- `<U> U reduce(U identity,BiFunction<U, ? super T, U> accumulator,BinaryOperator<U> combiner)`
+
+第一种传入二元运算表达式,第二种是带初始值的二元运算表达式,这里着重记录下第三种的使用方式
+
+第三种第一个参数方法的返回值类型,
+第二个参数是一个二元运算表达式,这个表达式的第一个参数是方法的返回值,也就是方法的第一个参数,第二个参数是 Stream 里的值
+第三个参数也是一个二元运算表达式,表达式的2个参数都是方法返回值的类型,用于对返回值类型的操作
+
+第三个参数在非并发的情况下返回任何类型(甚至是 null)都没有影响,因为在非并发情况下,第三个二元表达式根本不会执行
+
+那么第三个二元表达式用在并发的情况下,在并发的情况下,第二个二元表达式的第一个参数始终是方法的第一个类型,第三个三元表达式用于将不同线程操作的结果汇总起来
+
+
+## map() 和 flatMap()
+区别在于, map() 返回自定义对象, 而 flatMap() 返回 Stream 流对象
+
+
+## distinct() 使用记录
 最近在 lamda 的 stream 进行 list 去重复的时候，发现没有生效
 代码如下：
 
@@ -101,7 +122,7 @@ debug了一下，发现根本没有执行重写的 equals 方法
 
 这样就可以了。
 
-## 2018-9-13 更新
+### 2018-9-13 更新
 如果我们不重写方法，有没有办法按照List中bean的某个属性来去重复呢？答案是有的，利用的是 stream 的 reduce，用一个set 来存放 key,代码如下：
 
 ``` java
