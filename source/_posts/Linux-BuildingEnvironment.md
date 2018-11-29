@@ -411,3 +411,9 @@ $JAVA_HOME/bin/java -version  # 与直接执行 java -version 一样
 5. 解决方式: 在配置文件中添加: allow_writeable_chroot=YES
 
 6. 重启 vsftpd
+
+
+## RabbitMQ 服务端安装
+1. yum install rabbitmq-server
+2. rabbitmq-plugins enable rabbitmq_management
+3. systemctl start rabbitmq-server
