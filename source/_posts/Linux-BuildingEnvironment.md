@@ -417,3 +417,15 @@ $JAVA_HOME/bin/java -version  # 与直接执行 java -version 一样
 1. yum install rabbitmq-server
 2. rabbitmq-plugins enable rabbitmq_management
 3. systemctl start rabbitmq-server
+
+
+## MariaDB 的安装
+
+1. `yum install mariadb-server`
+2. 登入 mariadb `mysql -uroot -p` , 第一次登陆是 root 用户没有密码,直接进入即可
+3. 初始化设置: `mysql_secure_installation` ,可以设置 root 密码,移除匿名账号等等...
+4. 设置 root 可远程登录: 
+    1. `mysql -uroot -p` 登录
+    2. `GRANT ALL PRIVILEGES ON *.* TO 'root'@'%'IDENTIFIED BY '123456' WITH GRANT OPTION;` 授权 root 账户,密码 123456
+    3. `flush privileges;`
+5. 继续后续操作
