@@ -21,9 +21,9 @@ success(data, textStatus, jqXHR)	可选。请求成功时执行的回调函数�
 dataType	可选。规定预期的服务器响应的数据类型。默认执行智能判断（xml、json、script 或 html
 
 总结需要注意的是: 
-- 1. 请求的 Content-Type 是 `application/x-www-form-urlencoded; charset=UTF-8` 就是表单提交的,dataType值得是规定服务器的响应方式
-- 2. 第二个参数 data 的类型是键值对的对象,不能为 JSON.stringify 后的 json 字符串,序列化后也是 key 的数据
-- 3. 传数组会有问题,会将数组中每个对象的拆开然后堆到一起作为键值对传输数据, 可以通过 `jQuery.ajaxSettings.traditional = true;` 在 post 请求之前设置,防止这样的情况发生,但是对象不会被序列化,会变成 Object 这样的格式,这也不是我们想要的结果
+- 请求的 Content-Type 是 `application/x-www-form-urlencoded; charset=UTF-8` 就是表单提交的,dataType值得是规定服务器的响应方式
+- 第二个参数 data 的类型是键值对的对象,不能为 JSON.stringify 后的 json 字符串,序列化后也是 key 的数据
+- 传数组会有问题,会将数组中每个对象的拆开然后堆到一起作为键值对传输数据, 可以通过 `jQuery.ajaxSettings.traditional = true;` 在 post 请求之前设置,防止这样的情况发生,但是对象不会被序列化,会变成 Object 这样的格式,这也不是我们想要的结果
 
 
 ### $.ajax()
