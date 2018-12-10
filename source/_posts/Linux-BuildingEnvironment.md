@@ -451,3 +451,118 @@ MariaDB的默认编码是latin1，插入中文会乱码，因此需要将编码�
         druid:
           url: jdbc:mysql://34.0.7.183:3306/traffic-service?useUnicode=true&characterEncoding=utf8&useSSL=false
 ```
+
+
+## DNS 服务安装
+1. `yum install bind` 安装完成后服务名为 `named`
+2. `vim /etc/named.conf `
+
+``` bash
+    options {
+            listen-on port 53 { 34.0.7.183; };
+            listen-on-v6 port 53 { ::1; };
+            directory       "/var/named";
+            dump-file       "/var/named/data/cache_dump.db";
+            statistics-file "/var/named/data/named_stats.txt";
+            memstatistics-file "/var/named/data/named_mem_stats.txt";
+            recursing-file  "/var/named/data/named.recursing";
+            secroots-file   "/var/named/data/named.secroots";
+            allow-query     { any; };
+    
+            /* 
+             - If you are building an AUTHORITATIVE DNS server, do NOT enable recursion.
+             - If you are building a RECURSIVE (caching) DNS server, you need to enable 
+               recursion. 
+             - If your recursive DNS server has a public IP address, you MUST enable access 
+               control to limit queries to your legitimate users. Failing to do so will
+               cause your server to become part of large scale DNS amplification 
+               attacks. Implementing BCP38 within your network would greatly
+               reduce such attack surface 
+            */
+            recursion yes;
+    
+            dnssec-enable yes;
+            dnssec-validation yes;
+    
+            /* Path to ISC DLV key */
+            bindkeys-file "/etc/named.iscdlv.key";
+    
+            managed-keys-directory "/var/named/dynamic";
+    
+            pid-file "/run/named/named.pid";
+            session-keyfile "/run/named/session.key";
+    };
+    
+    logging {
+            channel default_debug {
+                    file "data/named.run";
+                    severity dynamic;
+            };
+    };
+    
+    zone "." IN {
+            type hint;
+            file "named.ca";
+    };
+    
+    include "/etc/named.rfc1912.zones";
+    include "/etc/named.root.key";
+    
+```
+
+`listen-on port 53 { 127.0.0.1; };`       # 指定服务监听的端口，建议写本机IP，减少服务器消耗
+`allow-query     { any; };`               # 允许哪些客户端访问DNS服务，此处改为“any”，表示任意主机
+
+修改这2项配置即可
+`include "/etc/named.rfc1912.zones"; `    # include代表该文件是子配置文件
+
+3. `vim /etc/named.rfc1912.zones ` , 添加一个我们自定义的域名配置,这里我使用的是 `baidu.com`
+
+``` bash
+    zone "baidu.com" IN {
+            type master;
+            file "data/baidu.com.zone";
+            allow-update { none; };
+    };
+```
+
+上述文件默认的目录在 `/var/named/data` 目录下
+
+4. `vim /var/named/data/baidu.com.zone `
+
+配置如下: 注意格式
+
+``` bash
+    $TTL 1D
+    @       IN SOA         baidu.com. root (
+                                            1       ; serial
+                                            1D      ; refresh
+                                            1H      ; retry
+                                            1W      ; expire
+                                            0 )     ; minimum
+    
+    @       IN      NS      ns.baidu.com.
+    ns      IN      A       34.0.7.183
+    @       IN      A       34.0.7.183
+    test    IN      A       34.0.7.183
+    liufa   IN      A       34.0.7.227
+```
+
+注意第一条记录 `ns.baidu.com.` 的解析必须添加否则会报错,添加之后,再加一条 ns 子域名的解析,直接指向自己即可
+
+这里附上一些配置的解释:
+
+- serial：序列号。可以供从服务器判断何时获取新数据的，这里我设成今天的日期。更新数据文件必须要更新这个序列号，否则从服务器将不更新
+- refresh：指定多长时间从服务器要与主服务器进行核对
+- retry：如果从服务器试图检查主服务器的序列号时，主服务器没有响应，则经过这个时间后将重新进行检查
+- expire：将决定从服务器在没有主服务器的情况下权威地持续提供域数据服务的时间长短
+- minimum：高速缓存否定回答的存活时间
+- SOA记录：每个区仅有一个SOA记录，该区一直延伸到遇见另一个SOA记录为止。SOA记录包括区的名字，一个技术联系人和各种不同的超时值
+- IN记录：使用“IN”，对应的是internet
+- A记录：是DNS数据库的核心。一个主机必须为它的每个网络接口得到一条A记录
+- NS记录：识别对一个区有权威性的服务器（即所有主服务器和从服务器），并把子域委托给其他机构。
+- MX记录：电子邮件系统就是使用MX记录来更有效的路由邮件。
+- PTR记录：从IP地址到主机名的反向映射。与A记录一样，必须为每个网络接口有一条PTR记录。
+
+5. `chown root:named baidu.com.zone` 修改权限
+6. `systemctl restart named`
