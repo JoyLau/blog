@@ -31,3 +31,10 @@ tags: [Docker]
       {
         "insecure-registries": [ "domain:5000"]
       }
+
+### 无网络搭建
+1. 在有网络的机器上 `docker pull registry`
+2. `docker save registry > registry.tar` 保存到个 tar 包
+3. 拷贝到服务器上, `docker load -i registry.tar` 导入镜像
+4. `docker images` 查看镜像
+5. 再继续上面的操作
