@@ -38,3 +38,14 @@ tags: [Docker]
 3. 拷贝到服务器上, `docker load -i registry.tar` 导入镜像
 4. `docker images` 查看镜像
 5. 再继续上面的操作
+
+### docker 开启 tcp 端口 
+- `vim /usr/lib/systemd/system/docker.service `
+
+修改
+
+``` bash
+    ExecStart=/usr/bin/dockerd-current -H tcp://0.0.0.0:2375 -H unix://var/run/docker.sock \
+```
+
+重启即可,之后 idea 可输入 tcp://ip:2375 连接
