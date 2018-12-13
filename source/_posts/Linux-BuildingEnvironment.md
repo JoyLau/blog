@@ -433,18 +433,18 @@ $JAVA_HOME/bin/java -version  # 与直接执行 java -version 一样
 ### Mybatis 连接 MariaDB 中文乱码问题
 MariaDB的默认编码是latin1，插入中文会乱码，因此需要将编码改为utf8
 
-- 首先设置数据库的编码都为 utf8
+1. 首先设置数据库的编码都为 utf8
     1. `SHOW VARIABLES LIKE 'character%';` 查看编码
     2. 修改 /etc/my.cnf.d/client.cnf , 在 `[client]` 里加入 `default-character-set=utf8`
     3. 修改 /etc/my.cnf.d/server.cnf , 在 `[mysqld]` 里加入 `character-set-server=utf8`
     4. `systemctl restart mariadb` 重启生效
     5. 再次查看 `SHOW VARIABLES LIKE 'character%';` 查看编码
 
-- 建库,建表,表里的 varchar 字段的字符集都用 `utf8`, 排序规则都用 `utf8_unicode_ci`
+2. 建库,建表,表里的 varchar 字段的字符集都用 `utf8`, 排序规则都用 `utf8_unicode_ci`
 
-- 至此服务端就配置完成了
+3. 至此服务端就配置完成了
 
-- 连接数据配置文件,加上参数
+4. 连接数据配置文件,加上参数
 
 ``` yml
       datasource:
