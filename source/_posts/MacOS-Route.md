@@ -14,7 +14,9 @@ tags: [MacOS]
 
 3. 删除路由: `sudo route delete 0.0.0.0`
 
-4. 清空路由表: `networksetup -setadditionalroutes "Ethernet"`,  “Ethernet” 指定路由走哪个设备（查看当前的设备可以使用这个命令 `networksetup -listallnetworkservices` 
+4. 清空路由表: `networksetup -setadditionalroutes "Ethernet"`,  “Ethernet” 指定路由走哪个设备（查看当前的设备可以使用这个命令 `networksetup -listallnetworkservices`
+
+5. 清空路由表: `sudo route flush ` , 是否有效没测试过,通过 `man route ` 看到的,等哪天试过了,再来更新这个内容是否有效
 
 ### 无线网卡和 USB 有线网卡同时使用
 我这里的使用场景是无线接外网, USB 网卡接内网,无线路由的网关是 192.168.0.1, USB 网卡的网关是 34.0.7.1
