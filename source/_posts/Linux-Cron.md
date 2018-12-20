@@ -13,17 +13,19 @@ tags: [Linux,Crond]
 
 ## 配置
 ### 配置一个定时清理的任务
-1. `crontab -e` , 添加一个定时任务
+1. `crontab -e` , 添加一个定时任务, 获取 `vim /etc/crontab` 添加一条记录
 
 ``` bash
-    10 * * * * /home/liufa/app/cron/del_log.sh
+    10 * * * * /home/liufa/app/cron/del_log.sh > /dev/null 2>&1 &
 ```
 
 每天 0 点 10 分运行上述命令文件
 
 2. 创建文件: del_log.sh
 
-3. 删除 10 天的日志文件 
+3. 授权 `chmod +x ./del_log.sh`
+
+4. 删除 10 天的日志文件 
 
 ``` bash
     #!/usr/bin/env bash
@@ -31,3 +33,12 @@ tags: [Linux,Crond]
 ```
 
 4. 启动定时任务, `systemctl start crond`
+
+
+### 注意
+1. 执行脚本使用/bin/sh（防止脚本无执行权限），要执行的文件路径是从根开始的绝对路径（防止找不到文件）
+2. 尽量把要执行的命令放在脚本里，然后把脚本放在定时任务里。对于调用脚本的定时任务，可以把标准输出错误输出重定向到空。
+3. 定时任务中带%无法执行，需要加\转义
+4. 如果时上有值，分钟上必须有值
+5. 日和周不要同时使用，会冲突
+6. `>>` 与 `>/dev/null 2>&1` 不要同时存在
