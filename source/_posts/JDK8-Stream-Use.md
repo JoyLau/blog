@@ -1,12 +1,80 @@
 ---
 title: 关于Jdk 8 Stream 的使用记录
-date: 2018-11-29 17:43:00
+date: 2018-12-24 23:27:38
 description: java 8 lamda 表达式的 stream 有很多实用的方法，这里记录下日常的使用记录
 categories: [Java篇]
 tags: [java]
 ---
 
 <!-- more -->
+
+## LocalDateTime 将 long 格式的时间转化本地时间字符串
+
+``` java
+    LocalDateTime
+            .ofEpochSecond(System.currentTimeMillis() / 1000, 0, ZoneOffset.ofHours(8))
+            .format(DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss"))
+```
+
+## reduce 导致的源集合对象改变
+例如下属代码导致 images 里的 DataImage 对象里的 stake 对象的数量改变
+
+``` java
+     Map<String,List<HighwayStake>> roadStakeMap = images.stream()
+                    .filter(image -> !image.getStakes().isEmpty())
+                    .map(DataImage::getStakes())
+                    .reduce((highwayStakes, highwayStakes2) -> {
+                        highwayStakes2.addAll(highwayStakes);
+                        return highwayStakes2;
+                    })
+                    .orElse(new ArrayList<>())
+                    .stream()
+                    .collect(Collectors.groupingBy(HighwayStake::getDlmc));
+```
+
+因为对 dataImage 的 stakes 集合进行了合并,将 map 操作改为 复制一个新的 list , 而不是操作原来的 stakes
+
+``` java
+     Map<String,List<HighwayStake>> roadStakeMap = images.stream()
+                    .filter(image -> !image.getStakes().isEmpty())
+                    .map(dataImage -> new ArrayList<>(dataImage.getStakes()))
+                    .reduce((highwayStakes, highwayStakes2) -> {
+                        highwayStakes2.addAll(highwayStakes);
+                        return highwayStakes2;
+                    })
+                    .orElse(new ArrayList<>())
+                    .stream()
+                    .collect(Collectors.groupingBy(HighwayStake::getDlmc));
+```
+
+## List 的深度拷贝
+上述的问题实际上是一个 list 的拷贝,而且是 浅度复制
+
+`new ArrayList<>(list)` 和 `Collections.copy(dest,src)` 都是浅度复制
+
+下面代码是一个靠谱的 深度拷贝, 需要 T 实现序列化接口
+
+``` java
+    /**
+     * list 深度复制
+     */
+    public static <T> List<T> deepCopy(List<T> source) {
+        ByteArrayOutputStream byteOut = new ByteArrayOutputStream();
+        List<T> dest = new ArrayList<>();
+        try {
+            ObjectOutputStream out = new ObjectOutputStream(byteOut);
+            out.writeObject(source);
+
+            ByteArrayInputStream byteIn = new ByteArrayInputStream(byteOut.toByteArray());
+            ObjectInputStream in = new ObjectInputStream(byteIn);
+            dest = (List<T>) in.readObject();
+        } catch (IOException | ClassNotFoundException e) {
+            e.printStackTrace();
+        }
+        return dest;
+    }
+```
+
 
 ## reduce() 使用记录
 reduce 有三种方法可以使用:
