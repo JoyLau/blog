@@ -111,3 +111,6 @@ tags: [Linux,YUM]
 ```
 
 4. 这时 private.repo 里的 baseurl 全改为网络地址即可
+
+## 403 权限问题
+修改 nginx.conf 配置文件的 user 为 root
