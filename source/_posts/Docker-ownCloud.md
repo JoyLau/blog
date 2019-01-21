@@ -119,6 +119,11 @@ ownCloud 除了传统的部署方式,在如今 docker 大行其道的环境下,�
 4. 修改. env 文件的版本号,手动或者 `sed -i 's/^OWNCLOUD_VERSION=.*$/OWNCLOUD_VERSION=<newVersion>/' /compose/*/.env`
 5. 重新构建并启动, `docker-compose up -d`
 
+#### 指定挂载目录
+1. owncloud-server : /mnt/data
+
+注意挂载本地目录时,要设置递归文件夹的可读权限 `chmod -R 777 ./owncloud/*`
+
 配置说明
 OWNCLOUD_VERSION:  ownCloud 版本
 OWNCLOUD_DOMAIN: ownCloud 可访问的域
@@ -131,3 +136,113 @@ HTTPS_PORT: SSL使用的端口
 
 总结来说,推荐使用第三种方式来部署.
 
+### docker-compose 文件备份
+
+docker-compose.yml:
+
+``` yaml
+    version: '2.1'
+    
+    volumes:
+      files:
+        driver: local
+      mysql:
+        driver: local
+      backup:
+        driver: local
+      redis:
+        driver: local
+    
+    services:
+      owncloud:
+        image: owncloud/server:${OWNCLOUD_VERSION}
+        restart: always
+        container_name: owncloud-server
+        ports:
+          - ${HTTP_PORT}:8080
+        depends_on:
+          - db
+          - redis
+        environment:
+          - OWNCLOUD_DOMAIN=${OWNCLOUD_DOMAIN}
+          - OWNCLOUD_DB_TYPE=mysql
+          - OWNCLOUD_DB_NAME=owncloud
+          - OWNCLOUD_DB_USERNAME=owncloud
+          - OWNCLOUD_DB_PASSWORD=owncloud
+          - OWNCLOUD_DB_HOST=db
+          - OWNCLOUD_ADMIN_USERNAME=${ADMIN_USERNAME}
+          - OWNCLOUD_ADMIN_PASSWORD=${ADMIN_PASSWORD}
+          - OWNCLOUD_MYSQL_UTF8MB4=true
+          - OWNCLOUD_REDIS_ENABLED=true
+          - OWNCLOUD_REDIS_HOST=redis
+        healthcheck:
+          test: ["CMD", "/usr/bin/healthcheck"]
+          interval: 30s
+          timeout: 10s
+          retries: 5
+        volumes:
+          - /home/liufa/owncloud-data:/mnt/data
+    
+      db:
+        image: webhippie/mariadb:latest
+        restart: always
+        container_name: owncloud-mysql
+        environment:
+          - MARIADB_ROOT_PASSWORD=owncloud
+          - MARIADB_USERNAME=owncloud
+          - MARIADB_PASSWORD=owncloud
+          - MARIADB_DATABASE=owncloud
+          - MARIADB_MAX_ALLOWED_PACKET=128M
+          - MARIADB_INNODB_LOG_FILE_SIZE=64M
+        healthcheck:
+          test: ["CMD", "/usr/bin/healthcheck"]
+          interval: 30s
+          timeout: 10s
+          retries: 5
+        volumes:
+          - /home/liufa/owncloud-mysql:/var/lib/mysql
+          - /home/liufa/owncloud-mysql-backup:/var/lib/backup
+    
+      redis:
+        image: webhippie/redis:latest
+        container_name: owncloud-redis
+        restart: always
+        environment:
+          - REDIS_DATABASES=1
+        healthcheck:
+          test: ["CMD", "/usr/bin/healthcheck"]
+          interval: 30s
+          timeout: 10s
+          retries: 5
+        volumes:
+          - /home/liufa/owncloud-redis:/var/lib/redis
+```
+
+.env:
+
+```bash
+    OWNCLOUD_VERSION=10.0
+    OWNCLOUD_DOMAIN=0.0.0.0
+    ADMIN_USERNAME=admin
+    ADMIN_PASSWORD=
+    HTTP_PORT=1194
+    HTTPS_PORT=443
+```
+
+### nginx 反向代理时的配置
+注意配置 请求头 和 限制上传文件的大小
+
+``` bash
+    server {
+            listen       80;
+            #listen       [::]:80 default_server;
+            server_name  cloud.joylau.cn;
+            location / {
+               # proxy_pass http://JoyCloud;
+                proxy_set_header X-Forwarded-For $remote_addr;
+                proxy_set_header Host            $http_host;
+                proxy_pass   http://127.0.0.1:1194;
+                client_max_body_size    10000m;
+            }
+        }
+```
