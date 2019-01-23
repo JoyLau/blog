@@ -11,12 +11,31 @@ tags: [Linux,Crond]
 ## 背景
 我们的程序在 Linux 上运行会产生大量日志文件,这些日志文件如果不定时清理的话会很快将磁盘沾满
 
+
+## 说明
+
+``` bash
+    # For details see man 4 crontabs
+    
+    # Example of job definition:
+    # .---------------- minute (0 - 59)
+    # |  .------------- hour (0 - 23)
+    # |  |  .---------- day of month (1 - 31)
+    # |  |  |  .------- month (1 - 12) OR jan,feb,mar,apr ...
+    # |  |  |  |  .---- day of week (0 - 6) (Sunday=0 or 7) OR sun,mon,tue,wed,thu,fri,sat
+    # |  |  |  |  |
+    # *  *  *  *  * user-name  command to be executed
+```
 ## 配置
 ### 配置一个定时清理的任务
-1. `crontab -e` , 添加一个定时任务, 获取 `vim /etc/crontab` 添加一条记录
+1. `crontab -e` , 添加一个定时任务, 或者 `vim /etc/crontab` 添加一条记录
 
 ``` bash
     10 * * * * /home/liufa/app/cron/del_log.sh > /dev/null 2>&1 &
+```
+
+```bash
+    10 * * * * root sh /home/liufa/app/cron/del_log.sh > /dev/null 2>&1 &
 ```
 
 每天 0 点 10 分运行上述命令文件
@@ -32,7 +51,7 @@ tags: [Linux,Crond]
     find /home/liufa/app/node/logs -mtime +10 -name "*.log" -exec rm -rf {} \;
 ```
 
-4. 启动定时任务, `systemctl start crond`
+4. 重启定时任务, `systemctl restart crond` , 在 Ubuntu 上叫 cron `systemctl restart cron`
 
 
 ### 注意
