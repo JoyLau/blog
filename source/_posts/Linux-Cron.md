@@ -30,12 +30,12 @@ tags: [Linux,Crond]
 ### 配置一个定时清理的任务
 1. `crontab -e` , 添加一个定时任务, 或者 `vim /etc/crontab` 添加一条记录
 
-``` bash
-    10 * * * * /home/liufa/app/cron/del_log.sh > /dev/null 2>&1 &
+```bash
+    10 0 * * * /home/liufa/app/cron/del_log.sh > /dev/null 2>&1 &
 ```
 
 ```bash
-    10 * * * * root sh /home/liufa/app/cron/del_log.sh > /dev/null 2>&1 &
+    10 0 * * * root sh /home/liufa/app/cron/del_log.sh > /dev/null 2>&1 &
 ```
 
 每天 0 点 10 分运行上述命令文件
@@ -46,7 +46,7 @@ tags: [Linux,Crond]
 
 4. 删除 10 天的日志文件 
 
-``` bash
+```bash
     #!/usr/bin/env bash
     find /home/liufa/app/node/logs -mtime +10 -name "*.log" -exec rm -rf {} \;
 ```
