@@ -240,10 +240,22 @@ github 地址： https://github.com/taskrabbit/elasticsearch-dump
             "indexed_chars": -1,
             "ignore_missing": true
           }
-        }
+        },
+         {
+           "remove": {
+             "field": "data"
+           }
+         }
       ]
     }
 ```
+
+新增了添加完附件数据后 删除 data 的 base64 的数据
+
+3. 删除通道
+
+http://192.168.10.74:9200/_ingest/pipeline/single_attachment  DELETE
+
 
 4. 创建索引
     http://192.168.10.74:9200/file_attachment/  PUT
@@ -264,7 +276,6 @@ github 地址： https://github.com/taskrabbit/elasticsearch-dump
           "properties": {
             "filename": {
               "type": "text",
-              "search_analyzer": "ik_max_word",
               "analyzer": "ik_max_word"
             },
             "data": {
@@ -275,7 +286,6 @@ github 地址： https://github.com/taskrabbit/elasticsearch-dump
             },
             "attachment.content": {
               "type": "text",
-              "search_analyzer": "ik_max_word",
               "analyzer": "ik_max_word"
             }
           }
