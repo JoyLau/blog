@@ -250,7 +250,41 @@ github 地址： https://github.com/taskrabbit/elasticsearch-dump
     }
 ```
 
+field  :  指定某个字段作为附件内容字段（需要用base64进行加密）
+
+target_field：指定某个字段作为附件信息字段（作者、时间、类型）
+
+indexed_chars : 指定解析文件管道流的最大大小，默认是100000。如果不想限制设置为-1（注意设置为-1的时候如果上传文件过大会而内存不够会导致文件上传不完全）
+
+indexed_chars_field：指定某个字段能覆盖index_chars字段属性，这样子可以通过文件的大小去指定indexed_chars值。
+
+properties:  选择需要存储附件的属性值可以为：content,title,name,author,keyword,date,content_type,content_length,language
+
+ignore_missing： 默认为false，如果设置为true表示，如果上面指定的field字段不存在这不对附件进行解析，文档还能继续保留
+
 新增了添加完附件数据后 删除 data 的 base64 的数据
+
+多文件管道流
+
+``` json
+    {
+      "description": "多文件管道流",
+      "processors": [
+         {
+          "foreach": {
+            "field": "attachments",
+            "processor": {
+              "attachment": {
+                "field": "data",
+                "indexed_chars": -1,
+                "ignore_missing": true
+              }
+            }
+          }
+        }
+      ]
+    }
+```
 
 3. 删除通道
 
