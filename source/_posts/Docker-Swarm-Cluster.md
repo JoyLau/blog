@@ -87,7 +87,7 @@ docker-machine status	查看主机状态
 docker-machine stop	停止一个主机
 
 ### swarm 集群节点可视化工具
-portainer : 建议监控本机和远程服务器或者集群环境,远程 docker 主机的话需要远程 docker 主机开启在 2375 端口的服务
+portainer : 很强大的工具,可以监控本机和远程服务器或者集群环境,远程 docker 主机的话需要远程 docker 主机开启在 2375 端口的服务
 
 https://www.portainer.io/installation/
 
