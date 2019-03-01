@@ -85,3 +85,21 @@ docker-machine scp	在主机之间复制文件
 docker-machine start	启动一个主机
 docker-machine status	查看主机状态
 docker-machine stop	停止一个主机
+
+### swarm 集群节点可视化工具
+portainer : 建议监控本机和远程服务器或者集群环境,远程 docker 主机的话需要远程 docker 主机开启在 2375 端口的服务
+
+https://www.portainer.io/installation/
+
+```yaml
+    version: '3'
+    services:
+      portainer:
+        image: 34.0.7.183:5000/joylau/portainer:latest
+        container_name: portainer
+        ports:
+          - 80:9000
+        restart: always
+        volumes:
+          - /home/liufa/portainer/data:/data
+```
