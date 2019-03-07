@@ -231,3 +231,48 @@ tags: [Linux,CMD]
 1. `command > file.log 2>&1` 等价于 `command 2>file.log 1>&2` 前一个指的是标准错误重定向到标准输出,标准输出在重定向到文件 file.log 中, 其中 1 省略了;后一个指的是标准输出重定向到标准错误,标准错误又重定向到文件 file.log, 其中2 不能省略
 2. shell 脚本中无法报命令不存在的错误: 在 shell 脚本第一行使用 `#!/usr/bin/env bash` 或者 `#!/usr/bin/bash` 或者 `#!/bin/bash`
 3. 如果运行还是命令不存在的话: 创建一个软连接 `ln -s command /usr/bin/command`, 参数 -s 创建了个符号链接,相当于快捷方式,不加参数 -s 就是创建硬链接,相当于文件拷贝
+
+## 2019-03-07 更新
+没有联网的机器做时间服务器,写了个接口获取网络的时间,然后服务器使用 crontab 定时设置时间
+java:
+
+``` java
+    /**
+     * 同步时间
+     */
+    @GetMapping("traffic/syncDateTime")
+    public String syncDateTime() {
+        String taobaoTime = "http://api.m.taobao.com/rest/api.do?api=mtop.common.getTimestamp";
+        String suningTime = "http://quan.suning.com/getSysTime.do";
+        JSONObject jsonObject;
+        jsonObject = getDateTime(taobaoTime);
+        if (null != jsonObject && jsonObject.containsKey("data")) {
+            String time = jsonObject.getJSONObject("data").getString("t");
+            return LocalDateTime.ofEpochSecond(Long.parseLong(time) / 1000, 0, ZoneOffset.ofHours(8))
+                    .format(DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss"));
+        }
+        jsonObject = getDateTime(suningTime);
+        if (null != jsonObject && jsonObject.containsKey("sysTime2")) {
+            return jsonObject.getString("sysTime2");
+        }
+        return null;
+
+    }
+
+    private JSONObject getDateTime(String url){
+        return restTemplate.getForObject(url,JSONObject.class);
+    }
+```
+
+shell:
+
+```bash
+    #!/usr/bin/env bash
+    time=$(curl -G -s http://34.0.7.227:9338/traffic/syncDateTime)
+    if [ ! -n "$time" ]; then
+      echo "time is null...."  
+    else
+      date -s "${time}"
+      hwclock -w
+    fi
+```
