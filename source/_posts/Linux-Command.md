@@ -151,29 +151,31 @@ tags: [Linux,CMD]
 
 - 下载新的CentOS-Base.repo 到/etc/yum.repos.d/
 
-    CentOS 5 ：
+``` shell
+    ## CentOS 5 ：
     
     wget -O /etc/yum.repos.d/CentOS-Base.repo http://mirrors.aliyun.com/repo/Centos-5.repo
     
-    或者
+    ## 或者
     
     curl -o /etc/yum.repos.d/CentOS-Base.repo http://mirrors.aliyun.com/repo/Centos-5.repo
     
-    CentOS 6 ： 
+    ## CentOS 6 ： 
     
     wget -O /etc/yum.repos.d/CentOS-Base.repo http://mirrors.aliyun.com/repo/Centos-6.repo
     
-    或者
+    ## 或者
     
     curl -o /etc/yum.repos.d/CentOS-Base.repo http://mirrors.aliyun.com/repo/Centos-6.repo
     
-    CentOS 7 ： 
+    ## CentOS 7 ： 
     
     wget -O /etc/yum.repos.d/CentOS-Base.repo http://mirrors.aliyun.com/repo/Centos-7.repo
     
-    或者
+    ## 或者
     
     curl -o /etc/yum.repos.d/CentOS-Base.repo http://mirrors.aliyun.com/repo/Centos-7.repo
+```
 
 - 之后运行 yum makecache 生成缓存
 
@@ -275,4 +277,11 @@ shell:
       date -s "${time}"
       hwclock -w
     fi
+```
+
+## 2019-03-15 更新
+1. shell 修改文件固定行的内容
+
+``` bash
+    sed -i "108c 'update content'" filename
 ```
