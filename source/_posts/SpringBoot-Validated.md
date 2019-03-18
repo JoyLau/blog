@@ -1,5 +1,5 @@
 ---
-title: @Validated 注解的 groups 使用记录
+title: Validated 注解的 groups 使用记录
 date: 2019-01-26 22:06:25
 description: 记录下 Spring Boot 中 @Validated 注解的 groups 使用记录
 categories: [SpringBoot篇]

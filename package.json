@@ -25,9 +25,9 @@
     "hexo-uglify": "0.0.4"
   },
   "scripts": {
-    "start": "hexo s",
     "clean": "hexo clean",
     "generate": "hexo g",
+    "start": "hexo s",
     "deploy": "hexo d"
   }
 }
