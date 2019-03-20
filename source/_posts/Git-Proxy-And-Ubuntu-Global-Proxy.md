@@ -50,7 +50,7 @@ Windows 和 MacOS 下的 ss 全局代理很方便,点击切换下就可以了,�
 
 ``` shell
     $ sudo pip install genpac
-    $ pip install --upgrade genpac
+    $ pip install -U genpac ## 安装或更新
 ```
 
 创建 user-rules.txt 文件
@@ -64,7 +64,7 @@ Windows 和 MacOS 下的 ss 全局代理很方便,点击切换下就可以了,�
 生成 autoproxy.pac 文件
 
 ``` shell
-    genpac -p "SOCKS5 127.0.0.1:1080" --gfwlist-proxy="SOCKS5 127.0.0.1:1080" --output="autoproxy.pac" --gfwlist-url="https://raw.githubusercontent.com/gfwlist/gfwlist/master/gfwlist.txt" --user-rule-from="user-rules.txt"
+    genpac --format=pac --pac-proxy="SOCKS5 127.0.0.1:1080" --output="autoproxy2.pac" --gfwlist-url="https://raw.githubusercontent.com/gfwlist/gfwlist/master/gfwlist.txt" --user-rule-from="user-rules.txt"
 ```
 
 github 上的 gfwlist.txt 文件可能读取不到,多试几次

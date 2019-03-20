@@ -151,29 +151,31 @@ tags: [Linux,CMD]
 
 - 下载新的CentOS-Base.repo 到/etc/yum.repos.d/
 
-    CentOS 5 ：
+``` shell
+    ## CentOS 5 ：
     
     wget -O /etc/yum.repos.d/CentOS-Base.repo http://mirrors.aliyun.com/repo/Centos-5.repo
     
-    或者
+    ## 或者
     
     curl -o /etc/yum.repos.d/CentOS-Base.repo http://mirrors.aliyun.com/repo/Centos-5.repo
     
-    CentOS 6 ： 
+    ## CentOS 6 ： 
     
     wget -O /etc/yum.repos.d/CentOS-Base.repo http://mirrors.aliyun.com/repo/Centos-6.repo
     
-    或者
+    ## 或者
     
     curl -o /etc/yum.repos.d/CentOS-Base.repo http://mirrors.aliyun.com/repo/Centos-6.repo
     
-    CentOS 7 ： 
+    ## CentOS 7 ： 
     
     wget -O /etc/yum.repos.d/CentOS-Base.repo http://mirrors.aliyun.com/repo/Centos-7.repo
     
-    或者
+    ## 或者
     
     curl -o /etc/yum.repos.d/CentOS-Base.repo http://mirrors.aliyun.com/repo/Centos-7.repo
+```
 
 - 之后运行 yum makecache 生成缓存
 
@@ -276,3 +278,19 @@ shell:
       hwclock -w
     fi
 ```
+
+## 2019-03-15 更新
+1. shell 修改文件固定行的内容
+
+``` bash
+    sed -i "108c 'update content'" filename
+```
+
+## 2019-03-18 更新
+
+#### 删除 Ubuntu 多余内核
+
+1. `dpkg --get-selections|grep linux` : 查看全部安装的内核
+2. 确定当前使用的内核,一般为版本号最新的内核,删除旧内核: `sudo apt remove linux-headers-4.15.0-43	linux-headers-4.15.0-43-generic linux-image-4.15.0-43-generic linux-modules-4.15.0-43-generic linux-modules-extra-4.15.0-43-generic`
+3. 再次输入第一步的命令查看现在的内核信息,现在会看到刚才删除的内核会出现 `deinstall` 的状态
+4. 删除 `deinstall` 状态的内核: `sudo dpkg -P xxxxxx`
