@@ -16,7 +16,7 @@ tags: [Docker]
 2. 再分析是文件目录的所属者的问题： `chown -R gname:uname xxxx` , 没有解决，依然报错
 3. 这时我们进入容器之后 使用 ll 查看挂载的目录的所属者，发现组名和户名跟宿主机的组名和用户名不一致
 4. 原因在于，操作系统判断用户组和用户其实并不是根据名称来的，而是根据名称对应的 id 来的
-5，查看用户组和用户名对象的 id, 可查看 `/etc/passwd`
+5. 查看用户组和用户名对象的 id, 可查看 `/etc/passwd`
 6. 此时，我们需要将宿主机的用户组用户的 ID 和 容器内挂在目录所需的用户组和用户的 ID 对应起来，写一直即可
 7. 举个例子
 8. redis 镜像产生的数据文件在 `/var/lib/redis` 中，并且该目录的用户组和用户都为 `redis`， 此时我们查看容器的 `redis:redis` 的 id , 假如是 `102:103`
@@ -30,7 +30,7 @@ tags: [Docker]
 因为 `/var/lib/mysql` 目录中文件夹可以看到，文件却没有权限看到
 类似这样
 
-``` text
+```shell
     190321 06:02:13 mysqld_safe Logging to '/var/lib/mysql/d240623581db.err'.
     190321 06:02:13 mysqld_safe Starting mysqld daemon with databases from /var/lib/mysql
     chown: /var/lib/mysql/60689c28e4a1.err: Permission denied
@@ -90,6 +90,8 @@ tags: [Docker]
 
 原因分析是：
 SELinux 造成的
-
+有以下 4 中解决方法：
 1. `setenforce 0` : 临时关闭 
 2. `vi /etc/selinux/config` ： 将 `SELINUX=enforcing` 改为 `SELINUX=disabled` ，重启
+3. 在docker run 中加入 `--privileged=true` 给容器加上特定权限
+4. 修改 SELinux 规则 `chcon -t mysqld_db_t  -R /opt/docker/mysql/data`
