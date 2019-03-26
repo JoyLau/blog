@@ -256,6 +256,8 @@ tags: [OpenCV]
 
 ![vm options](http://image.joylau.cn/blog/vm_options_config.jpg)
 
+mac os 下路径为: -Djava.library.path=/Users/joylau/opencv4/installation/OpenCV-master/share/java/opencv4
+
 
 3. 加载动态库
 
@@ -328,3 +330,50 @@ tags: [OpenCV]
 ![test_source](http://image.joylau.cn/blog/image-test.jpg)
 ![test_contours](http://image.joylau.cn/blog/test_contours.jpg)
 
+
+6. 实时人脸识别
+
+``` java
+    /**
+         * OpenCV-4.0.0 实时人脸识别
+         *
+         */
+        public static void videoFace() {
+            VideoCapture capture=new VideoCapture(0);
+            Mat image=new Mat();
+            int index=0;
+            if (capture.isOpened()) {
+                do {
+                    capture.read(image);
+                    HighGui.imshow("实时人脸识别", getFace(image));
+                    index = HighGui.waitKey(1);
+                } while (index != 27);
+            }
+        }
+    
+        /**
+         * OpenCV-4.0.0 人脸识别
+         * @param image 待处理Mat图片(视频中的某一帧)
+         * @return 处理后的图片
+         */
+        public static Mat getFace(Mat image) {
+            // 1 读取OpenCV自带的人脸识别特征XML文件
+            CascadeClassifier facebook=new CascadeClassifier("/Users/joylau/opencv4/opencv/data/haarcascades/haarcascade_frontalface_alt.xml");
+            // 2  特征匹配类
+            MatOfRect face = new MatOfRect();
+            // 3 特征匹配
+            facebook.detectMultiScale(image, face);
+            Rect[] rects=face.toArray();
+            log.info("匹配到 "+rects.length+" 个人脸");
+            // 4 为每张识别到的人脸画一个圈
+            for (Rect rect : rects) {
+                Imgproc.rectangle(image, new Point(rect.x, rect.y), new Point(rect.x + rect.width, rect.y + rect.height), new Scalar(0, 255, 0));
+                Imgproc.putText(image, "Human", new Point(rect.x, rect.y), Imgproc.FONT_HERSHEY_SIMPLEX, 2.0, new Scalar(0, 255, 0), 1, Imgproc.LINE_AA, false);
+                //Mat dst=image.clone();
+                //Imgproc.resize(image, image, new Size(300,300));
+            }
+            return image;
+        }
+```
+
+<center><video src="http://image.joylau.cn/blog/opencv-video-face.mp4" loop="true" controls="controls">您的浏览器版本太低，无法观看本视频</video></center>
