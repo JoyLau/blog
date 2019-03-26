@@ -1,7 +1,7 @@
 ---
-title: CentOS 和 Ubuntu 上编译安装 OpenCV4 及 SpringBoot 的结合使用
+title: CentOS , Ubuntu 和 Mac OS 上编译安装 OpenCV4 及 SpringBoot 的结合使用
 date: 2019-03-15 15:41:23
-description: 记录下 CentOS 和 Ubuntu 编译安装 OpenCV
+description: 记录下 CentOS , Ubuntu 和 Mac OS 上编译安装 OpenCV
 categories: [OpenCV篇]
 tags: [OpenCV]
 ---
@@ -9,7 +9,7 @@ tags: [OpenCV]
 <!-- more -->
 ### 为什么没有 Windows 下的编译安装
 因为官网已经提供的编译好的 exe 包,双击运行就会解压到特定的目录了,除此之外官网还提供了 ios 版和 安卓版
-这里着重记录下 CentOS 和 Ubuntu 下的安装,因为官网没有提供编译好的包
+这里着重记录下 CentOS , Ubuntu 和 Mac OS 下的安装,因为官网没有提供编译好的包
 
 ### 条件
 1. GCC 4.4.x or later
@@ -38,7 +38,184 @@ tags: [OpenCV]
 11. 生成文档 cd ~/opencv/build/doc/; make -j7 doxygen
 12. make install
 
-### CentOS 上 CMake 版本太低的解决方法
+
+### 编译好的包
+1. centos7 版: http://cloud.joylau.cn:1194/s/kUoNelmj1SX810K 或者  https://pan.baidu.com/s/1qaZ-TbF0xP0DxaEJKbdt-A 提取码: jkir
+2. Ubuntu 16.04 版: http://cloud.joylau.cn:1194/s/TsNRKwxJhM0v0HE  或者  https://pan.baidu.com/s/1ha6nATLrSt5WPL1iQlmWSg 提取码: gduu
+3. java 调用所需 opencv-410.jar 包: http://image.joylau.cn/blog/opencv-410.jar
+
+
+
+### Mac OS 上
+1. AppStore 上安装 XCode, 安装完成打开 XCode , 同意 license
+2. 安装 HomeBrew
+3. 安装必要依赖: Python 3, CMake and Qt 5
+
+```bash
+    brew install python3
+    brew install cmake
+    brew install qt5
+```
+
+4. 安装环境
+
+```bash
+    mkdir ~/opencv4
+    git clone https://github.com/opencv/opencv.git
+    git clone https://github.com/opencv/opencv_contrib.git
+    
+    # 变量定义
+    cwd=$(pwd)
+    cvVersion="master"
+    QT5PATH=/usr/local/Cellar/qt/5.12.2
+    
+    rm -rf opencv/build
+    rm -rf opencv_contrib/build
+    
+    # Create directory for installation
+    mkdir -p installation/OpenCV-"$cvVersion"
+    
+    sudo -H pip3 install -U pip numpy
+    # Install virtual environment
+    sudo -H python3 -m pip install virtualenv virtualenvwrapper
+    VIRTUALENVWRAPPER_PYTHON=/usr/local/bin/python3
+    echo "VIRTUALENVWRAPPER_PYTHON=/usr/local/bin/python3" >> ~/.bash_profile
+    echo "# Virtual Environment Wrapper" >> ~/.bash_profile
+    echo "source /usr/local/bin/virtualenvwrapper.sh" >> ~/.bash_profile
+    cd $cwd
+    source /usr/local/bin/virtualenvwrapper.sh
+     
+    ############ For Python 3 ############
+    # create virtual environment 由于 mac OS 本身使用的是 Python 2.7 , 而一些本身的应用依赖于 Python 2 ,为了不影响原来的环境,这里创建一个 Python3 的虚拟环境来进行编译
+    mkvirtualenv OpenCV-"$cvVersion"-py3 -p python3
+    workon OpenCV-"$cvVersion"-py3
+      
+    # now install python libraries within this virtual environment
+    pip install cmake numpy scipy matplotlib scikit-image scikit-learn ipython dlib
+      
+    # quit virtual environment
+    deactivate
+    ######################################
+    
+    cd opencv
+    mkdir build
+    cd build
+    
+    cmake -D CMAKE_BUILD_TYPE=RELEASE \
+                -D CMAKE_INSTALL_PREFIX=$cwd/installation/OpenCV-"$cvVersion" \
+                -D INSTALL_C_EXAMPLES=ON \
+                -D INSTALL_PYTHON_EXAMPLES=ON \
+                -D WITH_TBB=ON \
+                -D WITH_V4L=ON \
+                -D OPENCV_SKIP_PYTHON_LOADER=ON \
+                -D CMAKE_PREFIX_PATH=$QT5PATH \
+                -D CMAKE_MODULE_PATH="$QT5PATH"/lib/cmake \
+                -D OPENCV_PYTHON3_INSTALL_PATH=~/.virtualenvs/OpenCV-"$cvVersion"-py3/lib/python3.7/site-packages \
+            -D WITH_QT=ON \
+            -D WITH_OPENGL=ON \
+            -D OPENCV_EXTRA_MODULES_PATH=../../opencv_contrib/modules \
+            -D BUILD_EXAMPLES=ON ..
+    
+    make -j$(sysctl -n hw.physicalcpu)
+    make install
+     
+```
+
+5. cmake 后输出如下:
+
+```bash
+    --   OpenCV modules:
+    --     To be built:                 aruco bgsegm bioinspired calib3d ccalib core cvv datasets dnn dnn_objdetect dpm face features2d flann freetype fuzzy gapi hfs highgui img_hash imgcodecs imgproc java java_bindings_generator line_descriptor ml objdetect optflow phase_unwrapping photo plot python2 python3 python_bindings_generator quality reg rgbd saliency shape stereo stitching structured_light superres surface_matching text tracking ts video videoio videostab xfeatures2d ximgproc xobjdetect xphoto
+    --     Disabled:                    world
+    --     Disabled by dependency:      -
+    --     Unavailable:                 cnn_3dobj cudaarithm cudabgsegm cudacodec cudafeatures2d cudafilters cudaimgproc cudalegacy cudaobjdetect cudaoptflow cudastereo cudawarping cudev hdf js matlab ovis sfm viz
+    --     Applications:                tests perf_tests examples apps
+    --     Documentation:               NO
+    --     Non-free algorithms:         NO
+    -- 
+    --   GUI: 
+    --     QT:                          YES (ver 5.12.2)
+    --       QT OpenGL support:         YES (Qt5::OpenGL 5.12.2)
+    --     Cocoa:                       YES
+    --     OpenGL support:              YES (/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/System/Library/Frameworks/OpenGL.framework /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/System/Library/Frameworks/OpenGL.framework)
+    --     VTK support:                 NO
+    -- 
+    --   Media I/O: 
+    --     ZLib:                        build (ver 1.2.11)
+    --     JPEG:                        build-libjpeg-turbo (ver 2.0.2-62)
+    --     WEBP:                        build (ver encoder: 0x020e)
+    --     PNG:                         build (ver 1.6.36)
+    --     TIFF:                        build (ver 42 - 4.0.10)
+    --     JPEG 2000:                   build (ver 1.900.1)
+    --     OpenEXR:                     build (ver 1.7.1)
+    --     HDR:                         YES
+    --     SUNRASTER:                   YES
+    --     PXM:                         YES
+    --     PFM:                         YES
+    -- 
+    --   Video I/O:
+    --     DC1394:                      NO
+    --     FFMPEG:                      YES
+    --       avcodec:                   YES (58.35.100)
+    --       avformat:                  YES (58.20.100)
+    --       avutil:                    YES (56.22.100)
+    --       swscale:                   YES (5.3.100)
+    --       avresample:                YES (4.0.0)
+    --     GStreamer:                   NO
+    --     AVFoundation:                YES
+    --     v4l/v4l2:                    NO
+    -- 
+    --   Parallel framework:            GCD
+    -- 
+    --   Trace:                         YES (with Intel ITT)
+    -- 
+    --   Other third-party libraries:
+    --     Intel IPP:                   2019.0.0 Gold [2019.0.0]
+    --            at:                   /Users/joylau/opencv4/opencv/build/3rdparty/ippicv/ippicv_mac/icv
+    --     Intel IPP IW:                sources (2019.0.0)
+    --               at:                /Users/joylau/opencv4/opencv/build/3rdparty/ippicv/ippicv_mac/iw
+    --     Lapack:                      YES (/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/System/Library/Frameworks/Accelerate.framework)
+    --     Eigen:                       NO
+    --     Custom HAL:                  NO
+    --     Protobuf:                    build (3.5.1)
+    -- 
+    --   OpenCL:                        YES (no extra features)
+    --     Include path:                NO
+    --     Link libraries:              -framework OpenCL
+    -- 
+    --   Python 2:
+    --     Interpreter:                 /usr/bin/python2.7 (ver 2.7.10)
+    --     Libraries:                   /usr/lib/libpython2.7.dylib (ver 2.7.10)
+    --     numpy:                       /System/Library/Frameworks/Python.framework/Versions/2.7/Extras/lib/python/numpy/core/include (ver 1.8.0rc1)
+    --     install path:                lib/python2.7/site-packages
+    -- 
+    --   Python 3:
+    --     Interpreter:                 /usr/local/bin/python3 (ver 3.7.2)
+    --     Libraries:                   /usr/local/Frameworks/Python.framework/Versions/3.7/lib/libpython3.7m.dylib (ver 3.7.2)
+    --     numpy:                       /usr/local/lib/python3.7/site-packages/numpy/core/include (ver 1.16.2)
+    --     install path:                /Users/joylau/.virtualenvs/OpenCV-master-py3/lib/python3.7/site-packages
+    -- 
+    --   Python (for build):            /usr/bin/python2.7
+    -- 
+    --   Java:                          
+    --     ant:                         /Users/joylau/dev/apache-ant-1.10.5/bin/ant (ver 1.10.5)
+    --     JNI:                         /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/System/Library/Frameworks/JavaVM.framework/Headers /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/System/Library/Frameworks/JavaVM.framework/Headers /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/System/Library/Frameworks/JavaVM.framework/Headers
+    --     Java wrappers:               YES
+    --     Java tests:                  YES
+    -- 
+    --   Install to:                    /Users/joylau/opencv4/installation/OpenCV-master
+    -- -----------------------------------------------------------------
+    -- 
+    -- Configuring done
+    -- Generating done
+    -- Build files have been written to: /Users/joylau/opencv4/opencv/build
+```
+
+6. 编译好的安装包: http://cloud.joylau.cn:1194/s/6GMLl09ZAYNAUMU 或者: https://pan.baidu.com/s/1YBxUD_vB1zKOcxHeAtn6Xw 提取码: twsq 
+
+### 遇到的问题
+
+#### CentOS 上 CMake 版本太低的解决方法
 1. yum 上安装的版本太低,先卸载掉版本低的,yum remove cmake
 2. cd /opt
    tar zxvf cmake-3.10.2-Linux-x86_64.tar.gz
@@ -49,7 +226,7 @@ tags: [OpenCV]
 
 4. source /etc/profile 
 
-### 没有生成 opencv-410.jar 
+#### 没有生成 opencv-410.jar 
 
 ``` bash
     Java:                          
@@ -61,13 +238,6 @@ tags: [OpenCV]
 ```
 
 需要 ant 环境,安装后即可, java 即可进行调用
-
-
-### 编译好的包
-1. centos7 版: http://cloud.joylau.cn:1194/s/kUoNelmj1SX810K 或者  https://pan.baidu.com/s/1qaZ-TbF0xP0DxaEJKbdt-A 提取码: jkir
-2. Ubuntu 16.04 版: http://cloud.joylau.cn:1194/s/TsNRKwxJhM0v0HE  或者  https://pan.baidu.com/s/1ha6nATLrSt5WPL1iQlmWSg 提取码: gduu
-3. java 调用所需 opencv-410.jar 包: http://image.joylau.cn/blog/opencv-410.jar
-
 
 ### IDEA 及 Spring Boot 项目中的使用
 1. 下载 opencv-410.jar 包,引入到项目中
