@@ -36,7 +36,8 @@ tags: [Docker, OpenVPN]
 ### Linux 
 1. 安装 openvpn：`sudo yum install openvpn` 或者 `sudo apt install openvpn`
 2. 找到 ovpn 文件所在目录： `sudo openvpn --config ./liufa.ovpn`, 看到成功信息时即连接成功
-3. 可以用 nohup 以守护进程运行
+3. `--daemon` 参数以守护进程运行
+4. 或者写个 service 文件以守护进程并且开机启动运行
 
 ### MacOS
 1. 安装 Tunnelblick，地址：https://tunnelblick.net/
@@ -44,12 +45,57 @@ tags: [Docker, OpenVPN]
 3. 状态栏上点击连接VPN
 
 
-## 注意
-- 连接上 VPN 后,默认所有流量都⾛的 VPN,但事实上我们并不想这么做. 
-- ⽐如公司内⽹的⽹段为 192.168.10.0 ⽹段,我们先删除 2 个 0.0.0.0 的路由: `route delete 0.0.0.0 `
-- 然后添加 0.0.0.0 到本机的⽹段 `route add 0.0.0.0 mask 255.255.255.0 本机内⽹网关` 
-- 再指定 10 ⽹段⾛ VPN 通道 `route add 192.168.10.0 mask 255.255.255.0 VPN 网关`
+## 路由设置
+连接上 VPN 后,默认所有流量都走的 VPN,但事实上我们并不想这么做
+
+### Windows 上路由手动配置
+
+- ⽐如公司内网的网段为 192.168.10.0 网段,我们先删除 2 个 0.0.0.0 的路由: `route delete 0.0.0.0 `
+- 然后添加 0.0.0.0 到本机的网段 `route add 0.0.0.0 mask 255.255.255.0 本机内网网关` 
+- 再指定 10 网段走 VPN 通道 `route add 192.168.10.0 mask 255.255.255.0 VPN 网关`
 - 以上路由添加默认是临时的,重启失效,⽤久保存可加 -p 参数
+
+### OpenVPN 服务端配置
+修改配置文件 `openvpn.conf`
+在 
+
+``` bash
+    ### Route Configurations Below
+    route 192.168.254.0 255.255.255.0
+```
+
+下面添加路由即可， 客户端连接时会收到服务端推送的路由
+
+### OpenVPN 客户端设置
+很多时候我们希望自己的客户端能够自定义路由，而且更该服务端的配置并不是一个相对较好的做法
+
+找到我们的 ovpn 配置文件 
+
+到最后一行
+
+`redirect-gateway def1`
+即是我们全部流量走 VPN 的配置
+
+#### route-nopull
+客户端加入这个参数后,OpenVPN 连接后不会添加路由,也就是不会有任何网络请求走 OpenVPN
+
+#### vpn_gateway
+当客户端加入 `route-nopull` 后,所有出去的访问都不从 OpenVPN 出去,但可通过添加 vpn_gateway 参数使部分IP访问走 OpenVPN 出去
+
+```bash
+    route 192.168.255.0 255.255.255.0 vpn_gateway
+    route 192.168.10.0 255.255.255.0 vpn_gateway
+```
+
+#### net_gateway
+和 `vpn_gateway` 相反,他表示在默认出去的访问全部走 OpenVPN 时,强行指定部分 IP 访问不通过 OpenVPN 出去
+
+```bash
+    max-routes 1000 # 表示可以添加路由的条数,默认只允许添加100条路由,如果少于100条路由可不加这个参数
+    route 172.121.0.0 255.255.0.0 net_gateway
+```
+
+
 
 
 
