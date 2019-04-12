@@ -413,6 +413,24 @@ $JAVA_HOME/bin/java -version  # 与直接执行 java -version 一样
 6. 重启 vsftpd
 
 
+###  无法连接 FTP 服务器
+
+使用 FTP 工具连接失败,报如下错误:
+
+```bash
+   状态: 	连接建立，等待欢迎消息...
+   状态: 	不安全的服务器，不支持 FTP over TLS。
+   命令: 	USER ftp
+   响应: 	331 Please specify the password.
+   命令: 	PASS ******
+   响应: 	530 Login incorrect.
+   错误: 	严重错误: 无法连接到服务器
+   状态: 	已从服务器断开
+```
+
+解决方法: 找到 `/etc/pam.d/vsftpd` 注释掉 `#auth       required    pam_shells.so`
+
+
 ## RabbitMQ 服务端安装
 1. yum install rabbitmq-server
 2. rabbitmq-plugins enable rabbitmq_management
