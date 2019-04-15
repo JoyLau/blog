@@ -204,3 +204,13 @@ debug了一下，发现根本没有执行重写的 equals 方法
         return t -> seen.add(keyExtractor.apply(t));
     }
 ```
+
+## 2个集合的元素两两组合成一个 n * m 的集合
+
+``` java
+    Integer[] xs = new Integer[]{3, 4};
+    Integer[] ys = new Integer[]{5, 6};
+
+    List<Image> images = Arrays.stream(xs).flatMap(x -> Arrays.stream(ys).map(y -> new Image(x,y))).collect(Collectors.toList());
+
+```
