@@ -436,6 +436,9 @@ $JAVA_HOME/bin/java -version  # 与直接执行 java -version 一样
 2. rabbitmq-plugins enable rabbitmq_management
 3. systemctl start rabbitmq-server
 
+### 问题
+1. 当主机的 hostname 不是 localhost 时, 启动会报错: `unable to connect to epmd (port 4369) on 68: badarg (unknown POSIX error)` , 这时在文件中 `/etc/rabbitmq/rabbitmq-env.conf` 写入 `NODENAME=rabbit@localhost` 保存重启.
+
 
 ## MariaDB 的安装
 
