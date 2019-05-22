@@ -535,9 +535,11 @@ MariaDB的默认编码是latin1，插入中文会乱码，因此需要将编码�
 `allow-query     { any; };`               # 允许哪些客户端访问DNS服务，此处改为“any”，表示任意主机
 
 修改这2项配置即可
+
+### 配置自定义域名解析
 `include "/etc/named.rfc1912.zones"; `    # include代表该文件是子配置文件
 
-3. `vim /etc/named.rfc1912.zones ` , 添加一个我们自定义的域名配置,这里我使用的是 `baidu.com`
+1. `vim /etc/named.rfc1912.zones ` , 添加一个我们自定义的域名配置,这里我使用的是 `baidu.com`
 
 ``` bash
     zone "baidu.com" IN {
@@ -549,7 +551,7 @@ MariaDB的默认编码是latin1，插入中文会乱码，因此需要将编码�
 
 上述文件默认的目录在 `/var/named/data` 目录下
 
-4. `vim /var/named/data/baidu.com.zone `
+2. `vim /var/named/data/baidu.com.zone `
 
 配置如下: 注意格式
 
@@ -585,5 +587,43 @@ MariaDB的默认编码是latin1，插入中文会乱码，因此需要将编码�
 - MX记录：电子邮件系统就是使用MX记录来更有效的路由邮件。
 - PTR记录：从IP地址到主机名的反向映射。与A记录一样，必须为每个网络接口有一条PTR记录。
 
-5. `chown root:named baidu.com.zone` 修改权限
-6. `systemctl restart named`
+3. `chown root:named baidu.com.zone` 修改权限
+4. `systemctl restart named`
+
+## PostgreSQL 安装
+### 说明
+yum 安装的版本可能比较低,对于一些应用来说可能不好,这里使用官网的安装包
+### 安装
+1. 打开 https://www.postgresql.org/download/linux/redhat/
+2. 选择版本
+3. 安装源,我这里以 10 为例, `yum install https://download.postgresql.org/pub/repos/yum/reporpms/EL-7-x86_64/pgdg-redhat-repo-latest.noarch.rpm`
+4. 安装程序, `yum install postgresql10` , `yum install postgresql10-server`
+5. 初始化数据库 `/usr/pgsql-10/bin/postgresql-10-setup initdb`
+6. 开机启动 `systemctl enable postgresql-10;systemctl start postgresql-10`
+
+### 修改管理员密码
+数据库的默认管理员用户是 postgres, 在 PostgreSQL 安装好后会创建用户 postgres
+1. 切换到 postgres 用户 `su postgres`
+2. 执行 `psql` 登陆数据库
+3. 修改密码: `ALTER USER postgres WITH PASSWORD 'postgres';`
+
+
+### 配置远程访问
+1. 修改 `postgresql.conf` 文件的 `listen_address = *`
+2. 用户授权: 修改 `pg_hba.conf` 添加 `host all all 0.0.0.0/0 password` 一行
+
+说明:
+- ident: 系统用户和数据库用户对于即可访问
+- md5: md5 加密的密码认证
+- password: 明文密码
+- trust: 无需密码
+- reject: 拒接认证
+
+### 修改数据存放目录
+1. 修改 `/usr/lib/systemd/system/postgresql-10.service` 的 `PGDATA`
+2. `systemctl daemon-reload `
+3. `postgresql-step initdb` 初始化数据库,遇到权限问题,先创建好目录
+    1. chrow -R postgres:postgres /...
+    2. chmod -R 700 /...
+    3. 实在不行就使用 postgres 的身份操作
+4. 如果之前数据库有数据,可以直接拷贝数据目录,之后目录的权限设定好即可
