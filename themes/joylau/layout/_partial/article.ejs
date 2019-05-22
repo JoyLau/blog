@@ -35,6 +35,10 @@
     <% } %>
     <div class="article-entry" itemprop="articleBody">
       <% if (index && (post.description || post.excerpt)){ %>
+           <% if (post.img){ %>
+               <div><%- post.img %></div>
+           <% } %>
+
           <% if (post.description){ %>
               <div class="article-description-tlt"><%- post.description %></div>
           <% } else { %>

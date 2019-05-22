@@ -1,7 +1,8 @@
 ---
 title: 2017年程序员高考试卷
 date: 2017-6-9 20:58:03
-description: "<center><img src='//image.joylau.cn/blog/gaokao.gif' alt='broing'></center>  <br>2017年全国高考结束了，这里有份程序员的高考试卷，一起来做套题压压惊"
+img: <center><img src='//image.joylau.cn/blog/gaokao.gif' alt='broing'></center>
+description: 2017年全国高考结束了，这里有份程序员的高考试卷，一起来做套题压压惊
 categories: [其他篇]
 tags: [程序员]
 ---

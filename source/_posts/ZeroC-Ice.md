@@ -1,7 +1,8 @@
 ---
 title: ZeroC Ice --- 高性能RPC技术王者
 date: 2017-07-10 16:09:59
-description: "<center><img src='//image.joylau.cn/blog/ZeroC-ICE.png' alt='ZeroC-ICE'></center><br>HTTP REST 风格的远程通信技术可谓风靡一时，但是其低效也为人诟病<br>高性能，多语言支持，跨平台，轻量级是ICE主打的特性<br>本篇文章我将自己总结一下自己使用ZeroC Ice的技术"
+img: <center><img src='//image.joylau.cn/blog/ZeroC-ICE.png' alt='ZeroC-ICE'></center>
+description: HTTP REST 风格的远程通信技术可谓风靡一时，但是其低效也为人诟病<br>高性能，多语言支持，跨平台，轻量级是ICE主打的特性<br>本篇文章我将自己总结一下自己使用ZeroC Ice的技术
 categories: [ZeroC Ice篇]
 tags: [ZeroC Ice]
 ---

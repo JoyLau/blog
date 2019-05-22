@@ -1,7 +1,8 @@
 ---
 title: 重剑无锋,大巧不工 SpringBoot --- 实战项目 JoyMedia （ 分析篇 ）
 date: 2017-07-24 10:36:19
-description: "<center><img src='//image.joylau.cn/blog/JoyMedia.gif' alt='JoyMedia预览'><br><p>预览图</p><img src='//image.joylau.cn/blog/JoyMedia.png' alt='JoyMedia系统结构图'></center>  <br>JoyMedia --- 各种 SpringBoot 微服务实战"
+img: <center><img src='//image.joylau.cn/blog/JoyMedia.gif' alt='JoyMedia预览'><br><p>预览图</p><img src='//image.joylau.cn/blog/JoyMedia.png' alt='JoyMedia系统结构图'></center>
+description: JoyMedia --- 各种 SpringBoot 微服务实战
 categories: [SpringBoot篇]
 tags: [Spring,SpringBoot]
 ---

@@ -1,7 +1,8 @@
 ---
 title: 当鼠标移入图片上慢慢放大的效果
 date: 2017-10-13 15:07:54
-description: "<center><img src='http://image.joylau.cn/blog/image-scale.gif' alt='image-scale'></center>"
+img: <center><img src='http://image.joylau.cn/blog/image-scale.gif' alt='image-scale'></center>
+description: " "
 categories: [前端篇]
 tags: [CSS3]
 ---

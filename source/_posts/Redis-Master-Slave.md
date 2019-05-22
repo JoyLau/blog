@@ -1,7 +1,8 @@
 ---
 title: Redis主从复制 --- 实现读写分离
 date: 2017-4-27 13:27:05
-description: "<center><img src='//image.joylau.cn/blog/Redis-Master&Slave.jpg' alt='Redis-Master&Slave'></center>"
+img: <center><img src='//image.joylau.cn/blog/Redis-Master&Slave.jpg' alt='Redis-Master&Slave'></center>
+description: " "
 categories: [Redis篇]
 tags: [redis]
 ---

@@ -1,7 +1,8 @@
 ---
 title: SpringCloud --- 构建开发环境
 date: 2017-4-24 14:26:19
-description: <center><img src='//image.joylau.cn/blog/SpringEureka.png' alt='SpringEureka'></center><br>话不多说，想要使用就得创建服务和服务注册中心以及注册发现他们！
+img: <center><img src='//image.joylau.cn/blog/SpringEureka.png' alt='SpringEureka'></center>
+description: 话不多说，想要使用就得创建服务和服务注册中心以及注册发现他们！
 categories: [SpringCloud篇]
 tags: [SpringBoot,SpringCloud,Eureka]
 ---

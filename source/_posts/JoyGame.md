@@ -1,7 +1,8 @@
 ---
 title: JoyGame --- 一个情怀游戏平台
 date: 2017-9-11 14:26:53
-description: '<center><img src="//image.joylau.cn/blog/JoyGame-login.png" alt="JoyGame"></center>  <br>最近和哥们玩起了以前的很多经典单机游戏，比如红警2，魔兽...<br>像这些游戏都支持局域网对战<br>于是有了这样一个平台的诞生 ---- JoyGame'
+img: <center><img src="//image.joylau.cn/blog/JoyGame-login.png" alt="JoyGame"></center>
+description: '最近和哥们玩起了以前的很多经典单机游戏，比如红警2，魔兽...<br>像这些游戏都支持局域网对战<br>于是有了这样一个平台的诞生 ---- JoyGame'
 categories: [程序员篇]
 tags: [程序员,技能]
 ---

@@ -1,7 +1,8 @@
 ---
 title: 重剑无锋,大巧不工 SpringBoot --- 环境集成
 date: 2017-3-14 13:49:11
-description: <center><img src = '//image.joylau.cn/blog/SpringBoot-Integrate.png' alt='环境集成'></center>
+img: <center><img src = '//image.joylau.cn/blog/SpringBoot-Integrate.png' alt='环境集成'></center>
+description: " "
 categories: [SpringBoot篇]
 tags: [Spring,SpringBoot]
 ---

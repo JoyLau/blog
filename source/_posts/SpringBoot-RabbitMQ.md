@@ -1,7 +1,8 @@
 ---
 title: 重剑无锋,大巧不工 SpringBoot --- 整合RabbitMQ
 date: 2017-6-16 14:58:40
-description: "<center><img src='//image.joylau.cn/blog/spring-boot-rabbitMQ.png' alt='spring-boot-rabbitMQ'></center>  <br>本文将整合SpringBoot和RabbitMQ一个DEMO，后面实现更多样的开发"
+img: <center><img src='//image.joylau.cn/blog/spring-boot-rabbitMQ.png' alt='spring-boot-rabbitMQ'></center>
+description: 本文将整合SpringBoot和RabbitMQ一个DEMO，后面实现更多样的开发
 categories: [SpringBoot篇]
 tags: [Spring,SpringBoot,RabbitMQ]
 ---

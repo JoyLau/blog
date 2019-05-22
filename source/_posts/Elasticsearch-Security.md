@@ -1,7 +1,8 @@
 ---
 title: Elasticsearch 集群安全控制
 date: 2018-5-21 15:27:49
-description: "<center><img src='//image.joylau.cn/blog/elasticsearch-secu.jpg' alt='elasticsearch-security'/></center><br>一般我们搭建起来的 es 集群都可以通过默认的 9200 端口来进行 API 访问,这在局域网上没有什么大问题，如果说搭建的环境在公网上，这将埋下巨大的隐患" 
+img: <center><img src='//image.joylau.cn/blog/elasticsearch-secu.jpg' alt='elasticsearch-security'/></center>
+description: 一般我们搭建起来的 es 集群都可以通过默认的 9200 端口来进行 API 访问,这在局域网上没有什么大问题，如果说搭建的环境在公网上，这将埋下巨大的隐患 
 categories: [大数据篇]
 tags: [Elasticsearch,Linux]
 ---

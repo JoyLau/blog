@@ -1,7 +1,8 @@
 ---
 title: 重剑无锋,大巧不工 SpringBoot --- 实战项目 JoyMedia （ 搜索篇 ）
 date: 2017-08-06 18:09:47
-description: "<center><img src='//image.joylau.cn/blog/jquery-autocomplate.gif' alt='JoyMedia-Search'></center>  <br>JoyMedia --- 搜索自己想听的音乐"
+img: <center><img src='//image.joylau.cn/blog/jquery-autocomplate.gif' alt='JoyMedia-Search'></center>
+description: JoyMedia --- 搜索自己想听的音乐
 categories: [SpringBoot篇]
 tags: [SpringBoot,Jquery]
 ---

@@ -1,7 +1,8 @@
 ---
 title: Redis有多快??? --- 基准性能测试
 date: 2017-4-1 13:42:38
-description: "<center><img src='//image.joylau.cn/blog/Redis-Benchmark.jpg' alt='Redis-Benchmark'></center><br>Redis有多快???我们安装的Redis提供一个基准测试工具redis-benchmark，测一下就知道了....."
+img: <center><img src='//image.joylau.cn/blog/Redis-Benchmark.jpg' alt='Redis-Benchmark'></center>
+description: Redis有多快???我们安装的Redis提供一个基准测试工具redis-benchmark，测一下就知道了.....
 categories: [Redis篇]
 tags: [redis]
 ---

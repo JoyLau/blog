@@ -1,7 +1,8 @@
 ---
 title: 重剑无锋,大巧不工 SpringBoot --- RESTful API
 date: 2017-6-18 10:36:21
-description: "<center><img src='//image.joylau.cn/blog/spring-boot-swagger.png' alt='spring-boot-swagger'></center>  <br>最近在写将ZeroC Ice接口包装成RESTful API以供其他端调用，接口太多奈何要写的文档也太多，想在提供接口时就展示相应的说明文档"
+img: <center><img src='//image.joylau.cn/blog/spring-boot-swagger.png' alt='spring-boot-swagger'></center>
+description: 最近在写将ZeroC Ice接口包装成RESTful API以供其他端调用，接口太多奈何要写的文档也太多，想在提供接口时就展示相应的说明文档
 categories: [SpringBoot篇]
 tags: [Spring,SpringBoot,Swagger2]
 ---

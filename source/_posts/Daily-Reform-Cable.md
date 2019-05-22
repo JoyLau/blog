@@ -1,7 +1,7 @@
 ---
 title: 日常折腾 --- 家里网线改造记录
 date: 2019-05-22 11:43:26
-description: 常折腾之家里网线改造记录
+description: 日常折腾之家里网线改造记录
 categories: [日常折腾篇]
 tags: [日常折腾]
 ---

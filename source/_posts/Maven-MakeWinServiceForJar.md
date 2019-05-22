@@ -1,7 +1,8 @@
 ---
 title: Maven --- 将 SpringBoot 项目做成Windows服务(Windows Service)
 date: 2017-9-4 01:42:26
-description: '<center><video src="http://image.joylau.cn/blog/joylau-springboot-daemon-service-video.mp4" loop="true" controls="controls">您的浏览器版本太低，无法观看本视频</video></center>  <br>一款将 SpringBoot 项目做成Windows Service 的 Maven 插件<br>包括但不限于 SpringBoot ,任何打成 java jar 包运行的 Maven 项目都可以使用'
+img: '<center><video src="http://image.joylau.cn/blog/joylau-springboot-daemon-service-video.mp4" loop="true" controls="controls">您的浏览器版本太低，无法观看本视频</video></center>'
+description: '一款将 SpringBoot 项目做成Windows Service 的 Maven 插件<br>包括但不限于 SpringBoot ,任何打成 java jar 包运行的 Maven 项目都可以使用'
 categories: [Maven篇]
 tags: [Maven,SpringBoot]
 ---

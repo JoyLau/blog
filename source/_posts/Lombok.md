@@ -1,7 +1,8 @@
 ---
 title: Lombok 注解小记
 date: 2018-5-15 10:24:24
-description: "<center><img src='//image.joylau.cn/blog/Lombok.png' alt='Lombok'></center> <br> Lombok 一些常用注解记录"
+img: <center><img src='//image.joylau.cn/blog/Lombok.png' alt='Lombok'></center>
+description: Lombok 一些常用注解记录
 categories: [工具类篇]
 tags: [Lombok]
 ---
