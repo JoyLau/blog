@@ -109,4 +109,14 @@ Dockerfile 如下:
 还有一种方式是编写 dockerfile 文件
 我觉得没有这种方式方便,就不说了
 
+### docker 安装在内网服务器, 如何 pull 镜像
+在命令行使用 export HTTP_PROXY=xxxx:xx , 命令行里绝大部分命令都可以使用此代理联网,但是安装的 docker 不行,无法 pull 下来镜像文件,想要 pull 使用代理的话,需要添加代理的变量
+vim /usr/lib/systemd/system/docker.service
+添加
+Environment=HTTP_PROXY=http://xxxx:xxx
+Environment=HTTPS_PROXY=http://xxxx:xxx
+保存
+systemctl deamon-reload
+systemctl restart docker
+
 
