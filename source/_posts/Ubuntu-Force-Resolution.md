@@ -19,4 +19,14 @@ tags: [Ubuntu]
 3. 将 cvt 得到的显示模式使用 xrandr 命令添加:
     `sudo xrandr --newmode "1920x1080_60.00" 173.00  1920 2048 2248 2576  1080 1083 1088 1120 -hsync +vsync`
     `sudo xrandr --addmode VGA-1 "1920x1080_60.00"`
-4. 这样设置重启会失效, 将第三步的操作写到 `/etc/profile` 即可
+4. 这样设置重启会失效, 将脚本写到一个文件中,并授予执行权限
+
+```bash
+    !#/bin/bash
+    cvt 1920 1080
+    ## 如果登录用户不是 root ,则需要使用 sudo ,sudo 需要输入密码,可使用下面的方式解决
+    echo "password" | sudo -S xrandr --newmode "1920x1080_60.00" 173.00  1920 2048 2248 2576  1080 1083 1088 1120 -hsync +vsync
+    echo "password" | sudo -S xrandr --addmode VGA-1 "1920x1080_60.00"
+```
+
+5. 在 Ubuntu 中搜索 `启动应用程序`, 将脚本添加进去,完成.
