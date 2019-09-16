@@ -30,6 +30,8 @@ Windows 上是通过注册表实现的
    app.setAsDefaultProtocolClient(PROTOCOL, process.execPath, [`${__dirname}`]);
 ```
 
+这一句话即可完成 Windows 下和 macOS 下的协议注册,只不过需要应用启动后才可注册成功,就是说如果安装过后不打开的话,无法通过协议来唤醒应用,解决方式我们后面再讲
+
 第一个参数为协议的名称, 第二个参数为执行的命令,第三个参数为所传字符串参数数组
 
 在 Windows 环境下最后一项需要带上当前的项目路径,否则的话在开发模式下会打不开 electron 应用,打包完成后不会存在这个问题, mac 上也不会存在这个问题
