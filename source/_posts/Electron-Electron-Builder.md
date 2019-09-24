@@ -125,3 +125,7 @@ tags: [Electron]
       #set $isForceMachineInstall
     !macroend
 ```
+
+### NSIS 引入 license 文件包含中文的问题
+当引入的 license 文件里有中文时, 在 Windows (中文操作系统) 平台下打包需要 GBK 编码, 在 macOS 下,GBK 编码会直接报错,需要修改为 UTF-8 编码
+
