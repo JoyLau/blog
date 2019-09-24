@@ -98,4 +98,13 @@ windows 上监听的事件是 `second-instance`, mac 上监听的事件是 `open
     }
 ```
 
+### 浏览器判断 scheme 协议是否存在
+使用 setTimeout, 如果超时未打开的话则说明协议不存在 
 
+```js
+    let downloadURL = "http://xxxx";
+    window.location = "joy-security://xxxxxx_xxxxxxx";
+    setTimeout(function() {
+      window.location = downloadURL;
+    },1000)
+```
