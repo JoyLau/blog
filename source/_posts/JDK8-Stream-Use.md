@@ -214,3 +214,22 @@ debug了一下，发现根本没有执行重写的 equals 方法
     List<Image> images = Arrays.stream(xs).flatMap(x -> Arrays.stream(ys).map(y -> new Image(x,y))).collect(Collectors.toList());
 
 ```
+
+## 集合合并
+比如: List<List<Demo>> list 将所有的 Demo 合并到一个集合;
+
+1. reduce
+
+```java
+    // 第一种
+    List<Demo> demos  = list.stream().reduce(new ArrayList<>(),(demo1,demo2) -> {demo1.addAll(demo2); return demo2;});
+    
+    // 第二种
+    List<Demo> demos  = list.stream().reduce(new ArrayList<>(),(demo1,demo2) -> Stream.concat(demo1.stream(),demo2.stream()).collect(Collectors.toList()));
+```
+
+2. flatMap
+
+```java
+    List<Demo> demos = list.stream().flatMap(Collection::stream).collect(Collectors.toList());
+```
