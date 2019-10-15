@@ -3,7 +3,7 @@ title: Linux 定时删除 10 天前的日志文件
 date: 2018-12-13 15:23:09
 description: 我们的程序在 Linux 上运行会产生大量日志文件,这些日志文件如果不定时清理的话会很快将磁盘沾满
 categories: [Linux篇]
-tags: [Linux,Crond]
+tags: [Linux,Cron]
 ---
 
 <!-- more -->
@@ -53,6 +53,13 @@ tags: [Linux,Crond]
 
 4. 重启定时任务, `systemctl restart crond` , 在 Ubuntu 上叫 cron `systemctl restart cron`
 
+
+### 关于定时任务的配置目录
+1. `/etc/crontab` 文件, 系统级别的定时任务,需要加入用户名
+2. `/var/spool/cron` 目录, 以用户作为区分,一般会有一个和用户名相同的文件,里面记录了定时任务, 一般使用 crontab -e 创建, 语法中不需要指定用户名
+3. `/etc/cron.d/` 和 crontab 文件类似,需要指定用户名
+
+cron执行时，也就是要读取三个地方的配置文件
 
 ### 注意
 1. 执行脚本使用/bin/sh（防止脚本无执行权限），要执行的文件路径是从根开始的绝对路径（防止找不到文件）
