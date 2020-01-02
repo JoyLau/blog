@@ -90,5 +90,9 @@ tags: [react]
     );
 ```
 
+> 注意,这样配置的话, 请求的 uri 是 /metadata, 在 build 后会生成 metadata 文件, 将打包后的文件拷贝到服务器上运行效果不好
+> 一般我都注释掉 template, 再将 outPath 写成 /metadata.html
+
+
 ### 打包不生成 source-map 文件
 在项目更目录下创建文件 .env, 写入: GENERATE_SOURCEMAP=false 即可.
