@@ -19,9 +19,11 @@ undertow 肯定是实现了 JSR356, 在 undertow-websockets-jsr 这个依赖里
 判断肯定是由于移除 Tomcat 的问题,查看依赖发现 `spring-boot-starter-websocket` 依赖了 web , 而 web 默认使用的就是 Tomcat
 于是移除 web 依赖即可
 
-`implementation('org.springframework.boot:spring-boot-starter-web'){
-        exclude group: 'org.springframework.boot', module: 'spring-boot-starter-tomcat'
-}`
+``` groovy 
+    implementation ('org.springframework.boot:spring-boot-starter-websocket'){
+         exclude group: 'org.springframework.boot', module: 'spring-boot-starter-web'
+    }
+```
 
 代码部分:
 
