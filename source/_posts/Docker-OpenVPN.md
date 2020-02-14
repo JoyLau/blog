@@ -95,7 +95,9 @@ tags: [Docker, OpenVPN]
     route 172.121.0.0 255.255.0.0 net_gateway
 ```
 
-
+## 客户端互相访问
+1. 配置 client-to-client
+2. 192.168.255.0 的路由要能够走VPN通道, 可以配置 `redirect-gateway def1` 或者 `route-nopull  route 192.168.255.0 255.255.255.0 vpn_gateway`
 
 
 
