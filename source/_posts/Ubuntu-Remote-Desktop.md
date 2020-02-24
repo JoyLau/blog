@@ -70,6 +70,10 @@ tags: [Ubuntu]
     
 ```
 
+3. 解决复制粘贴的问题
+    - `sudo apt install autocutsel` 安装 autocutsel
+    - `autocutsel -f` 后台运行
+
 ### 问题及解决
 下载 vnc-view 新建一个连接发现连不上...
 尴尬。。。
