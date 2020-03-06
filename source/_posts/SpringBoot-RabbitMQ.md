@@ -175,6 +175,91 @@ tags: [Spring,SpringBoot,RabbitMQ]
 ![示例截图](//image.joylau.cn/blog/spring-boot-rabbitmq-test.png)
 
 
-## 结语
+## exchange 多个消费者
+当Exchange和RoutingKey相同、queue不同时，所有消费者都能消费同样的信息
+Exchange和RoutingKey、queue都相同时，消费者中只有一个能消费信息，其他消费者都不能消费该信息。
 
-- 后面继续更新一些具体业务场景中复杂的使用....
+
+下面示例的队列名称可以随意写个,启动时 @RabbitListener 的 bindings 会自动使用 key 绑定队列到exchange
+``` java
+    @RabbitHandler
+    @RabbitListener(
+            bindings = @QueueBinding(
+                    value = @Queue(value = "${spring.application.name}"),
+                    exchange = @Exchange(value = "${spring.rabbitmq.template.exchange}"),
+                    key = "${spring.rabbitmq.template.routing-key}")
+    )
+    public void listenerTrafficMessage(Message message){
+        System.out.println(message.getClass().getName());
+    }
+```
+
+## 消息返回队列
+
+需要处理完消息后在将消息返回队列的话需要配置 spring.rabbitmq.listener.simple.acknowledge-mode: manual
+之后注解@RabbitListener 到方法上
+Channel channel 进行返回
+
+``` java
+    @RabbitHandler
+    @RabbitListener(
+            bindings = @QueueBinding(
+                    value = @Queue(value = "${spring.application.name}"),
+                    exchange = @Exchange(value = "${spring.rabbitmq.template.exchange}"),
+                    key = "${spring.rabbitmq.template.routing-key}")
+    )
+    public void listenerTrafficMessage(Message message, Channel channel){
+
+        System.out.println(message.getClass().getName());
+
+        try {
+            channel.basicNack(message.getMessageProperties().getDeliveryTag(),false,true);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+    }
+```
+
+
+```yaml
+    spring:
+      rabbitmq:
+        host: 192.168.10.224
+        port: 35672
+        username: guest
+        password: guest
+        virtual-host: /
+        listener:
+          simple:
+            acknowledge-mode: manual #设置消费端手动 ack
+            concurrency: 1 #消费者最小数量
+            max-concurrency: 1 #消费者最大数量
+            prefetch: 1 #在单个请求中处理的消息个数，他应该大于等于事务数量(unack的最大数量)
+        template:
+          exchange: SURVEY_CENTER
+          routing-key: trafficCongestionSituationBD
+```
+
+在属性配置文件里面开启了ACK确认 所以如果代码没有执行ACK确认 你在RabbitMQ的后台会看到消息会一直留在队列里面未消费掉 只要程序一启动开始接受该队列消息的时候 又会收到
+
+``` java
+    // 告诉服务器收到这条消息 已经被我消费了 可以在队列删掉 这样以后就不会再发了
+    // 否则消息服务器以为这条消息没处理掉 后续还会在发，true确认所有消费者获得的消息
+    channel.basicAck(message.getMessageProperties().getDeliveryTag(),false);
+```
+
+丢弃消息
+
+``` java
+    //最后一个参数是：是否重回队列
+    channel.basicNack(message.getMessageProperties().getDeliveryTag(), false,false);
+    //拒绝消息
+    //channel.basicReject(message.getMessageProperties().getDeliveryTag(), true);
+    //消息被丢失
+    //channel.basicReject(message.getMessageProperties().getDeliveryTag(), false);
+    //消息被重新发送
+    //channel.basicReject(message.getMessageProperties().getDeliveryTag(), true);
+    //多条消息被重新发送
+    //channel.basicNack(message.getMessageProperties().getDeliveryTag(), true, true);
+```
