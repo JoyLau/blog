@@ -45,8 +45,7 @@ git rebase 有以下几种使用场景:
     git rebase -i HEAD~4
 ```
 
-在 idea 中可以在 Version Control 中选择提交记录, 然后选择 `Interactively Rebase from Here`
+在 idea 中可以在 Version Control 中选择最早时间的提交记录, 然后选择 `Interactively Rebase from Here`
 然后除了第一个为pick外，其他选择squash，点击start rebasing，接着输入提交信息就可以把多次commit合并为一次了
 
-
-还可以选择 Git -> Repository -> Rebase
+2. 分支合并,可以把本地未push的分叉提交历史整理成直线
