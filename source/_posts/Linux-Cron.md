@@ -1,7 +1,7 @@
 ---
 title: Linux 定时删除 10 天前的日志文件
 date: 2018-12-13 15:23:09
-description: 我们的程序在 Linux 上运行会产生大量日志文件,这些日志文件如果不定时清理的话会很快将磁盘沾满
+description: 我们的程序在 Linux 上运行会产生大量日志文件,这些日志文件如果不定时清理的话会很快将磁盘占满
 categories: [Linux篇]
 tags: [Linux,Cron]
 ---
@@ -9,7 +9,7 @@ tags: [Linux,Cron]
 <!-- more -->
 
 ## 背景
-我们的程序在 Linux 上运行会产生大量日志文件,这些日志文件如果不定时清理的话会很快将磁盘沾满
+我们的程序在 Linux 上运行会产生大量日志文件,这些日志文件如果不定时清理的话会很快将磁盘占满
 
 
 ## 说明
@@ -68,3 +68,36 @@ cron执行时，也就是要读取三个地方的配置文件
 4. 如果时上有值，分钟上必须有值
 5. 日和周不要同时使用，会冲突
 6. `>>` 与 `>/dev/null 2>&1` 不要同时存在
+
+
+### 日志位置
+日志位置位于 **/var/log/cron.log**,如果没有看到日志,可能由于没有开启 cron 日志记录,开启方法: 
+
+`vim /etc/rsyslog.d/50-default.conf`
+
+/var/log/cron.log相关行，将前面注释符#去掉
+
+重启 rsyslog
+
+`service rsyslog  restart`
+
+或者查看系统日志, 使用命令:
+
+`grep cron /var/log/syslog`
+
+能看到和 cron 相关的日志信息
+
+
+### 任务脚本中变量不生效
+在脚本里除了一些自动设置的全局变量,可能有些变量没有生效, 当手动执行脚本OK，但是crontab死活不执行时,在脚本里使用下面的方式
+
+1）脚本中涉及文件路径时写全局路径；
+2）脚本执行要用到java或其他环境变量时，通过source命令引入环境变量
+
+```bash
+    #!/bin/sh
+    source /etc/profile
+    
+```
+
+3) */1 * * * * . /etc/profile;/bin/sh /path/run.sh
