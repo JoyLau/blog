@@ -161,9 +161,14 @@ nginx -t 检查错误
 
 ### Dockfile
 ```text
-    FROM blog-auto-publish:1.6
+    FROM nas.joylau.cn:5007/joy/blog.joylau.cn:1.0
     
     LABEL maintainer="blog.joylau.cn"
+    
+    ENV GITHUB_REPO_USERNAME ""
+    ENV GITHUB_REPO_PASSWORD ""
+    ENV GITHUB_REPO_NAME ""
+    ENV REPO_INFO ""
     
     EXPOSE 80
     
@@ -171,6 +176,14 @@ nginx -t 检查错误
     
     CMD ["sh", "/my-blog/bash/init.sh"]
 ```
+
+打包镜像:
+docker build -t nas.joylau.cn:5007/joy/blog.joylau.cn:1.0 .
+
+打包后镜像大小为: 294 MB
+
+### 使用
+docker run -p 8081:80 -p 8082:8080 -d --name blog.joylau.cn nas.joylau.cn:5007/joy/blog.joylau.cn:1.0
 
 
 ### 备注
