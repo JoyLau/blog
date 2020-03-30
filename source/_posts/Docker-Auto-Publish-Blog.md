@@ -194,6 +194,6 @@ docker run -p 8081:80 -p 8082:8080 -d --name blog.joylau.cn nas.joylau.cn:5007/j
 
 ### 后续优化备忘
 1. 删除原来的 /var/log/nginx/error.log 日志里的错误信息，现有的错误信息是是测试使用产生的
-2. 在镜像里就执行一边 chown -R www-data:www-data /my-blog/* , 否则的话容器刚启动的时候会很慢
+2. 在镜像里就执行一边 chown -R www-data:www-data /my-blog/* , 否则的话容器刚启动的时候会很慢， 可以不执行 hexo g ,使用 hexo s --watch 实时监听文件变化，也不需要 nginx 了，开启 --debug 参数打印详细日志信息 
 3. 考虑将 publish.sh 的最后一行命令不等待执行完就返回，现在的情况是部署到配置较低的机器上执行很慢，会导致请求超时，虽然不影响执行结果
-4. 配置好容器内的时区，是的日志的时间戳更明显
+4. 配置好容器内的时区，使得日志的时间戳更明显
