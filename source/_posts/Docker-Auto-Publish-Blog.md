@@ -190,3 +190,4 @@ docker run -p 8081:80 -p 8082:8080 -d --name blog.joylau.cn nas.joylau.cn:5007/j
 1. 80 端口提供的服务为 blog 页面
 2. 8080 端口提供的服务为执行 shell 命令
 3. 提供 webhook 为 http://host:port/publish.sh ,通过请求这个请求来更新博客
+4. 查看日志文件有 /my-blog/logs/publish.log 和 nginx 的日志文件 /var/log/nginx/error.log
