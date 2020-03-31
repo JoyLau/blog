@@ -15,11 +15,8 @@ tags: [Git]
 
 其中: 
 git reset 有三种参数:
-
 - Soft：这个模式仅仅撤销 commit 记录而已，不影响本地的任何文件，即本地修改的文件内容还会存在,也不影响（index）缓存区的任何文件。
-  
 - Hard：不仅撤销 commit 记录，还将本地的文件指向 commit 前的版本，同时 index 也会指向 commit 前的版本。
-  
 - Mixed：回滚 index ，其余的保持不变。
 
 另外 HEAD 后面加上 `~1` 代表回滚一次 commit 记录, `HEAD^` 代表全部 commit 记录
@@ -40,7 +37,7 @@ git rebase 有以下几种使用场景:
 
 合并最近的 4 次提交纪录
 
-```shell script
+```bash
 
     git rebase -i HEAD~4
 ```
