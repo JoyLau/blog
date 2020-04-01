@@ -219,7 +219,7 @@ vim /my-blog/bash/publish.sh
 4. 实时监听文件变化
 vim /my-bog/bash/init.sh
  
- ```bash
+```bash
     #!/usr/bin/env bash
     service fcgiwrap start
     service nginx start
