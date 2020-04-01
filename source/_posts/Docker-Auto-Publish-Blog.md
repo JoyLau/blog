@@ -203,7 +203,7 @@ docker run -p 8081:80 -p 8082:8080 -d --name blog.joylau.cn nas.joylau.cn:5007/j
 ```bash
     echo "" > /var/log/nginx/error.log 
     echo "" > /var/log/nginx/access.log 
-``` 
+```
 
 3. webhooks 不等待执行完就返回
 vim /my-blog/bash/publish.sh
@@ -218,7 +218,7 @@ vim /my-blog/bash/publish.sh
 
 4. 实时监听文件变化
 vim /my-bog/bash/init.sh
- 
+
 ```bash
     #!/usr/bin/env bash
     service fcgiwrap start
