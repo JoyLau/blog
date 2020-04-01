@@ -232,3 +232,5 @@ vim /my-bog/bash/init.sh
 ```bash
     docker commit -c 'CMD ["sh", "/my-blog/bash/init.sh"]' -c "EXPOSE 80" -c "EXPOSE 8080" -a "JoyLau" -m "JoyLau's Blog Docker Image"  blog nas.joylau.cn:5007/joy/blog.joylau.cn:2.1
 ```
+
+6. 
