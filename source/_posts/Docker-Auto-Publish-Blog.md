@@ -148,7 +148,7 @@ nginx -t 检查错误
 1. fcgiwrap 不能以 root 组或者 root 用户运行, 这点在配置文件 /etc/init.d/fcgiwrap 可以配置,默认为 www-data, 因此 nginx 的用户也设置为 www-data,同时设置 /my-blog 目录下所属者为 www-data
 
 
-### Dockfile
+### Dockerfile
 ```text
     FROM nas.joylau.cn:5007/joy/blog.joylau.cn:1.0
     
@@ -183,6 +183,54 @@ docker run -p 8081:80 -p 8082:8080 -d --name blog.joylau.cn nas.joylau.cn:5007/j
 
 ### 后续优化备忘
 1. 删除原来的 /var/log/nginx/error.log 日志里的错误信息，现有的错误信息是是测试使用产生的
-2. 在镜像里就执行一边 chown -R www-data:www-data /my-blog/* , 否则的话容器刚启动的时候会很慢， 可以不执行 hexo g ,使用 hexo s --watch 实时监听文件变化，也不需要 nginx 了，开启 --debug 参数打印详细日志信息 
+2. 在镜像里就执行一遍 chown -R www-data:www-data /my-blog/* , 否则的话容器刚启动的时候会很慢， 可以不执行 hexo g ,使用 hexo g --watch 实时监听文件变化，也不需要 nginx 了，直接使用 hexo-server ,开启 --debug 参数打印详细日志信息 
 3. 考虑将 publish.sh 的最后一行命令不等待执行完就返回，现在的情况是部署到配置较低的机器上执行很慢，会导致请求超时，虽然不影响执行结果
 4. 配置好容器内的时区，使得日志的时间戳更明显
+
+
+### 优化更新记录 [2020-04-01]
+1. 设置时区:
+
+```bash
+    apt-get install tzdata
+    然后依次选择 6 , 70 即可
+
+    使用 dpkg-reconfigure tzdata 来重写选择
+```
+
+2. 清空 nginx 日志文件
+
+```bash
+    echo "" > /var/log/nginx/error.log 
+    echo "" > /var/log/nginx/access.log 
+``` 
+
+3. webhooks 不等待执行完就返回
+
+vim /my-blog/bash/publish.sh
+
+```bash
+    #!/bin/bash
+    echo "Content-Type:text/html"
+    echo ""
+    echo "ok"
+    /my-blog/bash/pull-deploy.sh>/my-blog/logs/publish.log 2>&1 &
+```
+
+4. 实时监听文件变化
+
+vim /my-bog/bash/init.sh
+ 
+ ```bash
+    #!/usr/bin/env bash
+    service fcgiwrap start
+    service nginx start
+    cd /my-blog/blog/ && nohup hexo g --watch >/my-blog/logs/hexo-generate.log 2>&1 &
+    tail -f -n 500 /my-blog/logs/publish.log /my-blog/logs/hexo-generate.log /var/log/nginx/error.log /var/log/nginx/access.log 
+```
+
+5. 不使用 dockerfile 来构建,直接使用 docker commit
+
+```bash
+    docker commit -c 'CMD ["sh", "/my-blog/bash/init.sh"]' -c "EXPOSE 80" -c "EXPOSE 8080" -a "JoyLau" -m "JoyLau's Blog Docker Image"  blog nas.joylau.cn:5007/joy/blog.joylau.cn:2.1
+```
