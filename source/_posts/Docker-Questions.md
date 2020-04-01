@@ -8,7 +8,7 @@ tags: [Docker]
 <!-- more -->
 ### 时区问题
 
-#### 镜像的时区
+#### 构建镜像
 时区的配置在 `/etc/localtime`
 
 localtime 文件会指向 `/usr/share/zoneinfo/Asia/` 目录下的某个文件
@@ -24,6 +24,24 @@ Dockerfile 可以这样配置
 
 先删除,在创建一个软连接即可
 
+#### 已构建好的镜像
+启动一个容器，加上如下参数，即可使用宿主机时间
+
+```bash
+    -v /etc/localtime:/etc/localtime:ro
+```
+
+#### 已经在运行的容器
+
+```bash
+    docker cp /etc/localtime [container]:/etc/localtime
+```
+
+在检查下是否修改成功:
+
+```bash
+    docker exec [container] date
+```
 
 #### springboot 应用的时区
 
