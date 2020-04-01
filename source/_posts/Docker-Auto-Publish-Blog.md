@@ -233,4 +233,38 @@ vim /my-bog/bash/init.sh
     docker commit -c 'CMD ["sh", "/my-blog/bash/init.sh"]' -c "EXPOSE 80" -c "EXPOSE 8080" -a "JoyLau" -m "JoyLau's Blog Docker Image"  blog nas.joylau.cn:5007/joy/blog.joylau.cn:2.1
 ```
 
-6. 
+### 优化更新记录 [2020-04-02]
+更新脚本:
+
+1. init.sh
+
+```bash
+    #!/usr/bin/env bash
+    echo "Hello! log file in /my-blog/logs/publish.log"
+    service fcgiwrap start
+    service nginx start
+    su - www-data -c "cd /my-blog/blog/ && git pull"
+    cd /my-blog/blog/
+    hexo g --watch | tee -a /my-blog/logs/publish.log
+
+```
+
+2. publish.sh
+
+```bash
+    #!/bin/bash
+    echo "Content-Type:text/html"
+    echo ""
+    echo "ok\r\n"
+    /my-blog/bash/pull-deploy.sh | tee -a /my-blog/logs/publish.log
+```
+
+3. pull-deploy.sh
+
+```bash
+    #! /usr/bin/env bash
+    echo "Prepare to update Blog Posts....."
+    cd /my-blog/blog/
+    git pull
+
+```

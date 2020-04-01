@@ -24,6 +24,15 @@ Dockerfile 可以这样配置
 
 先删除,在创建一个软连接即可
 
+
+
+如果是在容器内直接操作的话:
+
+1. apt-get install tzdata
+2. 然后依次选择 6 , 70 即可
+3. 使用 dpkg-reconfigure tzdata 来重写选择
+
+
 #### 已构建好的镜像
 启动一个容器，加上如下参数，即可使用宿主机时间
 
@@ -103,6 +112,11 @@ Dockerfile 如下:
 `du -m --max-depth=1`
 
 ### 基于已有 docker 镜像制作自己的镜像
+
+#### 编写 Dockerfile 文件
+这里就不细说了,了解 Dockerfile 文件里的命令即可
+
+#### 使用 docker commit提交容器
 比如说 openjdk:8 ,我想让他支持 node , php , python 等该怎么办?  
 有个简单方法  
 先 pull 下来
@@ -123,9 +137,21 @@ Dockerfile 如下:
 `docker commit containID xxx/xxxx:latest`
 提交容器的改变,之后就看到一个新的镜像了
 
+这里有个问题,就是我想定义自己的启动脚本,貌似无法做到,后来看了官方文档
+docker commit 有个 -c 参数,解释是这样的:
 
-还有一种方式是编写 dockerfile 文件
-我觉得没有这种方式方便,就不说了
+> commit Apply Dockerfile instruction to the created image
+
+以为使用 Dockerfile 的语法来创建镜像, 还有 3 个参数
+
+-a, --author string    制定个作者
+-m, --message string   本次提交信息
+-p, --pause            提交镜像时暂停容器,默认是 true
+
+假如我有个 blog 的容器, 示例:
+
+> docker commit -c 'CMD ["sh", "/my-blog/bash/init.sh"]' -c "EXPOSE 80" -c "EXPOSE 8080" -a "JoyLau" -m "JoyLau's Blog Docker Image"  blog nas.joylau.cn:5007/joy/blog.joylau.cn:2.1
+
 
 ### docker 安装在内网服务器, 如何 pull 镜像
 在命令行使用 export HTTP_PROXY=xxxx:xx , 命令行里绝大部分命令都可以使用此代理联网,但是安装的 docker 不行,无法 pull 下来镜像文件,想要 pull 使用代理的话,需要添加代理的变量
