@@ -8,7 +8,16 @@
 <meta name="keywords" content="<%= theme.keywords %>" />
 <meta name="format-detection" content="telephone=no" />
 <meta name="author" content="<%= config.author %>" />
-
+<style> 
+    html { 
+        -webkit-filter: grayscale(100%); 
+        -moz-filter: grayscale(100%); 
+        -ms-filter: grayscale(100%); 
+        -o-filter: grayscale(100%); 
+        filter:progid:DXImageTransform.Microsoft.BasicImage(grayscale=1);  
+        _filter:none; 
+    } 
+</style> 
 <% if (is_home()){ %>
     <% if (theme.baidu_site) { %> 
         <meta name="baidu-site-verification" content="<%- theme.baidu_site %>" />
