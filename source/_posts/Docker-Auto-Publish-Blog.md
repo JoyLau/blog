@@ -268,3 +268,13 @@ vim /my-bog/bash/init.sh
     git pull
 
 ```
+
+### 优化更新记录 [2020-04-07]
+新增 republish.sh
+
+```bash
+    #!/usr/bin/env bash
+    echo "prepare republish......"
+    cd /my-blog/blog/
+    hexo clean && hexo g
+```
