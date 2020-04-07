@@ -60,9 +60,9 @@ time_format: HH:mm:ss
 per_page: 6
 pagination_dir: page
 
-## 文章排序, 默认是创建时间降序: -data, 这里改为修改时间降序 -updated
-#index_generator:
-#  order_by: -data
+## 文章排序, 默认是创建时间降序: -date, 这里改为修改时间降序 -updated
+index_generator:
+  order_by: -updated
 
 # Extensions
 ## Plugins: https://hexo.io/plugins/

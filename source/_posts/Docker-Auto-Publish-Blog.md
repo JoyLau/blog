@@ -278,3 +278,13 @@ vim /my-bog/bash/init.sh
     cd /my-blog/blog/
     hexo clean && hexo g
 ```
+
+修改 init.sh
+
+```bash
+    #!/usr/bin/env bash
+    echo "Hello! log file in /my-blog/logs/publish.log"
+    service fcgiwrap start
+    service nginx start
+    su - www-data -c "cd /my-blog/blog/ && git pull && hexo g --watch | tee -a /my-blog/logs/publish.log"
+```
