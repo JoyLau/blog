@@ -33,9 +33,14 @@ docker compose 里有 depends_on 配置,但是他不能等上一个容器里的�
 如果不知道容器的启动脚本或者容器的启动脚本很长,并且带有参数,那将非常头疼
 
 查看容器的启动脚本:
-1. docker ps --no-trunc --format="table {{.ID}}\t{{.Command}}:"
-2. docker inspect container
 
+```bash
+    docker ps --no-trunc --format="table {{.ID}}\t{{.Command}}:"
+```
+
+```bash
+    docker inspect container
+```
 
 ### health 健康检查方法
 
