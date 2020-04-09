@@ -159,3 +159,21 @@ Harbor 是一个图形化的私服管理界面,安装使用更易于操作
 -v /registry/pwd:/auth -e "REGISTRY_AUTH=htpasswd" -e "REGISTRY_AUTH_HTPASSWD_REALM=Registry Realm" -e REGISTRY_AUTH_HTPASSWD_PATH=/auth/htpasswd
 
 至此,添加用户名密码完成,现在 pull 和 push 都需要登录
+
+
+### Docker login 密码存储
+默认存储位置为: $HOME/.docker/config.json
+很不安全, 使用 base64 解密即可看到用户名密码
+
+将密码存储到钥匙串:
+
+1. 下载工具: https://github.com/docker/docker-credential-helpers/releases
+2. 将 docker-credential-osxkeychain 配置到 path 路径
+3. 配置 config.json
+
+```json
+    {
+      "credsStore": "osxkeychain"
+    }
+```
+
