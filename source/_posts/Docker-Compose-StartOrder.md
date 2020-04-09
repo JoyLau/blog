@@ -38,6 +38,8 @@ docker compose 里有 depends_on 配置,但是他不能等上一个容器里的�
     docker ps --no-trunc --format="table {{.ID}}\t{{.Command}}:"
 ```
 
+或者
+
 ```bash
     docker inspect container
 ```

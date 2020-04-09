@@ -145,3 +145,17 @@ Harbor 是一个图形化的私服管理界面,安装使用更易于操作
 10. 登录,退出命令 `docker login 34.0.7.183:5000 ; docker logout 34.0.7.183:5000`
 
 11. 之后的操作都是日常操作了
+
+### Docker Registry 添加认证
+#### 生成用户名密码
+
+```bash
+    docker run --rm --entrypoint htpasswd registry -Bbn username password > ./htpasswd
+```
+
+假设将生成的文件放到 /registry/pwd/htpasswd
+
+#### 挂载用户名密码文件
+-v /registry/pwd:/auth -e "REGISTRY_AUTH=htpasswd" -e "REGISTRY_AUTH_HTPASSWD_REALM=Registry Realm" -e REGISTRY_AUTH_HTPASSWD_PATH=/auth/htpasswd
+
+至此,添加用户名密码完成,现在 pull 和 push 都需要登录

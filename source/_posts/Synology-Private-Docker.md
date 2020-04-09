@@ -26,7 +26,7 @@ docker 仓库存储大量的镜像,占用的空间很大,放到群晖上存储�
 
 REGISTRY_STORAGE_DELETE_ENABLED:true  
 REGISTRY_HTTP_HEADERS_Access-Control-Allow-Headers:['Origin,Accept,Content-Type,Authorization']  
-REGISTRY_HTTP_HEADERS_Access-Control-Allow-Methods:['GET,POST,PUT,DELETE']  
+REGISTRY_HTTP_HEADERS_Access-Control-Allow-Methods:['GET,POST,PUT,DELETE','HEAD']  
 REGISTRY_HTTP_HEADERS_Access-Control-Allow-Origin:['*']  
 REGISTRY_HTTP_HEADERS_Access-Control-Expose-Headers:['Docker-Content-Digest']  
 
@@ -87,3 +87,140 @@ REGISTRY_HTTP_HEADERS_Access-Control-Expose-Headers:['Docker-Content-Digest']
 该工具也提供了dry-run的方式，只输出待删除的信息不执行删除操作。在命令后加上——dry-run即可
 
 跟gc方式一样，删除镜像之后要重启docker registry，不然还是会出现相同镜像push不成功的问题。
+
+### docker-registry-ui 对于有认证的 docker 私服的配置 [2020-04-09 更新]
+对于没有认证的 docker 私服,使用方式上面已经有配置了
+对于有认证的 docker 私服,却有点变化
+需要改变:
+
+REGISTRY_HTTP_HEADERS_Access-Control-Allow-Methods:['GET,POST,PUT,DELETE','HEAD']  
+REGISTRY_HTTP_HEADERS_Access-Control-Allow-Origin:['<your docker-registry-ui url>']  
+REGISTRY_HTTP_HEADERS_Access-Control-Allow-Credentials: [true]
+
+
+另外,对于有认证的 docker 私服,删除镜像还有有问题的:
+具体情况见: https://github.com/Joxit/docker-registry-ui/issues/104
+
+简单来说是 docker 私服的锅,并不是 Joxit/docker-registry-ui 的问题,因为在浏览器再监测是否允许跨域请求发出的 options 请求被返回了 401 状态,导致后续请求无法发出
+
+而实际上应该返回 20x 的请求
+
+作者给出方法是: 将 docker 私服和 docker-registry-ui 放到同一个域下
+
+那我这边还是以 群晖的 docker 来配置 nginx 来实现这样的功能
+
+nginx 配置如下:
+
+1. /etc/nginx/nginx.conf, 这个没有变化,我们将其外置,方便日后修改:
+
+```editorconfig
+    user  nginx;
+    worker_processes  1;
+    
+    error_log  /var/log/nginx/error.log warn;
+    pid        /var/run/nginx.pid;
+    
+    
+    events {
+        worker_connections  1024;
+    }
+    
+    
+    http {
+        include       /etc/nginx/mime.types;
+        default_type  application/octet-stream;
+    
+        log_format  main  '$remote_addr - $remote_user [$time_local] "$request" '
+                          '$status $body_bytes_sent "$http_referer" '
+                          '"$http_user_agent" "$http_x_forwarded_for"';
+    
+        access_log  /var/log/nginx/access.log  main;
+    
+        sendfile        on;
+        #tcp_nopush     on;
+    
+        keepalive_timeout  65;
+    
+        #gzip  on;
+    
+        include /etc/nginx/conf.d/*.conf;
+    }
+```
+
+2. /etc/nginx/conf.d/default.conf: 这个文件我们添加反向代理,使得 docker 私服和 docker-registry-ui 在同一个域下
+
+```editorconfig
+    server {
+        listen       80;
+        server_name  localhost;
+    
+        #charset koi8-r;
+        #access_log  /var/log/nginx/host.access.log  main;
+    
+        location / {
+            root   /usr/share/nginx/html;
+            index  index.html index.htm;
+        }
+    
+        #location / {
+        #    #rewrite ^/b/(.*)$ /$1 break;
+        #    proxy_set_header Host $host;
+        #    proxy_set_header X-Real-IP $remote_addr;
+        #    proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        #    proxy_pass http://nas.joylau.cn:5007/; # 转发地址,注意要有/
+        #}
+        
+        location /v2 {
+            proxy_set_header Host $host;
+            proxy_set_header X-Real-IP $remote_addr;
+            proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+            proxy_pass http://xxxx:xxx/v2; # 转发地址
+        }
+    
+        location /ui {
+            rewrite ^/b/(.*)$ /$1 break; # 去除本地接口/ui前缀, 否则会出现404
+            proxy_set_header Host $host;
+            proxy_set_header X-Real-IP $remote_addr;
+            proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+            proxy_pass http://xxxx:xxx/; # 转发地址,注意要有/
+        }
+    
+        #error_page  404              /404.html;
+    
+        # redirect server error pages to the static page /50x.html
+        #
+        error_page   500 502 503 504  /50x.html;
+        location = /50x.html {
+            root   /usr/share/nginx/html;
+        }
+    
+        # proxy the PHP scripts to Apache listening on 127.0.0.1:80
+        #
+        #location ~ \.php$ {
+        #    proxy_pass   http://127.0.0.1;
+        #}
+    
+        # pass the PHP scripts to FastCGI server listening on 127.0.0.1:9000
+        #
+        #location ~ \.php$ {
+        #    root           html;
+        #    fastcgi_pass   127.0.0.1:9000;
+        #    fastcgi_index  index.php;
+        #    fastcgi_param  SCRIPT_FILENAME  /scripts$fastcgi_script_name;
+        #    include        fastcgi_params;
+        #}
+    
+        # deny access to .htaccess files, if Apache's document root
+        # concurs with nginx's one
+        #
+        #location ~ /\.ht {
+        #    deny  all;
+        #}
+    }
+```
+
+访问方式:
+1. docker-registry-ui 的访问直接使用 nginx 的地址, 后面加上 `/ui/`, 这样就会代理到之前的 docker-registry-ui 的服务
+2. docker registry 的地址直接填 nginx 提供服务的`主机 + 端口号`即可, 后面不需要加其他东西
+
+这样方式在 docker-registry-ui 连接 docker 私服时会弹框输入用户名密码, 也能完美解决删除镜像的问题
