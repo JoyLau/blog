@@ -26,8 +26,8 @@
   },
   "scripts": {
     "clean": "hexo clean",
-    "generate": "hexo g",
-    "start": "hexo s",
+    "generate": "hexo g --debug",
+    "start": "hexo s --debug",
     "deploy": "hexo d"
   }
 }
