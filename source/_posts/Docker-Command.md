@@ -91,3 +91,7 @@ docker images | grep xxx : 在本地仓库查找镜像
 ## 2018-07-12 09:44:40 更新
 进入容器： `docker exec -it 容器的ID或者NAME /bin/bash`
 
+## 2020-04-12 12:30:25 更新
+查找自定义属性
+`docker ps -a --format "table {{.ID}}\t{{.Image}}\t{{.Names}}\t{{.Status}}"`
+
