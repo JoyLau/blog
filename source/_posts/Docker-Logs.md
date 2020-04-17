@@ -29,6 +29,17 @@ json-file 会把所有容器的标准输出和标准错误以json格式写入文
 
 3. 重新加载配置文件并重启docker服务: systemctl daemon-reload
 
+## docker-compose 配置
+
+```yaml
+    logging: 
+#        driver: "json-file"
+        options: 
+          max-size: "1g"
+```
+
+这样就不需要修改 daemon.json 配置文件了
+
 ## 查看日志位置
 1. docker inspect container_id | grep log
 2. 进入上述目录
