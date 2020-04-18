@@ -15,62 +15,101 @@ tags: [Filebeat,SpringBoot]
 
 ```yaml
     logging:
-      config: logback-spring.xml
+      config: classpath:logback-config.xml
 ```
 
 
 ```xml
     <?xml version="1.0" encoding="UTF-8"?>
-    <configuration scan="true">
-        <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
-            <encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
-                <pattern>%d{${LOG_DATEFORMAT_PATTERN:-yyyy-MM-dd HH:mm:ss.SSS}} ${LOG_LEVEL_PATTERN:-%5p} ${PID:- } --- [%t] %-40.40logger{39} : %m%n${LOG_EXCEPTION_CONVERSION_WORD:-%exception}
-                </pattern>
-            </encoder>
-        </appender>
-    
-        <appender name="FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
-            <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
-                <fileNamePattern>
-                    /Users/joylau/docker-data/logs/es-doc-office-service/es-doc-office-service-%d{yyyy-MM-dd}.log
-                </fileNamePattern>
-                <!--最大保留时间为 30 天-->
-                <maxHistory>30</maxHistory>
-            </rollingPolicy>
-            <encoder class="net.logstash.logback.encoder.LoggingEventCompositeJsonEncoder">
-                <!--            json 日志美化-->
-                <!--            <jsonGeneratorDecorator class="net.logstash.logback.decorate.PrettyPrintingJsonGeneratorDecorator"/>-->
-                <jsonGeneratorDecorator class="net.logstash.logback.decorate.FeatureJsonGeneratorDecorator"/>
-                <providers>
-                    <pattern>
-                        <pattern>
-                            {
-                            "date": "%date{yyyy-MM-dd HH:mm:ss}",
-                            "level": "%level",
-                            "thread": "%thread",
-                            "class": "%logger{500}",
-                            "msg": "%msg",
-                            "stack_trace": "%exception{2000}"
-                            }
-                        </pattern>
-                    </pattern>
-                </providers>
-            </encoder>
-    
-        </appender>
-    
-        <root level="INFO">
-            <appender-ref ref="STDOUT"/>
-            <appender-ref ref="FILE"/>
-        </root>
-        <!--打印 mysql 日志-->
-        <logger name="cn.joylau.code.mapper" level="DEBUG">
-            <appender-ref ref="STDOUT"/>
-            <appender-ref ref="FILE"/>
-        </logger>
-    
-    </configuration>
+      <configuration scan="true">
+          <appender name="CONSOLE" class="ch.qos.logback.core.ConsoleAppender">
+              <encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
+                  <pattern>%d{${LOG_DATEFORMAT_PATTERN:-yyyy-MM-dd HH:mm:ss.SSS}} ${LOG_LEVEL_PATTERN:-%5p} ${PID:- } --- [%t] %-40.40logger{39} : %m%n${LOG_EXCEPTION_CONVERSION_WORD:-%exception}
+                  </pattern>
+              </encoder>
+          </appender>
+
+          <appender name="CONSOLE-FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
+              <file>
+                  /Users/joylau/docker-data/logs/es-doc-office-service/es-doc-office-service-console.log
+              </file>
+              <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+                  <fileNamePattern>
+                      /Users/joylau/docker-data/logs/es-doc-office-service/es-doc-office-service-console-%d{yyyy-MM-dd}.log.gz
+                  </fileNamePattern>
+                  <!--最大保留时间为 7 天-->
+                  <maxHistory>7</maxHistory>
+              </rollingPolicy>
+              <encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
+                  <pattern>%d{${LOG_DATEFORMAT_PATTERN:-yyyy-MM-dd HH:mm:ss.SSS}} ${LOG_LEVEL_PATTERN:-%5p} ${PID:- } --- [%t] %-40.40logger{39} : %m%n${LOG_EXCEPTION_CONVERSION_WORD:-%exception}
+                  </pattern>
+              </encoder>
+          </appender>
+
+          <appender name="JSON-FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
+              <file>
+                  /Users/joylau/docker-data/logs/es-doc-office-service/es-doc-office-service-json.log
+              </file>
+              <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+                  <fileNamePattern>
+                      /Users/joylau/docker-data/logs/es-doc-office-service/es-doc-office-service-json-%d{yyyy-MM-dd}.log.gz
+                  </fileNamePattern>
+                  <maxHistory>7</maxHistory>
+              </rollingPolicy>
+              <encoder class="net.logstash.logback.encoder.LoggingEventCompositeJsonEncoder">
+                  <!--            json 日志美化-->
+                  <!--            <jsonGeneratorDecorator class="net.logstash.logback.decorate.PrettyPrintingJsonGeneratorDecorator"/>-->
+                  <jsonGeneratorDecorator class="net.logstash.logback.decorate.FeatureJsonGeneratorDecorator"/>
+                  <providers>
+                      <pattern>
+                          <pattern>
+                              {
+                              "date": "%date{yyyy-MM-dd HH:mm:ss}",
+                              "level": "%level",
+                              "thread": "%thread",
+                              "class": "%logger{500}",
+                              "msg": "%msg",
+                              "stack_trace": "%exception{2000}"
+                              }
+                          </pattern>
+                      </pattern>
+                  </providers>
+              </encoder>
+          </appender>
+
+          <root level="INFO">
+              <appender-ref ref="CONSOLE"/>
+              <appender-ref ref="CONSOLE-FILE"/>
+              <appender-ref ref="JSON-FILE"/>
+          </root>
+
+          <!--打印 mysql 日志-->
+          <logger name="cn.joylau.code.mapper" level="DEBUG">
+              <appender-ref ref="CONSOLE"/>
+              <appender-ref ref="CONSOLE-FILE"/>
+              <appender-ref ref="JSON-FILE"/>
+          </logger>
+
+      </configuration>
 ```
+
+我这里记录了 2 份文件日志是因为我想在日志端点监控中(/actuator/logfile)直接访问控制台日志
+需要配置 
+
+```yaml
+    logging:
+      file: /path/es-doc-office-service-console.log
+```
+
+这里简单记录下 logback 配置文件:
+
+logback的主要组成部分
+- appender，是用来定义一个写日志记录的组件，常用的appender类有ConsoleAppender和RollingFileAppender，前者个是用来在控制台上打印日志，后者是将日志输出到文件中。
+- layout，是指定日志的布局方式，这个基本都不会去特殊的指定，可以忽略，知道有这个东西即可。
+- encoder，负责把事件转换成字节数组并把字节数组写到合适的输出流。encoder可以指定属性值class，这里对应的类只有一个PatternLayoutEncoder，也是默认值，可以不去指定。
+- filter，过滤器分为三种，logback-classic提供的是两种，分别是常规的过滤器和Turbo过滤器。常用的过滤器就是按照日志级别来控制，将不同级别的日志输出到不同文件中，便于查看日志。如：错误日志输出到xxx-error.log，info日志输出到xxx-info.log中。
+- rollingPolicy，用来设置日志的滚动策略，当达到条件后会自动将条件前的日志生成一个备份日志文件，条件后的日志输出到最新的日志文件中。常用的是按照时间来滚动（使用的类TimeBaseRollingPolicy）,还有一种就是基于索引来实现（使用的类FixedWindowRollingPolicy）。rolling policies有 TimeBasedRollingPolicy，SizeAndTimeBasedRollingPolicy,FixedWindowRollingPolicy三种策略
+- triggeringPolicy，日志触发器策略，常用的是日志的大小的控制，当日志达到对应的大小的时候，就会触发。生成新的日志文件。日志大小的控制配合rollingPlicy使用的时候，不同的rollingPolicy会有所不同。
 
 
 ### springboot 日志输出格式
