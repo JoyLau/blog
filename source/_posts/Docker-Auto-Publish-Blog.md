@@ -288,3 +288,139 @@ vim /my-bog/bash/init.sh
     service nginx start
     su - www-data -c "cd /my-blog/blog/ && git pull && hexo g --watch | tee -a /my-blog/logs/publish.log"
 ```
+
+### 使用 Dockerfile 构建 [2020-04-21 更新]
+在容器里各种操作是在是太黑箱了,日后极难维护,这里我编写 Dockerfile 来构建镜像
+
+#### Dockerfile
+
+```dockerfile
+    FROM node:latest
+    MAINTAINER joylau 2587038142.liu@gmail.com
+    LABEL Descripttion="This image is JoyLau's Bolg"
+    ENV GIT_REPO="https://github.com/JoyLau/blog.git"
+    ENV BRANCH master
+    EXPOSE 80 8081
+    ADD sources.list /etc/apt/sources.list
+    RUN apt-get update &&\
+        apt-get install -y gosu nginx git fcgiwrap &&\
+        npm install hexo -g &&\
+        npm install -g cnpm --registry=https://registry.npm.taobao.org
+    COPY nginx.default.conf /etc/nginx/sites-available/default
+    RUN mkdir -p /my-blog/bash /my-blog/logs
+    COPY *.sh /my-blog/bash/
+    RUN chown -R www-data:www-data /my-blog &&\
+        chmod -R 777 /var/www &&\
+        chmod +x /my-blog/bash/*.sh
+    ENTRYPOINT ["/my-blog/bash/docker-entrypoint.sh"]
+    CMD ["/my-blog/bash/init.sh"]
+
+```
+
+#### docker-entrypoint.sh
+
+```bash
+    #!/bin/bash
+    set -e
+    if [ "$1" = '/my-blog/bash/init.sh' -a "$(id -u)" = '0' ]; then
+        service nginx start
+        service fcgiwrap start
+        echo "☆☆☆☆☆ base service has started. ☆☆☆☆☆"
+        exec gosu www-data "$0" "$@"
+    fi
+    exec "$@"
+```
+
+#### init.sh
+
+````bash
+    #! /bin/bash
+    cd /my-blog
+    echo "☆☆☆☆☆ your git repo is [$GIT_REPO] ; branch is [$BRANCH]. ☆☆☆☆☆"
+    git clone -b $BRANCH --progress $GIT_REPO blog
+    cd blog
+    cnpm install -d
+    hexo g --watch --debug | tee -a /my-blog/logs/genrate.log
+````
+
+#### nginx.default.conf
+
+```config
+    server {
+        listen 80 default_server;
+        listen [::]:80 default_server;
+    
+        index index.html index.htm index.nginx-debian.html;
+    
+        server_name _;
+    
+        root /my-blog/blog/public;
+    
+        location / {
+                # First attempt to serve request as file, then
+                # as directory, then fall back to displaying a 404.
+                try_files $uri $uri/ =404;
+        }
+    
+    }
+    
+    server {
+            listen 8080 default_server;
+            listen [::]:8080 default_server;
+    
+            root /my-blog/bash;
+    
+            server_name _;
+    
+            location ~ ^/.*\.sh  {
+              gzip off;
+              fastcgi_pass  unix:/var/run/fcgiwrap.socket;
+              include fastcgi_params;
+              fastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name;
+            }
+    }
+```
+
+#### publish.sh
+
+```bash
+    #!/bin/bash
+    echo "Content-Type:text/html"
+    echo ""
+    echo "<h1>ok</h1>"
+    echo "<h3>Prepare to update Blog Posts.....</h3>"
+    cd /my-blog/blog/
+    git pull
+```
+
+#### republish.sh
+
+```bash
+    #!/bin/bash
+    echo "Content-Type:text/html"
+    echo ""
+    echo "<h1>ok</h1>"
+    echo "<h3>republish blog.....</h3>"
+    cd /my-blog/blog
+    hexo g --force
+```
+
+#### sources.list
+
+```text
+    deb http://mirrors.163.com/debian/ stretch main non-free contrib
+    deb http://mirrors.163.com/debian/ stretch-updates main non-free contrib
+    deb http://mirrors.163.com/debian/ stretch-backports main non-free contrib
+    deb-src http://mirrors.163.com/debian/ stretch main non-free contrib
+    deb-src http://mirrors.163.com/debian/ stretch-updates main non-free contrib
+    deb-src http://mirrors.163.com/debian/ stretch-backports main non-free contrib
+    deb http://mirrors.163.com/debian-security/ stretch/updates main non-free contrib
+    deb-src http://mirrors.163.com/debian-security/ stretch/updates main non-free contrib
+
+```
+
+#### 启动
+
+```bash
+    docker run -d --name blog -p 8001:80 -p 8002:8080 nas.joylau.cn:5007/joy/blog.joylau.cn:3.0
+```
