@@ -3,7 +3,7 @@ MAINTAINER joylau 2587038142.liu@gmail.com
 LABEL Descripttion="This image is JoyLau's Bolg"
 ENV GIT_REPO="https://github.com/JoyLau/blog.git"
 ENV BRANCH master
-EXPOSE 80 8081
+EXPOSE 80 8080
 ADD sources.list /etc/apt/sources.list
 RUN apt-get update &&\
     apt-get install -y gosu nginx git fcgiwrap &&\

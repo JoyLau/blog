@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 set -e
 if [ "$1" = '/my-blog/bash/init.sh' -a "$(id -u)" = '0' ]; then
     service nginx start
