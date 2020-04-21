@@ -11,11 +11,9 @@ RUN apt-get update &&\
     npm install -g cnpm --registry=https://registry.npm.taobao.org
 COPY nginx.default.conf /etc/nginx/sites-available/default
 RUN mkdir -p /my-blog/bash /my-blog/logs
-COPY init.sh /my-blog/bash/init.sh
-COPY publish.sh /my-blog/bash/publish.sh
+COPY *.sh /my-blog/bash/
 RUN chown -R www-data:www-data /my-blog &&\
     chmod -R 777 /var/www &&\
     chmod +x /my-blog/bash/*.sh
-COPY docker-entrypoint.sh /
-ENTRYPOINT ["sh","/docker-entrypoint.sh"]
+ENTRYPOINT ["/my-blog/bash/docker-entrypoint.sh"]
 CMD ["/my-blog/bash/init.sh"]
