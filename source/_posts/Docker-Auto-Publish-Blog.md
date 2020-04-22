@@ -365,7 +365,7 @@ vim /my-bog/bash/init.sh
     }
     
     server {
-            listen 8080 default_server;
+            listen 8081 default_server;
             listen [::]:8080 default_server;
     
             root /my-blog/bash;
@@ -422,5 +422,5 @@ vim /my-bog/bash/init.sh
 #### 启动
 
 ```bash
-    docker run -d --restart always --name blog -p 8001:80 -p 8002:8080 nas.joylau.cn:5007/joy/blog.joylau.cn:3.0
+    docker run -d --restart always --name blog -p 8001:80 -p 8002:8081 nas.joylau.cn:5007/joy/blog.joylau.cn:3.0
 ```
