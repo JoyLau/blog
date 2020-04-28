@@ -3,6 +3,7 @@ MAINTAINER joylau 2587038142.liu@gmail.com
 LABEL Descripttion="This image is JoyLau's Bolg"
 ENV GIT_REPO="https://github.com/JoyLau/blog.git"
 ENV BRANCH master
+ENV PROXY=''
 EXPOSE 80 8081
 ADD sources.list /etc/apt/sources.list
 RUN apt-get update &&\

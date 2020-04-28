@@ -47,7 +47,7 @@ tags: [Clash]
 - cfw-latency-timeout：延迟测试超时时间（毫秒），默认3000
 - cfw-latency-url：延迟测试URL，默认http://www.gstatic.com/generate_204
 - cfw-bypass：系统代理绕过域名或地址，参考 绕过系统代理
-- cfw-conn-break-strategy: 切换节点后或切换配置文件后打断连接，参考 打断连接
+- cfw-conn-break-strategy: 切换节点后或切换配置文件后打断连接
 - cfw-profiles-path: 自定义 profiles 目录路径 (beta)
 
 > 这些配置关乎Clash核心是否能正常启动，如非必要，请勿更改

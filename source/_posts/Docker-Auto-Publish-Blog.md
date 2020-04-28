@@ -424,3 +424,8 @@ vim /my-bog/bash/init.sh
 ```bash
     docker run -d --restart always --name blog -p 8001:80 -p 8002:8081 nas.joylau.cn:5007/joy/blog.joylau.cn:3.0
 ```
+
+### 加入代理 [2020-04-28更新]
+遇到初始化容器很慢的情况, 原因是 git clone 很慢
+本次在 init.sh 脚本里加入了 git 代理设置, 有代理的条件的可以设置代理
+快速启动容器
