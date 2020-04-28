@@ -1,7 +1,7 @@
 ---
 title: ClashX 在英文 Mac 系统中切换界面语言
 date: 2020-04-28 15:00:31
-description: ClashX 在英文 Mac 系统中切换界面语言
+description: 在网络上搜索关于 ClashX 的教程, 看到的截图都是中文的界面, 而我安装后的界面语言却是英文的, 就想着怎么能够切换下
 categories: [Clash]
 tags: [ClashX]
 ---
