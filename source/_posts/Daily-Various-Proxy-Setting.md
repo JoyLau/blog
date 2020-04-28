@@ -11,6 +11,13 @@ tags: [Proxy]
 ### 背景
 以前博客多多少少写个一些常用工具的代理设置,这里做一个汇总, 以后有更多工具使用代理直接在此处记录了
 
+### 说明
+如果代理有用户名密码的话, 使用
+
+```bash
+    http://username:password@127.0.0.1:1087
+```
+
 ### Mac 终端代理设置
 `export HTTP_PROXY=http://127.0.0.1:1087`
 
@@ -84,3 +91,19 @@ vim /usr/lib/systemd/system/docker.service
 
 `systemctl deamon-reload`
 `systemctl restart docker`
+
+
+### npm 使用代理
+npm 支持 http 代理，但是不支持 socks 代理
+
+```bash
+    npm config set proxy "http://localhost:1087"
+    npm config set https-proxy "http://localhost:1087"
+```
+
+删除代理
+
+```bash
+    npm config delete proxy
+    npm config delete https-proxy
+```
