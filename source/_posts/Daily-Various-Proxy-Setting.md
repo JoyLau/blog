@@ -16,6 +16,8 @@ tags: [Proxy]
 
 ```bash
     http://username:password@127.0.0.1:1087
+    # 或者
+    sockts5://username:password@127.0.0.1:1087
 ```
 
 ### Mac 终端代理设置
@@ -101,9 +103,20 @@ npm 支持 http 代理，但是不支持 socks 代理
     npm config set https-proxy "http://localhost:1087"
 ```
 
+该设置方式是永久的，全局的，想要取消的话，使用
+
 删除代理
 
 ```bash
     npm config delete proxy
     npm config delete https-proxy
 ```
+
+### apt-get 使用代理
+使用参数 `-o Acquire`
+
+```bash
+    sudo apt-get -o Acquire::http::proxy="http://host:port" update/install ...
+```
+
+该代理是一次性的，关闭 shell 即失效
