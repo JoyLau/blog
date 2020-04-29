@@ -39,6 +39,25 @@ tags: [Docker, OpenVPN]
 3. `--daemon` 参数以守护进程运行
 4. 或者写个 service 文件以守护进程并且开机启动运行
 
+#### GUI 客户端 [2020-04-29更新]
+可以使用开源客户端工具： [pritunl-client-electron](https://client.pritunl.com/#features)
+安装方法：
+Ubuntu 16.04:
+
+```bash
+    sudo tee /etc/apt/sources.list.d/pritunl.list << EOF
+    deb http://repo.pritunl.com/stable/apt xenial main
+    EOF
+    
+    sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com --recv 7568D9BB55FF9E5287D586017AE645C0CF8E292A
+    sudo apt-get update
+    sudo apt-get install pritunl-client-electron
+```
+
+注意 apt 安装需要科学上网来设置代理
+
+或者从 GitHub 上下载软件包： https://github.com/pritunl/pritunl-client-electron/releases
+
 ### MacOS
 1. 安装 Tunnelblick，地址：https://tunnelblick.net/
 2. 导入 ovpn文件
