@@ -73,61 +73,43 @@ tags: [日常折腾]
 5. 此时如何屏上显示 **RESET** ,则重置成功
 
 ### 接线图
-![image](//image.joylau.cn/blog/awtrix2/AWTRIX_Core_Steckplatine.jpg)
+![1](//image.joylau.cn/blog/awtrix2/AWTRIX_Core_Steckplatine.jpg)
 
 
 ### 效果图
-![image](//image.joylau.cn/blog/awtrix2/awtrix2_1.jpg)
+![2](//image.joylau.cn/blog/awtrix2/awtrix2_1.jpg)  
 
-![image](//image.joylau.cn/blog/awtrix2/awtrix2_2.jpg)
+![3](//image.joylau.cn/blog/awtrix2/awtrix2_2.jpg)  
 
-![image](//image.joylau.cn/blog/awtrix2/awtrix2_3.jpg)
+![4](//image.joylau.cn/blog/awtrix2/awtrix2_3.jpg)  
 
-![image](//image.joylau.cn/blog/awtrix2/awtrix2_4.jpg)
+![5](//image.joylau.cn/blog/awtrix2/awtrix2_4.jpg)  
 
-![image](//image.joylau.cn/blog/awtrix2/awtrix2_5.jpg)
+![6](//image.joylau.cn/blog/awtrix2/awtrix2_5.jpg)  
 
-![image](//image.joylau.cn/blog/awtrix2/awtrix2_6.jpg)
+![7](//image.joylau.cn/blog/awtrix2/awtrix2_6.jpg)  
 
-![image](//image.joylau.cn/blog/awtrix2/awtrix2_7.jpg)
+![8](//image.joylau.cn/blog/awtrix2/awtrix2_7.jpg)  
 
-![image](//image.joylau.cn/blog/awtrix2/awtrix2_8.jpg)
-
-![image](//image.joylau.cn/blog/awtrix2/awtrix2_9.jpg)
-
-![image](//image.joylau.cn/blog/awtrix2/awtrix2_10.jpg)
-
-![image](//image.joylau.cn/blog/awtrix2/awtrix2_11.jpg)
-
-![image](//image.joylau.cn/blog/awtrix2/awtrix2_12.jpg)
-
-![image](//image.joylau.cn/blog/awtrix2/awtrix2_13.jpg)
-
-![image](//image.joylau.cn/blog/awtrix2/awtrix2_14.jpg)
-
-![image](//image.joylau.cn/blog/awtrix2/awtrix2_15.jpg)
-
-![image](//image.joylau.cn/blog/awtrix2/awtrix2_16.jpg)
-
-![image](//image.joylau.cn/blog/awtrix2/awtrix2_17.jpg)
-
-![image](//image.joylau.cn/blog/awtrix2/awtrix2_18.jpg)
-
-![image](//image.joylau.cn/blog/awtrix2/awtrix2_19.jpg)
-
-![image](//image.joylau.cn/blog/awtrix2/awtrix2_20.jpg)
-
-![image](//image.joylau.cn/blog/awtrix2/awtrix2_21.jpg)
-
-![image](//image.joylau.cn/blog/awtrix2/awtrix2_22.jpg)
-
-![image](//image.joylau.cn/blog/awtrix2/awtrix2_23.jpg)
-
-![image](//image.joylau.cn/blog/awtrix2/awtrix2_24.jpg)
-
-![image](//image.joylau.cn/blog/awtrix2/server-page-1.png)
-
-![image](//image.joylau.cn/blog/awtrix2/server-page-2.png)
+![9](//image.joylau.cn/blog/awtrix2/awtrix2_8.jpg)
+![10](//image.joylau.cn/blog/awtrix2/awtrix2_9.jpg)
+![11](//image.joylau.cn/blog/awtrix2/awtrix2_10.jpg)
+![12](//image.joylau.cn/blog/awtrix2/awtrix2_11.jpg)
+![13](//image.joylau.cn/blog/awtrix2/awtrix2_12.jpg)
+![14](//image.joylau.cn/blog/awtrix2/awtrix2_13.jpg)
+![15](//image.joylau.cn/blog/awtrix2/awtrix2_14.jpg)
+![16](//image.joylau.cn/blog/awtrix2/awtrix2_15.jpg)
+![17](//image.joylau.cn/blog/awtrix2/awtrix2_16.jpg)
+![18](//image.joylau.cn/blog/awtrix2/awtrix2_17.jpg)
+![19](//image.joylau.cn/blog/awtrix2/awtrix2_18.jpg)
+![20](//image.joylau.cn/blog/awtrix2/awtrix2_19.jpg)
+![21](//image.joylau.cn/blog/awtrix2/awtrix2_20.jpg)
+![22](//image.joylau.cn/blog/awtrix2/awtrix2_21.jpg)
+![23](//image.joylau.cn/blog/awtrix2/awtrix2_22.jpg)
+![24](//image.joylau.cn/blog/awtrix2/awtrix2_23.jpg)
+![25](//image.joylau.cn/blog/awtrix2/awtrix2_24.jpg)
+![26](//image.joylau.cn/blog/awtrix2/server-page-1.png)
+![27](//image.joylau.cn/blog/awtrix2/server-page-2.png)
 
 
 <center>
@@ -139,6 +121,5 @@ tags: [日常折腾]
 </center>
 
 ### Siri 语音控制
-![image](//image.joylau.cn/blog/awtrix2/awtrix2_siri-1.PNG)
-
-![image](//image.joylau.cn/blog/awtrix2/awtrix2_siri-2.PNG)
+![28](//image.joylau.cn/blog/awtrix2/awtrix2_siri-1.PNG)
+![29](//image.joylau.cn/blog/awtrix2/awtrix2_siri-2.PNG)
