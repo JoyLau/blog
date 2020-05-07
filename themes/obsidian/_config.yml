@@ -64,7 +64,7 @@ TOC: true
 welcome_cover: /img/cover.jpg
 
 # Article default cover image
-cover: http://uploadbeta.com/api/pictures/random/?key=BingEverydayWallpaperPicture&
+cover: http://nas.joylau.cn:5016/1920x1080
 
 # Avatar
 avatar: http://image.joylau.cn/blog/JoyLau.jpg
