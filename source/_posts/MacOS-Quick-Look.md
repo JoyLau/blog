@@ -1,7 +1,7 @@
 ---
 title: MacOS 10.15 版本里 Quick Look 插件无法使用的解决办法
 date: 2020-03-18 09:55:40
-img: <center><img src='//image.joylau.cn/blog/qlPlugin-not-work.png' alt='qlPlugin-not-work'></center>
+cover: //image.joylau.cn/blog/qlPlugin-not-work.png
 description: 关于 MacOS 10.15 版本里 Quick Look 插件无法使用的解决办法
 categories: [MacOS篇]
 tags: [MacOS]

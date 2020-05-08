@@ -1,7 +1,7 @@
 ---
 title: 重剑无锋,大巧不工 SpringBoot --- 批处理SpringBatch
 date: 2017-3-21 11:00:39
-img: <center><img src='//image.joylau.cn/blog/SpringBatch.jpg' alt='SpringBatch'></center>
+cover: //image.joylau.cn/blog/SpringBatch.jpg
 description: SpringBatch是用来处理大量数据操作的一个框架，主要用来读取大量数据，然后进行一定处理后输出成指定的形式
 categories: [SpringBoot篇]
 tags: [Spring,SpringBoot,SpringBatch]

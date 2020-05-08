@@ -1,7 +1,7 @@
 ---
 title: 重剑无锋,大巧不工 SpringBoot --- 实战项目 JoyMedia （ Node篇 ）
 date: 2017-07-29 10:09:04
-img: <center><img src='//image.joylau.cn/blog/joylau-media-node.png' alt='JoyMedia-Node'></center>
+cover: //image.joylau.cn/blog/joylau-media-node.png
 description: JoyMedia --- Node服务提供解析及 APIs
 categories: [SpringBoot篇]
 tags: [Node.js,SpringBoot]

@@ -1,7 +1,7 @@
 ---
 title: 日常折腾 --- 硕美科 E95x 耳机复活记
 date: 2019-07-26 10:33:13
-img: <center><img src='http://image.joylau.cn/blog/Somix_E95x_IMG_0547.JPG' width='50%' alt='Somix E95x'></center>
+cover: http://image.joylau.cn/blog/Somix_E95x_IMG_0547.JPG
 description: 我这款硕美科耳机是 2015 年入手的,到现在已经 4 年多了,日常使用中汗水已经腐蚀了耳机的皮套和头悬梁的皮套
 categories: [日常折腾篇]
 tags: [日常折腾]

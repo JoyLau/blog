@@ -1,7 +1,7 @@
 ---
 title: 重剑无锋,大巧不工 SpringBoot --- 属性注入
 date: 2017-6-13 11:34:58
-img: <center><img src='//image.joylau.cn/blog/configuration-properties.png' alt='SpringBoot-Configuration-Properties.png'></center>
+cover: //image.joylau.cn/blog/configuration-properties.png
 description: "尝试一下更复杂的属性注入吧"
 categories: [SpringBoot篇]
 tags: [Spring,SpringBoot]

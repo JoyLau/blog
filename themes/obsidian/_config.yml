@@ -40,6 +40,7 @@ version: "1.4.3"
 
 # Menu setting | format = title_name: link_url
 menu:
+  HOME: http://blog.joylau.cn
   ABOUT: /whoami
   CATEGORIES: /categories
   TAGS: /tags
@@ -108,11 +109,11 @@ mp3:
 gitalk:
   enable: true
   autoExpand: true
-  clientID: 'ec894e2b66f752e8b7fb'
-  clientSecret: '3ccc2e92bb350688fe2c2dc2930189b62622bfb1'
-  repo: 'blog-comments'
-  owner: 'TriDiamond'
-  admin: ['TriDiamond']
+  clientID: 'd9218a69d0b64a6a69b4'
+  clientSecret: '1ff13ada2c9062d823689a5fef4bb431f257916b'
+  repo: 'blog'
+  owner: 'JoyLau'
+  admin: ['JoyLau']
   # Ensure uniqueness and length less than 50
   id: location.pathname
   # Facebook-like distraction
@@ -172,5 +173,11 @@ sharejs:
 codemirror:
   modes: ['javascript', 'css', 'xml', 'htmlmixed', 'clike', 'php', 'shell', 'python']
 
+baidu_site: YKshmF02SZ
+
+baidu_tongji: 691c26474b1733df80dca4dfa7ba5536
+
+baidu_auto_push: true
+
 # Enabling mathjax support
-mathjax: true
+mathjax: false

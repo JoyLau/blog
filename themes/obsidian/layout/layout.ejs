@@ -19,8 +19,8 @@
     </div>
 </body>
 <footer>
-    <p class="copyright" id="copyright">
-        <span id="busuanzi_container_site_pv"></span> || <span id="busuanzi_value_site_pv"></span>
+    <p class="copyright">
+        <span title="本站访问量"><span class=" iconfont icon-yonghu"> </span> <span id="busuanzi_value_site_pv" class="gradient-text"></span></span> | <span title="本页阅读量"><span class="iconfont icon-eye"> </span> <span id="busuanzi_value_page_pv" class="gradient-text"></span></span>
     </p>
     <p class="copyright" id="copyright">
         &copy; <%= date(new Date(), 'YYYY') %>
@@ -29,16 +29,19 @@
         </span>.
         Powered by
         <span class="gradient-text">
-            <%- link_to("http://hexo.io/", "Hexo", {external: true})%>
+            Hexo
+<!--            <%- link_to("http://hexo.io/", "Hexo", {external: true})%>-->
         </span>
         Theme
         <span class="gradient-text">
-            <%- link_to("https://github.com/TriDiamond/hexo-theme-obsidian", "Obsidian", {external: true})%>
+            Obsidian
+<!--            <%- link_to("https://github.com/TriDiamond/hexo-theme-obsidian", "Obsidian", {external: true})%>-->
         </span>
 <!--        <small><%- link_to("https://github.com/TriDiamond/hexo-theme-obsidian/blob/master/CHANGELOG.md", 'v'+theme.version, {external: true})%></small>-->
     </p>
 </footer>
 <%- partial('_partial/mathjax', null, {cache: true}) %>
 <%- partial('_partial/scripts', null, {cache: true}) %>
+<%- partial('_partial/baidu-analytics', null, {cache: false}) %>
 
 </html>

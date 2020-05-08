@@ -1,7 +1,7 @@
 ---
 title: MacBook Pro 2017 --- 不行！我要开箱
 date: 2017-06-24 10:30:22
-img: <center><img src='//image.joylau.cn/blog/MacBookPro-Unboxing.png' alt='MacBookPro-Unboxing'></center>
+cover: //image.joylau.cn/blog/MacBookPro-Unboxing.png
 description: " "
 categories: [MacOS篇]
 tags: [MacOS,MacBookPro]

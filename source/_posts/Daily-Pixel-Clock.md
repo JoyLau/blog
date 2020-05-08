@@ -1,7 +1,7 @@
 ---
 title: 日常折腾 --- 自制像素时钟, 不输 LaMeetric Time
 date: 2020-04-23 14:30:43
-img: <center><img src='//image.joylau.cn/blog/awtrix2/awtrix2_24.jpg' alt='Pixel Clock'></center>
+cover: //image.joylau.cn/blog/awtrix2/awtrix2_24.jpg
 description: 自制像素时钟, 不输 LaMeetric Time
 categories: [日常折腾篇]
 tags: [日常折腾]

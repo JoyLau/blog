@@ -41,10 +41,14 @@ function initialBusuanzi() {
     }, bszCaller.fetch("//busuanzi.ibruce.info/busuanzi?jsonpCallback=BusuanziCallback", function(a) {
         bszTag.texts(a), bszTag.shows()
     }), bszTag = {
-        bszs: ["site_pv", "page_pv", "site_uv"],
+        bszs: ["site_pv", "page_pv", "page_pv_copy","site_uv"],
         texts: function(a) {
+            console.info(a)
             this.bszs.map(function(b) {
                 var c = document.getElementById("busuanzi_value_" + b);
+                if (b === 'page_pv_copy') {
+                    b = 'page_pv'
+                }
                 c && (c.innerHTML = a[b])
             })
         },

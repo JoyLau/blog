@@ -1,7 +1,7 @@
 ---
 title: 日常折腾之 KVR 漫游(一) --- 新路由 3 (Newifi D2) 刷入 Breed (刷不死)固件
 date: 2020-04-13 08:59:56
-img: <center><img src='//image.joylau.cn/blog/Daily-KVR-NewifiD2-Breed.jpeg' width='50%' alt='Daily-KVR-NewifiD2-Breed'></center>
+cover: //image.joylau.cn/blog/Daily-KVR-NewifiD2-Breed.jpeg
 description: 目前想要组 WIFI 漫游可选的方案有 AC + AP 或者 mesh 组网, 可这些的价格都不便宜, 而我选择用 2 台之前很火的矿机新路由 3 (Newifi D2) 来组 AP 实现 KVR 漫游,想要组 KVR 漫游, 2 台路由必须刷入集客 AP 固件, 而刷入集客 AP 固件前必须先刷入 Breed 固件,本篇介绍新路由 3 如何刷入该固件 
 categories: [日常折腾篇]
 tags: [KVR]

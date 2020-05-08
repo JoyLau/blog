@@ -1,7 +1,7 @@
 ---
 title: 日常折腾 --- 蜗牛星际安装黑群晖
 date: 2019-05-27 10:29:53
-img: <center><img src='http://image.joylau.cn/blog/daily-nas.png' alt='daily-nas'></center>
+cover: http://image.joylau.cn/blog/daily-nas.png
 description: 蜗牛星际安装黑群晖
 categories: [日常折腾篇]
 tags: [日常折腾]

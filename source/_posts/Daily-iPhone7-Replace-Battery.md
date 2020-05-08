@@ -1,7 +1,7 @@
 ---
 title: 日常折腾 --- iPhone 7 更换电池,缝缝补补又三年
 date: 2020-04-21 15:13:57
-img: <center><img src='//image.joylau.cn/blog/iPhone7/4.jpeg' width='50%' alt='Daily-iPhone7-Replace-Battery'></center>
+cover: //image.joylau.cn/blog/iPhone7/4.jpeg
 description: 有台老 iPhone 7,电池峰值只有 66%, 家人一直在用,想着买块电池换上,缝缝补补又三年....
 categories: [日常折腾篇]
 tags: []

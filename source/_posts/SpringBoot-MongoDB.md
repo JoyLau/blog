@@ -1,7 +1,7 @@
 ---
 title: 重剑无锋,大巧不工 SpringBoot --- 整合使用MongoDB
 date: 2017-7-18 12:15:24
-img: <center><img src='//image.joylau.cn/blog/SpringBoot-MongoDB.jpg' alt='spring-boot-mongoDB'></center>
+cover: //image.joylau.cn/blog/SpringBoot-MongoDB.jpg
 description: 我最近实现的一个音乐小站，深爬网易云音乐官网的音乐数据<br>数据的存储和快速读取采用的是redis<br>而爬到的数据想持久化存储下来，对于这种很结构化的数据来说MySQL已经并不适用了<br>使用MongoDB来异步存储，以后可以数据分析使用
 categories: [SpringBoot篇]
 tags: [Spring,SpringBoot,MongoDB]
