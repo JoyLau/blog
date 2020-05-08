@@ -86,6 +86,11 @@ pagination_dir: page
 ## Themes: https://hexo.io/themes/
 theme: obsidian
 
+search:
+  path: search.xml
+  field: post
+  content: true
+
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html
 deploy:
