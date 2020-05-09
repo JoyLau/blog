@@ -43,7 +43,6 @@ function initialBusuanzi() {
     }), bszTag = {
         bszs: ["site_pv", "page_pv", "page_pv_copy","site_uv"],
         texts: function(a) {
-            console.info(a)
             this.bszs.map(function(b) {
                 var c = document.getElementById("busuanzi_value_" + b);
                 if (b === 'page_pv_copy') {

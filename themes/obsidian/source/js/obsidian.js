@@ -292,7 +292,10 @@ var Obsidian = {
     if ($('span[id^="busuanzi_"]').length) {
       initialBusuanzi();
     }
-    reprocessMathJax();
+
+    if (typeof MathJax !== 'undefined') {
+      reprocessMathJax();
+    }
     buildImgCaption();
     utiliseBgColor('article');
     Obsidian.initialShare();
