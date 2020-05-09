@@ -1036,9 +1036,13 @@ $(function () {
           $('html,body').animate({
             scrollTop: tempScrollTop + 400
           }, 500);
-          document.querySelectorAll('pre code').forEach((block) => {
-            hljs.highlightBlock(block);
-          });
+
+          if (typeof hljs !== 'undefined') {
+            document.querySelectorAll('pre code').forEach((block) => {
+              hljs.highlightBlock(block);
+            });
+          }
+
           Obsidian.setCodeRowWithLang();
           if ($('#vcomments').length) {
             initValine();
