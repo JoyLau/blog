@@ -293,9 +293,6 @@ var Obsidian = {
       initialBusuanzi();
     }
 
-    if (typeof MathJax !== 'undefined') {
-      reprocessMathJax();
-    }
     buildImgCaption();
     utiliseBgColor('article');
     Obsidian.initialShare();

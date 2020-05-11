@@ -179,5 +179,3 @@ baidu_tongji: 691c26474b1733df80dca4dfa7ba5536
 
 baidu_auto_push: true
 
-# Enabling mathjax support
-mathjax: true
