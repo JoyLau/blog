@@ -170,8 +170,9 @@ sharejs:
 # if you want more language support check the modes list at official website
 # modes see: https://codemirror.net/mode/
 # see https://codemirror.net/
+# 默认支持了：JS, HTML, CSS, PHP, JAVA, C, C#, C++, SHELL, PYTHON.
 codemirror:
-  modes: ['javascript', 'css', 'xml', 'htmlmixed', 'clike', 'php', 'shell', 'python']
+  modes: ['javascript', 'css', 'xml', 'htmlmixed', 'clike', 'php', 'shell', 'python','yaml','groovy','sql','jsx','powershell','nginx','http']
 
 baidu_site: YKshmF02SZ
 

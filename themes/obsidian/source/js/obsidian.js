@@ -421,17 +421,21 @@ var Obsidian = {
 
           item.empty();
 
-          var myCodeMirror = CodeMirror(this, {
-            value: $code,
-            mode: Obsidian.getCodeMirrorMode(lang),
-            lineNumbers: !item.is('.inline'),
-            readOnly: true,
-            lineWrapping: true,
-            theme: 'dracula'
-          });
+          var that = this;
 
-          item.find('.CodeMirror').prepend(
-            '<span class="language-mark" ref=' + lang + '> <b class="iconfont icon-code" style="line-height: 0.7rem"></b> ' + displayLangText + '</span>');
+          setTimeout(function () {
+            var myCodeMirror = CodeMirror(that, {
+              value: $code,
+              mode: Obsidian.getCodeMirrorMode(lang),
+              lineNumbers: !item.is('.inline'),
+              readOnly: true,
+              lineWrapping: true,
+              theme: 'dracula'
+            });
+            item.find('.CodeMirror').prepend('<span class="language-mark" ref=' + lang + '> <b class="iconfont icon-code" style="line-height: 0.7rem"></b> ' + displayLangText + '</span>');
+          },2000)
+
+
         }
       });
     }
