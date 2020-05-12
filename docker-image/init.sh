@@ -1,26 +1,31 @@
 #! /bin/bash
 cd /my-blog
-echo "☆☆☆☆☆ your git repo is [$PULL_GIT_REPO] ; branch is [$PULL_BRANCH].☆☆☆☆☆"
+echo "☆☆☆☆☆ setting your git config, email: [$GIT_USER_EMAIL] ; name: [$GIT_USER_NAME].☆☆☆☆☆"
+git config --global user.email "$GIT_USER_EMAIL"
+git config --global user.name "$GIT_USER_NAME"
+
 ## 如果配置了代理则设置代理
-if [ "$PROXY" != '' ]; then
-    echo "you proxy setting is [$PROXY]."
-    git config --global http.proxy "'$PROXY'"
+if [[ $PROXY != '' ]]; then
+  echo "setting your git proxy [$PROXY]."
+  git config --global http.proxy "'$PROXY'"
 fi
-git clone -v --progress --depth=1 -b $PULL_BRANCH $PULL_GIT_REPO blog && echo "clone repo success!!!" || exit 1
+
+## 如果 MODE 包含字符串 deploy
+if [[ $MODE == *deploy* ]]; then
+  echo "☆☆☆☆☆ your pull git repo is [$PULL_GIT_REPO] ; branch is [$PULL_BRANCH].☆☆☆☆☆"
+
+  git clone -v --progress --depth=1 -b $PULL_BRANCH $PULL_GIT_REPO blog && echo "clone repo success!!!" || exit 1
+  cd /my-blog/blog/
+  cnpm install -d
+  bash /my-blog/bash/deploy.sh -v
+fi
+
+## 如果 MODE 包含字符串 public
+if [[ $MODE == *public* ]]; then
+  echo "☆☆☆☆☆ your public git repo is [$PUBLIC_GIT_REPO] ; branch is [$PUSH_BRANCH].☆☆☆☆☆"
+  bash /my-blog/bash/public.sh
+fi
+
 ## 取消代理设置
 git config --global --unset http.proxy
-
-if [ "$MODE" == 'deploy' ]; then
-    sh ./deploy.sh
-fi
-
-if [ "$MODE" == 'public' ]; then
-    sh ./public.sh
-fi
-
-if [ "$MODE" == 'all' ]; then
-    sh ./deploy.sh
-    sh ./public.sh
-fi
-
-/bin/bash
+tail -f /dev/null
