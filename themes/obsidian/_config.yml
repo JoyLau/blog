@@ -76,6 +76,7 @@ scrollbar: true
 # Website keywords used for SEO
 keywords: "JoyLau,Blog,JoyLau's Blog"
 
+myDescription: 整理一些在项目中用到的小知识或者技术点做一个总结及叙述，希望通过这些记录，能够将自己的学习成果归纳出来，对这些技术进行备忘，以便日后查询
 # Website slogans
 descriptionOne: "Think like an artist, develop like an artisan"
 descriptionTwo: "艺术家思维去思考问题，工匠创造精神去开发"
