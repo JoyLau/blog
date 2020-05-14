@@ -12,9 +12,10 @@ fi
 
 ## 如果 MODE 包含字符串 deploy
 if [[ $MODE == *deploy* ]]; then
-  echo "☆☆☆☆☆ your pull git repo is [$PULL_GIT_REPO] ; branch is [$PULL_BRANCH].☆☆☆☆☆"
-
-  git clone -v --progress --depth=1 -b $PULL_BRANCH $PULL_GIT_REPO blog && echo "clone repo success!!!" || exit 1
+  if [ ! -d "blog" ]; then
+    echo "☆☆☆☆☆ your pull git repo is [$PULL_GIT_REPO] ; branch is [$PULL_BRANCH].☆☆☆☆☆"
+    git clone -v --progress --depth=1 -b $PULL_BRANCH $PULL_GIT_REPO blog && echo "clone repo success!!!" || exit 1
+  fi
   cd /my-blog/blog/
   cnpm install -d
   bash /my-blog/bash/deploy.sh -v
