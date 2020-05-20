@@ -69,7 +69,7 @@ function buildImgCaption() {
 
   images.each(function () {
     var caption = $(this).attr('alt');
-    $('.content').find("[alt='" + caption + "']").parent().append('<p class="image-caption">"' + caption + '"</p>');
+    $(this).after('<p class="image-caption">"' + caption + '"</p>')
   });
 }
 
