@@ -85,7 +85,7 @@ descriptionTwo: "艺术家思维去思考问题，工匠创造精神去开发"
 google_analytics: ''
 
 # Website favicon
-favicon: /img/favicon.ico
+favicon: http://image.joylau.cn/favicon.ico
 
 # rss file
 rss: atom.xml
