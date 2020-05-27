@@ -12,5 +12,7 @@ if [ ! -d "public" ]; then
   git clone -v --progress --depth=1 -b $PUSH_BRANCH $PUBLIC_GIT_REPO public && echo "clone repo success!!!" || exit 1
 else
   cd /my-blog/blog/public
+  git fetch --all
+  git reset --hard origin/$PUSH_BRANCH
   git pull | tee /my-blog/logs/genrate.log
 fi
