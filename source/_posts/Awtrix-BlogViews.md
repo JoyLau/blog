@@ -8,20 +8,18 @@ tags: [Awtrix]
 ---
 
 <!-- more -->
-### 效果图
-![gif](http://image.joylau.cn/blog/Awtrix-preview-gif.gif)
-![app](http://image.joylau.cn/blog/Awtrix-web-app.png)
-![config](http://image.joylau.cn/blog/Awtrix-web-config.png)
-
-
-
 ### 说明
 1. 具备 Awtrix 硬件设备
-2. 博客的计数工具是`不蒜子`
+2. 博客的计数工具是**不蒜子**
 
 ### 环境准备
 1. JDK 8 的环境
 2. 开发工具： [B4J](https://www.b4x.com/b4j.html)
+
+### 效果图
+![gif](http://image.joylau.cn/blog/Awtrix-preview-gif.gif)
+![app](http://image.joylau.cn/blog/Awtrix-web-app.png)
+![config](http://image.joylau.cn/blog/Awtrix-web-config.png)
 
 ### 开发准备
 1. 模板文件
