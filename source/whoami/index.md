@@ -19,9 +19,9 @@ date: 2020-04-30 11:18:11
   }
 </style>
 
-<img class="img-center" draggable="false" src="http://image.joylau.cn/blog/JoyLau.jpg" style="height: 100px; width: 100px; border-radius: 50%; margin-bottom: 15px">
+<img alt='' class="img-center no-image-caption" draggable="false" src="http://image.joylau.cn/blog/JoyLau.jpg" style="height: 100px; width: 100px; border-radius: 50%; margin-bottom: 15px">
 
-<img class="img-center" draggable="false" style="padding-bottom: 2em;" src="//image.joylau.cn/blog/undraw_programming_2svr.svg" height="550" width="550/">
+<img alt='' class="img-center no-image-caption" draggable="false" style="padding-bottom: 2em;" src="//image.joylau.cn/blog/undraw_programming_2svr.svg" height="550" width="550/">
 
 <div class="my-links">
   <a class="gradient-text" href="mailto:2587038142.liu@gmail.com" target="_blank" rel="noopener"><span class=" iconfont icon-email-fill"></span></a>
