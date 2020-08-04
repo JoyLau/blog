@@ -281,12 +281,3 @@ tags: [MacOS,MacBookPro]
 
 ### 缺点也还是有的
 - 太贵
-
-
-## 彩蛋
-
-<center>
-![MacBook Pro](http://image.joylau.cn/blog/macbookpro/IMG_2212.PNG)
-
-**`我和我老婆的对话`**
-</center>
