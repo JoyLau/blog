@@ -1,12 +1,14 @@
 ---
 title: Ubuntu --- indicator-sysmonitor 状态栏监控工具开启对磁盘读写的监控
 date: 2020-08-07 15:06:08
-cover: //image.joylau.cn/blog/stat-disk_002.png
 description: indicator-sysmonitor 默认的模式可以监控 CPU 使用率， 内存使用， 网络 I/O 等， 但是却缺少了很关键的对当前磁盘 I/O 的监控，于是我就想着把他给加上去
 categories: [Ubuntu篇]
 tags: [Ubuntu]
 ---
 <!-- more -->
+
+### 背景
+indicator-sysmonitor 默认的模式可以监控 CPU 使用率， 内存使用， 网络 I/O 等， 但是却缺少了很关键的对当前磁盘 I/O 的监控，于是我就想着把他给加上去
 
 ### 解决方式
 indicator-sysmonitor 可以新建传感器，可以自定义命令来显示输出， 于是我想着使用 shell 命令获取当前磁盘的 I/O 在输出即可
@@ -96,3 +98,6 @@ indicator-sysmonitor 可以新建传感器，可以自定义命令来显示输�
 ```
 
 `Ctrl + O ` 保存后，普通用户 joylau 使用 `sudo iotop` 就不需要输入密码了， 也就实现了第二种方式的效果了
+
+
+3. 性能对比： 实测第一种方式的性能（CPU使用平均在 2%）要稍好于第二种（CPU使用平均在 5%）

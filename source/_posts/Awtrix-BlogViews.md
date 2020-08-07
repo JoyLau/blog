@@ -1,5 +1,5 @@
 ---
-title: Awtrix App 开发 --- 开发一款显示个人博客访问人数的 App
+title: Awtrix App --- 开发一款显示个人博客访问人数的 App
 date: 2020-08-02 13:00:31
 cover: //image.joylau.cn/blog/Awtrix-preview-png.png
 description: Awtrix App 开发入门之开发一款显示个人博客访问人数的 App
@@ -9,6 +9,8 @@ tags: [Awtrix]
 
 <!-- more -->
 ### 说明
+Awtrix App 开发入门之开发一款显示个人博客访问人数的 App
+
 1. 具备 Awtrix 硬件设备
 2. 博客的计数工具是**不蒜子**
 
