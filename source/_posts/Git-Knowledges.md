@@ -7,6 +7,11 @@ tags: [Git]
 ---
 
 <!-- more -->
+## git 命令显示中文
+
+直接在终端中执行下面的命令
+git config --global core.quotepath false
+
 
 ## 文件回滚
 1. 工作区尚未暂存的文件: git checkout -- 文件名
