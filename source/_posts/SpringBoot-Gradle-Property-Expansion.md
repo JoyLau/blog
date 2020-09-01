@@ -1,6 +1,7 @@
 ---
 title: 重剑无锋,大巧不工 SpringBoot --- 自动注入 Gradle 属性并在自定义 Banner 图中使用
 date: 2020-09-01 16:00:53
+cover: http://image.joylau.cn/blog/SpringBoot-Gradle-Property-Expansion.png
 description: SpringBoot 自动注入 Gradle 属性并在自定义 Banner 图中使用
 categories: [SpringBoot篇]
 tags: [SpringBoot,Gradle]
@@ -66,6 +67,9 @@ tags: [SpringBoot,Gradle]
 很多时候我们会自定义 banner 图, 使用 banner.txt 可以使用 springboot 的内置变量
 结合上面的使用方法, 我给出我的使用示例
 banner 的生成可以去这个在线网站: [Online Spring Boot Banner Generator](https://devops.datenkollektiv.de/banner.txt/index.html)
+
+![SpringBoot-Gradle-Property-Expansion](http://image.joylau.cn/blog/SpringBoot-Gradle-Property-Expansion.png)
+
 
 #### banner.txt
 
