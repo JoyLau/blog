@@ -9,6 +9,9 @@ tags: [Lombok]
 
 <!-- more -->
 
+
+![img](http://image.joylau.cn/blog/Lombok.png)
+
 - val可以将变量申明是final类型。
 - @NonNull注解能够为方法或构造函数的参数提供非空检查。
 - @Cleanup注解能够自动释放资源。
