@@ -25,11 +25,8 @@ tags: [Linux]
     systemctl enable --now snapd.socket
 ```
 
-3. 创建符号链接
+3. 用户重新登录
 
-```bash
-    ln -s /var/lib/snapd/snap /snap
-```
 
 4. 安装及权限配置
 
