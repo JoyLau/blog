@@ -81,6 +81,22 @@ tags: [Proxy]
     systemProp.https.nonProxyHosts=*.nonproxyrepos.com|localhost
 ```
 
+另一种快速的方法是使用阿里云的 maven 仓库
+配置如下:
+在用户目录下的 .gradle 的目录下新建文件 init.gradle
+```groovy
+    allprojects {
+        repositories {
+            mavenLocal()
+            maven {
+                url "http://maven.aliyun.com/nexus/content/groups/public"
+            }
+            mavenCentral()
+        }
+    }
+```
+
+
 ### Docker 配置代理
 在命令行使用 export HTTP_PROXY=xxxx:xx , 命令行里绝大部分命令都可以使用此代理联网,但是安装的 docker 不行,无法 pull 下来镜像文件,想要 pull 使用代理的话,需要添加代理的变量
 vim /usr/lib/systemd/system/docker.service
