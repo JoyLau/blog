@@ -224,3 +224,15 @@ nginx 配置如下:
 2. docker registry 的地址直接填 nginx 提供服务的`主机 + 端口号`即可, 后面不需要加其他东西
 
 这样方式在 docker-registry-ui 连接 docker 私服时会弹框输入用户名密码, 也能完美解决删除镜像的问题
+
+
+### Docker 私服配置 SSL 证书
+1. 去证书申请网站上下载证书, 我的是阿里云的, 下载下来的压缩包里有 2 个文件 .key 和 .pem
+2. 将这 2 个文件上传到 NAS 上, 配置 registry 挂载这 2 个文件, 并配置如下 2 个环境变量, 重启 registry 容器即可
+
+```bash
+      -e REGISTRY_HTTP_TLS_CERTIFICATE=/server.crt
+      -e REGISTRY_HTTP_TLS_KEY=/server.key
+```
+
+REGISTRY_HTTP_TLS_CERTIFICATE 这个变量指定的文件可以在挂载的时候将 .pem 直接更名为 .crt 文件
