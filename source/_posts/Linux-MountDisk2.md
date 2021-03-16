@@ -95,8 +95,17 @@ Calling ioctl() to re-read partition table.
 
 
 #### 第二步: 格式化磁盘
+通知内核重新读取分区信息 `partprobe /dev/vdb`
+
+先执行 blkid 查看磁盘的格式
+
+如果是 xfs 格式，执行下面的命令
 
 `mkfs -t xfs /dev/vdb1`
+
+如果是 ext4 的话
+
+`mkfs -t ext4 /dev/vdb1`
 
 ```bash
 [root@localhost core]# mkfs -t xfs /dev/vdb1
