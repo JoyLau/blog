@@ -31,6 +31,9 @@ File | Settings | Editor | General | Auto Import， 勾选 fly
 File | Settings | Keymap | main menu | code | completion | basic 设为 alt + /
 同时 取消 cyclic expand word 的 快捷键
 
+### commanc + shift + / 块注释冲突
+打开 macos 的设置， 键盘 | 快捷键 | App 快捷键 ， 取消勾选 所有应用程序的显示帮助菜单
+
 ### 自动提示忽略大小写
 File | Settings | Editor | General | Code Completion，将 case sensitive completion 修改为NONE
 
