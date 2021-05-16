@@ -430,6 +430,12 @@ $JAVA_HOME/bin/java -version  # 与直接执行 java -version 一样
 
 解决方法: 找到 `/etc/pam.d/vsftpd` 注释掉 `#auth       required    pam_shells.so`
 
+## Docker 安装 FTP
+
+```shell
+    docker run -d --name ftp-server --restart always -p 6106:21 -p 6107:20 -p 6108-6109:21100-21101 -v /data/etc-service-data/nginx-data/data/ftp:/home/vsftpd -e PASV_ADDRESS=112.29.246.234 -e FTP_USER=ky -e FTP_PASS='Kaiyuan@2020' -e PASV_MAX_PORT=21101 fauria/vsftpd
+```
+
 
 ## RabbitMQ 服务端安装
 1. yum install rabbitmq-server
