@@ -46,6 +46,20 @@ File | Settings | Editor | Inspections | Serialization issues | Serializable cla
 ### 显示内存占用
 Preferences | Appearance & Behavior | Appearance | Show memory indicator
 
+### 显示 Lambda 表达式的小图标
+Preferences | Editor | General | Gutter Icons
+找到 Lambda 并打上勾
+
+### 编码时显示参数名的提示
+Preferences | Editor | General | Code Completion
+找到 Parameter Info
+勾选 Show parameter name hints on completion
+勾选 Show full method signatures
+
+### 显示更多的参数名提示
+Preferences | Editor | Inlay Hints | Java | Parameter Hints | Show parameters hints for:
+勾选出自己想要显示的选项，我全都勾选了
+
 ### idea64.vmoptions 配置
 16G 以上的机器： 
     -Xms512m
