@@ -34,7 +34,7 @@ mc mb minio/mysql-backup
 docker exec  mysql-slave-1 mysqldump -h 10.55.3.123 -u root -pKaiyuan@2020  etc | mc pipe --attr "Artist=mysql" minio/mysql-backup/etc-`date "+%Y-%m-%d_%H-%M-%S"`.sql
 
 # 删除 10 天前的备份
-mc rm --older-than=10 --force --recursive minio/mysql-backup/
+mc rm --older-than=10d --force --recursive minio/mysql-backup/
 ```
 
 `chmod +x mysql-backup.sh`
