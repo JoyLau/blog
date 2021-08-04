@@ -9,7 +9,7 @@ node('master') {
 
         stage('Prepare docker environment') {
             def dockerImageName = 'node:16'
-            nodejs = docker.build(dockerImageName)
+            nodejs = docker.image(dockerImageName)
         }
 
         nodejs.inside {
