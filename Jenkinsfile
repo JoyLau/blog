@@ -8,6 +8,7 @@ node('master') {
         }
 
         stage('Prepare docker environment') {
+            sh 'curl -fsSL get.docker.com -o get-docker.sh && sh get-docker.sh --mirror Aliyun'
             def dockerImageName = 'node:16'
             nodejs = docker.image(dockerImageName)
         }
