@@ -13,9 +13,14 @@ node('node') {
         }
 
         nodejs.inside {
-            stage('Install') {
-                sh 'npm install -g hexo@4.2.0'
+            stage('Install Hexo') {
+                sh 'npm install hexo-cli@4.2.0 -g'
                 sh 'hexo --version'
+            }
+
+            stage('Build') {
+                sh 'hexo clean'
+                sh 'hexo g'
             }
         }
     } catch (e) {
