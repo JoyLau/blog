@@ -36,7 +36,7 @@ node('node') {
             text: [
             '![](http://nas.joylau.cn:5016/1920x1080)',
             '流水线构建成功！',
-            '阶段：' + STAGE_NAME
+            '阶段：' + env.STAGE_NAME
             ],
         )
     }
