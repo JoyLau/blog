@@ -12,7 +12,7 @@ tags: [Jackson,SpringBoot]
 jackson 中将 json 转为 Java 复杂对象一般会使用 new TypeReference<List<User>>(){} 的匿名内部类来实现
 
 这种方式有 2 个缺点
-1. 会不符合一些代码检测规范，比如 spotbugs， 会报出 `SIC_INNER_SHOULD_BE_STATIC_ANON` 规范检查
+1. 会不符合一些代码检测规范，比如 spotbugs， 会报出 `SIC_INNER_SHOULD_BE_STATIC_ANON` 的规范检查问题
 2. 无法动态的指定泛型类型
 
 ### 解决方式
