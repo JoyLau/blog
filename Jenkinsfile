@@ -8,13 +8,13 @@ node('node') {
 
         stage('Prepare docker environment') {
             def dockerImageName = 'node:16'
-            nodejs = docker.image(dockerImageName)
+            def dockerBuildOpts = '-f Dockerfile .'
+            nodejs = docker.image(dockerImageName, dockerBuildOpts)
         }
 
         nodejs.inside {
-            stage('Install Hexo') {
-                sh 'npm install hexo-cli@4.2.0 -g'
-//                 sh 'hexo --version'
+            stage('Echo Hexo') {
+                sh 'hexo --version'
             }
 
             stage('Build') {
