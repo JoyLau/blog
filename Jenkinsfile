@@ -18,9 +18,9 @@ node('node') {
             }
 
             stage('Build') {
-                sh 'yarn install'
-                sh 'hexo clean'
-                sh 'hexo g'
+                sh 'yarn install --verbose'
+                sh 'hexo clean --debug'
+                sh 'hexo g --debug'
             }
 
             stage('Deploy') {
