@@ -7,9 +7,9 @@ node('node') {
         }
 
         stage('Prepare docker environment') {
-            def dockerImageName = 'node:16'
+            def dockerImageName = 'node:hexo-4.2.0'
             def dockerBuildOpts = '-f Dockerfile .'
-            nodejs = docker.image(dockerImageName, dockerBuildOpts)
+            nodejs = docker.build(dockerImageName, dockerBuildOpts)
         }
 
         nodejs.inside {
