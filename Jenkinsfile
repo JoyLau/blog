@@ -16,6 +16,7 @@ node('node') {
             stage('Echo Hexo') {
                 sh 'pwd'
                 sh 'whereis hexo'
+                sh 'ls -lah'
                 sh 'hexo --version'
             }
 
