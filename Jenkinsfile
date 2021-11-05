@@ -14,6 +14,8 @@ node('node') {
 
         nodejs.inside {
             stage('Echo Hexo') {
+                sh 'pwd'
+                sh 'whereis hexo'
                 sh 'hexo --version'
             }
 
