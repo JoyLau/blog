@@ -17,7 +17,7 @@ node('node') {
                 sh 'pwd'
                 sh 'whereis hexo'
                 sh 'ls -lah'
-                sh 'hexo --version'
+//                 sh 'hexo --version'
             }
 
             stage('Build') {
