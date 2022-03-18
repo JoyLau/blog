@@ -13,13 +13,6 @@ node('node') {
         }
 
         nodejs.inside {
-            stage('Echo Hexo') {
-                sh 'pwd'
-                sh 'whereis hexo'
-                sh 'ls -lah'
-                sh '/usr/local/bin/hexo --version'
-            }
-
             stage('Build') {
                 sh 'yarn install --verbose'
                 sh 'hexo clean'
