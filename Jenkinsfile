@@ -22,8 +22,8 @@ node('node') {
             stage('Deploy') {
                 if (env.BRANCH_NAME == 'v2.0') {
                     def remote = [:]
-                    remote.name = "blog.joylau.cn"
-                    remote.host = "blog.joylau.cn"
+                    remote.name = "joylau.cn"
+                    remote.host = "joylau.cn"
                     remote.port = 22
                     remote.allowAnyHosts = true
                     withCredentials([usernamePassword(credentialsId: 'blog.joylau.cn', passwordVariable: 'password', usernameVariable: 'username')]) {
