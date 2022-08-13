@@ -177,3 +177,52 @@ vdb
 ```
 
 
+
+
+
+### 扩展现有磁盘 （LVM 格式）
+比如在虚拟机情况下，原来给虚拟机分配的磁盘大小是 100G，后来发现不够用了，在虚拟机操作界面将 100G 扩容到了 200G，然后多出来的 100G, 扩容到现有系统的 /home 目录下
+
+按以下操作即可实现
+
+#### 扩展分区
+
+```fdisk -l```
+
+```
+fdisk /dev/sda
+n
+p
+3
+回车
+回车
+t
+L
+8e
+w
+```
+
+#### 加载分区表
+`partprobe`
+
+#### 创建物理卷
+`pvcreate /dev/sda3`
+
+使用 `pvdisplay` 可查看当前物理卷的相关信息
+
+#### 将物理卷扩容到现有的卷组
+`vgextend centos /dev/sda3`
+
+使用 `vgdisplay` 可查看卷组的信息
+
+
+#### 将卷组中空闲空间扩容到 home 分区
+`lvextend /dev/mapper/centos-home /dev/sda3`
+
+使用 `lvdisplay` 可查看逻辑卷的信息
+
+#### 刷新 home 分区，在线扩容
+`xfs_growfs /dev/mapper/centos-home`
+
+使用 `df -kh` 和 `lsblk` 查看磁盘挂载情况
+
