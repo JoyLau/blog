@@ -55,6 +55,14 @@ tags: [Proxy]
     	proxy = socks5://127.0.0.1:1080
 ```
 
+配置仅 Github 走代理
+
+``` bash
+    git config --global http.https://github.com.proxy http://127.0.0.1:7890
+```
+
+注意这里不需要配置 https, 配置 http 就可以生效了
+
 ### Linux 终端代理
 同 **Mac 终端代理设置**
 
