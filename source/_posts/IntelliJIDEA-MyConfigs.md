@@ -31,7 +31,7 @@ File | Settings | Editor | General | Auto Import， 勾选 fly
 File | Settings | Keymap | main menu | code | completion | basic 设为 alt + /
 同时 取消 cyclic expand word 的 快捷键
 
-### commanc + shift + / 块注释冲突
+### command + shift + / 块注释冲突
 打开 macos 的设置， 键盘 | 快捷键 | App 快捷键 ， 取消勾选 所有应用程序的显示帮助菜单
 
 ### 自动提示忽略大小写
@@ -76,3 +76,6 @@ Preferences | Editor | Inlay Hints | Java | Parameter Hints | Show parameters hi
 ### Mac OS 下 IDEA 文件位置
 配置文件位置: /Users/joylau/Library/Preferences/IntelliJIdea201x.x
 索引文件位置: /Users/joylau/Library/Caches/IntelliJIdea201x.x
+
+### 新版 IDEA 新皮肤代码警告颜色修改
+Editor -> Color Scheme -> General -> Errors and Warnings -> Warning 然后将背景色设置为 #5E5339
