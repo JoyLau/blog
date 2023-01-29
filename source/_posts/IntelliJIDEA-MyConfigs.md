@@ -79,3 +79,6 @@ Preferences | Editor | Inlay Hints | Java | Parameter Hints | Show parameters hi
 
 ### 新版 IDEA 新皮肤代码警告颜色修改
 Editor -> Color Scheme -> General -> Errors and Warnings -> Warning 然后将背景色设置为 #5E5339
+
+### 新版 IDEA 关闭预览和单击打开文件
+在左侧 Project 面板，找到右上方的设置按钮， 去除勾选 **Enable Preview Tab** 和 **Open Files with Single Click**
