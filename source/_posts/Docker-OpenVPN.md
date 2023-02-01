@@ -173,4 +173,23 @@ Ubuntu 16.04:
 2. 192.168.255.0 的路由要能够走VPN通道, 可以配置 `redirect-gateway def1` 或者 `route-nopull  route 192.168.255.0 255.255.255.0 vpn_gateway`
 
 
+### OpenVPN 服务端配置静态 ip
+1. 配置文件配置 `ifconfig-pool-persist /etc/openvpn/ipp.txt 0`
+
+ipp.txt 文件的格式
+
+```text
+    user1,192.168.255.10
+    user2,192.168.255.11
+    user3,192.168.255.12
+```
+
+经自己测试， 该方式配置静态 IP 没生效，实际得到的 IP 会大 2 位
+
+
+2. 配置文件配置 `client-config-dir ccd`
+
+然后在 ccd 目录下以用户名为文件名命名，写入内容： `ifconfig-push 192.168.255.10 255.255.255.0` 来为单个用户配置 IP
+
+
 
