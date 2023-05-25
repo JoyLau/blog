@@ -18,7 +18,6 @@ tags: [MacOS,MacBookPro]
 
 ## 开始拆箱
 
-<center>
 ![MacBook Pro](http://image.joylau.cn/blog/macbookpro/IMG_2180.JPG)
 
 先来看一下刚拿到手的包装是什么样的
@@ -129,7 +128,6 @@ tags: [MacOS,MacBookPro]
 
 一睹真容
 15.6寸的
-</center>
 
 
 
@@ -138,7 +136,6 @@ tags: [MacOS,MacBookPro]
 ## 进入系统
 
 
-<center>
 ![MacBook Pro](http://image.joylau.cn/blog/macbookpro/IMG_2193.JPG)
 
 盖子一打开就开机了
@@ -240,14 +237,12 @@ tags: [MacOS,MacBookPro]
 屏幕的显示效果很震撼
 
 特效动画的帧数很高，给人感觉很流畅
-</center>
 
 
 
 
 ## 系统信息
 
-<center>
 ![MacBook Pro](http://image.joylau.cn/blog/macbookpro/IMG_2204.JPG)
 
 看一下系统信息
@@ -260,7 +255,6 @@ tags: [MacOS,MacBookPro]
 显示器信息
 
 2G独立显存
-</center>
 
 
 ## 个人感受

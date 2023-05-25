@@ -9,12 +9,9 @@ tags: [Spring,SpringBoot]
 
 <!-- more -->
 
-<center>
 
-![JoyMedia - Beta - 预览图](//image.joylau.cn/blog/JoyMedia.gif)
-![JoyMedia - Beta - 系统结构](//image.joylau.cn/blog/JoyMedia.png)
-
-</center>
+![JoyMedia - Beta - 预览图](http://image.joylau.cn/blog/JoyMedia.gif)
+![JoyMedia - Beta - 系统结构](http://image.joylau.cn/blog/JoyMedia.png)
 
 ## 在线地址
 [JoyMedia - Beta 预览版](http://media.joylau.cn)

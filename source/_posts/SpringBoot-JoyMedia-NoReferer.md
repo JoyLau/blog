@@ -13,11 +13,9 @@ tags: [Node.js,SpringBoot]
 
 ### 效果展示
 
-<center>
 ![JoyMusic-NoReferer](//image.joylau.cn/blog/joymusic-mv-noreferer.png)
 ![JoyMusic-NoReferer](//image.joylau.cn/blog/joymusic-mv-video-small.gif)
 ![JoyMusic-NoReferer](//image.joylau.cn/blog/joymusic-mv-video-url.gif)
-</center>
 
 ### 在线地址
 - [JoyMusic](//music.joylau.cn)
