@@ -226,3 +226,88 @@ w
 
 使用 `df -kh` 和 `lsblk` 查看磁盘挂载情况
 
+
+### 扩展现有磁盘 （非 LVM 格式）
+在现有的环境中 /data 目录下挂载一块 1T 的存储盘， 非 LVM 格式，现在，新加了一块 2T 的硬盘，想要扩展到 /data 目录下，如下：
+
+```bash
+[root@server-62 ~]# lsblk
+NAME            MAJ:MIN RM  SIZE RO TYPE MOUNTPOINT
+sr0              11:0    1 1024M  0 rom  
+vda             252:0    0   50G  0 disk 
+├─vda1          252:1    0    1G  0 part /boot
+└─vda2          252:2    0   49G  0 part 
+  ├─centos-root 253:0    0 45.1G  0 lvm  /
+  └─centos-swap 253:1    0  3.9G  0 lvm  [SWAP]
+vdb             252:16   0   64M  0 disk 
+└─vdb1          252:17   0   63M  0 part 
+vdc             252:32   0 1000G  0 disk 
+└─vdc1          252:33   0 1000G  0 part /data
+vdd             252:48   0    2T  0 disk 
+```
+
+简单说下处理方式，还是转为 LVM 格式，将 2 块硬盘都加入逻辑卷，然后将原来数据花园
+
+备份现有 /data 目录的数据，注意原先目录的权限， 比如
+```cp -a /data/ /home/backup/```
+
+卸载原先磁盘，并删除分区
+```shell
+umout /dev/vdc1
+fdisk /dev/vdc
+d
+w
+```
+
+编辑 **/etc/fstab** 注释掉目录挂载
+
+创建物理卷
+
+```shell
+pvcreate /dev/vdd
+pvcreate /dev/vdc
+```
+
+创建卷组， 并命名为 vg_data
+```shell
+vgcreate vg_data /dev/vddd
+```
+
+将物理卷 /dev/vdc 加入卷组
+
+```shell
+vgextend vg_data /dev/vdc
+```
+
+查看信息
+
+```shell
+pvdisplay
+vgdisplay
+vgs
+```
+
+创建逻辑卷， 并命名为 lv_data， 100% 使用
+```shell
+lvcreate -l 100%VG -n lv_data vg_data
+```
+
+查看信息
+```shell
+lvdisplay
+```
+
+格式化
+```shell
+mkfs -t xfs /dev/vg_data/lv_data
+```
+
+最后，创建目录挂载
+```shell
+vim /etc/fstab
+/dev/mapper/vg_data-lv_data   /data                   xfs     defaults        0 0
+
+mount -a
+lsblk
+```
+
