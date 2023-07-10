@@ -311,3 +311,5 @@ mount -a
 lsblk
 ```
 
+如果 `mount -a` 发现挂载不上， 可执行 `systemctl daemon-reload` 或重启解决
+
