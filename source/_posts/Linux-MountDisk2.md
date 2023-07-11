@@ -270,7 +270,7 @@ pvcreate /dev/vdc
 
 创建卷组， 并命名为 vg_data
 ```shell
-vgcreate vg_data /dev/vddd
+vgcreate vg_data /dev/vdd
 ```
 
 将物理卷 /dev/vdc 加入卷组
