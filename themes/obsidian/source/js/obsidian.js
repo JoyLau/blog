@@ -298,7 +298,7 @@ var Obsidian = {
     utiliseBgColor('article');
     Obsidian.initialShare();
 
-    if (typeof initValine === 'function') {
+    if (typeof initialBusuanzi === 'function') {
       initialBusuanzi();
     }
     if (typeof baidu_auto_push === 'function') {
