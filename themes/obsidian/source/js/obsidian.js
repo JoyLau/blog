@@ -134,6 +134,9 @@ var Obsidian = {
             $(window).trigger('resize');
           }, 300);
         }, 0);
+        if (typeof initialBusuanzi === 'function') {
+          initialBusuanzi();
+        }
       } else {
         Obsidian.loading();
         Obsidian.L(state.u, function (data) {
@@ -291,13 +294,16 @@ var Obsidian = {
     if ($('#vcomments').length) {
       initValine();
     }
-    if ($('span[id^="busuanzi_"]').length) {
-      initialBusuanzi();
-    }
-
     buildImgCaption();
     utiliseBgColor('article');
     Obsidian.initialShare();
+
+    if (typeof initValine === 'function') {
+      initialBusuanzi();
+    }
+    if (typeof baidu_auto_push === 'function') {
+      baidu_auto_push();
+    }
   },
   setCodeRowWithLang: function () {
     // Get the programming type of the current code block
