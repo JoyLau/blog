@@ -6,9 +6,9 @@
  */
 hexo.extend.helper.register("page_title", function () {
     var title = this.config.title
-    if (this.config.subtitle) {
-        title += ' - ' + this.config.subtitle;
-    }
+    // if (this.config.subtitle) {
+    //     title += ' - ' + this.config.subtitle;
+    // }
 
     if (this.is_archive()) {
         title = this.__("nav.archive");
