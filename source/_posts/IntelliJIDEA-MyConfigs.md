@@ -82,3 +82,7 @@ Editor -> Color Scheme -> General -> Errors and Warnings -> Warning 然后将背
 
 ### 新版 IDEA 关闭预览和单击打开文件
 在左侧 Project 面板，找到右上方的设置按钮， 去除勾选 **Enable Preview Tab** 和 **Open Files with Single Click**
+
+### 新版（2023）IDEA 双击 shift 出现搜索结果慢
+取消勾选配置：  
+Advanced Settings -> Wait for all contributors to finish before showing results
