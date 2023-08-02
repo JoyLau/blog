@@ -86,3 +86,11 @@ tags: [IntelliJ IDEA,Plugins]
 **_代码都是人家的，我就没好意思往IDEA的仓库里上传了..._**
 
 >> 如果你想使用这个插件： [点击查看](https://github.com/JoyLau/joylau-translation/releases)  或  [点击下载](http://image.joylau.cn/plugins/joylau-translation.1.0.REALEASE.jar)
+
+
+## 更新（2023-08-02）
+最近发现有道 API 的接口不能用了，无法返回翻译数据，于是重新修改了下插件，发布最新版本
+
+地址： https://github.com/JoyLau/joylau-translation/releases/tag/V2
+
+> 目前有个问题就是，现在的有道 API 是收费的，刚开始注册送 50 元，不过很快会用完的， 到时再换其他的翻译 API 吧
