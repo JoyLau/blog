@@ -15,8 +15,10 @@ node('node') {
         nodejs.inside {
             stage('Build') {
                 sh 'yarn install --verbose'
+                sh 'rm -rf public.tar.gz'
                 sh 'hexo clean'
                 sh 'hexo g'
+                sh 'tar -czvf public.tar.gz public'
             }
 
             stage('Deploy') {
@@ -30,17 +32,12 @@ node('node') {
                         remote.user = username
                         remote.password = password
                     }
-                    def folder = '/home/my-resources/nginx/blog'
-                    sshPut remote: remote, from: "public", into: "${folder}"
-                    // sshCommand remote: remote, command: "unzip -o ${folder}/backup/${zipFileName} -d ${folder}/data"
-                    echo '部署到 blog.joylau.cn。'
+                    sshPut remote: remote, from: "public.tar.gz", into: "/tmp/"
+                    sshCommand remote: remote, command: "rm -rf /home/my-resources/nginx/blog/public && mv /tmp/public /home/my-resources/nginx/blog"
                 } else {
                     echo '该分支不支持自动部署。'
                 }
-
             }
-
-
         }
     } catch (e) {
         throw e
