@@ -33,7 +33,8 @@ node('node') {
                         remote.password = password
                     }
                     sshPut remote: remote, from: "public.tar.gz", into: "/tmp/"
-                    sshCommand remote: remote, command: "rm -rf /home/my-resources/nginx/blog/public && mv /tmp/public /home/my-resources/nginx/blog"
+                    sshCommand remote: remote, command: "cd /tmp/ && tar -zxvf public.tar.gz && rm -rf " +
+                            "/home/my-resources/nginx/blog/public && mv /tmp/public /home/my-resources/nginx/blog"
                 } else {
                     echo '该分支不支持自动部署。'
                 }
