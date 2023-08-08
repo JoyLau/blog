@@ -86,3 +86,6 @@ Editor -> Color Scheme -> General -> Errors and Warnings -> Warning 然后将背
 ### 新版（2023）IDEA 双击 shift 出现搜索结果慢
 取消勾选配置：  
 Advanced Settings -> Wait for all contributors to finish before showing results
+
+### 删除以前版本的缓存文件
+Help -> Delete Leftover IDE Directories...
