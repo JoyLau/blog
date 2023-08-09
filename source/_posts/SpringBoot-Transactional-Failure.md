@@ -1,7 +1,7 @@
 ---
-title: SpringBoot --- @Transactional注解下，事务失效的七种场景
+title: SpringBoot --- @Transactional 注解下，事务失效的七种场景
 date: 2023-08-09 09:42:27
-description: @Transactional注解下，事务失效的七种场景
+description: '@Transactional注解下，事务失效的七种场景'
 categories: [SpringBoot篇]
 tags: [SpringBoot]
 ---
