@@ -112,3 +112,9 @@ ParserContext.TEMPLATE_EXPRESSION 的源码是
 新建一个类,使用 @Configuration 和 @ConfigurationProperties(prefix = "xxx") 注册一个 bean
 再在实体类上加上注解 @Component 也注册一个bean
 之后就可以使用 #{bean.indexName} 来读取到配置属性了
+
+# Spring Boot 中手动解析表达式的值
+有时候我们会在注解中使用 SPEL 表达式来读取配置文件中的指定值， 一般会使用类似于 【${xxx.xxx.xxx}】这样来使用
+如果在代码中手动解析该表达式的值，可以使用 Environment 的以下方法
+
+` environment.resolvePlaceholders(cidSpel) ` 或者 `environment.resolveRequiredPlaceholders(cidSpel)`
