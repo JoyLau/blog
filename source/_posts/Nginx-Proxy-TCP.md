@@ -29,3 +29,16 @@ stream 放到和 http 同一级
 
 ```firewall-cmd --zone=public --add-port=45672/tcp --permanent```
 ```firewall-cmd --reload ```
+
+如果提示错误 `unknown directive "stream"`
+则需要加载相应的模块
+
+在 nginx.conf 配置
+
+```shell
+load_module /usr/lib64/nginx/modules/ngx_stream_module.so;
+```
+
+
+这里是我用的包
+[Modules](http://image.joylau.cn/blog/nginx-steam-modules.zip)
