@@ -89,3 +89,7 @@ Advanced Settings -> Wait for all contributors to finish before showing results
 
 ### 删除以前版本的缓存文件
 Help -> Delete Leftover IDE Directories...
+
+### IntelliJ IDEA 2023.1.3 color schema 备份文件
+更新了 2023.2 后，对编辑器的颜色不是很适应， 这里备份下我在 2023.1.3 下的配置， 后面可以继续使用
+[IntelliJIDEA.2023.1.3.Color.Schema.Dark.icls](http://image.joylau.cn/blog/IntelliJIDEA.2023.1.3.Color.Schema.Dark.icls)
