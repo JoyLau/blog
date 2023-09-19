@@ -1,5 +1,5 @@
 ---
-title: SpringBoot --- @Transactional 注解下，事务失效的七种场景
+title: SpringBoot --- @Transactional 注解关于事务的记录备忘
 date: 2023-08-09 09:42:27
 description: '@Transactional注解下，事务失效的七种场景'
 categories: [SpringBoot篇]
@@ -23,3 +23,16 @@ tags: [SpringBoot]
 - 事务传播属性设置错误
 
 > 转载自 https://mp.weixin.qq.com/s/f9oYSo68ZNkEj9g8cXb9yA
+
+
+## 手动回滚事务和提交事务
+1. 回滚
+```TransactionAspectSupport.currentTransactionStatus().setRollbackOnly();```
+
+2. 提交
+引入 **PlatformTransactionManager** Bean
+```
+platformTransactionManager.commit(TransactionAspectSupport.currentTransactionStatus());
+```
+
+也可以使用 platformTransactionManager 来回滚事务
