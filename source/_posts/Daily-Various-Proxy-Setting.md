@@ -144,3 +144,15 @@ npm 支持 http 代理，但是不支持 socks 代理
 ```
 
 该代理是一次性的，关闭 shell 即失效
+
+### JVM 使用代理配置
+
+```bash
+    -DsocksProxyHost=172.16.1.201 -DsocksProxyPort=60798
+```
+
+在该代理基础上需要排除一些不需要使用代理的， 需要再加上
+
+```bash
+-Dhttp.nonProxyHosts="192.168.1.*|172.16.*.*" -DsocksNonProxyHosts="192.168.1.*|172.16.*.*"
+```
