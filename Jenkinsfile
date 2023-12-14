@@ -14,6 +14,8 @@ node('node') {
 
         nodejs.inside {
             stage('Build') {
+                sh 'npm config set registry https://registry.npmmirror.com'
+                sh 'yarn config set registry https://registry.npmmirror.com'
                 sh 'yarn install --verbose'
                 sh 'rm -rf public.tar.gz'
                 sh 'hexo clean'
