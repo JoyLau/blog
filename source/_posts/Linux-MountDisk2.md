@@ -313,3 +313,11 @@ lsblk
 
 如果 `mount -a` 发现挂载不上， 可执行 `systemctl daemon-reload` 或重启解决
 
+### 扩展逻辑卷
+[参考文档](https://help.aliyun.com/zh/ecs/use-cases/extend-an-lv-by-using-lvm#b3f8d0001aft2)
+
+### 扩容分区和文件系统
+[参考文档](https://help.aliyun.com/zh/ecs/user-guide/extend-the-partitions-and-file-systems-of-disks-on-a-linux-instance)
+
+### 转换MBR分区为GPT分区
+[参考文档](https://help.aliyun.com/zh/ecs/user-guide/convert-mbr-partitions-into-gpt-partitions)
