@@ -15,14 +15,14 @@ Windows 上是通过注册表实现的
 
 通过在 HKCR (HKEY_CALSSES_ROOT) 添加一条注册表记录
 
-![Win Registry](http://image.joylau.cn/blog/Electron-URL-Scheme-win.png)
+![Win Registry](//s3.joylau.cn:9000/blog/Electron-URL-Scheme-win.png)
 
 其中 command 的命令即为要执行的命令,注意后面要加一个参数 `"%1"`
 
 ### Mac 上的实现
 在应用里显示包内容,使用 xcode 查看 Info.plist 找到 URL types -- URL Schemes 里添加一项
 
-![Mac Info.plist](http://image.joylau.cn/blog/Electron-URL-Scheme-mac.png)
+![Mac Info.plist](//s3.joylau.cn:9000/blog/Electron-URL-Scheme-mac.png)
 
 ### Electron 的实现
 

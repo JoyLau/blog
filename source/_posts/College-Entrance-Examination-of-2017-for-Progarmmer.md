@@ -1,7 +1,7 @@
 ---
 title: 2017年程序员高考试卷
 date: 2017-6-9 20:58:03
-cover: http://image.joylau.cn/blog/gaokao.gif
+cover: //s3.joylau.cn:9000/blog/gaokao.gif
 description: 2017年全国高考结束了，这里有份程序员的高考试卷，一起来做套题压压惊
 categories: [其他篇]
 tags: [程序员]
@@ -28,13 +28,13 @@ tags: [程序员]
 &emsp;&emsp;&emsp;C. 程序员没有女朋友，不过节
 
 ### **4、程序员最怕弹出的窗口是（）**
-&emsp;&emsp;&emsp;A.&emsp;&emsp;&emsp;![选项A](//image.joylau.cn/blog/gaokao-a.jpg)
+&emsp;&emsp;&emsp;A.&emsp;&emsp;&emsp;![选项A](//s3.joylau.cn:9000/blog/gaokao-a.jpg)
 
 
-&emsp;&emsp;&emsp;B.&emsp;&emsp;&emsp;![选项B](//image.joylau.cn/blog/gaokao-b.jpg)
+&emsp;&emsp;&emsp;B.&emsp;&emsp;&emsp;![选项B](//s3.joylau.cn:9000/blog/gaokao-b.jpg)
 
 
-&emsp;&emsp;&emsp;C.&emsp;&emsp;&emsp;![选项C](//image.joylau.cn/blog/gaokao-c.jpg)
+&emsp;&emsp;&emsp;C.&emsp;&emsp;&emsp;![选项C](//s3.joylau.cn:9000/blog/gaokao-c.jpg)
 
 
 
@@ -81,7 +81,7 @@ tags: [程序员]
 
 
 
-<center> ![Title](//image.joylau.cn/blog/gaokao-title.jpg)</center >
+<center> ![Title](//s3.joylau.cn:9000/blog/gaokao-title.jpg)</center >
 
 
 ## 2017年普通高等学校招生全国统一考试

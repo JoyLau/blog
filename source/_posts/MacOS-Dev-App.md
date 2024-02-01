@@ -1,7 +1,7 @@
 ---
 title: MacOS常用开发使用APP
 date: 2017-06-29 23:28:02
-cover: //image.joylau.cn/blog/macos-soft.png
+cover: //s3.joylau.cn:9000/blog/macos-soft.png
 description: 记录一下自己常用的APP，以防不时之需
 categories: [MacOS篇]
 tags: [MacOS,MacBookPro]

@@ -1,7 +1,7 @@
 ---
 title: 重剑无锋,大巧不工 SpringBoot --- 实战项目 JoyMedia （ 搜索篇 ）
 date: 2017-08-06 18:09:47
-cover: //image.joylau.cn/blog/jquery-autocomplate.gif
+cover: //s3.joylau.cn:9000/blog/jquery-autocomplate.gif
 description: JoyMedia --- 搜索自己想听的音乐
 categories: [SpringBoot篇]
 tags: [SpringBoot,Jquery]
@@ -10,7 +10,7 @@ tags: [SpringBoot,Jquery]
 <!-- more -->
 ## 前言
 ### 效果展示
-![JoyMedia - Search](//image.joylau.cn/blog/jquery-autocomplate.gif)
+![JoyMedia - Search](//s3.joylau.cn:9000/blog/jquery-autocomplate.gif)
 ### 在线地址
 - [JoyMusic](//music.joylau.cn)
 ### 解释
@@ -92,7 +92,7 @@ tags: [SpringBoot,Jquery]
 - 再往后面来,看到的是一些配置项参数,一些简单的我就不在这多解释了,我这边主要说下我觉得比较重要的
 - resultsClass : 这个参数是生成的候选项的父 DIV,如下图所示:
 
-![JoyMedia - AutoComplate-Div](//image.joylau.cn/blog/jquery-autocomplate-div.png)
+![JoyMedia - AutoComplate-Div](//s3.joylau.cn:9000/blog/jquery-autocomplate-div.png)
 
 - 默认提供的样式很不好看,默认提供的样式都写在 jquery.autocomplete.css 里面
 - 在这里面,能看到刚才截图的 div : ac_results

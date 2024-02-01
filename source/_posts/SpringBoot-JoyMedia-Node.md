@@ -1,7 +1,7 @@
 ---
 title: 重剑无锋,大巧不工 SpringBoot --- 实战项目 JoyMedia （ Node篇 ）
 date: 2017-07-29 10:09:04
-cover: //image.joylau.cn/blog/joylau-media-node.png
+cover: //s3.joylau.cn:9000/blog/joylau-media-node.png
 description: JoyMedia --- Node服务提供解析及 APIs
 categories: [SpringBoot篇]
 tags: [Node.js,SpringBoot]
@@ -24,7 +24,7 @@ tags: [Node.js,SpringBoot]
 ### 以获取歌曲评论来分析
 - 我们打开其中一首音乐,抓包看一下
 
-![JoyMedia - Node](//image.joylau.cn/blog/joylau-media-node-1.png)
+![JoyMedia - Node](//s3.joylau.cn:9000/blog/joylau-media-node-1.png)
 
 - 绝大部分的请求都是 POST 的
 - 我们找到其中关于评论的请求,如上图所示
@@ -33,18 +33,18 @@ tags: [Node.js,SpringBoot]
 - 评论过多的话是分页来展示的
 - 通过参数 limit 来显示评论数量, offset 来控制分页
 
-![JoyMedia - Node](//image.joylau.cn/blog/joylau-media-node-2.png)
+![JoyMedia - Node](//s3.joylau.cn:9000/blog/joylau-media-node-2.png)
 
 - 再来看,这是我本地浏览器中的 cookies 值,现在为止知道有个 csrf 值用来加密
 
-![JoyMedia - Node](//image.joylau.cn/blog/joylau-media-node-3.png)
+![JoyMedia - Node](//s3.joylau.cn:9000/blog/joylau-media-node-3.png)
 
 - 每个请求后面都会跟上csrf_token 值,其他的参数还有params 和 encSecKey
 - 这些值的加密算法无非是2种,一种是前台 js 加密生成的,另一种是将参数传往后台,由后台加密完再传回来
 - 想要测试一下很简单,将里面的值复制一下在 xhr 里找一下就知道了
 - 推测是是 js 加密的,加密的 js 简直不能看,如下图
 
-![JoyMedia - Node](//image.joylau.cn/blog/joylau-media-node-4.png)
+![JoyMedia - Node](//s3.joylau.cn:9000/blog/joylau-media-node-4.png)
 - 看到很多请求后面都返回了 md5 那么 md5 加密是肯定有的
 - 其实仔细看加密的参数,很多都能靠猜出来
 - 本地需要创建一个私钥secKey，十六位，之后aes加密生成，在通过rsa吧secKey加密作为参数一起传回
@@ -196,7 +196,7 @@ tags: [Node.js,SpringBoot]
 ```
 
 - 值得注意的是,这里我的 node 模板选择的 EJS 所使用的 js 语法格式也比较新,你需要将你 WebStorm 的 js 编译器的版本提升到ECMAScript 6,否则的话会报错,如下图所示:
-![JoyMedia - Node](//image.joylau.cn/blog/joylau-media-node-5.png)
+![JoyMedia - Node](//s3.joylau.cn:9000/blog/joylau-media-node-5.png)
 
 
 ## 封装
@@ -269,9 +269,9 @@ tags: [Node.js,SpringBoot]
 - node app.js
 
 ## 查看效果
-![JoyMedia - Node](//image.joylau.cn/blog/joylau-media-node-7.png)
+![JoyMedia - Node](//s3.joylau.cn:9000/blog/joylau-media-node-7.png)
 
-![JoyMedia - Node](//image.joylau.cn/blog/joylau-media-node-6.png)
+![JoyMedia - Node](//s3.joylau.cn:9000/blog/joylau-media-node-6.png)
 
 
 >> 欢迎大家来听听试试看!😘 http://music.joylau.cn  (当前版本 v1.3)

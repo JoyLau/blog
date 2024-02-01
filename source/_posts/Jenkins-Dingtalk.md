@@ -31,4 +31,4 @@ tags: [Jenkins]
 ```
 
 ### 效果
-![Jenkins-Dingtalk](http://image.joylau.cn/blog/Jenkins-Dingtalk.png)
+![Jenkins-Dingtalk](//s3.joylau.cn:9000/blog/Jenkins-Dingtalk.png)

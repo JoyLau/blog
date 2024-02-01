@@ -1,7 +1,7 @@
 ---
 title: 日常折腾 --- 自制像素时钟, 不输 LaMeetric Time
 date: 2020-04-23 14:30:43
-cover: //image.joylau.cn/blog/awtrix2/awtrix2_24.jpg
+cover: //s3.joylau.cn:9000/blog/awtrix2/awtrix2_24.jpg
 description: 自制像素时钟, 不输 LaMeetric Time
 categories: [日常折腾篇]
 tags: [日常折腾]
@@ -33,7 +33,7 @@ tags: [日常折腾]
 2. 电烙铁家用一套
 3. 5v 4A 2.5mm 电源
 4. 2.5mm 直流电源插头
-5. 手动修改官方 3D 打印图纸, 这是我修改好的图纸,其中前面板的高度调高了 3 mm : http://image.joylau.cn//blog/awtrix2/3d打印图纸.zip
+5. 手动修改官方 3D 打印图纸, 这是我修改好的图纸,其中前面板的高度调高了 3 mm : //s3.joylau.cn:9000//blog/awtrix2/3d打印图纸.zip
 6. 手摇自喷漆一罐
 7. 定制黑色半透明亚克力板一块,尺寸 335mm * 95mm * 3mm
 8. 通用超 520 粘胶一小瓶
@@ -73,68 +73,68 @@ tags: [日常折腾]
 5. 此时如何屏上显示 **RESET** ,则重置成功
 
 ### 接线图
-![1](//image.joylau.cn/blog/awtrix2/AWTRIX_Core_Steckplatine.jpg)
+![1](//s3.joylau.cn:9000/blog/awtrix2/AWTRIX_Core_Steckplatine.jpg)
 
 
 ### 效果图
-![2](//image.joylau.cn/blog/awtrix2/awtrix2_1.jpg)  
+![2](//s3.joylau.cn:9000/blog/awtrix2/awtrix2_1.jpg)  
 
-![3](//image.joylau.cn/blog/awtrix2/awtrix2_2.jpg)  
+![3](//s3.joylau.cn:9000/blog/awtrix2/awtrix2_2.jpg)  
 
-![4](//image.joylau.cn/blog/awtrix2/awtrix2_3.jpg)  
+![4](//s3.joylau.cn:9000/blog/awtrix2/awtrix2_3.jpg)  
 
-![5](//image.joylau.cn/blog/awtrix2/awtrix2_4.jpg)  
+![5](//s3.joylau.cn:9000/blog/awtrix2/awtrix2_4.jpg)  
 
-![6](//image.joylau.cn/blog/awtrix2/awtrix2_5.jpg)  
+![6](//s3.joylau.cn:9000/blog/awtrix2/awtrix2_5.jpg)  
 
-![7](//image.joylau.cn/blog/awtrix2/awtrix2_6.jpg)  
+![7](//s3.joylau.cn:9000/blog/awtrix2/awtrix2_6.jpg)  
 
-![8](//image.joylau.cn/blog/awtrix2/awtrix2_7.jpg)  
+![8](//s3.joylau.cn:9000/blog/awtrix2/awtrix2_7.jpg)  
 
-![9](//image.joylau.cn/blog/awtrix2/awtrix2_8.jpg)  
+![9](//s3.joylau.cn:9000/blog/awtrix2/awtrix2_8.jpg)  
 
-![10](//image.joylau.cn/blog/awtrix2/awtrix2_9.jpg)  
+![10](//s3.joylau.cn:9000/blog/awtrix2/awtrix2_9.jpg)  
 
-![11](//image.joylau.cn/blog/awtrix2/awtrix2_10.jpg)  
+![11](//s3.joylau.cn:9000/blog/awtrix2/awtrix2_10.jpg)  
 
-![12](//image.joylau.cn/blog/awtrix2/awtrix2_11.jpg)  
+![12](//s3.joylau.cn:9000/blog/awtrix2/awtrix2_11.jpg)  
 
-![13](//image.joylau.cn/blog/awtrix2/awtrix2_12.jpg)  
+![13](//s3.joylau.cn:9000/blog/awtrix2/awtrix2_12.jpg)  
 
-![14](//image.joylau.cn/blog/awtrix2/awtrix2_13.jpg)  
+![14](//s3.joylau.cn:9000/blog/awtrix2/awtrix2_13.jpg)  
 
-![15](//image.joylau.cn/blog/awtrix2/awtrix2_14.jpg)  
+![15](//s3.joylau.cn:9000/blog/awtrix2/awtrix2_14.jpg)  
 
-![16](//image.joylau.cn/blog/awtrix2/awtrix2_15.jpg)  
+![16](//s3.joylau.cn:9000/blog/awtrix2/awtrix2_15.jpg)  
 
-![17](//image.joylau.cn/blog/awtrix2/awtrix2_16.jpg)  
+![17](//s3.joylau.cn:9000/blog/awtrix2/awtrix2_16.jpg)  
 
-![18](//image.joylau.cn/blog/awtrix2/awtrix2_17.jpg)  
+![18](//s3.joylau.cn:9000/blog/awtrix2/awtrix2_17.jpg)  
 
-![19](//image.joylau.cn/blog/awtrix2/awtrix2_18.jpg)  
+![19](//s3.joylau.cn:9000/blog/awtrix2/awtrix2_18.jpg)  
 
-![20](//image.joylau.cn/blog/awtrix2/awtrix2_19.jpg)  
+![20](//s3.joylau.cn:9000/blog/awtrix2/awtrix2_19.jpg)  
 
-![21](//image.joylau.cn/blog/awtrix2/awtrix2_20.jpg)  
+![21](//s3.joylau.cn:9000/blog/awtrix2/awtrix2_20.jpg)  
 
-![22](//image.joylau.cn/blog/awtrix2/awtrix2_21.jpg)  
+![22](//s3.joylau.cn:9000/blog/awtrix2/awtrix2_21.jpg)  
 
-![23](//image.joylau.cn/blog/awtrix2/awtrix2_22.jpg)  
+![23](//s3.joylau.cn:9000/blog/awtrix2/awtrix2_22.jpg)  
 
-![24](//image.joylau.cn/blog/awtrix2/awtrix2_23.jpg)  
+![24](//s3.joylau.cn:9000/blog/awtrix2/awtrix2_23.jpg)  
 
-![25](//image.joylau.cn/blog/awtrix2/awtrix2_24.jpg)  
+![25](//s3.joylau.cn:9000/blog/awtrix2/awtrix2_24.jpg)  
 
-![26](//image.joylau.cn/blog/awtrix2/server-page-1.png)  
+![26](//s3.joylau.cn:9000/blog/awtrix2/server-page-1.png)  
 
-![27](//image.joylau.cn/blog/awtrix2/server-page-2.png)  
+![27](//s3.joylau.cn:9000/blog/awtrix2/server-page-2.png)  
 
 
-<center><video src="//image.joylau.cn/blog/awtrix2/awtrix2_video1.mp4" muted loop="true" controls="controls">您的浏览器版本太低，无法观看本视频</video></center>  
+<center><video src="//s3.joylau.cn:9000/blog/awtrix2/awtrix2_video1.mp4" muted loop="true" controls="controls">您的浏览器版本太低，无法观看本视频</video></center>  
 
-<center><video src="//image.joylau.cn/blog/awtrix2/awtrix2_video2.mp4" muted loop="true" controls="controls">您的浏览器版本太低，无法观看本视频</video></center>  
+<center><video src="//s3.joylau.cn:9000/blog/awtrix2/awtrix2_video2.mp4" muted loop="true" controls="controls">您的浏览器版本太低，无法观看本视频</video></center>  
 
 ### Siri 语音控制
-![28](//image.joylau.cn/blog/awtrix2/awtrix2_siri-1.PNG)  
+![28](//s3.joylau.cn:9000/blog/awtrix2/awtrix2_siri-1.PNG)  
 
-![29](//image.joylau.cn/blog/awtrix2/awtrix2_siri-2.PNG)
+![29](//s3.joylau.cn:9000/blog/awtrix2/awtrix2_siri-2.PNG)

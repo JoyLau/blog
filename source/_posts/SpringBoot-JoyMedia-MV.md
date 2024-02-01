@@ -1,7 +1,7 @@
 ---
 title: 重剑无锋,大巧不工 SpringBoot --- 实战项目 JoyMedia （ MV篇 ）
 date: 2017-08-20 10:09:04
-description: '<center><video src="//image.joylau.cn/blog/joymusic-mv.mp4" loop="true" controls="controls" poster="//image.joylau.cn/blog/joymusic-mv-poster.png">您的浏览器版本太低，无法观看本视频</video></center>  <br>JoyMedia --- 观看海量 MV 视频'
+description: '<center><video src="//s3.joylau.cn:9000/blog/joymusic-mv.mp4" loop="true" controls="controls" poster="//s3.joylau.cn:9000/blog/joymusic-mv-poster.png">您的浏览器版本太低，无法观看本视频</video></center>  <br>JoyMedia --- 观看海量 MV 视频'
 categories: [SpringBoot篇]
 tags: [Node.js,SpringBoot]
 ---
@@ -12,7 +12,7 @@ tags: [Node.js,SpringBoot]
 
 ### 效果展示
 
-<center><video src="//image.joylau.cn/blog/joymusic-mv.mp4" loop="true" controls="controls" poster="//image.joylau.cn/blog/joymusic-mv-poster.png">您的浏览器版本太低，无法观看本视频</video></center>
+<center><video src="//s3.joylau.cn:9000/blog/joymusic-mv.mp4" loop="true" controls="controls" poster="//s3.joylau.cn:9000/blog/joymusic-mv-poster.png">您的浏览器版本太低，无法观看本视频</video></center>
 
 ### 在线地址
 - [JoyMusic](//music.joylau.cn)
@@ -58,11 +58,11 @@ tags: [Node.js,SpringBoot]
 
 这个是带 referer 的请求,被网易云直接拒绝了
 
-![joymusic-mv-referer](http://image.joylau.cn/blog/joymusic-mv-referer.png)
+![joymusic-mv-referer](//s3.joylau.cn:9000/blog/joymusic-mv-referer.png)
 
 这个是复制地址到地址栏,则可以直接播放
 
-![joymusic-mv-no-referer](http://image.joylau.cn/blog/joymusic-mv-no-referer.png)
+![joymusic-mv-no-referer](//s3.joylau.cn:9000/blog/joymusic-mv-no-referer.png)
 
 ## 服务单去除 referer
 - 严格来说不能说去除 refere,我们需要将原本我们自己服务器的 referer 修改为网易云服务器的 referer
@@ -144,7 +144,7 @@ tags: [Node.js,SpringBoot]
 - 这一属性已被我使用在播放器的右下角的一个小飞机的按钮上
 - 点击小飞机按钮就可以直接看 MV 视频了,流量走的是网易云的CDN,不再试自己的服务器
 
-![joymusic-mv-no-referer-href](http://image.joylau.cn/blog/joymusic-mv-no-referer-href.png)
+![joymusic-mv-no-referer-href](//s3.joylau.cn:9000/blog/joymusic-mv-no-referer-href.png)
 
 ## 不完美
 - 总感觉这个解决不够完美

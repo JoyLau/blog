@@ -1,7 +1,7 @@
 ---
 title: Maven --- 一款打包压缩 js css html 的Maven插件
 date: 2017-10-16 14:38:14
-cover: http://image.joylau.cn/blog/resource-compressor.png
+cover: //s3.joylau.cn:9000/blog/resource-compressor.png
 description: " "
 categories: [Maven篇]
 tags: [Maven]
@@ -86,7 +86,7 @@ pom 中引入插件：
 ## 压缩信息
 当看到以下图片所示的信息后，则压缩成功
 
-![joylau-compressor-plugins](http://image.joylau.cn/blog/resource-compressor.png)
+![joylau-compressor-plugins](//s3.joylau.cn:9000/blog/resource-compressor.png)
 
 例如 ：[INFO] common.js(8.71KB==>4.58KB,47.39%)
 

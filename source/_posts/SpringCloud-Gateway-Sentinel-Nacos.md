@@ -126,5 +126,5 @@ gw_flow-rules:
 1. 查看 sentinel dashboard 的配置
 2. 调用接口，看是否返回被 ban 信息
 
-![api-group](http://image.joylau.cn/blog/spring-cloud-gateway-sentinel-nacos-api-group.png)
-![aip=rule](http://image.joylau.cn/blog/spring-cloud-gateway-sentinel-nacos-rule.png)
+![api-group](//s3.joylau.cn:9000/blog/spring-cloud-gateway-sentinel-nacos-api-group.png)
+![aip=rule](//s3.joylau.cn:9000/blog/spring-cloud-gateway-sentinel-nacos-rule.png)

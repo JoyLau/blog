@@ -1,7 +1,7 @@
 ---
 title: 黑苹果 --- Hackintosh 修复磁盘 NVMe 磁盘的错误问题
 date: 2021-08-16 15:58:12
-cover: http://image.joylau.cn/blog/macOS%E7%9A%84%E9%97%AE%E9%A2%98%E6%8A%A5%E5%91%8A.png
+cover: //s3.joylau.cn:9000/blog/macOS%E7%9A%84%E9%97%AE%E9%A2%98%E6%8A%A5%E5%91%8A.png
 description: 黑苹果 Hackintosh 修复磁盘 NVMe 磁盘的错误问题
 categories: [Hackintosh]
 tags: [Hackintosh,黑苹果]
@@ -10,7 +10,7 @@ tags: [Hackintosh,黑苹果]
 <!-- more -->
 ### 错误信息
 
-![macOS 的问题报告](http://image.joylau.cn/blog/macOS%E7%9A%84%E9%97%AE%E9%A2%98%E6%8A%A5%E5%91%8A.png)
+![macOS 的问题报告](//s3.joylau.cn:9000/blog/macOS%E7%9A%84%E9%97%AE%E9%A2%98%E6%8A%A5%E5%91%8A.png)
 
 系统登录后报错信息如下：
 

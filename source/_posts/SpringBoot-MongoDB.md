@@ -1,7 +1,7 @@
 ---
 title: 重剑无锋,大巧不工 SpringBoot --- 整合使用MongoDB
 date: 2017-7-18 12:15:24
-cover: //image.joylau.cn/blog/SpringBoot-MongoDB.jpg
+cover: //s3.joylau.cn:9000/blog/SpringBoot-MongoDB.jpg
 description: 我最近实现的一个音乐小站，深爬网易云音乐官网的音乐数据<br>数据的存储和快速读取采用的是redis<br>而爬到的数据想持久化存储下来，对于这种很结构化的数据来说MySQL已经并不适用了<br>使用MongoDB来异步存储，以后可以数据分析使用
 categories: [SpringBoot篇]
 tags: [Spring,SpringBoot,MongoDB]
@@ -34,7 +34,7 @@ tags: [Spring,SpringBoot,MongoDB]
 ```
 
 ### 配置文件
-![mongoDB配置](//image.joylau.cn/blog/springboot-mongodb-config.png)
+![mongoDB配置](//s3.joylau.cn:9000/blog/springboot-mongodb-config.png)
 还有种配置url方式: `spring.data.mongodb.uri=mongodb://name:pass@host:port/db_name`
 
 相比这种方式,我觉得第一种截图的方式要更直观一些
@@ -50,10 +50,10 @@ tags: [Spring,SpringBoot,MongoDB]
 - 下面截图所示:
 
 自定义一个 DAO :
-![mongoDB-DAO](//image.joylau.cn/blog/springboot-mongodb-dao.png)
+![mongoDB-DAO](//s3.joylau.cn:9000/blog/springboot-mongodb-dao.png)
 
 查看如何使用 :
-![mongoDB-method](//image.joylau.cn/blog/springboot-mongodb-method.png)
+![mongoDB-method](//s3.joylau.cn:9000/blog/springboot-mongodb-method.png)
 有个 username 忘了配置了,得加上的
 
 
@@ -76,4 +76,4 @@ tags: [Spring,SpringBoot,MongoDB]
 
 ## 预览
 查看下刚爬的网易云官网的歌曲信息吧
-<center> ![歌曲信息](//image.joylau.cn/blog/springboot-mongoDB-preview.gif) <center>
+<center> ![歌曲信息](//s3.joylau.cn:9000/blog/springboot-mongoDB-preview.gif) <center>

@@ -1,7 +1,7 @@
 ---
 title: JoyGame --- 一个情怀游戏平台
 date: 2017-9-11 14:26:53
-cover: http://image.joylau.cn/blog/JoyGame-login.png
+cover: //s3.joylau.cn:9000/blog/JoyGame-login.png
 description: '最近和哥们玩起了以前的很多经典单机游戏，比如红警2，魔兽...<br>像这些游戏都支持局域网对战<br>于是有了这样一个平台的诞生 ---- JoyGame'
 categories: [程序员篇]
 tags: [程序员,技能]
@@ -23,7 +23,7 @@ tags: [程序员,技能]
 ## 原理
 通过socket hook + udp，针对war3来说，支持tcp，先在本地通过hook模拟建立tcp连接，然后将tcp的数据转成外网udp数据发给外网服务器转发给其他客户端，客户端接收到后通过本地tcp
 模拟连接转发到游戏进程。这个过程中通过中转服务器协助进行p2p。  
-![JoyGame-zhihu](http://image.joylau.cn/blog/JoyGame-zhihu.jpg)  
+![JoyGame-zhihu](//s3.joylau.cn:9000/blog/JoyGame-zhihu.jpg)  
 
 上面是知乎上的回答
 用我自己的话说就是
@@ -32,26 +32,26 @@ tags: [程序员,技能]
 ## 使用
 - 解压，打开JoyGameClient.exe
 - 选择中间的网络服务器,因为你本地肯定是没有服务端的，只能连接远程部署好的服务器  
-![JoyGame-Login](http://image.joylau.cn/blog/JoyGame-login.png)  
+![JoyGame-Login](//s3.joylau.cn:9000/blog/JoyGame-login.png)  
 - 没有账号，就注册一个账号，注册成功后登录平台
-![JoyGame-Login](http://image.joylau.cn/blog/JoyGame-main.png)
+![JoyGame-Login](//s3.joylau.cn:9000/blog/JoyGame-main.png)
 - 这是主界面
 - 接下来进入一个你想玩的游戏的房间
 - 设置你的游戏启动主程序
-![JoyGame-Login](http://image.joylau.cn/blog/JoyGame-setGamePath.png)
+![JoyGame-Login](//s3.joylau.cn:9000/blog/JoyGame-setGamePath.png)
 - 下面可以设置启动时游戏的参数，比如玩红警时，加入参数 -win，可以窗口启动
 - 之后点启动，进入游戏就可找到在一个房间的小伙伴了
 - 使用都很简单，看一遍就会
 
 ## 特色
 - 可以聊天，发表情，可以加好友。。。额，这些好像没有什么特色 
-![JoyGame-Login](http://image.joylau.cn/aodamiao/02.jpg)
+![JoyGame-Login](//s3.joylau.cn:9000/aodamiao/02.jpg)
 
 ## 我想说
 如果你想玩玩以前的一些怀旧游戏，或者你想看看该平台是如何操作实现联机的，还等什么，跟着Joy一起来玩吧
 私聊我可以给你开个 VIP 、等级直接升到将军哦！虽然没什么用，纯粹装*
 
 ## 下载
-- JoyGame平台下载： [JoyGameClient.rar](http://image.joylau.cn/blog/JoyGameClient.rar)
+- JoyGame平台下载： [JoyGameClient.rar](//s3.joylau.cn:9000/blog/JoyGameClient.rar)
 - 魔兽争霸3冰封王座v1.26绿色版： [百度网盘](https://pan.baidu.com/share/link?shareid=3779529435&uk=1077172855)
 - 红警2共和国之辉：[百度网盘](https://pan.baidu.com/s/1pKQ0aaJ)

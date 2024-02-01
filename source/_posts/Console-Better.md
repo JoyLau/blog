@@ -1,7 +1,7 @@
 ---
 title: 让你的Windows控制台窗口更优美
 date: 2017-6-16 09:23:17
-cover: //image.joylau.cn/blog/console-better.png
+cover: //s3.joylau.cn:9000/blog/console-better.png
 description: Windows下默认的控制台字体简直丑爆了
 categories: [其他篇]
 tags: [CMD]

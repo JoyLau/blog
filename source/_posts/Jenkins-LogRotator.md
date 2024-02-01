@@ -5,7 +5,7 @@ description: Jenkins使用脚本配置【丢弃旧的构建】
 categories: [Jenkins篇]
 tags: [Jenkins]
 ---
-<!-- more -->
+
 
 ### 脚本
 ```groovy
@@ -26,6 +26,8 @@ tags: [Jenkins]
 ```
 
 LogRotator 有 2 个构造方法， 一个是 2 个参数的， 一个是 4 个参数的，构造参数分别为：
+
+<!-- more -->
 
 - daysToKeep: 保持构建的天数， 如果非空，构建记录将保存此天数
 - numToKeep: 保持构建的最大个数， 如果非空，最多此数目的构建记录将被保存

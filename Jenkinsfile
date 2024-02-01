@@ -7,7 +7,7 @@ node('node') {
         }
 
         stage('Prepare docker environment') {
-            def dockerImageName = 'node:hexo-4.2.0'
+            def dockerImageName = 'node:hexo-7.1.1'
             def dockerBuildOpts = '-f Dockerfile .'
             nodejs = docker.build(dockerImageName, dockerBuildOpts)
         }
@@ -24,7 +24,7 @@ node('node') {
             }
 
             stage('Deploy') {
-                if (env.BRANCH_NAME == 'v2.0') {
+                if (env.BRANCH_NAME == 'v3.0') {
                     def remote = [:]
                     remote.name = "joylau.cn"
                     remote.host = "joylau.cn"

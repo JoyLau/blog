@@ -32,54 +32,54 @@ tags: [OpenCV]
 
 
 抽稀结果示例:
-![](http://image.joylau.cn/blog/baidu-traffic/2019-04-30-2.27.04.png)  
+![](//s3.joylau.cn:9000/blog/baidu-traffic/2019-04-30-2.27.04.png)  
 
 上图中,已经将上面的拥堵部分大量点稀释的只剩下 3 个点了,这三个点还是位于原来的轨迹上, 可能看的不太清楚,放大了看  
 
-![](http://image.joylau.cn/blog/baidu-traffic/2019-04-30-2.27.19.png)  
-![](http://image.joylau.cn/blog/baidu-traffic/2019-04-30-2.27.26.png)  
+![](//s3.joylau.cn:9000/blog/baidu-traffic/2019-04-30-2.27.19.png)  
+![](//s3.joylau.cn:9000/blog/baidu-traffic/2019-04-30-2.27.26.png)  
 
 示例 2 :
 
-![](http://image.joylau.cn/blog/baidu-traffic/2019-04-30-4.15.27.png)  
+![](//s3.joylau.cn:9000/blog/baidu-traffic/2019-04-30-4.15.27.png)  
 
 对于抽稀最大直观效果,我通过下面 2 张动图来演示:  
 
 抽稀前:  
-![](http://image.joylau.cn/blog/baidu-traffic/2019-04-30-2.02.49.gif)
+![](//s3.joylau.cn:9000/blog/baidu-traffic/2019-04-30-2.02.49.gif)
 
 抽稀后:
-![](http://image.joylau.cn/blog/baidu-traffic/2019-04-30-2.05.08.gif)
+![](//s3.joylau.cn:9000/blog/baidu-traffic/2019-04-30-2.05.08.gif)
 
 
 ### 骨架提取
 骨架提取是指从原来的图中层层剥离点,最后仍然要保持原来的形状
 
 算法基本思想: 
-![](http://image.joylau.cn/blog/baidu-traffic/2019-04-30-16-52-57.jpeg)
+![](//s3.joylau.cn:9000/blog/baidu-traffic/2019-04-30-16-52-57.jpeg)
 
 效果示例:
 
 我以这张拥堵瓦片图来看, 我提取出左上角的拥堵部分来处理
 
-![](http://image.joylau.cn/blog/baidu-traffic/17.png)
+![](//s3.joylau.cn:9000/blog/baidu-traffic/17.png)
 
 轮廓提取:
 
-![](http://image.joylau.cn/blog/baidu-traffic/2019-04-30-2.24.43.png)
+![](//s3.joylau.cn:9000/blog/baidu-traffic/2019-04-30-2.24.43.png)
 
 填充内部:
-![](http://image.joylau.cn/blog/baidu-traffic/2019-04-30-2.24.59.png)
+![](//s3.joylau.cn:9000/blog/baidu-traffic/2019-04-30-2.24.59.png)
 
 上述 2 中图进行加运算, 得到整个拥堵部分,再进行骨架提取:
 
-![](http://image.joylau.cn/blog/baidu-traffic/2019-04-30-2.25.07.png)
+![](//s3.joylau.cn:9000/blog/baidu-traffic/2019-04-30-2.25.07.png)
 
 已经得到最小化的骨架了,基本上都是 1 像素值,这对后续的处理很有利,再放大点看:
-![](http://image.joylau.cn/blog/baidu-traffic/2019-04-30-2.25.24.png)
+![](//s3.joylau.cn:9000/blog/baidu-traffic/2019-04-30-2.25.24.png)
 
 最后,我录了个视频，以展示目前的演示效果:
-<center><video src="http://image.joylau.cn/blog/baidu-traffic/traffic-demo.mp4" loop="true" controls="controls">您的浏览器版本太低，无法观看本视频</video></center>
+<center><video src="//s3.joylau.cn:9000/blog/baidu-traffic/traffic-demo.mp4" loop="true" controls="controls">您的浏览器版本太低，无法观看本视频</video></center>
 
 
 

@@ -66,7 +66,7 @@ spring 为我们实现了一个基于 ThreadPoolExecutor 线程池
 
 ### 个人理解
 理解图
-![](http://image.joylau.cn/blog/springboot-ThreadPoolTaskExecutor.jpg)
+![](//s3.joylau.cn:9000/blog/springboot-ThreadPoolTaskExecutor.jpg)
 
 ### 看点数据
 在线程池整个运作过程中,想看下运行状态的话可以这么做:

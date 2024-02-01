@@ -1,7 +1,7 @@
 ---
 title: 重剑无锋,大巧不工 SpringBoot --- 实战项目 JoyMedia （ NoReferer篇 ）
 date: 2017-08-29 11:13:24
-cover: //image.joylau.cn/blog/joymusic-mv-noreferer.png
+cover: //s3.joylau.cn:9000/blog/joymusic-mv-noreferer.png
 description: JoyMedia --- 解决上篇文章 MV 防盗链加上 referer 认证的问题<br>同时加上下滑看 MV 评论时,将视频缩小化到右下角,一边看 MV 一边看热评两不误
 categories: [SpringBoot篇]
 tags: [Node.js,SpringBoot]
@@ -13,9 +13,9 @@ tags: [Node.js,SpringBoot]
 
 ### 效果展示
 
-![JoyMusic-NoReferer](//image.joylau.cn/blog/joymusic-mv-noreferer.png)
-![JoyMusic-NoReferer](//image.joylau.cn/blog/joymusic-mv-video-small.gif)
-![JoyMusic-NoReferer](//image.joylau.cn/blog/joymusic-mv-video-url.gif)
+![JoyMusic-NoReferer](//s3.joylau.cn:9000/blog/joymusic-mv-noreferer.png)
+![JoyMusic-NoReferer](//s3.joylau.cn:9000/blog/joymusic-mv-video-small.gif)
+![JoyMusic-NoReferer](//s3.joylau.cn:9000/blog/joymusic-mv-video-url.gif)
 
 ### 在线地址
 - [JoyMusic](//music.joylau.cn)

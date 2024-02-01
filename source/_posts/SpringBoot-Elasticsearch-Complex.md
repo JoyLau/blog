@@ -17,7 +17,7 @@ java 操作 elasticsearch 有四种方式
 
 ## 测试准备
 我们先来准备一些数据,写了一个之前的获取JoyMusic 的音乐数据的项目来说,项目的结构是这样的:
-![elasticsearch-test-project](http://image.joylau.cn/blog/elasticsearch-test-project.png)
+![elasticsearch-test-project](//s3.joylau.cn:9000/blog/elasticsearch-test-project.png)
 获取数据的主要代码如下,只是为了增加数据
 
 ``` java 
@@ -126,8 +126,8 @@ java 操作 elasticsearch 有四种方式
 ```
 
 跑了起来之后, elasticsearch 增加的数据如下:
-![elasticsearch-test-guide](http://image.joylau.cn/blog/elasticsearch-test-guide.png)
-![elasticsearch-test-data](http://image.joylau.cn/blog/elasticsearch-test-data.png)
+![elasticsearch-test-guide](//s3.joylau.cn:9000/blog/elasticsearch-test-guide.png)
+![elasticsearch-test-data](//s3.joylau.cn:9000/blog/elasticsearch-test-data.png)
 
 现在数据有了,接下来就是使用各种方法了
 

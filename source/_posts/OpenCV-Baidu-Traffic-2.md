@@ -14,7 +14,7 @@ tags: [OpenCV]
 之前算法核心是 找出分段拥堵,并提取信息  
 之前算法的缺陷是使用霍夫变换提取瓦片中的直线时, 无法很好的控制参数, 导致在临近的曲线情况下分析结果不正确  
 简单示意图:  
-![](http://image.joylau.cn/blog/baidu-traffic/8.gif)  
+![](//s3.joylau.cn:9000/blog/baidu-traffic/8.gif)  
 
 
 在二维的坐标系中, 控制直线的是参数 m(斜率) 和 b(截距)
@@ -49,7 +49,7 @@ min_theta: 0
 
 max_theta: 5
 
-![](http://image.joylau.cn/blog/baidu-traffic/9.gif)  
+![](//s3.joylau.cn:9000/blog/baidu-traffic/9.gif)  
 
 对于形态各异的瓦片图来说,很难调整出一个适当的参数.  
 
@@ -75,7 +75,7 @@ max_theta: 5
 
 开发一系列流程截图如下:
 
-![](http://image.joylau.cn/blog/baidu-traffic/10.gif)  
+![](//s3.joylau.cn:9000/blog/baidu-traffic/10.gif)  
 
 图示的顺序依次对应思路的步骤, 在最后一张图中,已经将分析出来的分段拥堵信息再绘制到原图上, 准确度很高  
 
@@ -83,10 +83,10 @@ max_theta: 5
 
 为此我特地抽取了北京天安门附近的拥堵瓦片图  
 
-![](http://image.joylau.cn/blog/baidu-traffic/11.gif)  
+![](//s3.joylau.cn:9000/blog/baidu-traffic/11.gif)  
 
 这张图里反应的拥堵情况应该很具有代表性了,下面再用此算法对这张图进行分析:  
 
-![](http://image.joylau.cn/blog/baidu-traffic/12.gif)  
+![](//s3.joylau.cn:9000/blog/baidu-traffic/12.gif)  
 
 值得一提的是, 前一张图片处理耗时时间是: 0.08534727 s; 而后一张图片处理的时间是: 0.084427357 s, 时间基本无差.

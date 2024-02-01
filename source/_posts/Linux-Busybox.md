@@ -30,7 +30,7 @@ tags: [Linux]
 
 ### 可执行文件
 下面是我编译好二进制文件，可直接下载使用
-[busybox](http://image.joylau.cn/blog/busybox)
+[busybox](//s3.joylau.cn:9000/blog/busybox)
 
 可使用命令如下：
 

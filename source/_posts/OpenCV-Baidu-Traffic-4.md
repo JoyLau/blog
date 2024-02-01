@@ -40,7 +40,7 @@ tags: [OpenCV]
 
 经过一番分析和折腾后,于内网搭建了离线版的地址解析服务,提供 API,将经纬度转化为道路信息, API 返回数据如下:
 
-![](http://image.joylau.cn/blog/geocoder-reverse.png)
+![](//s3.joylau.cn:9000/blog/geocoder-reverse.png)
 
 
 支持返回的数据很详细: 省,市,行政区划,邮编,道路名,附近的建筑物,公交站牌,商场等
@@ -50,7 +50,7 @@ tags: [OpenCV]
 
 
 最后,我录了个短视频看下实际的使用效果:
-<center><video src="http://image.joylau.cn/blog/geocoder-reverse.mp4" loop="true" controls="controls">您的浏览器版本太低，无法观看本视频</video></center>
+<center><video src="//s3.joylau.cn:9000/blog/geocoder-reverse.mp4" loop="true" controls="controls">您的浏览器版本太低，无法观看本视频</video></center>
 
 
 

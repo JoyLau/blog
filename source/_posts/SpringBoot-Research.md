@@ -7,7 +7,7 @@ tags: [Spring,SpringBoot]
 ---
 
 <!-- more -->
-![SpringBootStart-Main](//image.joylau.cn/blog/SpringBootStart-Main.png-image1)
+![SpringBootStart-Main](//s3.joylau.cn:9000/blog/SpringBootStart-Main.png-image1)
 
 
 ## 开始
@@ -223,7 +223,7 @@ SpringApplication的run方法的实现是我们本次旅程的主要线路，该
 
 13） 正常情况下，遍历执行SpringApplicationRunListener的finished()方法、（如果整个过程出现异常，则依然调用所有SpringApplicationRunListener的finished()方法，只不过这种情况下会将异常信息一并传入处理）
 去除事件通知点后，整个流程如下：
-![SpringBoot-start-model](//image.joylau.cn/blog/SpringBoot-start-model.jpg)
+![SpringBoot-start-model](//s3.joylau.cn:9000/blog/SpringBoot-start-model.jpg)
 
 ### 参考
 大部分参考了《SpringBoot揭秘快速构建为服务体系》这本书

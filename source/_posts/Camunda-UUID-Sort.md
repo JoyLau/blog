@@ -2,7 +2,7 @@
 title: Camunda --- ACT_HI_ACTINST 表中同一流程实例的活动节点排序
 date: 2023-07-21 09:18:26
 description: Camunda ACT_HI_ACTINST 表中同一流程实例的活动节点排序
-cover: http://image.joylau.cn/blog/Camunda-UUID-Sort-2.png
+cover: //s3.joylau.cn:9000/blog/Camunda-UUID-Sort-2.png
 categories: [Camunda篇]
 tags: [Camunda]
 ---
@@ -12,13 +12,13 @@ tags: [Camunda]
 ## 背景
 有时我们想在同一个流程实例中查看流程从上到下的流转顺序， 效果像这样
 
-![Camunda-1](http://image.joylau.cn/blog/Camunda-UUID-Sort-1.jpg)
+![Camunda-1](//s3.joylau.cn:9000/blog/Camunda-UUID-Sort-1.jpg)
 
 这时会到 **ACT_HI_ACTINST** 表里去查流程实例的节点信息
 
 但是我们根据流程是 ID 去查数据的时候发现， 并没有很好的根据时间顺序进行排列，就比如上面的数据，在数据库反应的情况如下:
 
-![Camunda-2](http://image.joylau.cn/blog/Camunda-UUID-Sort-2.png)
+![Camunda-2](//s3.joylau.cn:9000/blog/Camunda-UUID-Sort-2.png)
 
 可以看到 发起人和抄送人是几乎同时进行的，因为发起人发起后，第一个是抄送人任务， sendTask 的操作很快，创建时间 START_TIME 都是 2023-07-20 09:11:21  
  于是同一流程实例根据创建时间 START_TIME 排序就会出现问题，上面的数据就是抄送人跑到发起人前面去了

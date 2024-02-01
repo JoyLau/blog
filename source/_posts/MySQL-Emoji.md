@@ -1,14 +1,14 @@
 ---
 title: 为网站添加emoji表情支持
 date: 2017-3-21 08:35:04
-cover: //image.joylau.cn/blog/emoji.jpg
+cover: //s3.joylau.cn:9000/blog/emoji.jpg
 description: 普通的文字在平常聊天已经是远远不能满足人们的正常需求了，emoji小表情的流行貌似更能表达人们之间用文字无法传达的情感
 categories: [MySQL篇]
 tags: [MySQL,emoji]
 ---
 <!-- more -->
 
-![emoji](//image.joylau.cn/blog/emoji.jpg)
+![emoji](//s3.joylau.cn:9000/blog/emoji.jpg)
 
 
 ## 准备

@@ -57,7 +57,7 @@ tags: [Gradle]
 
 10. 对比发现2个项目的依赖版本号不一致
 
-![对比图](http://image.joylau.cn/blog/elastic-job-gradle-dependencies.png)
+![对比图](//s3.joylau.cn:9000/blog/elastic-job-gradle-dependencies.png)
 
 11. 看到 demo 里依赖的 `org.apache.curator:curator-framework` 和 `org.apache.curator:curator-recipes` 都是 2.10.0, 而我引入的版本却是gradle 上的最新版 4.0.1, 而且也能看到2者的 zookeeper 的版本也不一致,一个是 3.4.6,一个是 3.5.3-beta
 

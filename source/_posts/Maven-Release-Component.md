@@ -1,14 +1,14 @@
 ---
 title: Maven --- 发布自己的构件到中央仓库
 date: 2017-3-17 11:43:01
-cover: //image.joylau.cn/blog/sonatype.png
+cover: //s3.joylau.cn:9000/blog/sonatype.png
 description: Sonatype真可谓是个强大的公司，如此多的构件包竟能管理的有条不紊，最近自己写了个ECharts的类库，想传到Maven中央仓库，下面开始动手吧.....
 categories: [Maven篇]
 tags: [Maven,GPG]
 ---
 <!-- more -->
 
-![Sonatype](//image.joylau.cn/blog/sonatype.png)
+![Sonatype](//s3.joylau.cn:9000/blog/sonatype.png)
 
 
 ## 说明
@@ -19,25 +19,25 @@ tags: [Maven,GPG]
 
 ### 账户注册
 - 注册地址 ： https://issues.sonatype.org/secure/Signup!default.jspa  ,这一步需要注意的是记住用户名和密码，后面配置文件会用到
-![注册](//image.joylau.cn/blog/sonatype-register.png)
+![注册](//s3.joylau.cn:9000/blog/sonatype-register.png)
 
 ### 创建并提交工单
-![创建工单](//image.joylau.cn/blog/sonatype_issue.PNG)
+![创建工单](//s3.joylau.cn:9000/blog/sonatype_issue.PNG)
 
 - Project和issue Type的填写如上图所示，不能填写错了
-- 创建完成之后就等待网站工作人员的审核就可以了，不知道为什么，我等待的时间非常短，2分钟都不到，工作人员就回复我了，可能是我的运气比较好吧，但是上个星期买房摇号我却没摇到![伤心欲绝](////image.joylau.cn/aodamiao/18.gif)
+- 创建完成之后就等待网站工作人员的审核就可以了，不知道为什么，我等待的时间非常短，2分钟都不到，工作人员就回复我了，可能是我的运气比较好吧，但是上个星期买房摇号我却没摇到![伤心欲绝](////s3.joylau.cn:9000/aodamiao/18.gif)
 - 当issue 的 state 变为 `RESOLVED`时就可继续操作了，同时下面的活动区会给你发消息
-![Comment](//image.joylau.cn/blog/issue-activity.png)
+![Comment](//s3.joylau.cn:9000/blog/issue-activity.png)
 
 
 ### gpg生成密钥对
 - 下载安装：https://www.gpg4win.org/download.html 
  **_安装时注意的是，只安装主体组件和加密解密窗口的组件就可以了，其他的不需要~~~~_**
 - 查看是否安装成功:`gpg --version`
-![version](//image.joylau.cn/blog/gpg-version.png)
+![version](//s3.joylau.cn:9000/blog/gpg-version.png)
 - 生成密钥对:`gpg --gen-key`
-![gpg --gen-key](//image.joylau.cn/blog/gpg-2.png)
-![gpg --gen-key](//image.joylau.cn/blog/gpg-2.png)
+![gpg --gen-key](//s3.joylau.cn:9000/blog/gpg-2.png)
+![gpg --gen-key](//s3.joylau.cn:9000/blog/gpg-2.png)
 - 之后往下，会让你输入用户名和邮箱，还有一个Passphase，相当于密钥库密码，不要忘记。
 - 查看公钥:`gpg --list-keys`
 - 将公钥发布到 PGP 密钥服务器

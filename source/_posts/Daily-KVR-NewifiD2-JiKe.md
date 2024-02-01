@@ -32,7 +32,7 @@ tags: [KVR]
 2. 进入无线管理->SSID 设置WIFI 信息, 只要设置一台即可,下面通过克隆的方式来配置其他的 AP
 3. 进入微AC->AP列表
 
-![配置信息如下](//image.joylau.cn/blog/Daily-KVR-NewifiD2-JiKe.png)
+![配置信息如下](//s3.joylau.cn:9000/blog/Daily-KVR-NewifiD2-JiKe.png)
 
 
 
@@ -46,6 +46,6 @@ HND: 1.2
 
 2. 注意 WIFI 切换不同的信道,防止互相干扰
 
-![信道切换](//image.joylau.cn/blog/Daily-KVR-NewifiD2-JiKe-2.png)
+![信道切换](//s3.joylau.cn:9000/blog/Daily-KVR-NewifiD2-JiKe-2.png)
 
 之后可以使用 WIFI 魔盒对家里的各个地方进行网速和稳定性及漫游的测试了✿✿ヽ(°▽°)ノ✿

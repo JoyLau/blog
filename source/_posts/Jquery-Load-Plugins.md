@@ -49,4 +49,4 @@ tags: [Jquery]
 
 发一张对比图
 
-![query-Load-Plugins](http://image.joylau.cn/blog/Jquery-Load-Plugins.md.png)
+![query-Load-Plugins](//s3.joylau.cn:9000/blog/Jquery-Load-Plugins.md.png)

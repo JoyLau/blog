@@ -2,7 +2,7 @@
 title: Tesla --- 自己动手更换特斯拉内部空调滤芯
 date: 2023-07-17 09:14:24
 description: 自己动手更换特斯拉内部空调滤芯
-cover: http://image.joylau.cn/blog/Tesla_my.jpg
+cover: //s3.joylau.cn:9000/blog/Tesla_my.jpg
 categories: [Tesla 篇]
 tags: [Tesla]
 ---
@@ -32,17 +32,17 @@ tags: [Tesla]
 5. 我这里为了顺利拆掉侧方的挡板， 我拔掉了喇叭的排线，这样能够把整个塑料壳放到傍边，也可以把氛围灯的排线一并拆掉，这样可以整体拿下来
 6. 使用撬棒沿着侧边挡板的缝隙慢慢撬起， 随后用手沿着挡板把整个挡板拽下来，要用点力气, 这里注意拔下来的挡板白色卡扣，有时候不会被一起带出来，需要手动去下来，再装回卡勾上， 不然还原装回去的时候容易掉下去，导致车里异响  
 
-![挡板](http://image.joylau.cn/blog/Tesla-Inner-Car-Air-Filter_1_.pic.jpg)  
+![挡板](//s3.joylau.cn:9000/blog/Tesla-Inner-Car-Air-Filter_1_.pic.jpg)  
 
 7. 拆下挡板后可以看到最里面的滤芯槽盖板， 上方有一个 T20 的螺丝， 拆下他， 可以去除盖板  
 
-![滤芯槽盖板](http://image.joylau.cn/blog/Tesla-Inner-Car-Air-Filter_2_.pic.jpg)   
-![滤芯槽盖板2](http://image.joylau.cn/blog/Tesla-Inner-Car-Air-Filter_3_.pic.jpg)   
+![滤芯槽盖板](//s3.joylau.cn:9000/blog/Tesla-Inner-Car-Air-Filter_2_.pic.jpg)   
+![滤芯槽盖板2](//s3.joylau.cn:9000/blog/Tesla-Inner-Car-Air-Filter_3_.pic.jpg)   
 
 8. 取出 2 片空调滤芯，再放入新买的
 
-![新旧对比1](http://image.joylau.cn/blog/Tesla-Inner-Car-Air-Filter_4_.pic.jpg)   
-![新旧对比2](http://image.joylau.cn/blog/Tesla-Inner-Car-Air-Filter_5_.pic.jpg)   
+![新旧对比1](//s3.joylau.cn:9000/blog/Tesla-Inner-Car-Air-Filter_4_.pic.jpg)   
+![新旧对比2](//s3.joylau.cn:9000/blog/Tesla-Inner-Car-Air-Filter_5_.pic.jpg)   
 
 
 对比了下新旧， 发现我之前旧的滤芯并不是很脏，但是有点潮湿了，还有异味
@@ -50,4 +50,4 @@ tags: [Tesla]
 9. 还原
 
 
-![我的 Tesla](http://image.joylau.cn/blog/Tesla_my.jpg)
+![我的 Tesla](//s3.joylau.cn:9000/blog/Tesla_my.jpg)

@@ -1,14 +1,14 @@
 ---
 title: IntelliJ IDEA 插件开发
 date: 2017-4-28 11:32:10
-cover: //image.joylau.cn/blog/IntelliJIDEA-Plugins.png
+cover: //s3.joylau.cn:9000/blog/IntelliJIDEA-Plugins.png
 description: 以前经常使用的一款翻译插件，近几天发现突然不好用了，时行时不行的.....是时候得 看一些问题了.....
 categories: [IntelliJ IDEA篇]
 tags: [IntelliJ IDEA,Plugins]
 ---
 
 <!-- more -->
-![IntelliJIDEA-Plugins](//image.joylau.cn/blog/IntelliJIDEA-Plugins.png)
+![IntelliJIDEA-Plugins](//s3.joylau.cn:9000/blog/IntelliJIDEA-Plugins.png)
 
 ## 说明
 我现在用的这个插件时ECTranslation,是用于做中英文翻译的，可以在看文档和注释的是方便的使用，然而近期变得不好用了
@@ -23,9 +23,9 @@ tags: [IntelliJ IDEA,Plugins]
 
 ## 开始项目
 第一步创建IDEA插件项目：
-![IntelliJIDEA-Build](//image.joylau.cn/blog/IntelliJIDEA-Build.png)
+![IntelliJIDEA-Build](//s3.joylau.cn:9000/blog/IntelliJIDEA-Build.png)
 第二步目录结构如下图所示：
-![IntelliJIDEA-Folder](//image.joylau.cn/blog/IntelliJIDEA-folder.png)
+![IntelliJIDEA-Folder](//s3.joylau.cn:9000/blog/IntelliJIDEA-folder.png)
 
 
 ## 项目配置
@@ -85,7 +85,7 @@ tags: [IntelliJ IDEA,Plugins]
 
 **_代码都是人家的，我就没好意思往IDEA的仓库里上传了..._**
 
->> 如果你想使用这个插件： [点击查看](https://github.com/JoyLau/joylau-translation/releases)  或  [点击下载](http://image.joylau.cn/plugins/joylau-translation.1.0.REALEASE.jar)
+>> 如果你想使用这个插件： [点击查看](https://github.com/JoyLau/joylau-translation/releases)  或  [点击下载](//s3.joylau.cn:9000/plugins/joylau-translation.1.0.REALEASE.jar)
 
 
 ## 更新（2023-08-02）

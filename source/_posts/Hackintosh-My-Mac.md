@@ -1,7 +1,7 @@
 ---
 title: 黑苹果 --- Hackintosh + GIGABYTE Z390 AORUS PRO WIFI + i9-9900K + RX 580 + BCM94360CD + OpenCore 0.6.3 黑苹果主机配置与安装记录
 date: 2020-11-14 11:42:31
-cover: http://image.joylau.cn/blog/%E6%95%88%E6%9E%9C%E5%9B%BE-1.JPG
+cover: //s3.joylau.cn:9000/blog/%E6%95%88%E6%9E%9C%E5%9B%BE-1.JPG
 description: GIGABYTE Z390 AORUS PRO WIFI + i9-9900K + RX 580 + BCM94360CD + OpenCore 0.6.3 黑苹果主机配置与安装记录
 categories: [Hackintosh]
 tags: [Hackintosh,黑苹果]
@@ -53,17 +53,17 @@ tags: [Hackintosh,黑苹果]
 | 总计     |                                      | 16295  |                                                                                                 |
 
 ### 效果图
-![效果图-1](http://image.joylau.cn/blog/%E6%95%88%E6%9E%9C%E5%9B%BE-1.JPG)
+![效果图-1](//s3.joylau.cn:9000/blog/%E6%95%88%E6%9E%9C%E5%9B%BE-1.JPG)
 
-![效果图-2](http://image.joylau.cn/blog/%E6%95%88%E6%9E%9C%E5%9B%BE-2.JPG)
+![效果图-2](//s3.joylau.cn:9000/blog/%E6%95%88%E6%9E%9C%E5%9B%BE-2.JPG)
 
-![系统信息](http://image.joylau.cn/blog/%E7%B3%BB%E7%BB%9F%E4%BF%A1%E6%81%AF.png)
+![系统信息](//s3.joylau.cn:9000/blog/%E7%B3%BB%E7%BB%9F%E4%BF%A1%E6%81%AF.png)
 
-![设备信息](http://image.joylau.cn/blog/%E8%AE%BE%E5%A4%87%E4%BF%A1%E6%81%AF.png)
+![设备信息](//s3.joylau.cn:9000/blog/%E8%AE%BE%E5%A4%87%E4%BF%A1%E6%81%AF.png)
 
-![CPU得分](http://image.joylau.cn/blog/CPU%20%E5%BE%97%E5%88%86.png)
+![CPU得分](//s3.joylau.cn:9000/blog/CPU%20%E5%BE%97%E5%88%86.png)
 
-![CPU超频](http://image.joylau.cn/blog/%E8%B6%85%E9%A2%91.png)
+![CPU超频](//s3.joylau.cn:9000/blog/%E8%B6%85%E9%A2%91.png)
 
 Power 显示的是当前 CPU 的功率；
 
@@ -73,11 +73,11 @@ Temperature 显示当前 CPU 的温度，此温度是内核温度；
 
 Utilization 显示当前 CPU 的占用率。
 
-![显卡 Metal 得分](http://image.joylau.cn/blog/%E6%98%BE%E5%8D%A1%E5%BE%97%E5%88%86-Metal.png)
+![显卡 Metal 得分](//s3.joylau.cn:9000/blog/%E6%98%BE%E5%8D%A1%E5%BE%97%E5%88%86-Metal.png)
 
-![显卡 OpenCL 得分](http://image.joylau.cn/blog/%E6%98%BE%E5%8D%A1%E5%BE%97%E5%88%86-OpenCL.png)
+![显卡 OpenCL 得分](//s3.joylau.cn:9000/blog/%E6%98%BE%E5%8D%A1%E5%BE%97%E5%88%86-OpenCL.png)
 
-![磁盘速度](http://image.joylau.cn/blog/%E7%A3%81%E7%9B%98%E9%80%9F%E5%BA%A6.png)
+![磁盘速度](//s3.joylau.cn:9000/blog/%E7%A3%81%E7%9B%98%E9%80%9F%E5%BA%A6.png)
 
 
 ### 步骤
@@ -138,12 +138,12 @@ Utilization 显示当前 CPU 的占用率。
 
 #### USB 端口的配置
 有 MacOS 系统的限制， 最多只允许开始使用 15个端口， 我这里就 Z390 的主板进行下面端口的开启
-![背面端口图](http://image.joylau.cn/blog/back_panel.png)
-![主板接口图](http://image.joylau.cn/blog/internal_io.png)
+![背面端口图](//s3.joylau.cn:9000/blog/back_panel.png)
+![主板接口图](//s3.joylau.cn:9000/blog/internal_io.png)
 
 
 使用 Hackintool, 修改端口， 并导出， 注意保留 `USBPorts.kext` 文件以放入 Kexts 目录下， 我这里开启的端口如下配置
-![启用的端口](http://image.joylau.cn/blog/%E5%90%AF%E7%94%A8%E7%9A%84%E7%AB%AF%E5%8F%A3.png)
+![启用的端口](//s3.joylau.cn:9000/blog/%E5%90%AF%E7%94%A8%E7%9A%84%E7%AB%AF%E5%8F%A3.png)
 
 
 #### 关闭啰嗦模式
@@ -305,9 +305,9 @@ EFI
 ### 遇到的坑
 1. 我买的主板CPU针脚上有一个针脚弯曲了， 导致有2 个内存插槽无法读取， 如下图
 
-![CPU针脚](http://image.joylau.cn/blog/CPU%E9%92%88%E8%84%9A.JPG)
+![CPU针脚](//s3.joylau.cn:9000/blog/CPU%E9%92%88%E8%84%9A.JPG)
 
-![CPU针脚弯曲](http://image.joylau.cn/blog/%E9%92%88%E8%84%9A%E5%BC%AF%E6%9B%B2.JPG)
+![CPU针脚弯曲](//s3.joylau.cn:9000/blog/%E9%92%88%E8%84%9A%E5%BC%AF%E6%9B%B2.JPG)
 
 这种情况的具体表现是只有插在主板的 DDR4_A1 槽或者 DDR4_A2 槽或者 2 个槽都插时才能短接进入 BIOS 界面,
 插入全部 4 根内存条或者只要插入 DDR4_B2 或者 DDR4_B1 时将无法进入 BIOS 界面且主板无限重启,显示器无输出且 DRAM 指示灯常亮

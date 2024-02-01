@@ -1,7 +1,7 @@
 ---
 title: 重剑无锋,大巧不工 SpringBoot --- 自定义打包部署，暴露配置文件和静态资源文件
 date: 2017-12-12 09:24:39
-cover: http://image.joylau.cn/blog/Assembly-Package.png
+cover: //s3.joylau.cn:9000/blog/Assembly-Package.png
 description: SpringBoot 默认有2种打包方式，一种是直接打成 jar 包，直接使用 java -jar 跑起来，另一种是打成 war 包，移除掉 web starter 里的容器依赖，然后丢到外部容器跑起来。这篇文章说下自定义打包，暴露配置文件和静态资源文件
 categories: [SpringBoot篇]
 tags: [Maven,SpringBoot]
@@ -40,7 +40,7 @@ window 下需要使用 解压缩软件打开 jar 再找到配置文件，修改�
 
 
 就像这样
-![Assembly-Package](http://image.joylau.cn/blog/Assembly-Package.png)
+![Assembly-Package](//s3.joylau.cn:9000/blog/Assembly-Package.png)
 
 - `bin` 目录放一些我们程序的启动停止脚本
 - `boot` 目录放我们自己的程序包

@@ -1,7 +1,7 @@
 ---
 title: Lombok 注解小记
 date: 2018-5-15 10:24:24
-cover: //image.joylau.cn/blog/Lombok.png
+cover: //s3.joylau.cn:9000/blog/Lombok.png
 description: Lombok 一些常用注解记录
 categories: [工具类篇]
 tags: [Lombok]
@@ -10,7 +10,7 @@ tags: [Lombok]
 <!-- more -->
 
 
-![img](http://image.joylau.cn/blog/Lombok.png)
+![img](//s3.joylau.cn:9000/blog/Lombok.png)
 
 - val可以将变量申明是final类型。
 - @NonNull注解能够为方法或构造函数的参数提供非空检查。

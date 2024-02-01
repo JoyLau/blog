@@ -7,7 +7,7 @@ tags: [Spring,SpringBoot]
 ---
 
 <!-- more -->
-![SpringBoot-Start](//image.joylau.cn/blog/springbootstart.png)
+![SpringBoot-Start](//s3.joylau.cn:9000/blog/springbootstart.png)
 
 ## 说明
 > - 玄铁重剑是神雕侠侣中杨过的兵器，外表看似笨重无比，但内在却精致有细。
@@ -38,7 +38,7 @@ tags: [Spring,SpringBoot]
 - Spring 官方网站搭建
     1. 访问：http://start.spring.io/
     2. 选择构建工具Maven Project、Spring Boot版本1.5.1以及一些工程基本信息，可参考下图所示
-        ![SpringInitializr](//image.joylau.cn/blog/SpringInitializr.png)
+        ![SpringInitializr](//s3.joylau.cn:9000/blog/SpringInitializr.png)
     3. 点击Generate Project下载项目压缩包
     4. 导入到你的工程，如果是IDEA，则需要：
        a.菜单中选择`File–>New–>Project from Existing Sources...`
@@ -49,16 +49,16 @@ tags: [Spring,SpringBoot]
        
 - IntelliJ IDEA创建（**强烈推荐**）
 在File菜单里面选择 New > Project,然后选择Spring Initializr，接着如下图一步步操作即可。
-![SpringInitializr](//image.joylau.cn/blog/SpringInitializr-IDEA.png)
-![SpringInitializr-2](//image.joylau.cn/blog/SpringInitializr-IDEA-2.png)
-![SpringInitializr-3](//image.joylau.cn/blog/SpringInitializr-IDEA-3.png)
-![SpringInitializr-4](//image.joylau.cn/blog/SpringInitializr-IDEA-4.png)
+![SpringInitializr](//s3.joylau.cn:9000/blog/SpringInitializr-IDEA.png)
+![SpringInitializr-2](//s3.joylau.cn:9000/blog/SpringInitializr-IDEA-2.png)
+![SpringInitializr-3](//s3.joylau.cn:9000/blog/SpringInitializr-IDEA-3.png)
+![SpringInitializr-4](//s3.joylau.cn:9000/blog/SpringInitializr-IDEA-4.png)
 
 若上述步骤步骤没有出现网络错误导致的无法搭建，基本上已经没有什么问题了
 
 ### 项目目录
 根据上面的操作已经初始化了一个Spring Boot的框架了，项目结构如下：
-![SpringBootProject-view](//image.joylau.cn/blog/SpringBootProject-view.png)
+![SpringBootProject-view](//s3.joylau.cn:9000/blog/SpringBootProject-view.png)
 
 项目里面基本没有代码，除了几个空目录外，还包含如下几样东西。
 - `pom.xml`：Maven构建说明文件。
@@ -123,15 +123,15 @@ tags: [Spring,SpringBoot]
 ### 项目依赖
 #### 起步依赖 spring-boot-starter-xx
 Spring Boot提供了很多”开箱即用“的依赖模块，都是以spring-boot-starter-xx作为命名的。举个例子来说明一下这个起步依赖的好处，比如组装台式机和品牌机，自己组装的话需要自己去选择不同的零件，最后还要组装起来，期间有可能会遇到零件不匹配的问题。耗时又消力，而品牌机就好一点，买来就能直接用的，后续想换零件也是可以的。相比较之下，后者带来的效果更好点（这里就不讨论价格问题哈），起步依赖就像这里的品牌机，自动给你封装好了你想要实现的功能的依赖。就比如我们之前要实现web功能，引入了spring-boot-starter-web这个起步依赖。我们来看看spring-boot-starter-web到底依赖了哪些,如下图：
-![SpringBoot-starter-web-dependencies](//image.joylau.cn/blog/SpringBoot-starter-web-dependencies.png)
+![SpringBoot-starter-web-dependencies](//s3.joylau.cn:9000/blog/SpringBoot-starter-web-dependencies.png)
 
 
 ## 最后
 ### 项目启动的三种方式
 1. `main`方法
-![SpringBoot-Start1](//image.joylau.cn/blog/SpringBoot-Start1.png)
+![SpringBoot-Start1](//s3.joylau.cn:9000/blog/SpringBoot-Start1.png)
 2. 使用命令 `mvn spring-boot:run`在命令行启动该应用，IDEA中该命令在如下位置
-![SpringBoot-Start2](//image.joylau.cn/blog/SpringBoot-Start2.png)
+![SpringBoot-Start2](//s3.joylau.cn:9000/blog/SpringBoot-Start2.png)
 3. 运行`mvn package`进行打包时，会打包成一个可以直接运行的 JAR 文件，使用`java -jar`命令就可以直接运行
-![SpringBoot-Start3](//image.joylau.cn/blog/SpringBoot-Start3.png)
-![SpringBoot-Start4](//image.joylau.cn/blog/SpringBoot-Start4.png)
+![SpringBoot-Start3](//s3.joylau.cn:9000/blog/SpringBoot-Start3.png)
+![SpringBoot-Start4](//s3.joylau.cn:9000/blog/SpringBoot-Start4.png)

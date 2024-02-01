@@ -7,7 +7,7 @@ tags: [Linux,JDK,Tomcat,MySQL,Redis,Docker]
 ---
 
 <!-- more -->
-![Server](//image.joylau.cn/blog/server.jpg)
+![Server](//s3.joylau.cn:9000/blog/server.jpg)
 
 
 ## 前言
@@ -165,7 +165,7 @@ $JAVA_HOME/bin/java -version  # 与直接执行 java -version 一样
 ### 开始
 - 在mysql的官网上找到mysql的源链接
 
-![Mysql官网截图](//image.joylau.cn/blog/mysqlsourceLink.jpg)
+![Mysql官网截图](//s3.joylau.cn:9000/blog/mysqlsourceLink.jpg)
 
 - 找到原链接：`https://repo.mysql.com//mysql57-community-release-el7-9.noarch.rpm`
 
@@ -185,12 +185,12 @@ $JAVA_HOME/bin/java -version  # 与直接执行 java -version 一样
  
 ### 配置
 - 查看` /var/log/mysqld.log `里的日志(可以查找**password**关键字)
-![mysqlLog](//image.joylau.cn/blog/mysqllog.jpg)
+![mysqlLog](//s3.joylau.cn:9000/blog/mysqllog.jpg)
 - 可以看到创建的临时密码
 - 登录MySQL：`mysql -u root -p `
 - 输入刚才在日志里看到的临时密码
 - 这个时候我输入任何的命令都会提示`You must reset your password using ALTER USER statement before executing this statement.`
-![alterTips](//image.joylau.cn/blog/alertTips.jpg)
+![alterTips](//s3.joylau.cn:9000/blog/alertTips.jpg)
 - 通过 `alter user 'root'@'localhost' identified by 'root'` 命令，修改 root 用户的密码为 root，注意修改的密码不能过于简单
 - 退出，重新以root用户和刚设置的密码进行登录即可
 
@@ -286,7 +286,7 @@ $JAVA_HOME/bin/java -version  # 与直接执行 java -version 一样
 
 ### 路径配置
 - `ls`查看src下的文件，你会看到有些文件是绿色的，这些事重要的文件，也正是我们所需要的，我们将这些文件单独存下来
-![Redis源码编译后的重要文件](//image.joylau.cn/blog/redisimportantfile.png)
+![Redis源码编译后的重要文件](//s3.joylau.cn:9000/blog/redisimportantfile.png)
 - 我们来看看编译出来的几个程序分别是干什么的：
       redis-server：顾名思义，redis服务
       redis-cli：redis client，提供一个redis客户端，以供连接到redis服务，进行增删改查等操作
@@ -295,9 +295,9 @@ $JAVA_HOME/bin/java -version  # 与直接执行 java -version 一样
       redis-check-aof：若以AOF方式产生日志，当意外发生时用来快速修复
       redis-check-rdb：若以RDB方式产生日志，当意外发生时用来快速修复
 - 保存好之后我们的路径如下：
-![Redis根目录](//image.joylau.cn/blog/redisfloder.png)
-![Redis-bin](//image.joylau.cn/blog/redisbin.png)
-![Redis-etc](//image.joylau.cn/blog/redisetc.png)
+![Redis根目录](//s3.joylau.cn:9000/blog/redisfloder.png)
+![Redis-bin](//s3.joylau.cn:9000/blog/redisbin.png)
+![Redis-etc](//s3.joylau.cn:9000/blog/redisetc.png)
 
 
 ### 配置文件配置

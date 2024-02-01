@@ -7,7 +7,7 @@ tags: [Linux,磁盘挂载]
 ---
 
 <!-- more -->
-![Thymeleaf](//image.joylau.cn/blog/Thymeleaf.png)
+![Thymeleaf](//s3.joylau.cn:9000/blog/Thymeleaf.png)
 
 
 ## 注意事项
@@ -24,16 +24,16 @@ tags: [Linux,磁盘挂载]
 - 运行 `fdisk -l` 命令查看数据盘。注意：在没有分区和格式化数据盘之前，使用 `df -h` 命令是无法看到数据盘的。在下面的示例中，有一个 5 GB 的数据盘需要挂载。
 - 如果执行了 `fdisk -l` 命令后，没有发现 /dev/xvdb，则表示您的实例没有数据盘，因此无需挂载
 
-![Image1](//image.joylau.cn/blog/linux1.jpg)
+![Image1](//s3.joylau.cn:9000/blog/linux1.jpg)
 
 ### 需要进行分区的情况
 - 运行 `fdisk /dev/xvdb`，对数据盘进行分区。根据提示，依次输入 n，p，1，两次回车，wq，分区就开始了。
 
-![Image2](//image.joylau.cn/blog/linux2.jpg)
+![Image2](//s3.joylau.cn:9000/blog/linux2.jpg)
 
 - 运行 `fdisk -l` 命令，查看新的分区。新分区 xvdb1 已经创建好。如下面示例中的/dev/xvdb1。
 
-![Image3](//image.joylau.cn/blog/linux3.jpg)
+![Image3](//s3.joylau.cn:9000/blog/linux3.jpg)
 
 
 ### 不需要进行分区的情况
@@ -42,11 +42,11 @@ tags: [Linux,磁盘挂载]
 
 - 运行 `mkfs.ext3 /dev/xvdb1`，对新分区进行格式化。格式化所需时间取决于数据盘大小。您也可自主决定选用其他文件格式，如 `ext4` 等。
 
-![Image4](//image.joylau.cn/blog/linux4.jpg)
+![Image4](//s3.joylau.cn:9000/blog/linux4.jpg)
 
 - 运行 `echo /dev/xvdb1 /mnt ext3 defaults 0 0 >> /etc/fstab` 写入新分区信息。完成后，可以使用 `cat /etc/fstab` 命令查看。
 
-![Image5](//image.joylau.cn/blog/linux5.jpg)
+![Image5](//s3.joylau.cn:9000/blog/linux5.jpg)
 
 > Ubuntu 12.04 不支持 barrier，所以对该系统正确的命令是：`echo /dev/xvdb1 /mnt ext3 defaults 0 0 >> /etc/fstab` 
   如果需要把数据盘单独挂载到某个文件夹，比如单独用来存放网页，可以修改以上命令中的 /mnt 部分。

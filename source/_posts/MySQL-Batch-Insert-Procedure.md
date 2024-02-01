@@ -5,11 +5,10 @@ description: MySQL 批量插入表数据的存储过程写法记录
 categories: [MySQL篇]
 tags: [MySQL]
 ---
-<!-- more -->
 
 ### 写法记录
 
-```sql
+``` sql
 CREATE PROCEDURE insert_bulk(in max_num int(10))
 begin
     declare i int default 0;
@@ -22,7 +21,9 @@ begin
 end;
 ```
 
+<!-- more -->
+
 ### 调用
-```sql
+``` sql
 call insert_bulk(10000)
 ```

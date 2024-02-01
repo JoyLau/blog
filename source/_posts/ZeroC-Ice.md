@@ -1,7 +1,7 @@
 ---
 title: ZeroC Ice --- 高性能RPC技术王者
 date: 2017-07-10 16:09:59
-cover: //image.joylau.cn/blog/ZeroC-ICE.png
+cover: //s3.joylau.cn:9000/blog/ZeroC-ICE.png
 description: HTTP REST 风格的远程通信技术可谓风靡一时，但是其低效也为人诟病<br>高性能，多语言支持，跨平台，轻量级是ICE主打的特性<br>本篇文章我将自己总结一下自己使用ZeroC Ice的技术
 categories: [ZeroC Ice篇]
 tags: [ZeroC Ice]
@@ -17,21 +17,21 @@ tags: [ZeroC Ice]
 
 ### 开始动手
 - 首先我们需要几个ice接口文件,比如说这几个：
-![Ice 文件展示](//image.joylau.cn/blog/ZeroC-Ice-1.png)
+![Ice 文件展示](//s3.joylau.cn:9000/blog/ZeroC-Ice-1.png)
 - 我们来看一下其中一个ice文件定义的接口说明
-![Ice接口文件说明](//image.joylau.cn/blog/ZeroC-Ice-2.png)
+![Ice接口文件说明](//s3.joylau.cn:9000/blog/ZeroC-Ice-2.png)
 文件里定义了5个接口，可以很明显的的看到是区间的增删改查接口
 刚好很适合我们对外提供增删改查的RESTFul API 接口
 这里在对外提供 RESTFul API 是可以很清楚的 使用 POST GET PUT DELETE
 可以说这里很好的提供了这样一个例子
 - 命令 `slice2java xxx.ice` 生成 java 的 client，server类
-![生成的Java类](//image.joylau.cn/blog/ZeroC-Ice-3.png)
+![生成的Java类](//s3.joylau.cn:9000/blog/ZeroC-Ice-3.png)
 生成的Java文件很多，这个不用管，更不必更改里面的代码内容
 你要是有兴趣的话，也可以将这些文件分为 client 和 server 分门别类的归纳好
 打开看一下，里面的代码很混乱，无论是代码风格，样式，变量命名，对于我来说，简直不忍直视
-![生成的Java代码](//image.joylau.cn/blog/ZeroC-Ice-5.png)
+![生成的Java代码](//s3.joylau.cn:9000/blog/ZeroC-Ice-5.png)
 - 编写client类
-![client类](//image.joylau.cn/blog/ZeroC-Ice-4.png)
+![client类](//s3.joylau.cn:9000/blog/ZeroC-Ice-4.png)
 代码如下：
 
 ``` java
@@ -121,14 +121,14 @@ tags: [ZeroC Ice]
 ```
 
 - 需要三个配置： 适配器名，IP地址，端口号，配置在SpringBoot项目里，如下：
-![ICE配置信息](//image.joylau.cn/blog/ZeroC-Ice-6.png)
+![ICE配置信息](//s3.joylau.cn:9000/blog/ZeroC-Ice-6.png)
 
 
 ### 再封装一下
 - 封装返回消息体
-![ICE配置信息](//image.joylau.cn/blog/ZeroC-Ice-8.png)
+![ICE配置信息](//s3.joylau.cn:9000/blog/ZeroC-Ice-8.png)
 - 封装执行命令体
-![ICE配置信息](//image.joylau.cn/blog/ZeroC-Ice-7.png)
+![ICE配置信息](//s3.joylau.cn:9000/blog/ZeroC-Ice-7.png)
 
 
 ### 重要

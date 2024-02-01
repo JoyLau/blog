@@ -6,8 +6,6 @@ categories: [KMS篇]
 tags: [KMS]
 ---
 
-<!-- more -->
-
 ### 下载 Office 
 地址:  https://massgrave.dev/office_c2r_links.html#Chinese_[zh-cn]
 
@@ -16,6 +14,8 @@ tags: [KMS]
 ### 配置激活
 这里需要用到这个项目
 https://github.com/Wind4/vlmcsd/tree/gh-pages
+
+<!-- more -->
 
 如果在执行 `cscript ospp.vbs /inpkey:FXYTK-NJJ8C-GB6DW-3DYQT-6F7TH` 报错 `The Software Licensing Service reported that the product SKU is not found.` 
 那么你需要用到下面的项目

@@ -4,16 +4,16 @@
 
 # Site
 title: JoyLau's Blog
-subtitle: JoyLau 的技术学习与思考
-description: JoyLau 的技术学习与思考,JoyLau 的个人博客
+subtitle: 'JoyLau 的技术学习与思考'
+description: 'JoyLau 的技术学习与思考'
+keywords:
 author: JoyLau
 language: zh-CN
-timezone: Asia/Shanghai
+timezone: 'Asia/Shanghai'
 
 # URL
-## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
+## Set your site url here. For example, if you use GitHub Page, set url as 'https://username.github.io/project'
 url: http://blog.joylau.cn/
-root: /
 permalink: :year/:month/:day/:title/
 permalink_defaults:
 pretty_urls:
@@ -43,12 +43,18 @@ render_drafts: false
 post_asset_folder: false
 relative_link: false
 future: true
+syntax_highlighter: highlight.js
 highlight:
-  enable: false
+  enable: true
   line_number: true
-  auto_detect: false
-  tab_replace:
-
+  auto_detect: true
+  tab_replace: ''
+  wrap: true
+  hljs: false
+prismjs:
+  preprocess: true
+  line_number: true
+  tab_replace: ''
 
 # Home page setting
 # path: Root path for your blogs index page. (default = '')
@@ -56,9 +62,8 @@ highlight:
 # order_by: Posts order. (Order by date descending by default)
 index_generator:
   path: ''
-  per_page: 5
+  per_page: 8
   order_by: -date
-
 
 # Category & Tag
 default_category: uncategorized
@@ -75,25 +80,26 @@ meta_generator: true
 ## http://momentjs.com/docs/#/displaying/format/
 date_format: YYYY-MM-DD
 time_format: HH:mm:ss
+## updated_option supports 'mtime', 'date', 'empty'
+updated_option: 'mtime'
 
 # Pagination
 ## Set per_page to 0 to disable pagination
-per_page: 5
+per_page: 8
 pagination_dir: page
+
+# Include / Exclude file(s)
+## include:/exclude: options only apply to the 'source/' folder
+include:
+exclude:
+ignore:
 
 # Extensions
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
-theme: obsidian
-
-search:
-  path: search.xml
-  field: post
-  content: true
+theme: next
 
 # Deployment
-## Docs: https://hexo.io/docs/deployment.html
+## Docs: https://hexo.io/docs/one-command-deployment
 deploy:
-  type: git
-  repository: https://name:password@github.com/JoyLau/blog-public.git
-  branch: master
+  type: ''

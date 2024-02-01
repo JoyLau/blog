@@ -1,14 +1,14 @@
 ---
 title: Redis有多快??? --- 基准性能测试
 date: 2017-4-1 13:42:38
-cover: //image.joylau.cn/blog/Redis-Benchmark.jpg
+cover: //s3.joylau.cn:9000/blog/Redis-Benchmark.jpg
 description: Redis有多快???我们安装的Redis提供一个基准测试工具redis-benchmark，测一下就知道了.....
 categories: [Redis篇]
 tags: [redis]
 ---
 
 <!-- more -->
-![Redis-Benchmark](//image.joylau.cn/blog/Redis-Benchmark.jpg)
+![Redis-Benchmark](//s3.joylau.cn:9000/blog/Redis-Benchmark.jpg)
 
 
 
@@ -75,11 +75,11 @@ tags: [redis]
 - 本次配置为Redis的默认配置，默认的配置项已经有足够好的性能表现了，不需要调优
 - `redis-benchmark -h joylau.cn -p 6379 -a XXX -t get,set -n 1000 -c 400 -q`
     我是模仿了我自己现在公司的业务需求，测试了我直接服务器上的Redis，向redis服务器发送1000个请求，每个请求附带400个并发客户端，以静默显示
-    ![redis-joylau-test-q](//image.joylau.cn/blog/redis-joylau-test-q.png)
+    ![redis-joylau-test-q](//s3.joylau.cn:9000/blog/redis-joylau-test-q.png)
     可以看到，set操作每秒处理17241次，get操作每秒处理17543次
 - `redis-benchmark -h joylau.cn -p 6379 -a XXX -t get,set -n 1000 -c 400`
     同上，以标准格式显示
-    ![redis-joylau-test](//image.joylau.cn/blog/redis-joylau-test.png)
+    ![redis-joylau-test](//s3.joylau.cn:9000/blog/redis-joylau-test.png)
     可以看到，set操作每秒处理17857次，get操作每秒处理18518次
 - **_我自己也开了本地的服务器做测试，每秒操作次数可达100000次_**
 

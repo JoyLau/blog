@@ -1,7 +1,7 @@
 ---
 title: Awtrix App --- 开发一款显示个人博客访问人数的 App
 date: 2020-08-02 13:00:31
-cover: //image.joylau.cn/blog/Awtrix-preview-png.png
+cover: //s3.joylau.cn:9000/blog/Awtrix-preview-png.png
 description: Awtrix App 开发入门之开发一款显示个人博客访问人数的 App
 categories: [Awtrix]
 tags: [Awtrix]
@@ -19,9 +19,9 @@ Awtrix App 开发入门之开发一款显示个人博客访问人数的 App
 2. 开发工具： [B4J](https://www.b4x.com/b4j.html)
 
 ### 效果图
-![gif](http://image.joylau.cn/blog/Awtrix-preview-gif.gif)
-![app](http://image.joylau.cn/blog/Awtrix-web-app.png)
-![config](http://image.joylau.cn/blog/Awtrix-web-config.png)
+![gif](//s3.joylau.cn:9000/blog/Awtrix-preview-gif.gif)
+![app](//s3.joylau.cn:9000/blog/Awtrix-web-app.png)
+![config](//s3.joylau.cn:9000/blog/Awtrix-web-config.png)
 
 ### 开发准备
 1. 模板文件

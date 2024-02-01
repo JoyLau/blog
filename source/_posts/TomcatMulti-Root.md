@@ -7,7 +7,7 @@ tags: [Tomcat,GZIP]
 ---
 <!-- more -->
 
-![Tomcat](//image.joylau.cn/blog/tomcat.jpg)
+![Tomcat](//s3.joylau.cn:9000/blog/tomcat.jpg)
 
 
 ## 事发起因
@@ -25,9 +25,9 @@ tags: [Tomcat,GZIP]
 
 ### 建立文件夹
 - 在Tomcat的根目录下建立blog文件夹
-![blog文件夹](//image.joylau.cn/blog/floder1.png)
+![blog文件夹](//s3.joylau.cn:9000/blog/floder1.png)
 - 在blog文件夹下建立ROOT文件夹，用作新项目的根路径
-![ROOT文件夹](//image.joylau.cn/blog/folder2.png)
+![ROOT文件夹](//s3.joylau.cn:9000/blog/folder2.png)
 
 ### 修改配置
 - 修改server.xml配置文件,多加一对<Host></Host>配置

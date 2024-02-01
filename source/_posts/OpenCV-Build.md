@@ -42,7 +42,7 @@ tags: [OpenCV]
 ### 编译好的包
 1. centos7 版: http://cloud.joylau.cn:1194/s/kUoNelmj1SX810K 或者  https://pan.baidu.com/s/1qaZ-TbF0xP0DxaEJKbdt-A 提取码: jkir
 2. Ubuntu 16.04 版: http://cloud.joylau.cn:1194/s/TsNRKwxJhM0v0HE  或者  https://pan.baidu.com/s/1ha6nATLrSt5WPL1iQlmWSg 提取码: gduu
-3. java 调用所需 opencv-410.jar 包: http://image.joylau.cn/blog/opencv-410.jar
+3. java 调用所需 opencv-410.jar 包: //s3.joylau.cn:9000/blog/opencv-410.jar
 
 
 
@@ -254,7 +254,7 @@ tags: [OpenCV]
 ```
 2. 配置动态库路径, vm options: -Djava.library.path=/home/joylau/opencv4/opencv/build/lib
 
-![vm options](http://image.joylau.cn/blog/vm_options_config.jpg)
+![vm options](//s3.joylau.cn:9000/blog/vm_options_config.jpg)
 
 mac os 下路径为: -Djava.library.path=/Users/joylau/opencv4/installation/OpenCV-master/share/java/opencv4
 
@@ -298,7 +298,7 @@ mac os 下路径为: -Djava.library.path=/Users/joylau/opencv4/installation/Open
         }
 ```
 
-![test_face](http://image.joylau.cn/blog/opencv_test_face.jpg)
+![test_face](//s3.joylau.cn:9000/blog/opencv_test_face.jpg)
 
 > 注: 图片来自微博
 
@@ -327,8 +327,8 @@ mac os 下路径为: -Djava.library.path=/Users/joylau/opencv4/installation/Open
         }
 ```
 
-![test_source](http://image.joylau.cn/blog/image-test.jpg)
-![test_contours](http://image.joylau.cn/blog/test_contours.jpg)
+![test_source](//s3.joylau.cn:9000/blog/image-test.jpg)
+![test_contours](//s3.joylau.cn:9000/blog/test_contours.jpg)
 
 
 6. 实时人脸识别
@@ -376,4 +376,4 @@ mac os 下路径为: -Djava.library.path=/Users/joylau/opencv4/installation/Open
         }
 ```
 
-<center><video src="http://image.joylau.cn/blog/opencv-video-face.mp4" loop="true" controls="controls">您的浏览器版本太低，无法观看本视频</video></center>
+<center><video src="//s3.joylau.cn:9000/blog/opencv-video-face.mp4" loop="true" controls="controls">您的浏览器版本太低，无法观看本视频</video></center>

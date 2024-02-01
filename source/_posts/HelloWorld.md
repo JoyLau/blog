@@ -7,7 +7,7 @@ tags: [Hexo,Nodejs,Git,Bootstrap]
 ---
 <!-- more -->
 
-![HelloWorld](//image.joylau.cn/blog/world.jpg)
+![HelloWorld](//s3.joylau.cn:9000/blog/world.jpg)
 
 
 ## 关于博客

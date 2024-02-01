@@ -114,7 +114,7 @@ H调整颜色；S越大，图像色彩越丰富，颜色越鲜艳；V越大，�
 
 记住下面这张图, 可使用这张图中的范围来查找某种颜色
 
-![HSV](http://image.joylau.cn/blog/OpenCV-HSV.png)
+![HSV](//s3.joylau.cn:9000/blog/OpenCV-HSV.png)
 
 #### 转换方法
 

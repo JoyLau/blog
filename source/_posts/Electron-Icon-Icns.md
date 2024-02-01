@@ -13,7 +13,7 @@ tags: [Electron]
 ### 什么工具
 需要这么一个工具, IconFX : [下载](http://nas.joylau.cn:5000/sharing/Y3xyQ0OJV)
 
-![IconFX](http://image.joylau.cn/blog/Electron-icon-icns-iconfx.png.png)
+![IconFX](//s3.joylau.cn:9000/blog/Electron-icon-icns-iconfx.png.png)
 
 制做一组至少有 256*256 (此外还有 128*128 , 96*96, 64*64, 48*48,32*32,16*16)的一套图标, Windows 下格式为 icon, Mac 下格式为 icns
 
@@ -22,7 +22,7 @@ tags: [Electron]
 
 图像 --- 从图像创建 Windows 图标
 
-![IconFX-make](http://image.joylau.cn/blog/Electron-icon-icns-iconfx-make.png)
+![IconFX-make](//s3.joylau.cn:9000/blog/Electron-icon-icns-iconfx-make.png)
 
 MacOS 也是同样的道理
 

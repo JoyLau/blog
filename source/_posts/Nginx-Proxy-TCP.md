@@ -41,4 +41,4 @@ load_module /usr/lib64/nginx/modules/ngx_stream_module.so;
 
 
 这里是我用的包
-[Modules](http://image.joylau.cn/blog/nginx-steam-modules.zip)
+[Modules](//s3.joylau.cn:9000/blog/nginx-steam-modules.zip)

@@ -16,11 +16,11 @@ tags: [OpenCV]
 1. 筛选出合肥市在百度地图 17 等级下的路况瓦片 62354 张
 2. 对合肥二环路内圈的路况进行分析,目前分析出的路况开发截图
 
-![](http://image.joylau.cn/blog/baidu-traffic/1.gif)
+![](//s3.joylau.cn:9000/blog/baidu-traffic/1.gif)
 
 
 分析结果: 用蓝色的线表示,画线时未区分颜色,实际分析已区分
-![](http://image.joylau.cn/blog/baidu-traffic/2.gif)
+![](//s3.joylau.cn:9000/blog/baidu-traffic/2.gif)
 
 
 目前已分析提取出的数据有:
@@ -39,26 +39,26 @@ tags: [OpenCV]
 目前该研究课题存在的问题:
 
 1. 有些复杂路口分析不正确,例如:
-![](http://image.joylau.cn/blog/baidu-traffic/3.gif)  
+![](//s3.joylau.cn:9000/blog/baidu-traffic/3.gif)  
 
 
 进行分析后,会变成下面这样:
-![](http://image.joylau.cn/blog/baidu-traffic/4.gif)  
+![](//s3.joylau.cn:9000/blog/baidu-traffic/4.gif)  
 
 
 还有这样的: 
-![](http://image.joylau.cn/blog/baidu-traffic/5.gif)  
+![](//s3.joylau.cn:9000/blog/baidu-traffic/5.gif)  
 
 
 结果 :
-![](http://image.joylau.cn/blog/baidu-traffic/6.gif)  
+![](//s3.joylau.cn:9000/blog/baidu-traffic/6.gif)  
 
 
 目前的分析算法对于单张瓦片多处拥堵,且拥堵路段呈直线状分析结果准确,对于拥堵路段为曲线状且涉及多个路段时分析的结果不如人意,这是目前分析算法的原因,尚待改进.  
 
 
 性能问题,我目前测试了合肥二环路内圈的路况耗时日志结果如下:  
-![](http://image.joylau.cn/blog/baidu-traffic/7.gif)  
+![](//s3.joylau.cn:9000/blog/baidu-traffic/7.gif)  
 
 该测试结果是我在笔记本上运行的结果,其中参数配置是:  
 1. CPU : 2.8 GHz Intel Core i7-4 * 2核心, RAM:  16 GB 2133 MHz LPDDR3 , Graphics Card: Radeon Pro 555 2 GB

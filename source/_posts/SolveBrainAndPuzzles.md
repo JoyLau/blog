@@ -7,7 +7,7 @@ tags: [算法]
 ---
 
 <!-- more -->
-![Im Back](//image.joylau.cn/blog/imback.jpg)
+![Im Back](//s3.joylau.cn:9000/blog/imback.jpg)
 
 今天被问了一道题，是这样的：
 

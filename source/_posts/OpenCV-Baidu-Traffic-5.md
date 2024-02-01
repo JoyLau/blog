@@ -818,12 +818,12 @@ password: 123456
 
 1. CPU
 
-![CPU-OVERVIEW](http://image.joylau.cn/blog/ts_cpu-overview.gif)
+![CPU-OVERVIEW](//s3.joylau.cn:9000/blog/ts_cpu-overview.gif)
 
 这是一个分析周期的资源占用情况, 一个分析周期指的是分析完一遍合肥市拥堵情况的动作
 截取其中几分钟的的监控情况如下:
 
-![CPU](http://image.joylau.cn/blog/ts_cpu.gif)
+![CPU](//s3.joylau.cn:9000/blog/ts_cpu.gif)
 
 简单解释: 
 第二张图中每个驼峰代表一次分析过程,图中 11:06 - 11:13,经过了 4 个分析周期,每个分析周期的的大致状态是前期和后期 CPU 占用率都不高,中间部分 CPU 占有率高, 约 80% 左右
@@ -832,7 +832,7 @@ password: 123456
 于是就能解释为什么在一个分析周期前期和后期 CPU 占用率都不高,中间部分 CPU 占有率高的原因
 
 2. 线程
-![Thread](http://image.joylau.cn/blog/ts_thread.gif)
+![Thread](//s3.joylau.cn:9000/blog/ts_thread.gif)
 
 简单解释:
 重点看 `ts_` 前缀开头的线程
@@ -847,7 +847,7 @@ password: 123456
 
 线程中甚至还会出现这样的情况  
 
-![Thread Waiting](http://image.joylau.cn/blog/ts_thread_waiting.png)
+![Thread Waiting](//s3.joylau.cn:9000/blog/ts_thread_waiting.png)
 
 这种情况会拖慢单个线程的执行效率
 这种情况是因为在请求百度瓦片的时候某一张耗时过长被阻塞了,导致线程一直在等待,直到等待时间大于等于连接超时时间或者数据传输超时时间,该线程会被主动释放,后面又恢复正常运行
@@ -855,7 +855,7 @@ password: 123456
 
 
 3. 内存
-![Memory](http://image.joylau.cn/blog/ts_memory.gif)
+![Memory](//s3.joylau.cn:9000/blog/ts_memory.gif)
 
 对于服务器内存来说, 24G 内存还是比较吃紧的
 其中最消耗服务器内存是核心分析服务, 为 java 服务
@@ -867,12 +867,12 @@ java 12 初始化堆大小和最大堆大小均没有配置,为缺省值
 结合整个机器内存占用普遍在 80% 以上, 更能说明这一点
 
 4. 磁盘
-![Disk](http://image.joylau.cn/blog/ts_disk.gif)
+![Disk](//s3.joylau.cn:9000/blog/ts_disk.gif)
 
 磁盘的 IO 情况其实并没有太大变动,只是在分析的高峰会有写入和读取
 
 5. 网络
-![Networks](http://image.joylau.cn/blog/ts_networks.gif)
+![Networks](//s3.joylau.cn:9000/blog/ts_networks.gif)
 
 8 线程并发请求, 外网下载速度平稳在 350 kb/s 左右, 对网络带宽大小要求不高,但要求网络稳定,无抖动,无丢包
 
@@ -895,7 +895,7 @@ java 12 初始化堆大小和最大堆大小均没有配置,为缺省值
 ##### 本地读取瓦片
 将 TCP 请求更换为本地读取文件形式,结果分析时间令人欣慰, 这里也不贴出表格数据了,放一张日志的截图对比下
 
-![File System](http://image.joylau.cn/blog/ts_file_system.png)
+![File System](//s3.joylau.cn:9000/blog/ts_file_system.png)
 
 
 ### 总结

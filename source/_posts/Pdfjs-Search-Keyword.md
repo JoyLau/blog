@@ -6,7 +6,6 @@ categories: [Tools 篇]
 tags: [Tools]
 ---
 
-<!-- more -->
 
 ### 修改代码
 
@@ -23,6 +22,8 @@ tags: [Tools]
     document.getElementById("findInput").value=keyword;
     document.getElementById("findHighlightAll").click();
 ```
+
+<!-- more -->
 
 ### 使用方法
 访问时在地址栏传入 `&keyword=xxx` 关键字

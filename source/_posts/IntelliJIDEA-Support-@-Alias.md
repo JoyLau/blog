@@ -8,7 +8,7 @@ tags: [IntelliJ IDEA]
 
 <!-- more -->
 ### 配置前
-![配置前](http://image.joylau.cn/blog/idea-support-alas-1.png)
+![配置前](//s3.joylau.cn:9000/blog/idea-support-alas-1.png)
 
 @ 导包的类无法点击跳转,也不识别
 

@@ -71,4 +71,4 @@ github 上的 gfwlist.txt 文件可能读取不到,多试几次
 
 4. 配置使用
 
-![配置使用](http://image.joylau.cn/blog/ubuntu-global-proxy.png)
+![配置使用](//s3.joylau.cn:9000/blog/ubuntu-global-proxy.png)

@@ -1,7 +1,7 @@
 ---
 title: MacBook Pro 2017 --- 不行！我要开箱
 date: 2017-06-24 10:30:22
-cover: //image.joylau.cn/blog/MacBookPro-Unboxing.png
+cover: //s3.joylau.cn:9000/blog/MacBookPro-Unboxing.png
 description: " "
 categories: [MacOS篇]
 tags: [MacOS,MacBookPro]
@@ -12,13 +12,13 @@ tags: [MacOS,MacBookPro]
 ## 官方视频
 
 <center>
-<video src="//image.joylau.cn/blog/macbook-pro-design.mp4" loop="true" controls="controls" poster="//image.joylau.cn/blog/MacBookPro-unboxing-video.png">您的浏览器版本太低，无法观看本视频</video>
+<video src="//s3.joylau.cn:9000/blog/macbook-pro-design.mp4" loop="true" controls="controls" poster="//s3.joylau.cn:9000/blog/MacBookPro-unboxing-video.png">您的浏览器版本太低，无法观看本视频</video>
 </center>
 
 
 ## 开始拆箱
 
-![MacBook Pro](http://image.joylau.cn/blog/macbookpro/IMG_2180.JPG)
+![MacBook Pro](//s3.joylau.cn:9000/blog/macbookpro/IMG_2180.JPG)
 
 先来看一下刚拿到手的包装是什么样的
 
@@ -31,14 +31,14 @@ tags: [MacOS,MacBookPro]
  
  
  
-![MacBook Pro](http://image.joylau.cn/blog/macbookpro/IMG_2181.JPG)
+![MacBook Pro](//s3.joylau.cn:9000/blog/macbookpro/IMG_2181.JPG)
 
 打开主机纸盒
 
 
 
 
-![MacBook Pro](http://image.joylau.cn/blog/macbookpro/IMG_2182.JPG)
+![MacBook Pro](//s3.joylau.cn:9000/blog/macbookpro/IMG_2182.JPG)
 
 掰开这个直接就可以把里面的主机盒抽出来,很方便
 
@@ -47,7 +47,7 @@ tags: [MacOS,MacBookPro]
 
 
 
-![MacBook Pro](http://image.joylau.cn/blog/macbookpro/IMG_2183.JPG)
+![MacBook Pro](//s3.joylau.cn:9000/blog/macbookpro/IMG_2183.JPG)
 
 就2样东西
 
@@ -58,14 +58,14 @@ tags: [MacOS,MacBookPro]
 
 
 
-![MacBook Pro](http://image.joylau.cn/blog/macbookpro/IMG_2184.JPG)
+![MacBook Pro](//s3.joylau.cn:9000/blog/macbookpro/IMG_2184.JPG)
 
 来一张侧面照
 
 
 
 
-![MacBook Pro](http://image.joylau.cn/blog/macbookpro/IMG_2185.JPG)
+![MacBook Pro](//s3.joylau.cn:9000/blog/macbookpro/IMG_2185.JPG)
 
 拆开盒子保护膜
 
@@ -74,14 +74,14 @@ tags: [MacOS,MacBookPro]
 
 
 
-![MacBook Pro](http://image.joylau.cn/blog/macbookpro/IMG_2186.JPG)
+![MacBook Pro](//s3.joylau.cn:9000/blog/macbookpro/IMG_2186.JPG)
 
 这样一看，真的很薄，起码比我以前用过得笔记本都要薄多了
 
 
 
 
-![MacBook Pro](http://image.joylau.cn/blog/macbookpro/IMG_2187.JPG)
+![MacBook Pro](//s3.joylau.cn:9000/blog/macbookpro/IMG_2187.JPG)
 
 2端都是 USB-C 接口的充电线
 
@@ -90,14 +90,14 @@ tags: [MacOS,MacBookPro]
 
 
 
-![MacBook Pro](http://image.joylau.cn/blog/macbookpro/IMG_2188.JPG)
+![MacBook Pro](//s3.joylau.cn:9000/blog/macbookpro/IMG_2188.JPG)
 
 靠近点看下USB-C的充电线
 
 
 
 
-![MacBook Pro](http://image.joylau.cn/blog/macbookpro/IMG_2189.JPG)
+![MacBook Pro](//s3.joylau.cn:9000/blog/macbookpro/IMG_2189.JPG)
 
 然后就什么都没有了
 
@@ -106,7 +106,7 @@ tags: [MacOS,MacBookPro]
 
 
 
-![MacBook Pro](http://image.joylau.cn/blog/macbookpro/IMG_2190.JPG)
+![MacBook Pro](//s3.joylau.cn:9000/blog/macbookpro/IMG_2190.JPG)
 
 苹果的LOGO贴纸
 
@@ -117,14 +117,14 @@ tags: [MacOS,MacBookPro]
 
 
 
-![MacBook Pro](http://image.joylau.cn/blog/macbookpro/IMG_2191.JPG)
+![MacBook Pro](//s3.joylau.cn:9000/blog/macbookpro/IMG_2191.JPG)
 
 开始正式拆开主机的包装纸
 
 
 
 
-![MacBook Pro](http://image.joylau.cn/blog/macbookpro/IMG_2192.JPG)
+![MacBook Pro](//s3.joylau.cn:9000/blog/macbookpro/IMG_2192.JPG)
 
 一睹真容
 15.6寸的
@@ -136,7 +136,7 @@ tags: [MacOS,MacBookPro]
 ## 进入系统
 
 
-![MacBook Pro](http://image.joylau.cn/blog/macbookpro/IMG_2193.JPG)
+![MacBook Pro](//s3.joylau.cn:9000/blog/macbookpro/IMG_2193.JPG)
 
 盖子一打开就开机了
 
@@ -147,14 +147,14 @@ tags: [MacOS,MacBookPro]
 
 
 
-![MacBook Pro](http://image.joylau.cn/blog/macbookpro/IMG_2194.JPG)
+![MacBook Pro](//s3.joylau.cn:9000/blog/macbookpro/IMG_2194.JPG)
 
 很快就进入了系统
 
 
 
 
-![MacBook Pro](http://image.joylau.cn/blog/macbookpro/IMG_2195.JPG)
+![MacBook Pro](//s3.joylau.cn:9000/blog/macbookpro/IMG_2195.JPG)
 
 重新设计的蝴蝶键盘
 
@@ -165,7 +165,7 @@ tags: [MacOS,MacBookPro]
 
 
 
-![MacBook Pro](http://image.joylau.cn/blog/macbookpro/IMG_2196.JPG)
+![MacBook Pro](//s3.joylau.cn:9000/blog/macbookpro/IMG_2196.JPG)
 
 来一张键盘的整体照
 
@@ -174,7 +174,7 @@ tags: [MacOS,MacBookPro]
 
 
 
-![MacBook Pro](http://image.joylau.cn/blog/macbookpro/IMG_2197.JPG)
+![MacBook Pro](//s3.joylau.cn:9000/blog/macbookpro/IMG_2197.JPG)
 
 触摸板的占比实在是太大了
 
@@ -185,7 +185,7 @@ tags: [MacOS,MacBookPro]
 
 
 
-![MacBook Pro](http://image.joylau.cn/blog/macbookpro/IMG_2198.JPG)
+![MacBook Pro](//s3.joylau.cn:9000/blog/macbookpro/IMG_2198.JPG)
 
 迫不及待的想进入系统尝试一下了
 
@@ -194,7 +194,7 @@ tags: [MacOS,MacBookPro]
 
 
 
-![MacBook Pro](http://image.joylau.cn/blog/macbookpro/IMG_2199.JPG)
+![MacBook Pro](//s3.joylau.cn:9000/blog/macbookpro/IMG_2199.JPG)
 
 老套路了
 
@@ -205,14 +205,14 @@ tags: [MacOS,MacBookPro]
 
 
 
-![MacBook Pro](http://image.joylau.cn/blog/macbookpro/IMG_2200.JPG)
+![MacBook Pro](//s3.joylau.cn:9000/blog/macbookpro/IMG_2200.JPG)
 
 在电源键上提供了和iPhone上一个的指纹支持
 
 
 
 
-![MacBook Pro](http://image.joylau.cn/blog/macbookpro/IMG_2201.JPG)
+![MacBook Pro](//s3.joylau.cn:9000/blog/macbookpro/IMG_2201.JPG)
 
 来录入我自己的指纹
 
@@ -221,7 +221,7 @@ tags: [MacOS,MacBookPro]
 
 
 
-![MacBook Pro](http://image.joylau.cn/blog/macbookpro/IMG_2202.JPG)
+![MacBook Pro](//s3.joylau.cn:9000/blog/macbookpro/IMG_2202.JPG)
 
 正在设置指纹
 
@@ -230,7 +230,7 @@ tags: [MacOS,MacBookPro]
 
 
 
-![MacBook Pro](http://image.joylau.cn/blog/macbookpro/IMG_2203.JPG)
+![MacBook Pro](//s3.joylau.cn:9000/blog/macbookpro/IMG_2203.JPG)
 
 终于正式进入系统了
 
@@ -243,14 +243,14 @@ tags: [MacOS,MacBookPro]
 
 ## 系统信息
 
-![MacBook Pro](http://image.joylau.cn/blog/macbookpro/IMG_2204.JPG)
+![MacBook Pro](//s3.joylau.cn:9000/blog/macbookpro/IMG_2204.JPG)
 
 看一下系统信息
 
 
 
 
-![MacBook Pro](http://image.joylau.cn/blog/macbookpro/IMG_2205.JPG)
+![MacBook Pro](//s3.joylau.cn:9000/blog/macbookpro/IMG_2205.JPG)
 
 显示器信息
 

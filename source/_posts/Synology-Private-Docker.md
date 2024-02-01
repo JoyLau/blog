@@ -22,7 +22,7 @@ docker 仓库存储大量的镜像,占用的空间很大,放到群晖上存储�
 2. 配置环境变量,因为默认的 registry 镜像不支持跨域请求和没有开启删除镜像的功能,我曾尝试在镜像里修改配置文件,然后在导出镜像,但是失败了,新导出的镜像启动后无法提供服务
 3. 环境配置如下
 
-![Synology-Private-Docker](http://image.joylau.cn/blog/Synology-Private-Docker.png)
+![Synology-Private-Docker](//s3.joylau.cn:9000/blog/Synology-Private-Docker.png)
 
 REGISTRY_STORAGE_DELETE_ENABLED:true  
 REGISTRY_HTTP_HEADERS_Access-Control-Allow-Headers:['Origin,Accept,Content-Type,Authorization']  

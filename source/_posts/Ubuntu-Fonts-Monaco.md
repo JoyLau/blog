@@ -12,11 +12,11 @@ tags: [Ubuntu]
 
 ## 前后对比
 左侧使用前，右侧使用后
-<figure class="half"><img src="http://image.joylau.cn/blog/Monaco1.png" width="50%"/><img src="http://image.joylau.cn/blog/Monaco4.png" width="50%"/></figure>
+<figure class="half"><img src="//s3.joylau.cn:9000/blog/Monaco1.png" width="50%"/><img src="//s3.joylau.cn:9000/blog/Monaco4.png" width="50%"/></figure>
 
-<figure class="half"><img src="http://image.joylau.cn/blog/Monaco2.png" width="50%"/><img src="http://image.joylau.cn/blog/Monaco5.png" width="50%"/></figure>
+<figure class="half"><img src="//s3.joylau.cn:9000/blog/Monaco2.png" width="50%"/><img src="//s3.joylau.cn:9000/blog/Monaco5.png" width="50%"/></figure>
 
-<figure class="half"><img src="http://image.joylau.cn/blog/Monaco3.png" width="50%"/><img src="http://image.joylau.cn/blog/Monaco6.png" width="50%"/></figure>
+<figure class="half"><img src="//s3.joylau.cn:9000/blog/Monaco3.png" width="50%"/><img src="//s3.joylau.cn:9000/blog/Monaco6.png" width="50%"/></figure>
 
 ## 使用步骤
 1. 该字体为开源字体，字体地址： https://github.com/vjpr/monaco-bold
@@ -24,7 +24,7 @@ tags: [Ubuntu]
 3. `fc-cache -fv` 生成字体缓存
 
 我的 1080P 分辨率，我的配置如下：
-![MonacoB2](http://image.joylau.cn/blog/Monaco7.png)
+![MonacoB2](//s3.joylau.cn:9000/blog/Monaco7.png)
 
 ## 2018-07-18 14:22:05 更新
 看到一篇关于 Ubuntu 字体渲染问题的文章: 修复 Ubuntu 中文字体渲染  https://i-meto.com/fix-chinese-font-display/

@@ -32,4 +32,4 @@ tags: [Docker]
 
 在 idea 里配置如下, 以后双击即可构建
 
-![Docker-Jib-SendCredentialsOverHttp](//image.joylau.cn/blog/docker-jib-sendCredentialsOverHttp.png)
+![Docker-Jib-SendCredentialsOverHttp](//s3.joylau.cn:9000/blog/docker-jib-sendCredentialsOverHttp.png)

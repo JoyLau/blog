@@ -1,7 +1,7 @@
 ---
 title: 日常折腾 --- 蜗牛星际安装黑群晖
 date: 2019-05-27 10:29:53
-cover: http://image.joylau.cn/blog/daily-nas.png
+cover: //s3.joylau.cn:9000/blog/daily-nas.png
 description: 蜗牛星际安装黑群晖
 categories: [日常折腾篇]
 tags: [日常折腾]
@@ -17,7 +17,7 @@ tags: [日常折腾]
 分别有：A单，A双；B单，B双；C单，C双；D单。  
 下面是网络上整理的一个表单
 
-![](http://image.joylau.cn/blog/heiqun_catg.jpg)
+![](//s3.joylau.cn:9000/blog/heiqun_catg.jpg)
 
 我买的是 B 款单网口的 intel i211 的网卡
 双网卡,还有一个网卡是 82583 需要短接主板上 2 个触电可完美使用双千兆
