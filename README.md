@@ -1,5 +1,5 @@
 <p align="center"><a href="https://blog.joylau.cn/" target="_blank" rel="noopener noreferrer"><img width="100" 
-src="https://s3.joylau.cn:9000/blog/JoyLau.jpg" alt="logo" style="border-radius: 50%"></a></p>
+src="http://image.joylau.cn/blog/JoyLau.jpg" alt="logo" style="border-radius: 50%"></a></p>
 
 <h1 align="center">JoyLau's Blog</h1>
 
@@ -10,3 +10,5 @@ src="https://s3.joylau.cn:9000/blog/JoyLau.jpg" alt="logo" style="border-radius:
 **[预览](https://blog.joylau.cn)**
 
 </div>
+
+![index](https://s3.joylau.cn:9000/blog/blogV3.png)
