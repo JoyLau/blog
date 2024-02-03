@@ -6,14 +6,14 @@
 title: JoyLau's Blog
 subtitle: 'JoyLau 的技术学习与思考'
 description: 'JoyLau 的技术学习与思考'
-keywords:
+keywords: JoyLau
 author: JoyLau
 language: zh-CN
 timezone: 'Asia/Shanghai'
 
 # URL
 ## Set your site url here. For example, if you use GitHub Page, set url as 'https://username.github.io/project'
-url: http://blog.joylau.cn/
+url: https://blog.joylau.cn/
 permalink: :year/:month/:day/:title/
 permalink_defaults:
 pretty_urls:

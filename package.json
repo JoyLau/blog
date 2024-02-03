@@ -6,7 +6,8 @@
     "build": "hexo generate",
     "clean": "hexo clean",
     "deploy": "hexo deploy",
-    "server": "hexo server"
+    "server": "hexo server",
+    "re-build": "hexo clean && hexo generate"
   },
   "hexo": {
     "version": "7.1.1"
@@ -15,9 +16,11 @@
     "@next-theme/plugins": "^8.19.1",
     "hexo": "^7.0.0",
     "hexo-generator-archive": "^2.0.0",
+    "hexo-generator-baidu-sitemap": "^0.1.9",
     "hexo-generator-category": "^2.0.0",
     "hexo-generator-index": "^3.0.0",
     "hexo-generator-searchdb": "^1.4.1",
+    "hexo-generator-sitemap": "^3.0.1",
     "hexo-generator-tag": "^2.0.0",
     "hexo-renderer-ejs": "^2.0.0",
     "hexo-renderer-marked": "^6.0.0",

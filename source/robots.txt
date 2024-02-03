@@ -1,0 +1,10 @@
+User-agent: *
+Allow: /
+
+Disallow: /js/
+Disallow: /css/
+Disallow: /images/
+Disallow: /lib/
+
+Sitemap: https://blog.joylau.cn/sitemap.xml
+Sitemap: https://blog.joylau.cn/baidusitemap.xml
