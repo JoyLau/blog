@@ -42,3 +42,32 @@ load_module /usr/lib64/nginx/modules/ngx_stream_module.so;
 
 这里是我用的包
 [Modules](//s3.joylau.cn:9000/blog/nginx-steam-modules.zip)
+
+
+使用源码编译包 
+#### 下载源码
+地址 ：https://nginx.org/en/download.html
+
+#### 启动一个 docker 容器用来编译打包 
+`docker run -it -v /tmp/nginx-1.18.0/:/data centos:7.4.1708 bash`
+
+#### 安装编译工具等 
+
+```bash
+yum -y install gcc gcc-c++ pcre pcre-devel zlib zlib-devel openssl openssl-devel
+```
+
+```bash
+yum groupinstall 'Development Tools'
+```
+
+### 配置，编译，安装
+```shell
+./configure --prefix=/usr/local/nginx  --with-http_stub_status_module --with-http_ssl_module --with-stream
+
+make
+
+make install
+```
+
+然后直接拷贝编译好的 nginx 二进制文件用就行
