@@ -37,3 +37,6 @@ iptables -L DOCKER-USER -nv --line-numbers
 
 iptables -D DOCKER-USER 要删除的行号
 ```
+
+### 注意
+上面的端口要填写容器的端口而不是映射到宿主机的端口
