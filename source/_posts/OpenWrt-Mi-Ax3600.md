@@ -6,7 +6,6 @@ categories: [ OpenWrt篇 ]
 tags: [ OpenWrt ]
 ---
 
-<!-- more -->
 # 刷机教程
 https://openwrt.org/toh/xiaomi/ax3600
 ## 简单总结下
@@ -14,6 +13,8 @@ https://openwrt.org/toh/xiaomi/ax3600
 2. 解锁 SSH
 
 初始化后登录到后台，打开浏览器控制台，执行下面的命令
+
+<!-- more -->
 
 ```javascript
 function getSTOK() {
