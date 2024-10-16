@@ -21,3 +21,4 @@ tags: [SpringBoot]
 logging.level.org.springframework.web.filter.CommonsRequestLoggingFilter=DEBUG
 ```
 
+使用了 `ContentCachingRequestWrapper` 和 `ContentCachingResponseWrapper` 包装请求体和响应体， 可以看下源码
