@@ -294,3 +294,9 @@ shell:
 2. 确定当前使用的内核,一般为版本号最新的内核,删除旧内核: `sudo apt remove linux-headers-4.15.0-43	linux-headers-4.15.0-43-generic linux-image-4.15.0-43-generic linux-modules-4.15.0-43-generic linux-modules-extra-4.15.0-43-generic`
 3. 再次输入第一步的命令查看现在的内核信息,现在会看到刚才删除的内核会出现 `deinstall` 的状态
 4. 删除 `deinstall` 状态的内核: `sudo dpkg -P xxxxxx`
+
+## 2024-11-20 更新
+
+#### 测试硬盘的读写速度
+- 写入: `dd if=/dev/zero of=testfile bs=1G count=1 oflag=direct`
+- 读取: `dd if=testfile of=/dev/null bs=1G iflag=direct`
