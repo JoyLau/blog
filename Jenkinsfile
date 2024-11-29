@@ -30,7 +30,7 @@ node('node') {
                     remote.host = "joylau.cn"
                     remote.port = 22
                     remote.allowAnyHosts = true
-                    withCredentials([usernamePassword(credentialsId: 'blog.joylau.cn', passwordVariable: 'password', usernameVariable: 'username')]) {
+                    withCredentials([usernamePassword(credentialsId: 'jl-server', passwordVariable: 'password', usernameVariable: 'username')]) {
                         remote.user = username
                         remote.password = password
                     }
