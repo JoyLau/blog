@@ -163,3 +163,10 @@ npm 支持 http 代理，但是不支持 socks 代理
 1. 安装 **http-proxy-to-socks** `npm install -g http-proxy-to-socks`
 2. 开启转发 `hpts -s 172.16.1.200:60798 -p 7951` 本地的 7951 端口转发到远程的 60798 端口
 3. 之后正常设置 http 代理即可
+
+
+### Chrome 使用 socks5 代理
+使用快捷方式设置代理或者使用命令行启动设置代理参数
+```shell
+"C:\Program Files\JumpServer\applications\Chrome\Application\chrome.exe" --proxy-server=socks5://ip:port
+```
