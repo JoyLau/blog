@@ -50,7 +50,7 @@ ENV DEBIAN_FRONTEND=noninteractive
 RUN apt update
 RUN apt install -y vim git curl unzip clang cmake ninja-build pkg-config libgl1 libgtk-3-dev openjdk-21-jdk
 ENV ANDROID_SDK_ROOT="/hf/android-sdk"
-ENV PATH="/hf/flutter/bin::$PATH"
+ENV PATH="/hf/flutter/bin:$PATH"
 
 RUN echo '#!/bin/bash\n\
 git config --global --add safe.directory /hf/flutter\n\
