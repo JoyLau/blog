@@ -102,6 +102,10 @@ lcd4linux -f lcd4linux.conf
 -F -vv 调试程序
 -o /xxx/xx.png 生成图片
 
+### OpenWRT 系统下安装包
+地址: https://archive.openwrt.org/releases/23.05.5/packages/aarch64_generic/packages/
+
+
 
 ### 效果图
 ![lcd4linux-IMG](https://s3.joylau.cn:9000/blog/lcd4linux-IMG_9132.png)
