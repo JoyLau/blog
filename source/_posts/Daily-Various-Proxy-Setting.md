@@ -118,6 +118,18 @@ vim /usr/lib/systemd/system/docker.service
 `systemctl deamon-reload`
 `systemctl restart docker`
 
+或者在配置文件 **daemon.json** 配置代理
+
+```json
+{
+  "proxies": {
+    "http-proxy": "http://proxy.example.com:3128",
+    "https-proxy": "https://proxy.example.com:3129",
+    "no-proxy": "*.test.example.com,.example.org,127.0.0.0/8"
+  }
+}
+```
+
 
 ### npm 使用代理
 npm 支持 http 代理，但是不支持 socks 代理
