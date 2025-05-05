@@ -163,3 +163,59 @@ N  下行 25  Mbps   上行 50  Mbps
 # TFTP 救砖
 https://www.youtube.com/watch?v=c9HOIYsLjiU&t=8s  
 对应地址: https://openwrt.org/toh/xiaomi/ax3600#tftp_recovery
+
+# 安装 OpenVPN 客户端并访问局域网内其他设备
+### 安装服务
+- openvpn-openssl
+- luci-app-openvpn
+- luci-i18n-openvpn-zh-cn
+
+### 配置文件修改
+由于我的服务端是 iKuai 需要修改2处配置以适配
+1. 新增 auth-user-pass /etc/openvpn/homeopenvpn.auth
+2. 修改 cipher AES-256-GCM
+
+### 服务端可以访问客户端网段的其他设备
+需要修改
+ /etc/config/firewall，在 config zone 部分启用 masq
+
+```bash
+config zone
+    option name 'lan'
+    option masq '1'  # 对所有从 LAN 出去的流量启用 MASQUERADE
+    option network 'lan'
+    option input 'ACCEPT'
+    option output 'ACCEPT'
+    option forward 'ACCEPT'
+```
+
+然后重启 防火墙  
+
+这种方式的   
+优点：
+- 简单，直接让 OpenWRT 对所有 LAN 流量做 MASQUERADE。
+- 兼容性好，UCI 会自动生成正确的 nftables 规则。
+
+缺点：
+- 会对 所有 LAN 流量 启用 MASQUERADE（而不仅仅是 VPN 流量）。
+
+如果希望 仅对 指定的IP 做 MASQUERADE，可以手动创建持久化 nftables 规则
+创建 /etc/nftables.d/vpn-nat.nft  
+
+```bash
+cat > /etc/nftables.d/vpn-nat.nft <<EOF
+ table ip nat {
+  chain postrouting {
+  type nat hook postrouting priority 100; policy accept;
+  ip saddr 10.7.7.0/24 oifname "br-lan" masquerade
+ }
+}
+EOF
+```
+
+iKuai 服务端配置需要
+1. 设置固定IP
+2. 配置静态路由
+
+参考 [OpenVPN服务端](https://www.ikuai8.com/index.php?option=com_content&view=article&id=165&Itemid=277)
+
