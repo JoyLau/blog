@@ -191,5 +191,144 @@ ipp.txt 文件的格式
 
 然后在 ccd 目录下以用户名为文件名命名，写入内容： `ifconfig-push 192.168.255.10 255.255.255.0` 来为单个用户配置 IP
 
+### OpenVPN 客户端证书续期
+默认生成的证书有效期为 825 天，2 年多就过期了  
+过期后连接服务端会报错，连不上  
 
+```shell
+# openvpn 客户端连接服务端报错
+VERIFY ERROR: depth=0, error=certificate has expired: CN=26.64.10.114
+
+# 客户端连接报警告
+May 06 13:15:16 msmp-v5 openvpn[2357]: 2025-05-06 13:15:16 WARNING: Your certificate has expired!
+May 06 13:15:16 msmp-v5 openvpn[2357]: 2025-05-06 13:15:16 TCP/UDP: Preserving recently used remote address: [AF_INET]26.64.10.114:1194
+May 06 13:15:16 msmp-v5 openvpn[2357]: 2025-05-06 13:15:16 Attempting to establish TCP connection with [AF_INET]26.64.10.114:1194 [nonblock]
+May 06 13:15:16 msmp-v5 openvpn[2357]: 2025-05-06 13:15:16 TCP connection established with [AF_INET]26.64.10.114:1194
+May 06 13:15:16 msmp-v5 openvpn[2357]: 2025-05-06 13:15:16 TCP_CLIENT link local: (not bound)
+May 06 13:15:16 msmp-v5 openvpn[2357]: 2025-05-06 13:15:16 TCP_CLIENT link remote: [AF_INET]26.64.10.114:1194
+May 06 13:15:16 msmp-v5 openvpn[2357]: 2025-05-06 13:15:16 Connection reset, restarting [-1]
+May 06 13:15:16 msmp-v5 openvpn[2357]: 2025-05-06 13:15:16 SIGUSR1[soft,connection-reset] received, process restarting
+
+
+# 服务端报错
+Tue May  6 05:50:16 2025 26.64.10.121:54270 TLS: Initial packet from [AF_INET]26.64.10.121:54270, sid=f947d193 380748a0
+Tue May  6 05:50:16 2025 26.64.10.121:54270 CRL: loaded 1 CRLs from file /etc/openvpn/crl.pem
+Tue May  6 05:50:16 2025 26.64.10.121:54270 VERIFY OK: depth=1, CN=Easy-RSA CA
+Tue May  6 05:50:16 2025 26.64.10.121:54270 VERIFY ERROR: depth=0, error=certificate has expired: CN=省局-121
+Tue May  6 05:50:16 2025 26.64.10.121:54270 OpenSSL: error:1417C086:SSL routines:tls_process_client_certificate:certificate verify failed
+Tue May  6 05:50:16 2025 26.64.10.121:54270 TLS_ERROR: BIO read tls_read_plaintext error
+Tue May  6 05:50:16 2025 26.64.10.121:54270 TLS Error: TLS object -> incoming plaintext read error
+Tue May  6 05:50:16 2025 26.64.10.121:54270 TLS Error: TLS handshake failed
+Tue May  6 05:50:16 2025 26.64.10.121:54270 Fatal TLS error (check_tls_errors_co), restarting
+Tue May  6 05:50:16 2025 26.64.10.121:54270 SIGUSR1[soft,tls-error] received, client-instance restarting
+```
+
+需要手动续期， 这里我续期 10 年  
+由 825 天改为 10 年，需要修改 
+1. /usr/share/easyrsa 的 vars 配置文件中 `set_var EASYRSA_CERT_EXPIRE     3650`
+2. 或者容器使用变量 `EASYRSA_CERT_EXPIRE=3650`
+
+这里我选择的是第二种方式  
+
+
+具体涉及命令  
+
+撤销证书: `ovpn_revokeclient $client_name (remove)` 加上 remove 是删除证书  
+重新生成： `easyrsa build-client-full $client_name nopass`  
+重新导出配置文件：`ovpn_getclient $client_name > /etc/openvpn/$client_name.ovpn`  
+
+由于执行上面的命令需要输入 yes 和密码确认， 可以写个脚本自动完成(需要容器内安装 expect 工具完成自动交互的功能)  
+**update_client.exp**  
+
+```shell
+#!/usr/bin/expect
+
+# 从命令行参数获取客户端名称
+if {[llength $argv] == 0} {
+    send_user "错误：请指定客户端名称\n"
+    send_user "用法：./revoke_client.exp <客户端名称>\n"
+    exit 1
+}
+set client_name [lindex $argv 0]
+set password "123456"
+
+spawn ovpn_revokeclient $client_name
+
+# 等待 "yes/no" 确认提示
+expect {
+    "*Continue with revocation:*" {
+        send "yes\r"
+        exp_continue
+    }
+    "*Enter pass phrase for /etc/openvpn/pki/private/ca.key:*" {
+        send "$password\r"
+        exp_continue
+    }
+    # 其他可能的错误处理
+    timeout {
+        send_user "操作超时\n"
+        exit 1
+    }
+    eof {
+        send_user "操作完成\n"
+    }
+}
+
+spawn easyrsa build-client-full $client_name nopass
+
+expect {
+    "*Enter pass phrase for /etc/openvpn/pki/private/ca.key:*" {
+        send "$password\r"
+        exp_continue
+    }
+    # 其他可能的错误处理
+    timeout {
+        send_user "操作超时\n"
+        exit 1
+    }
+    eof {
+        send_user "操作完成\n"
+    }
+}
+
+exec ovpn_getclient $client_name > /etc/openvpn/$client_name.ovpn
+exec sed -i "s/^redirect-gateway def1$/# redirect-gateway def1/" /etc/openvpn/$client_name.ovpn
+
+send_user "客户端配置文件已生成：/etc/openvpn/$client_name.ovpn\n"
+```
+
+使用方法为 `./update_client.exp user1`  
+
+另外，重新生成的证书需要更新到客户端上  
+这里有个命令快速部署到客户端服务器上  
+**update_opvn_user.sh**  
+
+```shell
+#!/usr/bin/bash
+set -e
+set -u
+
+NAME=$1
+host=$2
+
+if [[ ! $NAME ]]; then
+  echo "请输入名称"
+  exit 1
+fi
+
+if [[ ! $host ]]; then
+  echo "请输入主机"
+  exit 1
+fi
+
+# 重新签发10年的证书，需要容器内安装 expect 工具完成自动交互的功能
+docker exec -it openvpn /etc/openvpn/update_client.exp $NAME
+# 验证有效期
+openssl x509 -in /home/data/common-service/openvpn/ovpn-data/$NAME.ovpn -noout -dates
+# 拷贝到服务器上，重启服务
+scp /home/data/common-service/openvpn/ovpn-data/$NAME.ovpn root@$host:/etc/openvpn/client/
+ssh root@$host "systemctl restart openvpn"
+```
+
+使用方法 `sh update_opvn_user.sh user1 192.168.255.21`
 
