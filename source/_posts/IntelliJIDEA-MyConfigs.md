@@ -93,3 +93,7 @@ Help -> Delete Leftover IDE Directories...
 ### IntelliJ IDEA 2023.1.3 color schema 备份文件
 更新了 2023.2 后，对编辑器的颜色不是很适应， 这里备份下我在 2023.1.3 下的配置， 后面可以继续使用
 [IntelliJIDEA.2023.1.3.Color.Schema.Dark.icls](//s3.joylau.cn:9000/blog/IntelliJIDEA.2023.1.3.Color.Schema.Dark.icls)
+
+## IDEA 小技巧记录
+1. 要水平滚动文件，请在按住   Shift   的同时转动鼠标滚轮。
+2. 比较文件和文件夹: 要比较任意两个文件或文件夹，请在 项目 工具窗口中将其选中，然后按   ⌘   D  。可以比较两个   .jar  、   .zip   或   .phar   归档或甚至一个归档中的文件，这样就可以查看一个库的两个不同版本之间到底有哪些变化
