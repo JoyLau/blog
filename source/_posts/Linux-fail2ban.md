@@ -65,7 +65,13 @@ systemctl start fail2ban
 
 
 ## 其他命令
+查看封禁的IP
+```shell
+fail2ban-client status ssh-iptables(规则名称)
+```
+
+
 解封
 ```shell
-fail2ban-client set ssh-iptables unbanip xxxxxx
+fail2ban-client set ssh-iptables(规则名称) unbanip xxxxxx
 ```
