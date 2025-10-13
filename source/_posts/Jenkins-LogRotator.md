@@ -39,3 +39,14 @@ LogRotator 有 2 个构造方法， 一个是 2 个参数的， 一个是 4 个�
 - numToKeep: 保持构建的最大个数， 如果非空，最多此数目的构建记录将被保存
 - artifactDaysToKeep: 发布包保留天数，如果非空，比此早的发布包将被删除，但构建的日志、操作历史、报告等将被保留
 - artifactNumToKeep: 发布包最大保留#个构建， 如果非空，最多此数目大构建将保留他们的发布包
+
+### 定时自动执行
+可以搭配 jenkins-cli.jar 执行本地脚本和定时任务配置来定时执行
+我的配置如下
+
+```bash
+# 每周四4:20执行
+20 4 * * 0 java -jar /data/jenkins/jenkins-cli.jar -auth admin:<Token> -s http://192.168.1.31:6108/ groovy = < /data/jenkins/clean-job.groovy
+```
+
+**clean-job.groovy** 即为上面的脚本
