@@ -6,8 +6,6 @@ categories: [Docker篇]
 tags: [Docker, Jenkins]
 ---
 
-<!-- more -->
-
 我的 Jenkins 是使用 Docker 部署的，部署的脚本如下:
 
 ```yaml
@@ -27,6 +25,9 @@ services:
 ### 升级步骤
 总体思路
 1. 直接从 docker hub 上找最新的镜像包，更改 image 的 jenkins 版本重启升级即可
+
+
+<!-- more -->
 
 ### 升级问题
 绝大部分场景下，更新版本重启后就行了  
