@@ -9,20 +9,26 @@ tags: [Jenkins]
 
 ### 脚本
 ```groovy
-    import hudson.tasks.LogRotator
-    Jenkins.instance.allItems(Job).each { job ->
-      println "$job.builds.number $job.name"
-      if ( job.isBuildable() && job.supportsLogRotator()) {
+import jenkins.model.Jenkins
+import hudson.model.Job
+import hudson.tasks.LogRotator
+
+def count = 0
+Jenkins.instance.allItems(Job).each { job ->
+    if ( job.isBuildable() && job.supportsLogRotator()) {
         // 注释if所有任务统一设置策略，去掉注释后只更改没有配置策略的任务
-        //if ( job.getProperty(BuildDiscarderProperty) == null) {
-          job.setLogRotator(new LogRotator (-1, 3))
+        //if ( job.getLogRotator() == null) {
+        job.setLogRotator(new LogRotator (-1, 3))
         //}
-          //立马执行Rotate策略
-          job.logRotate()
-        println "$job.builds.number $job.name 磁盘回收已处理"
-      } else { println "$job.name 未修改，已跳过" }
+        //立马执行Rotate策略
+        job.logRotate()
+        count++
+        println "$job.name: 磁盘回收已处理"
+    } else {
+        println "$job.name: 未修改，已跳过"
     }
-    return;
+}
+println "总共处理了 $count 个作业"
 ```
 
 LogRotator 有 2 个构造方法， 一个是 2 个参数的， 一个是 4 个参数的，构造参数分别为：
