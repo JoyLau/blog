@@ -38,7 +38,7 @@ OpenVPN 本身的虚拟网段为：
 本文将介绍从路由、iptables、NAT 到最终验证的完整解决方案。
 
 
-## 📌 1. 需求分析与拓扑结构
+## 1. 需求分析与拓扑结构
 
 假设环境：
 
@@ -60,7 +60,7 @@ OpenVPN 本身的虚拟网段为：
 
 ---
 
-## 📌 2. 在客户端 A 上添加静态路由
+## 2. 在客户端 A 上添加静态路由
 
 A 需要知道访问 26.64.10.0/24 时走 VPN（tun1）：
 
@@ -74,7 +74,7 @@ route 26.64.10.0 255.255.255.0 vpn_gateway
 
 ---
 
-## 📌 3. 在客户端 B 上开启数据转发
+## 3. 在客户端 B 上开启数据转发
 
 ```
 echo 1 > /proc/sys/net/ipv4/ip_forward
@@ -89,7 +89,7 @@ sysctl -p
 
 ---
 
-## 📌 4. 在客户端 B 上放行 tun1 的转发流量
+## 4. 在客户端 B 上放行 tun1 的转发流量
 
 客户端 B 是 VPN 流量与内网 26.64.10.x 的中转节点，因此必须允许 FORWARD。
 
@@ -107,7 +107,7 @@ iptables -I FORWARD -o tun1 -j ACCEPT
 
 ---
 
-## 📌 5. **关键步骤**：在客户端 B 上启用 NAT（解决回包问题）
+## 5. **关键步骤**：在客户端 B 上启用 NAT（解决回包问题）
 
 由于 26.64.10.x 的网关无法配置路由，因此当它看到来自 192.168.250.x 的流量，会把回包发错路径。
 
@@ -126,7 +126,7 @@ MASQUERADE 的作用是：
 
 ---
 
-## 📌 6. 验证配置
+## 6. 验证配置
 
 在客户端 A 上：
 
@@ -150,7 +150,7 @@ A → tun1 → OpenVPN → B → 内网 26.64.10.x
 ---
 
 
-## 📌 7. Docker 环境的注意事项
+## 7. Docker 环境的注意事项
 
 如果 B 上运行 Docker，FORWARD 链通常由 Docker 修改，伴随：
 
@@ -171,7 +171,7 @@ iptables -I FORWARD ...
 ---
 
 
-### ✔ 完整配置列表（客户端 B）
+### 完整配置列表（客户端 B）
 
 ```
 echo 1 > /proc/sys/net/ipv4/ip_forward
@@ -182,13 +182,13 @@ iptables -I FORWARD -o tun1 -j ACCEPT
 iptables -t nat -A POSTROUTING -s 192.168.250.0/24 -d 26.64.10.0/24 -j MASQUERADE
 ```
 
-### ✔ 客户端 A
+### 客户端 A
 
 ```
 route 26.64.10.0 255.255.255.0 vpn_gateway
 ```
 
-### ✔ OpenVPN 服务端
+### OpenVPN 服务端
 1）server.conf：
 
 ```
