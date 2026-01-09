@@ -124,6 +124,18 @@ MASQUERADE 的作用是：
 
 这是整个方案中最核心的一步。
 
+查看配置
+
+```
+iptables -t nat -L -n -v --line-numbers
+```
+
+删除配置（把-A 改为 -D 即可）
+
+```
+iptables -t nat -D POSTROUTING -s 192.168.250.0/24 -d 26.64.10.0/24 -j MASQUERADE
+```
+
 ---
 
 ## 6. 验证配置
