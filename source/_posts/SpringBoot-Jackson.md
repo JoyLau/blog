@@ -20,3 +20,26 @@ tags: [Jackson,SpringBoot]
 2. @JsonFormat不仅可以完成后台到前台参数传递的类型转换，还可以实现前台到后台类型转换。
 
 当content-type为application/json时，优先使用@JsonFormat的pattern进行类型转换。而不会使用@DateTimeFormat进行类型转换。
+
+### SpringBoot4 Jackson 配置记录
+
+```java
+    @Bean
+    public JsonMapperBuilderCustomizer customizer() {
+        return builder -> {
+            builder.disable(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES);
+            builder.changeDefaultPropertyInclusion(incl ->
+                    incl.withValueInclusion(JsonInclude.Include.ALWAYS));
+
+            builder.addModule(
+                    new SimpleModule()
+                            // Long 的序列化
+                            .addSerializer(Long.class, StringSerializer.instance)
+                            // LocalDateTime 的序列化
+                            .addSerializer(LocalDateTime.class, new LocalDateTimeSerializer(DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss")))
+                            // LocalDateTime 的反序列化
+                            .addDeserializer(LocalDateTime.class,
+                                    new LocalDateTimeDeserializer(DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss"))));
+        };
+    }
+```
