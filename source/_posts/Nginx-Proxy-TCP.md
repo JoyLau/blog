@@ -71,3 +71,22 @@ make install
 ```
 
 然后直接拷贝编译好的 nginx 二进制文件用就行
+
+### 解决域名解析缓存的问题
+如果反向代理的域名是动态域名，当解析发生变化后，Nginx 不会重新解析（只在启动或 reload 时解析一次域名）
+解决方式  
+
+```nginx
+stream {
+    resolver 223.5.5.5 8.8.8.8 valid=30s ipv6=off;
+
+    server {
+        listen xxx udp;
+        proxy_pass xxxx.com:xxx;
+    }
+}
+```
+
+- 每 30 秒重新解析一次
+- DNS 更新后可自动生效
+- 无需 reload nginx
