@@ -75,18 +75,33 @@ make install
 ### 解决域名解析缓存的问题
 如果反向代理的域名是动态域名，当解析发生变化后，Nginx 不会重新解析（只在启动或 reload 时解析一次域名）
 解决方式  
+将域名改为变量形式，Nginx 才会按照 resolver 的 valid 时间定期重新解析  
 
 ```nginx
 stream {
-    resolver 223.5.5.5 8.8.8.8 valid=30s ipv6=off;
+    resolver 223.5.5.5 8.8.8.8 valid=10s ipv6=off;
+    resolver_timeout 2s;
 
     server {
         listen xxx udp;
-        proxy_pass xxxx.com:xxx;
+        set $backend "域名:端口";
+        proxy_pass $backend;
     }
 }
 ```
 
-- 每 30 秒重新解析一次
-- DNS 更新后可自动生效
-- 无需 reload nginx
+Nginx 的 resolver 不是定时主动轮询，而是按需触发 + 缓存过期机制：
+
+有新请求进来 → 检查 DNS 缓存是否过期（valid=10s）→ 已过期则重新查询 → 建立连接
+
+没有请求进来，Nginx 永远不会主动发 DNS 查询。 valid=10s 只是缓存有效期，不是轮询间隔。
+
+验证方法
+
+手动模拟 UDP 请求触发解析：
+
+终端：抓包
+`tcpdump -i any port 53`
+
+客户端: 连接
+如果 IP 变化后希望尽快生效，将 valid 调小（如 valid=5s），确保每次请求间隔超过该值即可。
