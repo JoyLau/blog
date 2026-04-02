@@ -74,3 +74,43 @@ my.cnf
 选择   **Confluence**  再选择 **Confluence (Data Center)**
 填入 Server ID 即可申请免费的一个月的 License 
 一个月到期后再次申请即可
+
+
+## License 优化
+下载地址 [atlassian-agent.jar(Atlassian Crack Agent v1.3.1)](https://s3.joylau.cn:9000/mdpic/picgo/2026/04/02/atlassian-agent.jar)  
+
+授权码生成方法  
+```shell
+java -jar atlassian-agent.jar --help
+
+# products
+java -jar atlassian-agent.jar -d -m [Email] -n BAT -p [conf or jira] -o http://[serverip-or-domain] -s [serverId]
+
+# plugins
+java -jar atlassian-agent.jar -d -m [Email] -n BAT -p [plugin code] -o http://[serverip-or-domain] -s [serverId]
+```
+
+比如我这里 `java -jar atlassian-agent.jar -d -m xxxx@gmail.com -n BAT -p conf -o http://192.168.1.34:8090 -s BT8A-4FXC-D261-6XNR`
+
+得到的授权码可以配置到 `confluence.cfg.xml` 文件中  
+配置项为 `atlassian.license.message`, 注意格式上面的换行变成空格即可  
+
+然后使用 -javaagent 加载 atlassian-agent.jar 重启 Confluence 服务即可  
+
+示例:  
+```yaml
+services:
+  confluence:
+    image: atlassian/confluence
+    container_name: confluence
+    restart: always
+    ports:
+      - 8090:8090
+      - 8091:8091
+    environment:
+      - JAVA_TOOL_OPTIONS='-javaagent:/atlassian-agent.jar'
+    volumes:
+      - ./atlassian-agent.jar:/atlassian-agent.jar
+      - ./mysql-connector-java-8.0.29.jar:/opt/atlassian/confluence/confluence/WEB-INF/lib/mysql-connector-java-8.0.29.jar
+      - ./confluence-data:/var/atlassian/application-data/confluence
+```
