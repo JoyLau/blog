@@ -8,7 +8,7 @@ tags: [日常折腾, LCD4Linux, OpenWrt]
 
 之前写过一篇 [编译 LCD4Linux 增加 Image,VNC,X11 驱动](https://blog.joylau.cn/2024/10/31/Daily-LCD4Linux/) 的文章，这次我把 LCD4Linux 用在了 FriendlyWrt 小主机上，配合 ax206 屏实现了一个实时监控小屏。
 
-<!-- more -->
+
 
 ### 背景
 
@@ -30,6 +30,11 @@ tags: [日常折腾, LCD4Linux, OpenWrt]
 - `cam_watch`：监听文件变化，将图片复制到 `/tmp/cam_copy.png`
 
 lcd4linux 只读取 `/tmp/cam_copy.png`，避免了读写冲突。
+
+
+<video src="https://s3.joylau.cn:9000/mdpic/picgo/2026/04/09/Daily-LCD4Linux-Cam-Monitor-1.mp4" muted controls="controls"> </video>
+
+<!-- more -->
 
 ### 服务脚本
 
@@ -194,6 +199,9 @@ Layout 'layout_480x320'
 - 稳定：procd 自动重启机制保证服务持续运行
 
 最后这套方案也可以近实时的显示电视直播流，比如每秒看 CCTV13 新闻频道  
+
+<video src="https://s3.joylau.cn:9000/mdpic/picgo/2026/04/09/Daily-LCD4Linux-Cam-Monitor-2.mp4" muted controls="controls"> </video>
+
 参考
 
 ```shell
