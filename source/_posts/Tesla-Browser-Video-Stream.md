@@ -30,7 +30,7 @@ tags: [Tesla, ffmpeg]
     └──► MP3 audio stream → 浏览器 <audio> 标签播放
 ```
 ## 实现效果
-<video src="https://s3.joylau.cn:9000/mdpic/picgo/2026/04/08/Tesla-Browser-Video-Stream.mp4" muted controls="controls"> </video>
+<video src="https://s3.joylau.cn:9000/mdpic/picgo/2026/04/09/Tesla-Browser-Video-Stream.mp4" muted controls="controls"> </video>
 
 <!-- more -->
 
