@@ -321,3 +321,41 @@ lsblk
 
 ### 转换MBR分区为GPT分区
 [参考文档](https://help.aliyun.com/zh/ecs/user-guide/convert-mbr-partitions-into-gpt-partitions)
+
+
+### LVM 挂载数据盘到指定目录
+```bash
+Disk /dev/vdb：3 TiB，3298534883328 字节，6442450944 个扇区
+单元：扇区 / 1 * 512 = 512 字节
+扇区大小(逻辑/物理)：512 字节 / 512 字节
+I/O 大小(最小/最佳)：512 字节 / 512 字节
+```
+
+命令：  
+
+```shell
+# 1. 创建 PV
+pvcreate /dev/vdb
+
+# 2. 创建 VG
+vgcreate vg_data /dev/vdb
+
+# 3. 创建 LV（用全部空间）
+lvcreate -l 100%FREE -n lv_data vg_data
+
+# 4. 格式化（xfs 适合大文件，想 ext4 自己换）
+mkfs.xfs /dev/vg_data/lv_data
+
+# 5. 创建挂载点
+mkdir -p /data
+
+# 6. 写 fstab 开机自动挂载
+echo '/dev/vg_data/lv_data /data xfs defaults 0 0' >> /etc/fstab
+
+# 7. 挂载
+mount -a
+
+# 8. 验证
+lsblk
+df -h /data
+```
