@@ -39,4 +39,4 @@ tags: [群晖]
 - Rufus，一款免费的开源工具
 - 一个Ubuntu ISO 文件
 #### 选择
-![](//s3.joylau.cn:9000/blog/rufus-ubuntu.png)
+![](//blog.joylau.cn/blog/rufus-ubuntu.png)

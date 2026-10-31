@@ -117,11 +117,11 @@ https://github.com/jerrykuku/luci-theme-argon/blob/master/README_ZH.md
 
 # 配置无线网络
 ## radio0
-![radio0](https://s3.joylau.cn:9000/blog/openwrt-radio0.png)
+![radio0](https://blog.joylau.cn/blog/openwrt-radio0.png)
 ## radio1
-![radio1](https://s3.joylau.cn:9000/blog/openwrt-radio1.png)
+![radio1](https://blog.joylau.cn/blog/openwrt-radio1.png)
 ## radio2
-![radio2](https://s3.joylau.cn:9000/blog/openwrt-radio2.png)
+![radio2](https://blog.joylau.cn/blog/openwrt-radio2.png)
 
 关于 N AC AX 我这边找到的资料：
 > OpenWrt 无线设置中的 legacy、n、ac 和 ax 代表不同的 WiFi 标准:

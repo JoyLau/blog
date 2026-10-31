@@ -1,7 +1,7 @@
 ---
 title: 日常折腾 --- 软路由攒机记录
 date: 2019-05-22 14:45:10
-cover: //s3.joylau.cn:9000/blog/IMG_0314.jpg
+cover: //blog.joylau.cn/blog/IMG_0314.jpg
 description: 日常折腾之家里网线改造记录
 categories: [日常折腾篇]
 tags: [日常折腾]
@@ -14,11 +14,11 @@ tags: [日常折腾]
 ### 实机
 看下我攒的把
 
-![](//s3.joylau.cn:9000/blog/IMG_0314.jpg)
+![](//blog.joylau.cn/blog/IMG_0314.jpg)
 
-![](//s3.joylau.cn:9000/blog/IMG_0315.jpg)
+![](//blog.joylau.cn/blog/IMG_0315.jpg)
 
-![](//s3.joylau.cn:9000/blog/IMG_0316.jpg)
+![](//blog.joylau.cn/blog/IMG_0316.jpg)
 
 
 ### 硬件配置

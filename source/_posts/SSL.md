@@ -7,13 +7,13 @@ tags: [SSL,HTTPS,Apache,Tomcat,Nginx]
 ---
 <!-- more -->
 
-![SSL](//s3.joylau.cn:9000/blog/https.jpg)
+![SSL](//blog.joylau.cn/blog/https.jpg)
 
 
 ## Apache 2.x 证书部署
 
 ### 文件准备
-![Apache](//s3.joylau.cn:9000/blog/apachessl.png)
+![Apache](//blog.joylau.cn/blog/apachessl.png)
 
 ### 获取证书
 - Apache文件夹内获得证书文件 1_root_bundle.crt，2_www.domain.com_cert.crt 和私钥文件 3_www.domain.com.key,
@@ -47,7 +47,7 @@ tags: [SSL,HTTPS,Apache,Tomcat,Nginx]
 ##  Nginx 证书部署
 
 ### 文件准备
-![Nginx](//s3.joylau.cn:9000/blog/Nginxssl.png)
+![Nginx](//blog.joylau.cn/blog/Nginxssl.png)
 
 ### 获取证书
 - Nginx文件夹内获得SSL证书文件 1_www.domain.com_bundle.crt 和私钥文件 2_www.domain.com.key,
@@ -95,7 +95,7 @@ tags: [SSL,HTTPS,Apache,Tomcat,Nginx]
 
 ### 文件准备
 
-![Nginx](//s3.joylau.cn:9000/blog/Tomcatssl.png)
+![Nginx](//blog.joylau.cn/blog/Tomcatssl.png)
 
 
 ### 获取证书

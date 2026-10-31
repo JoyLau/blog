@@ -38,7 +38,7 @@ indicator-sysmonitor 可以新建传感器，可以自定义命令来显示输�
 
 在 indicator-sysmonitor 里新建一项， 复制上述命令，效果如下
 
-![disk-dstat](//s3.joylau.cn:9000/blog/stat-disk_001.png)
+![disk-dstat](//blog.joylau.cn/blog/stat-disk_001.png)
 
 
 
@@ -67,7 +67,7 @@ indicator-sysmonitor 可以新建传感器，可以自定义命令来显示输�
 
 同上操作， 命令更换下，效果如下：
 
-![disk-iotop](//s3.joylau.cn:9000/blog/stat-disk_002.png)
+![disk-iotop](//blog.joylau.cn/blog/stat-disk_002.png)
 
 
 ### 对比

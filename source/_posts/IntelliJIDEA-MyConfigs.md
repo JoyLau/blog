@@ -92,7 +92,7 @@ Help -> Delete Leftover IDE Directories...
 
 ### IntelliJ IDEA 2023.1.3 color schema 备份文件
 更新了 2023.2 后，对编辑器的颜色不是很适应， 这里备份下我在 2023.1.3 下的配置， 后面可以继续使用
-[IntelliJIDEA.2023.1.3.Color.Schema.Dark.icls](//s3.joylau.cn:9000/blog/IntelliJIDEA.2023.1.3.Color.Schema.Dark.icls)
+[IntelliJIDEA.2023.1.3.Color.Schema.Dark.icls](//blog.joylau.cn/blog/IntelliJIDEA.2023.1.3.Color.Schema.Dark.icls)
 
 ## pom.xml 文件安全漏洞警告去除
 进入 设置 - 编辑器 - 检查 - 安全性， 去除 “易受攻击的声明依赖项” 和 “易受攻击的导入依赖项”

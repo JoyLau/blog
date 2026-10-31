@@ -1,7 +1,7 @@
 ---
 title: 日常折腾之 KVR 漫游(一) --- 新路由 3 (Newifi D2) 刷入 Breed (刷不死)固件
 date: 2020-04-13 08:59:56
-cover: //s3.joylau.cn:9000/blog/Daily-KVR-NewifiD2-Breed.jpeg
+cover: //blog.joylau.cn/blog/Daily-KVR-NewifiD2-Breed.jpeg
 description: 目前想要组 WIFI 漫游可选的方案有 AC + AP 或者 mesh 组网, 可这些的价格都不便宜, 而我选择用 2 台之前很火的矿机新路由 3 (Newifi D2) 来组 AP 实现 KVR 漫游,想要组 KVR 漫游, 2 台路由必须刷入集客 AP 固件, 而刷入集客 AP 固件前必须先刷入 Breed 固件,本篇介绍新路由 3 如何刷入该固件 
 categories: [日常折腾篇]
 tags: [KVR]
@@ -19,7 +19,7 @@ tags: [KVR]
 
 一次性搞了 3 台
 
-![新路由 3](//s3.joylau.cn:9000/blog/Daily-KVR-NewifiD2-Breed.jpeg)
+![新路由 3](//blog.joylau.cn/blog/Daily-KVR-NewifiD2-Breed.jpeg)
 
 
 ## 概念介绍
@@ -40,7 +40,7 @@ BSS 最大空闲服务有助于客户端和接入点在没有流量传输时，�
 
 ## 步骤
 ### 材料准备
-1. [newifi-d2-jail-break.ko](//s3.joylau.cn:9000/blog/newifi-d2-jail-break.ko)
+1. [newifi-d2-jail-break.ko](//blog.joylau.cn/blog/newifi-d2-jail-break.ko)
 
 ### 操作
 1. 重置现有路由器系统: 开机状态下按住 reset 键 5 秒,等待重启

@@ -32,7 +32,7 @@ tags: [日常折腾, LCD4Linux, OpenWrt]
 lcd4linux 只读取 `/tmp/cam_copy.png`，避免了读写冲突。
 
 
-<video src="https://s3.joylau.cn:9000/mdpic/picgo/2026/04/09/Daily-LCD4Linux-Cam-Monitor-1.mp4" muted controls="controls"> </video>
+<video src="https://blog.joylau.cn/mdpic/picgo/2026/04/09/Daily-LCD4Linux-Cam-Monitor-1.mp4" muted controls="controls"> </video>
 
 <!-- more -->
 
@@ -200,7 +200,7 @@ Layout 'layout_480x320'
 
 最后这套方案也可以近实时的显示电视直播流，比如每秒看 CCTV13 新闻频道  
 
-<video src="https://s3.joylau.cn:9000/mdpic/picgo/2026/04/09/Daily-LCD4Linux-Cam-Monitor-2.mp4" muted controls="controls"> </video>
+<video src="https://blog.joylau.cn/mdpic/picgo/2026/04/09/Daily-LCD4Linux-Cam-Monitor-2.mp4" muted controls="controls"> </video>
 
 参考
 

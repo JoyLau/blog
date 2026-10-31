@@ -70,7 +70,7 @@ available plugins:
   cfg, math, string, test, time, apm, asterisk, button_exec, cpuinfo, diskstats, dvb, exec, event, fifo, file, hddtemp, huawei, i2c_sensors, iconv, imon, isdn, kvv, loadavg, meminfo, netdev, netinfo, pop3, ppp, proc_stat, raspi, sample, seti, statfs, uname, uptime, w1retap, wireless, xmms
 ```
 
-[lcd4linux-PNG-DPF-X11-VNC-NULL_all-plugin.zip](https://s3.joylau.cn:9000/blog/lcd4linux-PNG-DPF-X11-VNC-NULL_all-plugin.zip)
+[lcd4linux-PNG-DPF-X11-VNC-NULL_all-plugin.zip](https://blog.joylau.cn/blog/lcd4linux-PNG-DPF-X11-VNC-NULL_all-plugin.zip)
 
 ### 仅 PNG,DPF 驱动的
 
@@ -86,12 +86,12 @@ available plugins:
   cfg, math, string, test, time, apm, asterisk, button_exec, cpuinfo, diskstats, dvb, exec, event, fifo, file, hddtemp, huawei, i2c_sensors, iconv, imon, isdn, kvv, loadavg, meminfo, netdev, netinfo, pop3, ppp, proc_stat, raspi, sample, seti, statfs, uname, uptime, w1retap, wireless, xmms
 ```
 
-[lcd4linux-PNG-DPF_all-plugin.zip](https://s3.joylau.cn:9000/blog/lcd4linux-PNG-DPF_all-plugin.zip)
+[lcd4linux-PNG-DPF_all-plugin.zip](https://blog.joylau.cn/blog/lcd4linux-PNG-DPF_all-plugin.zip)
 
 ### lib 库文件及图片文件和配置文件
 运行时缺什么文件自行加入到 **/lib64** 目录下
 
-[lcd4linux-resources.zip](https://s3.joylau.cn:9000/blog/lcd4linux-resources.zip)
+[lcd4linux-resources.zip](https://blog.joylau.cn/blog/lcd4linux-resources.zip)
 
 ### 运行
 ```shell
@@ -108,4 +108,4 @@ lcd4linux -f lcd4linux.conf
 
 
 ### 效果图
-![lcd4linux-IMG](https://s3.joylau.cn:9000/blog/lcd4linux-IMG_9132.png)
+![lcd4linux-IMG](https://blog.joylau.cn/blog/lcd4linux-IMG_9132.png)

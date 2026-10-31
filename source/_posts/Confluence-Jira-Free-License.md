@@ -77,7 +77,7 @@ my.cnf
 
 
 ## License 优化
-下载地址 [atlassian-agent.jar(Atlassian Crack Agent v1.3.1)](https://s3.joylau.cn:9000/mdpic/picgo/2026/04/02/atlassian-agent.jar)  
+下载地址 [atlassian-agent.jar(Atlassian Crack Agent v1.3.1)](https://blog.joylau.cn/mdpic/picgo/2026/04/02/atlassian-agent.jar)  
 
 授权码生成方法  
 ```shell

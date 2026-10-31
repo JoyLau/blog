@@ -7,7 +7,7 @@ tags: [ OpenWrt ]
 ---
 
 # 网络拓扑图
-![iptv1](https://s3.joylau.cn:9000/blog/openwrt-iptv-1.png)
+![iptv1](https://blog.joylau.cn/blog/openwrt-iptv-1.png)
 
 
 # 网络接口配置
@@ -205,7 +205,7 @@ https://post.smzdm.com/p/a785k2z9/
 本地 IP 和 本地端口填写 udpxy 的配置
 
 # m3u文件
-最后整理成 m3u 文件 [playlist.m3u](https://s3.joylau.cn:9000/blog/playlist.m3u)  
+最后整理成 m3u 文件 [playlist.m3u](https://blog.joylau.cn/blog/playlist.m3u)  
 然后就可以到电视端或者手机端导入观看了
 
 # 总结

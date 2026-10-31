@@ -15,4 +15,4 @@ tags: [ OpenWrt ]
 2. 刷入 OpenWrt，注意要选择 newifi-d2-squashfs-sysupgrade.bin 的升级包，如果选择 kennel 包，所有的数据都不会保存，重启后配置会丢失
 
 ### 升级包
-[openwrt-24.10.5-ramips-mt7621-d-team_newifi-d2-squashfs-sysupgrade.bin](https://s3.joylau.cn:9000/mdpic/picgo/2026/01/27/openwrt-24.10.5-ramips-mt7621-d-team_newifi-d2-squashfs-sysupgrade.bin)
+[openwrt-24.10.5-ramips-mt7621-d-team_newifi-d2-squashfs-sysupgrade.bin](https://blog.joylau.cn/mdpic/picgo/2026/01/27/openwrt-24.10.5-ramips-mt7621-d-team_newifi-d2-squashfs-sysupgrade.bin)
